@@ -11,7 +11,6 @@
 
 @implementation AxcBasicSuitCalculateTool
 
-
 /**
  数值递归计算操作
  @param calculateType 递归计算类型

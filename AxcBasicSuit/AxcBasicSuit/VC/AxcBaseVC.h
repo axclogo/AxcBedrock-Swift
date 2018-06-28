@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#import "AxcBasicSuitDefine.h"          // 快速宏定义
-#import "AxcLanguageManagement.h"       // 语言管理对象
 #import "AxcBasicSuitPrefixHeader.h"    // 可以全局引用的头文件
-#import "NSObject+AxcBasicSuitObjectEx.h"
-
 
 /** AxcVC基类 */
 @interface AxcBaseVC : UIViewController
@@ -38,6 +33,9 @@ UITableViewDelegate
 @property(nonatomic, assign)CGFloat axcStatusBarHeight;
 /** 上部Bar所有高度 */
 @property(nonatomic, assign)CGFloat axcTopBarAllHeight;
+
+/** tabbar高度 */
+@property(nonatomic , strong)UIColor *themeColor;
 
 //***************** 常用函数 *****************
 /** 快速设置TableView */

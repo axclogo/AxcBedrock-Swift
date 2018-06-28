@@ -17,6 +17,7 @@
 @implementation AxcBaseVC
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.themeColor = [UIColor ];
     [self settingInitialize];
     [self createUI];
     [self requestData];
