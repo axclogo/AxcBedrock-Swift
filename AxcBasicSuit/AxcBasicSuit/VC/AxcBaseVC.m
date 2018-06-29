@@ -17,7 +17,7 @@
 @implementation AxcBaseVC
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.themeColor = [UIColor ];
+    self.themeColor = [UIColor AxcTool_carrotColor];
     [self settingInitialize];
     [self createUI];
     [self requestData];

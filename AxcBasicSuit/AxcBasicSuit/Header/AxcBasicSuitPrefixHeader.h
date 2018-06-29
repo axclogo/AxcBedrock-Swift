@@ -15,3 +15,5 @@
 #pragma mark - 视图操作类
 #import "UIView+AxcViewRectEx.h"                        // 快速赋值视图Rect属性
 
+#import "UIColor+AxcColorEx.h"                          // 颜色工具类
+

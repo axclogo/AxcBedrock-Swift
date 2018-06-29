@@ -1,5 +1,5 @@
 //
-//  Axc框架封装工程
+//  AxcBasicSuit
 //
 //  Created by ZhaoXin on 16/3/9.
 //  Copyright © 2016年 Axc5324. All rights reserved.
@@ -197,16 +197,16 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-+ (UIColor *)colorWithView:(UIImage *)AtPixel:(CGPoint)point {
-    if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, self.image.size.width, self.image.size.height), point)) {
++ (UIColor *)AxcTool_colorWithImageView:(UIImageView *)imageView AtPixel:(CGPoint)point {
+    if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, imageView.image.size.width,
+                                        imageView.image.size.height), point)) {
         return nil;
     }
-    
     NSInteger pointX = trunc(point.x);
     NSInteger pointY = trunc(point.y);
-    CGImageRef cgImage = self.image.CGImage;
-    NSUInteger width = self.image.size.width;
-    NSUInteger height = self.image.size.height;
+    CGImageRef cgImage = imageView.image.CGImage;
+    NSUInteger width = imageView.image.size.width;
+    NSUInteger height = imageView.image.size.height;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     int bytesPerPixel = 4;
     int bytesPerRow = bytesPerPixel * 1;
@@ -225,12 +225,10 @@
     CGContextTranslateCTM(context, -pointX, pointY-(CGFloat)height);
     CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)width, (CGFloat)height), cgImage);
     CGContextRelease(context);
-    
     CGFloat red   = (CGFloat)pixelData[0] / 255.0f;
     CGFloat green = (CGFloat)pixelData[1] / 255.0f;
     CGFloat blue  = (CGFloat)pixelData[2] / 255.0f;
     CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
-    
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 

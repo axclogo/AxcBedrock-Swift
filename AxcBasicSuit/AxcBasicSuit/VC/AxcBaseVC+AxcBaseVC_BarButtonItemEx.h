@@ -11,9 +11,9 @@
 
 @interface AxcBaseVC (AxcBaseVC_BarButtonItemEx)
 
-- (UIButton *)AxcBase_createButtonItem:(UIImage *)image
-                              OrString:(NSString *)str
-                                 State:(UIControlState)state
-                                Action:(SEL)action;
+- (UIButton *)AxcBase_createButtonWithImage:(UIImage *)image
+                                      title:(NSString *)title
+                                       font:(UIFont *)font
+                                     action:(SEL )action;
 
 @end
