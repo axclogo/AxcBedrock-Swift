@@ -11,17 +11,30 @@
 #import "AxcBasicSuitBlockDefine.h"     // Block定义
 
 /** 运算操作类型 */
-typedef NS_ENUM(NSInteger, AxcBasicSuitCalculateType) {
-    AxcBasicSuitCalculateTypeAdd,           // 加
-    AxcBasicSuitCalculateTypeReduction,     // 减
-    AxcBasicSuitCalculateTypeTake,          // 乘
-    AxcBasicSuitCalculateTypeAddition,      // 除
+typedef NS_ENUM(NSInteger, AxcCalculateType) {
+    AxcCalculateTypeAdd,           // 加
+    AxcCalculateTypeReduction,     // 减
+    AxcCalculateTypeTake,          // 乘
+    AxcCalculateTypeAddition,      // 除
 };
 /**
  常用的一些计算算法、排序等
  主要是涉及到数值计算的定义函数
  */
-@interface AxcBasicSuitCalculateTool : NSObject
+@interface AxcCalculateTool : NSObject
+
+
+/**
+ 角度转弧度
+ @param degrees 角度
+ */
++ (CGFloat)AxcTool_degreesToRadian:(CGFloat )degrees;
+
+/**
+ 弧度转角度
+ @param radian 弧度
+ */
++ (CGFloat)AxcTool_radianToDegrees:(CGFloat )radian;
 
 /**
  数值递归计算操作
@@ -31,7 +44,7 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitCalculateType) {
  @param operationValue 操作数值
  @return 结果
  */
-+ (CGFloat )AxcTool_recursiveCalculateType:(AxcBasicSuitCalculateType )calculateType
++ (CGFloat )AxcTool_recursiveCalculateType:(AxcCalculateType )calculateType
                                       data:(CGFloat )data
                             operationCount:(NSInteger )operationCount
                             operationValue:(CGFloat )operationValue;
@@ -42,7 +55,7 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitCalculateType) {
 
 #pragma mark - 数据换算/计算 函数分层类扩展
 
-@interface AxcBasicSuitCalculateTool (AxcConversionCalculateEx)
+@interface AxcCalculateTool (AxcConversionCalculateEx)
 
 /**
  MD5换算
@@ -86,7 +99,7 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitStorageUnitType) {
     AxcBasicSuitStorageSizeTypeYottabyte,       // Y字节
 };
 
-@interface AxcBasicSuitCalculateTool (AxcFileCalculateEx)
+@interface AxcCalculateTool (AxcFileCalculateEx)
 /**
  获取某种类型的磁盘空间
  @param type 类型
@@ -133,7 +146,7 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitStorageUnitType) {
 
 #pragma mark - 日期计算/换算 函数分层类扩展
 
-@interface AxcBasicSuitCalculateTool (AxcDateCalculateEx)
+@interface AxcCalculateTool (AxcDateCalculateEx)
 /**
  毫秒计算时分秒
  @param time 毫秒数值

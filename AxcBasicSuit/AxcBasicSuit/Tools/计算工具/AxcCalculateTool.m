@@ -6,10 +6,26 @@
 //  Copyright © 2018年 AxcLogo. All rights reserved.
 //
 
-#import "AxcBasicSuitCalculateTool.h"
+#import "AxcCalculateTool.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation AxcBasicSuitCalculateTool
+@implementation AxcCalculateTool
+
+/**
+ 角度转弧度
+ @param degrees 角度
+ */
++ (CGFloat)AxcTool_degreesToRadian:(CGFloat )degrees{
+    return (M_PI * (degrees) / 180.0);
+}
+
+/**
+ 弧度转角度
+ @param radian 弧度
+ */
++ (CGFloat)AxcTool_radianToDegrees:(CGFloat )radian{
+    return (radian * 180.0) / M_PI;
+}
 
 /**
  数值递归计算操作
@@ -19,22 +35,22 @@
  @param operationValue 操作数值
  @return 结果
  */
-+ (CGFloat )AxcTool_recursiveCalculateType:(AxcBasicSuitCalculateType )calculateType
++ (CGFloat )AxcTool_recursiveCalculateType:(AxcCalculateType )calculateType
                                       data:(CGFloat )data
                             operationCount:(NSInteger )operationCount
                             operationValue:(CGFloat )operationValue{
     if (operationCount != 0) {
         switch (calculateType) {
-            case AxcBasicSuitCalculateTypeAdd:{            // 加
+            case AxcCalculateTypeAdd:{            // 加
                 data += operationValue;
             }break;
-            case AxcBasicSuitCalculateTypeReduction:{      // 减
+            case AxcCalculateTypeReduction:{      // 减
                 data -= operationValue;
             }break;
-            case AxcBasicSuitCalculateTypeTake:{           // 乘
+            case AxcCalculateTypeTake:{           // 乘
                 data *= operationValue;
             }break;
-            case AxcBasicSuitCalculateTypeAddition:{       // 除
+            case AxcCalculateTypeAddition:{       // 除
                 data /= operationValue;
             }break;
             default: break;
@@ -53,7 +69,7 @@
 
 #pragma mark - 数据换算/计算 函数分层类扩展
 
-@implementation AxcBasicSuitCalculateTool (AxcConversionCalculateEx)
+@implementation AxcCalculateTool (AxcConversionCalculateEx)
 
 /**
  MD5换算
@@ -93,7 +109,7 @@
 
 #pragma mark - 文件计算 函数分层类扩展
 
-@implementation AxcBasicSuitCalculateTool (AxcFileCalculateEx)
+@implementation AxcCalculateTool (AxcFileCalculateEx)
 
 /**
  获取某种类型的磁盘空间
@@ -105,9 +121,7 @@
     NSError *error;
     NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
     if (error) {
-#ifdef DEBUG
-        NSLog(@"error: %@", error.localizedDescription);
-#endif
+        AxcErrorObjLog(error.localizedDescription);
     }else{
         switch (type) {
             case AxcBasicSuitFileSystemTypeSize:{
@@ -126,9 +140,7 @@
                 size = allSize - freeSize;
             }break;
             default:{
-#ifdef DEBUG
-                NSLog(@"error: Unknown type With Enum:<AxcBasicSuitFileSystemType>");
-#endif
+                AxcErrorObjLog(@"error: Unknown type With Enum:<AxcBasicSuitFileSystemType>");
             } break;
         }
     }
@@ -180,7 +192,7 @@
     NSInteger between = toUnitType - unitType;
     NSInteger operationCount = labs(between); // 绝对值
     return [self AxcTool_recursiveCalculateType:between > 0 ? // 向上转换除法 // 向下转换乘法
-             AxcBasicSuitCalculateTypeAddition : AxcBasicSuitCalculateTypeTake
+             AxcCalculateTypeAddition : AxcCalculateTypeTake
                                            data:dataUnit
                                  operationCount:operationCount
                                  operationValue:1024];
@@ -202,7 +214,7 @@
 
 #pragma mark - 日期计算 函数分层类扩展
 
-@implementation AxcBasicSuitCalculateTool (AxcDateCalculateEx)
+@implementation AxcCalculateTool (AxcDateCalculateEx)
 
 /**
  毫秒转时分秒
@@ -255,7 +267,7 @@
     NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc]init];
     dateFormatter2.dateFormat = format2;
     NSDate *currentDate = [dateFormatter2 dateFromString:currentTime];
-    return [AxcBasicSuitCalculateTool AxcTool_timeIntervalFromLastTime:lastDate ToCurrentTime:currentDate];
+    return [AxcCalculateTool AxcTool_timeIntervalFromLastTime:lastDate ToCurrentTime:currentDate];
 }
 /**
  计算上次日期距离现在多久

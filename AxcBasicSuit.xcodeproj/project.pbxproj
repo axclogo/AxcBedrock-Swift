@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		EA29153020E1E8CC00832709 /* AxcLanguageManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29152F20E1E8CC00832709 /* AxcLanguageManagement.m */; };
 		EA29153420E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29153320E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m */; };
-		EA29153D20E236DE00832709 /* AxcBasicSuitCalculateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29153C20E236DE00832709 /* AxcBasicSuitCalculateTool.m */; };
+		EA29153D20E236DE00832709 /* AxcCalculateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29153C20E236DE00832709 /* AxcCalculateTool.m */; };
 		EA69960320E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960220E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m */; };
 		EA69960820E4CDE7000592B2 /* NSString+AxcRegularEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960720E4CDE7000592B2 /* NSString+AxcRegularEx.m */; };
-		EA69960B20E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960A20E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.m */; };
 		EA69960E20E4E08E000592B2 /* NSString+AxcTextCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960D20E4E08E000592B2 /* NSString+AxcTextCalculation.m */; };
 		EA69961320E4E41E000592B2 /* UIView+AxcViewRectEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961220E4E41E000592B2 /* UIView+AxcViewRectEx.m */; };
 		EA69961720E4E5D6000592B2 /* UIColor+AxcColorEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961520E4E5D6000592B2 /* UIColor+AxcColorEx.m */; };
+		EA69961B20E61C49000592B2 /* AxcParameterObj.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961A20E61C49000592B2 /* AxcParameterObj.m */; };
+		EA69962020E6261D000592B2 /* UIView+AxcViewAppearanceEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961F20E6261D000592B2 /* UIView+AxcViewAppearanceEx.m */; };
+		EA69962420E62CF7000592B2 /* AxcDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69962220E62CF6000592B2 /* AxcDataCache.m */; };
 		EA9FB0C320E1E0CB006260C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FB0C220E1E0CB006260C4 /* AppDelegate.m */; };
 		EA9FB0C620E1E0CB006260C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FB0C520E1E0CB006260C4 /* ViewController.m */; };
 		EA9FB0C920E1E0CB006260C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9FB0C720E1E0CB006260C4 /* Main.storyboard */; };
@@ -50,21 +52,25 @@
 		EA29153220E226D200832709 /* NSObject+AxcBasicSuitIndexPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AxcBasicSuitIndexPath.h"; sourceTree = "<group>"; };
 		EA29153320E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AxcBasicSuitIndexPath.m"; sourceTree = "<group>"; };
 		EA29153620E229C700832709 /* AxcBasicSuitPrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcBasicSuitPrefixHeader.h; sourceTree = "<group>"; };
-		EA29153B20E236DE00832709 /* AxcBasicSuitCalculateTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcBasicSuitCalculateTool.h; sourceTree = "<group>"; };
-		EA29153C20E236DE00832709 /* AxcBasicSuitCalculateTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxcBasicSuitCalculateTool.m; sourceTree = "<group>"; };
+		EA29153B20E236DE00832709 /* AxcCalculateTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcCalculateTool.h; sourceTree = "<group>"; };
+		EA29153C20E236DE00832709 /* AxcCalculateTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxcCalculateTool.m; sourceTree = "<group>"; };
 		EA29154B20E23F3500832709 /* AxcBasicSuitBlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcBasicSuitBlockDefine.h; sourceTree = "<group>"; };
 		EA69960120E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AxcBasicSuitObjectEx.h"; sourceTree = "<group>"; };
 		EA69960220E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AxcBasicSuitObjectEx.m"; sourceTree = "<group>"; };
 		EA69960620E4CDE7000592B2 /* NSString+AxcRegularEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcRegularEx.h"; sourceTree = "<group>"; };
 		EA69960720E4CDE7000592B2 /* NSString+AxcRegularEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcRegularEx.m"; sourceTree = "<group>"; };
-		EA69960920E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AxcBaseVC+AxcBaseVC_BarButtonItemEx.h"; sourceTree = "<group>"; };
-		EA69960A20E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AxcBaseVC+AxcBaseVC_BarButtonItemEx.m"; sourceTree = "<group>"; };
 		EA69960C20E4E08E000592B2 /* NSString+AxcTextCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcTextCalculation.h"; sourceTree = "<group>"; };
 		EA69960D20E4E08E000592B2 /* NSString+AxcTextCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcTextCalculation.m"; sourceTree = "<group>"; };
 		EA69961120E4E41E000592B2 /* UIView+AxcViewRectEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcViewRectEx.h"; sourceTree = "<group>"; };
 		EA69961220E4E41E000592B2 /* UIView+AxcViewRectEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcViewRectEx.m"; sourceTree = "<group>"; };
 		EA69961520E4E5D6000592B2 /* UIColor+AxcColorEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AxcColorEx.m"; sourceTree = "<group>"; };
 		EA69961620E4E5D6000592B2 /* UIColor+AxcColorEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AxcColorEx.h"; sourceTree = "<group>"; };
+		EA69961920E61C49000592B2 /* AxcParameterObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcParameterObj.h; sourceTree = "<group>"; };
+		EA69961A20E61C49000592B2 /* AxcParameterObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcParameterObj.m; sourceTree = "<group>"; };
+		EA69961E20E6261D000592B2 /* UIView+AxcViewAppearanceEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcViewAppearanceEx.h"; sourceTree = "<group>"; };
+		EA69961F20E6261D000592B2 /* UIView+AxcViewAppearanceEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcViewAppearanceEx.m"; sourceTree = "<group>"; };
+		EA69962220E62CF6000592B2 /* AxcDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcDataCache.m; sourceTree = "<group>"; };
+		EA69962320E62CF7000592B2 /* AxcDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcDataCache.h; sourceTree = "<group>"; };
 		EA9FB0BE20E1E0CB006260C4 /* AxcBasicSuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AxcBasicSuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9FB0C120E1E0CB006260C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA9FB0C220E1E0CB006260C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 		EA29153A20E236A900832709 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA69962120E62CE9000592B2 /* 二进制缓存器 */,
+				EA69961820E61C1C000592B2 /* 机型判断 */,
 				EA29152D20E1E87000832709 /* 语言工具 */,
 				EA29153E20E236E300832709 /* 计算工具 */,
 				EA29153120E2267B00832709 /* 扩展类工具 */,
@@ -152,8 +160,8 @@
 		EA29153E20E236E300832709 /* 计算工具 */ = {
 			isa = PBXGroup;
 			children = (
-				EA29153B20E236DE00832709 /* AxcBasicSuitCalculateTool.h */,
-				EA29153C20E236DE00832709 /* AxcBasicSuitCalculateTool.m */,
+				EA29153B20E236DE00832709 /* AxcCalculateTool.h */,
+				EA29153C20E236DE00832709 /* AxcCalculateTool.m */,
 			);
 			path = "计算工具";
 			sourceTree = "<group>";
@@ -215,8 +223,8 @@
 		EA69961020E4E408000592B2 /* UIVIew+ */ = {
 			isa = PBXGroup;
 			children = (
-				EA69961120E4E41E000592B2 /* UIView+AxcViewRectEx.h */,
-				EA69961220E4E41E000592B2 /* UIView+AxcViewRectEx.m */,
+				EA69961D20E625EB000592B2 /* 快速定义外观 */,
+				EA69961C20E625CE000592B2 /* 快速设置Rect */,
 			);
 			path = "UIVIew+";
 			sourceTree = "<group>";
@@ -228,6 +236,42 @@
 				EA69961520E4E5D6000592B2 /* UIColor+AxcColorEx.m */,
 			);
 			path = "UIColor+";
+			sourceTree = "<group>";
+		};
+		EA69961820E61C1C000592B2 /* 机型判断 */ = {
+			isa = PBXGroup;
+			children = (
+				EA69961920E61C49000592B2 /* AxcParameterObj.h */,
+				EA69961A20E61C49000592B2 /* AxcParameterObj.m */,
+			);
+			path = "机型判断";
+			sourceTree = "<group>";
+		};
+		EA69961C20E625CE000592B2 /* 快速设置Rect */ = {
+			isa = PBXGroup;
+			children = (
+				EA69961120E4E41E000592B2 /* UIView+AxcViewRectEx.h */,
+				EA69961220E4E41E000592B2 /* UIView+AxcViewRectEx.m */,
+			);
+			path = "快速设置Rect";
+			sourceTree = "<group>";
+		};
+		EA69961D20E625EB000592B2 /* 快速定义外观 */ = {
+			isa = PBXGroup;
+			children = (
+				EA69961E20E6261D000592B2 /* UIView+AxcViewAppearanceEx.h */,
+				EA69961F20E6261D000592B2 /* UIView+AxcViewAppearanceEx.m */,
+			);
+			path = "快速定义外观";
+			sourceTree = "<group>";
+		};
+		EA69962120E62CE9000592B2 /* 二进制缓存器 */ = {
+			isa = PBXGroup;
+			children = (
+				EA69962320E62CF7000592B2 /* AxcDataCache.h */,
+				EA69962220E62CF6000592B2 /* AxcDataCache.m */,
+			);
+			path = "二进制缓存器";
 			sourceTree = "<group>";
 		};
 		EA9FB0B520E1E0CB006260C4 = {
@@ -301,8 +345,6 @@
 			children = (
 				EA9FB0F420E1E0F8006260C4 /* AxcBaseVC.h */,
 				EA9FB0F520E1E0F8006260C4 /* AxcBaseVC.m */,
-				EA69960920E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.h */,
-				EA69960A20E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -450,15 +492,17 @@
 				EA29153420E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m in Sources */,
 				EA9FB0C620E1E0CB006260C4 /* ViewController.m in Sources */,
 				EA69960E20E4E08E000592B2 /* NSString+AxcTextCalculation.m in Sources */,
-				EA69960B20E4DF7F000592B2 /* AxcBaseVC+AxcBaseVC_BarButtonItemEx.m in Sources */,
 				EA69961320E4E41E000592B2 /* UIView+AxcViewRectEx.m in Sources */,
-				EA29153D20E236DE00832709 /* AxcBasicSuitCalculateTool.m in Sources */,
+				EA29153D20E236DE00832709 /* AxcCalculateTool.m in Sources */,
+				EA69962420E62CF7000592B2 /* AxcDataCache.m in Sources */,
 				EA69961720E4E5D6000592B2 /* UIColor+AxcColorEx.m in Sources */,
 				EA9FB0D120E1E0CC006260C4 /* main.m in Sources */,
 				EA9FB0F620E1E0F8006260C4 /* AxcBaseVC.m in Sources */,
+				EA69962020E6261D000592B2 /* UIView+AxcViewAppearanceEx.m in Sources */,
 				EA69960820E4CDE7000592B2 /* NSString+AxcRegularEx.m in Sources */,
 				EA29153020E1E8CC00832709 /* AxcLanguageManagement.m in Sources */,
 				EA9FB0C320E1E0CB006260C4 /* AppDelegate.m in Sources */,
+				EA69961B20E61C49000592B2 /* AxcParameterObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
