@@ -58,12 +58,12 @@
                                             withIntermediateDirectories:YES
                                                              attributes:nil
                                                                   error:nil];
-    if (!isSuccess) {AxcErrorObjLog(AxcLS(AxcFileCreateFailed));return;}
-    saveKey = [AxcCalculateTool AxcTool_MD5WithStr:saveKey];
+    if (!isSuccess) {AxcErrorObjLog(AxcLS(@"创建缓存文件失败！"));return;}
+    saveKey = saveKey.AxcTool_get_MD5_Str;
     [filePath appendFormat:@"/%@",saveKey];
     BOOL isWrite = [data writeToFile:filePath
                           atomically:YES];
-    if (!isWrite) {AxcErrorObjLog(AxcLS(AxcFileWriteFailed)); }
+    if (!isWrite) {AxcErrorObjLog(AxcLS(@"写入缓存文件失败！")); }
 }
 
 
@@ -86,13 +86,12 @@
 + (NSData *)AxcTool_cacheGetDataWithSaveKey:(NSString *)saveKey
                                  folderName:(NSString *)folderName{
     if (!folderName.length) folderName = kAxcDefaultCacheFolder;
-    NSString *saveKey_MD5 = [AxcCalculateTool AxcTool_MD5WithStr:saveKey];
+    NSString *saveKey_MD5 = saveKey.AxcTool_get_MD5_Str;
     NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@",self.AxcTool_getCachePath,folderName,saveKey_MD5];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     if (!data) {
         data = [NSData data];
-        NSString *errorLog = [NSString stringWithFormat:@"%@\n错误存储Key值：%@\n错误文件目录：%@\n错误文件路径：%@",AxcLS(AxcGetFileFailed),
-                              saveKey,folderName,filePath];
+        NSString *errorLog = [NSString stringWithFormat:@"缓存目录中没有相应的缓存文件！请检查文件路径以及存储saveKey是否有误！\n错误存储Key值：%@\n错误文件目录：%@\n错误文件路径：%@",saveKey,folderName,filePath];
         AxcErrorObjLog(errorLog);
     }
     return data ; // 返回空转换会直接崩溃

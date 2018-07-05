@@ -15,6 +15,10 @@
 #define AxcIsValidPostalcodeRegular         @"^[0-8]\\d{5}(?!\\d)$"
 #define AxcIsIPAddressRegular               @"^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"
 #define AxcIsIntegerNumberRegular           @"^-?\\d+$"
+#define AxcIsPasswordRegular                @"^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{6,18}"
+#define AxcIsUserNameRegular                @"^([\u4e00-\u9fa5]+|([a-zA-Z]+\\s?)+)$"
+#define AxcIsBankNumberRegular              @"^([0-9]{16}|[0-9]{19})$"
+#define AxcIsNumberAndStringRegular         @"^[A-Za-z0-9]+$"
 
 
 
@@ -37,17 +41,15 @@
 
 #define AxcBasicSuitUnknownText         @"未知"
 
-#define AxcCodeLineText                 @"行号"
-#define AxcExecutiveFunctionText        @"执行函数"
-
-
-#define AxcFileCreateFailed             @"创建缓存文件失败！"
-#define AxcFileWriteFailed              @"写入缓存文件失败！"
-#define AxcGetFileFailed                @"缓存目录中没有相应的缓存文件！请检查文件路径以及存储saveKey是否有误！"
-
 #define AxcAuthenticationText           @"请进行身份验证"
 #define AxcInputPasswordText            @"输入密码"
 
+#define AxcYearsFomat                   @"yyyy"
+#define AxcMonthFomat                   @"MM"
+#define AxcDayFomat                     @"dd"
+#define AxcHoursFomat                   @"HH"
+#define AxcMinutesFomat                 @"mm"
+#define AxcSecondsFomat                 @"ss"
 
 /***************** 函数块区 *****************/
 
@@ -87,7 +89,7 @@
  AxcTool错误日志打印函数
  @param FORMAT 错误内容
  */
-#define AxcErrorLog(FORMAT, ...) printf("%s",[[NSString stringWithFormat:@"\n############## AXC-TOOLS-ERROR ##############\nAxcToolsError: \n[ %@ |%@：%d ] | [%@：%s]:\n%@\n\n##############-AXC-TOOLS-ERROR-END ##############\n\n",self,AxcCodeLineText,__LINE__,AxcExecutiveFunctionText,__func__,##__VA_ARGS__] UTF8String]);
+#define AxcErrorLog(FORMAT, ...) printf("%s",[[NSString stringWithFormat:@"\n############## AXC-TOOLS-ERROR ##############\nAxcToolsError: \n[ %@ |行号：%d ] | [执行函数：%s]:\n%@\n\n##############-AXC-TOOLS-ERROR-END ##############\n\n",self,__LINE__,__func__,##__VA_ARGS__] UTF8String]);
 /**
  AxcTool错误日志打印函数
  @param errorObj 错误对象

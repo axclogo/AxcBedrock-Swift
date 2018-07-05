@@ -25,11 +25,20 @@
 /** 是否为邮箱 */
 - (BOOL)AxcTool_isEmail;
 
+/** 匹配用户姓名,20位的中文或英文 */
+- (BOOL)AxcTool_isUserName;
+
+/** 匹配用户密码6-18位数字和字母组合 */
+- (BOOL)AxcTool_isPassword;
+
 /** 是否为手机号 */
 - (BOOL )AxcTool_isPhoneNum;
 
 /** 是否为身份证号 */
 - (BOOL )AxcTool_isIdCardNumber;
+
+/** 是否为银行卡号 */
+- (BOOL )AxcTool_isBankNumber;
 
 /** 是否为车牌号 */
 - (BOOL )AxcTool_IsCarNumber;
@@ -45,6 +54,9 @@
 
 /** 是否为IP地址 */
 - (BOOL )AxcTool_isIPAddress;
+
+/** 是否仅为数字和字母 */
+- (BOOL )AxcTool_isNumAndString;
 
 
 /**

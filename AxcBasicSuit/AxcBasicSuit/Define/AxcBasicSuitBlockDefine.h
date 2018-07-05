@@ -24,6 +24,12 @@ typedef NSString *(^AxcBasicSuitFormatBlock )(NSArray <NSString *>*strings);
 typedef void (^AxcBasicSuitBarBtnItemBlock )(UIButton *barItemBtn);
 
 
+/**
+ 倒计时结束回调Block
+ */
+typedef void (^AxcBasicSuitBtnTimeEndBlock )(void);
+
+
 
 
 

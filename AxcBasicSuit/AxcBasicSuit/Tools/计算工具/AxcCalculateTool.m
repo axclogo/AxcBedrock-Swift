@@ -71,22 +71,6 @@
 
 @implementation AxcCalculateTool (AxcConversionCalculateEx)
 
-/**
- MD5换算
- @param str 准备换算的字符串
- @return MD5
- */
-+(NSString *)AxcTool_MD5WithStr:(NSString *)str{
-    const char *cStr = [str UTF8String];
-    unsigned char result[16];
-    CC_MD5(cStr, (int)strlen(cStr), result);
-    return [NSString stringWithFormat:
-            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
-            result[0], result[1], result[2], result[3],
-            result[4], result[5], result[6], result[7],
-            result[8], result[9], result[10], result[11],
-            result[12], result[13], result[14], result[15]];
-}
 
 /**
  获取字符串(或汉字)首字母
@@ -269,6 +253,7 @@
     NSDate *currentDate = [dateFormatter2 dateFromString:currentTime];
     return [AxcCalculateTool AxcTool_timeIntervalFromLastTime:lastDate ToCurrentTime:currentDate];
 }
+
 /**
  计算上次日期距离现在多久
  @param lastTime 上次日期(NSData)
@@ -318,16 +303,7 @@
     return AxcLS(AxcBasicSuitUnknownText);
 }
 
-/**
- 获取当前时间
- @param format 日期格式
- @return 当前日期
- */
-+ (NSString *)AxcTool_getCurrentDateWithFormat:(NSString *)format{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    return [dateFormatter stringFromDate:[NSDate date]];
-}
+
 
 
 @end

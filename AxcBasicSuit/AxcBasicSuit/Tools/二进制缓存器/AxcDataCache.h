@@ -13,6 +13,8 @@
 #import "NSString+AxcDataConversionEx.h"                // 快速Data转换数据 - NSString
 #import "NSDictionary+AxcDataConversionEx.h"            // 快速Data转换数据 - NSDictionary
 
+#import "NSString+Axc_MD5_Ex.h"                         // MD5转换
+
 @interface AxcDataCache : NSObject
 
 /** 获取缓存路径 */

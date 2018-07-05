@@ -27,6 +27,16 @@
 - (BOOL)AxcTool_isEmail{
     return [self AxcTool_isRegularExpression:AxcIsEmailRegular];
 }
+
+/** 匹配用户姓名,20位的中文或英文 */
+- (BOOL)AxcTool_isUserName{
+    return [self AxcTool_isRegularExpression:AxcIsUserNameRegular];
+}
+
+/** 匹配用户密码6-18位数字和字母组合 */
+- (BOOL)AxcTool_isPassword{
+    return [self AxcTool_isRegularExpression:AxcIsPasswordRegular];
+}
 /** 是否为手机号 */
 - (BOOL )AxcTool_isPhoneNum{
     return [self AxcTool_isRegularExpression:AxcIsPhoneNumberRegular];
@@ -34,6 +44,10 @@
 /** 是否为身份证号 */
 - (BOOL )AxcTool_isIdCardNumber{
     return [self AxcTool_isRegularExpression:AxcIsIdCardNumberRegular];
+}
+/** 是否为银行卡号 */
+- (BOOL)AxcTool_isBankNumber{
+    return [self AxcTool_isRegularExpression:AxcIsBankNumberRegular];
 }
 /** 是否为车牌号 */
 - (BOOL )AxcTool_IsCarNumber{
@@ -53,6 +67,11 @@
 /** 是否为邮政编码 */
 - (BOOL )AxcTool_isValidPostalcode{
     return [self AxcTool_isRegularExpression:AxcIsValidPostalcodeRegular];
+}
+
+/** 是否仅为数字和字母 */
+- (BOOL )AxcTool_isNumAndString{
+    return [self AxcTool_isRegularExpression:AxcIsNumberAndStringRegular];
 }
 
 /** 是否为IP地址 */

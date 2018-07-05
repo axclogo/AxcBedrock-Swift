@@ -57,12 +57,7 @@ typedef NS_ENUM(NSInteger, AxcCalculateType) {
 
 @interface AxcCalculateTool (AxcConversionCalculateEx)
 
-/**
- MD5换算
- @param str 准备换算的字符串
- @return MD5
- */
-+(NSString *)AxcTool_MD5WithStr:(NSString *)str;
+
 /**
  换算 字符串(或汉字)首字母
  @param string 入参字符或文字
@@ -178,11 +173,5 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitStorageUnitType) {
 + (NSString *)AxcTool_timeIntervalFromLastTime:(NSDate *)lastTime
                                  ToCurrentTime:(NSDate *)currentTime;
 
-/**
- 获取当前时间
- @param format 日期格式
- @return 当前日期
- */
-+ (NSString *)AxcTool_getCurrentDateWithFormat:(NSString *)format;
 
 @end
