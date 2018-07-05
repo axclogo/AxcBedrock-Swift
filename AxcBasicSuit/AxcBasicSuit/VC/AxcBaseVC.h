@@ -220,7 +220,7 @@ typedef NS_ENUM(NSInteger, AxcBaseBarButtonItemBearing) {
                                        font:(UIFont *)font
                                      action:(SEL )action;
 
-// 回调嫁接Block指针
+// 回调Block指针
 @property(nonatomic , copy)AxcBasicSuitBarBtnItemBlock rightBarItemBlock;
 @property(nonatomic , copy)AxcBasicSuitBarBtnItemBlock leftBarItemBlock;
 

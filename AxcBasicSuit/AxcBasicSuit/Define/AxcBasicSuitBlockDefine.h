@@ -23,3 +23,9 @@ typedef NSString *(^AxcBasicSuitFormatBlock )(NSArray <NSString *>*strings);
  */
 typedef void (^AxcBasicSuitBarBtnItemBlock )(UIButton *barItemBtn);
 
+
+
+
+
+
+

@@ -8,8 +8,15 @@
 
 #import "AxcCalculateTool.h"
 
+#import "NSData+AxcDataConversionEx.h"                  // 快速Data转换数据 - NSData
+#import "NSArray+AxcDataConversionEx.h"                 // 快速Data转换数据 - NSArray
+#import "NSString+AxcDataConversionEx.h"                // 快速Data转换数据 - NSString
+#import "NSDictionary+AxcDataConversionEx.h"            // 快速Data转换数据 - NSDictionary
+
 @interface AxcDataCache : NSObject
 
+/** 获取缓存路径 */
++ (NSString *)AxcTool_getCachePath;
 
 /**
  将数据存入缓存器，默认文件夹名称
@@ -26,8 +33,8 @@
  @param saveKey 存的文件名/或者唯一标识
  */
 + (void)AxcTool_cacheSaveWithData:(NSData *)data
-                       folderName:(NSString *)folderName
-                          saveKey:(NSString *)saveKey;
+                          saveKey:(NSString *)saveKey
+                       folderName:(NSString *)folderName;
 
 /**
  将数据取出缓存器，默认文件夹名称
@@ -42,8 +49,9 @@
  @param saveKey 存的文件名/或者唯一标识
  @return 数据对象
  */
-+ (NSData *)AxcTool_cacheGetDataWithFolderName:(NSString *)folderName
-                                       saveKey:(NSString *)saveKey;
++ (NSData *)AxcTool_cacheGetDataWithSaveKey:(NSString *)saveKey
+                                 folderName:(NSString *)folderName;
+
 
 
 /** 清除全部缓存 */

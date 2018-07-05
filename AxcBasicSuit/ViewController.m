@@ -19,31 +19,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor AxcTool_orangeColor];
     
-    [self AxcBase_addBarButtonItem:AxcBaseBarButtonItemLocationRight
-                            images:@[@"barItemImg",@"barItemImg"]
-                           handler:^(UIButton *barItemBtn) {
-                               NSLog(@"%@",barItemBtn.axcStringTag);
-                           }];
-    [self AxcBase_addBarButtonItem:AxcBaseBarButtonItemLocationLeft
-                            titles:@[@"赵新",@"哈哈哈"]];
-    self.dataListArray = @[@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@""].mutableCopy;
-    // 设置布局
-//    UICollectionViewFlowLayout *_flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    _flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-//    _flowLayout.sectionInset = UIEdgeInsetsMake(10, 15, 10, 15);
-//    _flowLayout.minimumLineSpacing = 15;
-//    _flowLayout.minimumInteritemSpacing = 10;
-//    [self AxcBase_settingCollectionLayout:_flowLayout nibName:nil cellID:@"111"];
-//    [self.view addSubview:self.collectionView];
+    NSData *data = [NSData AxcTool_dataWithObj:@{@"123":@"45345"} options:NSJSONWritingPrettyPrinted error:nil];
+
+    [AxcDataCache AxcTool_cacheSaveWithData:data saveKey:@"axclogo" ];
     
-    [self AxcBase_settingTableType:UITableViewStylePlain nibName:nil cellID:nil];
-    [self.view addSubview:self.tableView];
-    self.useCustomToolBarView = YES;
-    AxcErrorLog(@"%@",@"asdasd");
+    NSData *data2 = [AxcDataCache AxcTool_cacheGetDataWithSaveKey:@"axclogoa" ];
+    
+    NSLog(@"%@",[AxcDataCache AxcTool_getCachePath]);
+
+    NSLog(@"%@",[NSDictionary AxcTool_dicWithData:data2] );
 }
 
-- (void)AxcBase_clickLeftBarItemBtn:(UIButton *)sender{
-    NSLog(@"%@",sender.axcStringTag);
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [AxcTouchManager AxcTool_TouchManagerWithMessage:@"123" fallbackTitle:@"asdasd" verifyBlock:^(BOOL success, AxcTouchManagerVerifyStatus status) {
+        NSLog(@"%ld",status);
+    }];
 }
 
 

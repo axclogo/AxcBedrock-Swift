@@ -8,9 +8,9 @@
 
 #import "AxcDataCache.h"
 
-#define AxcDataCachePath @"/Documents/AxcDataCache"
-#define kAxcDataCache @"AxcDataCache"
-#define kAxcDefaultCacheFolder @"AxcDefaultCacheFolder"
+#define AxcDataCachePath            @"/Documents/AxcDataCache"
+#define kAxcDataCache               @"AxcDataCache"
+#define kAxcDefaultCacheFolder      @"AxcDefaultCacheFolder"
 
 @implementation AxcDataCache
 
@@ -40,7 +40,7 @@
  */
 + (void)AxcTool_cacheSaveWithData:(NSData *)data
                           saveKey:(NSString *)saveKey{
-    [self AxcTool_cacheSaveWithData:data folderName:kAxcDefaultCacheFolder saveKey:saveKey];
+    [self AxcTool_cacheSaveWithData:data saveKey:saveKey folderName:kAxcDefaultCacheFolder];
 }
 
 /**
@@ -50,16 +50,17 @@
  @param saveKey 存的文件名/或者唯一标识
  */
 + (void)AxcTool_cacheSaveWithData:(NSData *)data
-                       folderName:(NSString *)folderName
-                          saveKey:(NSString *)saveKey{
+                          saveKey:(NSString *)saveKey
+                       folderName:(NSString *)folderName{
     if (!folderName.length) folderName = kAxcDefaultCacheFolder;
-    BOOL isSuccess = [self.AxcTool_getfileManager createDirectoryAtPath:self.AxcTool_getCachePath
+    NSMutableString *filePath = [NSMutableString stringWithFormat:@"%@/%@",self.AxcTool_getCachePath,folderName];
+    BOOL isSuccess = [self.AxcTool_getfileManager createDirectoryAtPath:filePath
                                             withIntermediateDirectories:YES
                                                              attributes:nil
                                                                   error:nil];
     if (!isSuccess) {AxcErrorObjLog(AxcLS(AxcFileCreateFailed));return;}
     saveKey = [AxcCalculateTool AxcTool_MD5WithStr:saveKey];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@%@",self.AxcTool_getCachePath,folderName,saveKey];
+    [filePath appendFormat:@"/%@",saveKey];
     BOOL isWrite = [data writeToFile:filePath
                           atomically:YES];
     if (!isWrite) {AxcErrorObjLog(AxcLS(AxcFileWriteFailed)); }
@@ -72,8 +73,8 @@
  @return 数据对象
  */
 + (NSData *)AxcTool_cacheGetDataWithSaveKey:(NSString *)saveKey{
-    return [self AxcTool_cacheGetDataWithFolderName:kAxcDefaultCacheFolder
-                                            saveKey:saveKey];
+    return [self AxcTool_cacheGetDataWithSaveKey:saveKey
+                                      folderName:kAxcDefaultCacheFolder];
 }
 
 /**
@@ -82,13 +83,19 @@
  @param saveKey 存的文件名/或者唯一标识
  @return 数据对象
  */
-+ (NSData *)AxcTool_cacheGetDataWithFolderName:(NSString *)folderName
-                                       saveKey:(NSString *)saveKey{
++ (NSData *)AxcTool_cacheGetDataWithSaveKey:(NSString *)saveKey
+                                 folderName:(NSString *)folderName{
     if (!folderName.length) folderName = kAxcDefaultCacheFolder;
-    saveKey = [AxcCalculateTool AxcTool_MD5WithStr:saveKey];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@%@",self.AxcTool_getCachePath,folderName,saveKey];
-    if (![self.AxcTool_getfileManager fileExistsAtPath:filePath]) {return nil;}
-    return [NSData dataWithContentsOfFile:filePath];
+    NSString *saveKey_MD5 = [AxcCalculateTool AxcTool_MD5WithStr:saveKey];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@",self.AxcTool_getCachePath,folderName,saveKey_MD5];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    if (!data) {
+        data = [NSData data];
+        NSString *errorLog = [NSString stringWithFormat:@"%@\n错误存储Key值：%@\n错误文件目录：%@\n错误文件路径：%@",AxcLS(AxcGetFileFailed),
+                              saveKey,folderName,filePath];
+        AxcErrorObjLog(errorLog);
+    }
+    return data ; // 返回空转换会直接崩溃
 }
 
 

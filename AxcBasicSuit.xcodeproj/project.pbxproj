@@ -10,6 +10,10 @@
 		EA29153020E1E8CC00832709 /* AxcLanguageManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29152F20E1E8CC00832709 /* AxcLanguageManagement.m */; };
 		EA29153420E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29153320E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m */; };
 		EA29153D20E236DE00832709 /* AxcCalculateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA29153C20E236DE00832709 /* AxcCalculateTool.m */; };
+		EA44AEC920EC671C0090664D /* NSString+AxcDataConversionEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AEC820EC671C0090664D /* NSString+AxcDataConversionEx.m */; };
+		EA44AECD20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AECC20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m */; };
+		EA44AED120EC67CE0090664D /* NSArray+AxcDataConversionEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AED020EC67CE0090664D /* NSArray+AxcDataConversionEx.m */; };
+		EA44AED920EC6A2D0090664D /* AxcTouchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA44AED820EC6A2D0090664D /* AxcTouchManager.m */; };
 		EA69960320E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960220E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m */; };
 		EA69960820E4CDE7000592B2 /* NSString+AxcRegularEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960720E4CDE7000592B2 /* NSString+AxcRegularEx.m */; };
 		EA69960E20E4E08E000592B2 /* NSString+AxcTextCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69960D20E4E08E000592B2 /* NSString+AxcTextCalculation.m */; };
@@ -18,6 +22,7 @@
 		EA69961B20E61C49000592B2 /* AxcParameterObj.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961A20E61C49000592B2 /* AxcParameterObj.m */; };
 		EA69962020E6261D000592B2 /* UIView+AxcViewAppearanceEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69961F20E6261D000592B2 /* UIView+AxcViewAppearanceEx.m */; };
 		EA69962420E62CF7000592B2 /* AxcDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69962220E62CF6000592B2 /* AxcDataCache.m */; };
+		EA69962820E9D2BC000592B2 /* NSData+AxcDataConversionEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69962720E9D2BC000592B2 /* NSData+AxcDataConversionEx.m */; };
 		EA9FB0C320E1E0CB006260C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FB0C220E1E0CB006260C4 /* AppDelegate.m */; };
 		EA9FB0C620E1E0CB006260C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FB0C520E1E0CB006260C4 /* ViewController.m */; };
 		EA9FB0C920E1E0CB006260C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9FB0C720E1E0CB006260C4 /* Main.storyboard */; };
@@ -55,6 +60,14 @@
 		EA29153B20E236DE00832709 /* AxcCalculateTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcCalculateTool.h; sourceTree = "<group>"; };
 		EA29153C20E236DE00832709 /* AxcCalculateTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxcCalculateTool.m; sourceTree = "<group>"; };
 		EA29154B20E23F3500832709 /* AxcBasicSuitBlockDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcBasicSuitBlockDefine.h; sourceTree = "<group>"; };
+		EA44AEC720EC671C0090664D /* NSString+AxcDataConversionEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcDataConversionEx.h"; sourceTree = "<group>"; };
+		EA44AEC820EC671C0090664D /* NSString+AxcDataConversionEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AxcDataConversionEx.m"; sourceTree = "<group>"; };
+		EA44AECB20EC677F0090664D /* NSDictionary+AxcDataConversionEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AxcDataConversionEx.h"; sourceTree = "<group>"; };
+		EA44AECC20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AxcDataConversionEx.m"; sourceTree = "<group>"; };
+		EA44AECF20EC67CE0090664D /* NSArray+AxcDataConversionEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+AxcDataConversionEx.h"; sourceTree = "<group>"; };
+		EA44AED020EC67CE0090664D /* NSArray+AxcDataConversionEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AxcDataConversionEx.m"; sourceTree = "<group>"; };
+		EA44AED720EC6A2D0090664D /* AxcTouchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcTouchManager.h; sourceTree = "<group>"; };
+		EA44AED820EC6A2D0090664D /* AxcTouchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AxcTouchManager.m; sourceTree = "<group>"; };
 		EA69960120E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+AxcBasicSuitObjectEx.h"; sourceTree = "<group>"; };
 		EA69960220E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AxcBasicSuitObjectEx.m"; sourceTree = "<group>"; };
 		EA69960620E4CDE7000592B2 /* NSString+AxcRegularEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+AxcRegularEx.h"; sourceTree = "<group>"; };
@@ -71,6 +84,8 @@
 		EA69961F20E6261D000592B2 /* UIView+AxcViewAppearanceEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcViewAppearanceEx.m"; sourceTree = "<group>"; };
 		EA69962220E62CF6000592B2 /* AxcDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxcDataCache.m; sourceTree = "<group>"; };
 		EA69962320E62CF7000592B2 /* AxcDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxcDataCache.h; sourceTree = "<group>"; };
+		EA69962620E9D2BC000592B2 /* NSData+AxcDataConversionEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+AxcDataConversionEx.h"; sourceTree = "<group>"; };
+		EA69962720E9D2BC000592B2 /* NSData+AxcDataConversionEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+AxcDataConversionEx.m"; sourceTree = "<group>"; };
 		EA9FB0BE20E1E0CB006260C4 /* AxcBasicSuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AxcBasicSuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9FB0C120E1E0CB006260C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA9FB0C220E1E0CB006260C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,10 +144,8 @@
 		EA29153120E2267B00832709 /* 扩展类工具 */ = {
 			isa = PBXGroup;
 			children = (
-				EA69961420E4E5C4000592B2 /* UIColor+ */,
-				EA69961020E4E408000592B2 /* UIVIew+ */,
-				EA6995FB20E4C5C1000592B2 /* NSString+ */,
-				EA6995FA20E4C5B3000592B2 /* NSObject+ */,
+				EA44AED320EC683E0090664D /* UIKit+ */,
+				EA44AED220EC68320090664D /* Foundation+ */,
 			);
 			path = "扩展类工具";
 			sourceTree = "<group>";
@@ -148,6 +161,7 @@
 		EA29153A20E236A900832709 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EA44AED620EC69E60090664D /* 指纹验证 */,
 				EA69962120E62CE9000592B2 /* 二进制缓存器 */,
 				EA69961820E61C1C000592B2 /* 机型判断 */,
 				EA29152D20E1E87000832709 /* 语言工具 */,
@@ -166,6 +180,88 @@
 			path = "计算工具";
 			sourceTree = "<group>";
 		};
+		EA44AEC520EC66780090664D /* 数据转换 */ = {
+			isa = PBXGroup;
+			children = (
+				EA69962620E9D2BC000592B2 /* NSData+AxcDataConversionEx.h */,
+				EA69962720E9D2BC000592B2 /* NSData+AxcDataConversionEx.m */,
+			);
+			path = "数据转换";
+			sourceTree = "<group>";
+		};
+		EA44AEC620EC66FE0090664D /* 数据转换 */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AEC720EC671C0090664D /* NSString+AxcDataConversionEx.h */,
+				EA44AEC820EC671C0090664D /* NSString+AxcDataConversionEx.m */,
+			);
+			path = "数据转换";
+			sourceTree = "<group>";
+		};
+		EA44AECA20EC67430090664D /* NSDictionary+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AED520EC69060090664D /* 数据转换 */,
+			);
+			path = "NSDictionary+";
+			sourceTree = "<group>";
+		};
+		EA44AECE20EC67AB0090664D /* NSArray+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AED420EC68FC0090664D /* 数据转换 */,
+			);
+			path = "NSArray+";
+			sourceTree = "<group>";
+		};
+		EA44AED220EC68320090664D /* Foundation+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA6995FB20E4C5C1000592B2 /* NSString+ */,
+				EA44AECE20EC67AB0090664D /* NSArray+ */,
+				EA44AECA20EC67430090664D /* NSDictionary+ */,
+				EA69962520E9D29B000592B2 /* NSData+ */,
+				EA6995FA20E4C5B3000592B2 /* NSObject+ */,
+			);
+			path = "Foundation+";
+			sourceTree = "<group>";
+		};
+		EA44AED320EC683E0090664D /* UIKit+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA69961420E4E5C4000592B2 /* UIColor+ */,
+				EA69961020E4E408000592B2 /* UIVIew+ */,
+			);
+			path = "UIKit+";
+			sourceTree = "<group>";
+		};
+		EA44AED420EC68FC0090664D /* 数据转换 */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AECF20EC67CE0090664D /* NSArray+AxcDataConversionEx.h */,
+				EA44AED020EC67CE0090664D /* NSArray+AxcDataConversionEx.m */,
+			);
+			path = "数据转换";
+			sourceTree = "<group>";
+		};
+		EA44AED520EC69060090664D /* 数据转换 */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AECB20EC677F0090664D /* NSDictionary+AxcDataConversionEx.h */,
+				EA44AECC20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m */,
+			);
+			path = "数据转换";
+			sourceTree = "<group>";
+		};
+		EA44AED620EC69E60090664D /* 指纹验证 */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AED720EC6A2D0090664D /* AxcTouchManager.h */,
+				EA44AED820EC6A2D0090664D /* AxcTouchManager.m */,
+			);
+			path = "指纹验证";
+			sourceTree = "<group>";
+		};
 		EA6995FA20E4C5B3000592B2 /* NSObject+ */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +274,7 @@
 		EA6995FB20E4C5C1000592B2 /* NSString+ */ = {
 			isa = PBXGroup;
 			children = (
+				EA44AEC620EC66FE0090664D /* 数据转换 */,
 				EA69960F20E4E0A3000592B2 /* 文字大小 */,
 				EA69960520E4CDCC000592B2 /* 正则字符串 */,
 			);
@@ -272,6 +369,14 @@
 				EA69962220E62CF6000592B2 /* AxcDataCache.m */,
 			);
 			path = "二进制缓存器";
+			sourceTree = "<group>";
+		};
+		EA69962520E9D29B000592B2 /* NSData+ */ = {
+			isa = PBXGroup;
+			children = (
+				EA44AEC520EC66780090664D /* 数据转换 */,
+			);
+			path = "NSData+";
 			sourceTree = "<group>";
 		};
 		EA9FB0B520E1E0CB006260C4 = {
@@ -488,14 +593,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA44AECD20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m in Sources */,
 				EA69960320E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m in Sources */,
 				EA29153420E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m in Sources */,
 				EA9FB0C620E1E0CB006260C4 /* ViewController.m in Sources */,
 				EA69960E20E4E08E000592B2 /* NSString+AxcTextCalculation.m in Sources */,
 				EA69961320E4E41E000592B2 /* UIView+AxcViewRectEx.m in Sources */,
 				EA29153D20E236DE00832709 /* AxcCalculateTool.m in Sources */,
+				EA69962820E9D2BC000592B2 /* NSData+AxcDataConversionEx.m in Sources */,
+				EA44AED120EC67CE0090664D /* NSArray+AxcDataConversionEx.m in Sources */,
 				EA69962420E62CF7000592B2 /* AxcDataCache.m in Sources */,
+				EA44AED920EC6A2D0090664D /* AxcTouchManager.m in Sources */,
 				EA69961720E4E5D6000592B2 /* UIColor+AxcColorEx.m in Sources */,
+				EA44AEC920EC671C0090664D /* NSString+AxcDataConversionEx.m in Sources */,
 				EA9FB0D120E1E0CC006260C4 /* main.m in Sources */,
 				EA9FB0F620E1E0F8006260C4 /* AxcBaseVC.m in Sources */,
 				EA69962020E6261D000592B2 /* UIView+AxcViewAppearanceEx.m in Sources */,
@@ -672,7 +782,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MPXR757EXU;
 				INFOPLIST_FILE = AxcBasicSuit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,7 +800,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MPXR757EXU;
 				INFOPLIST_FILE = AxcBasicSuit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
