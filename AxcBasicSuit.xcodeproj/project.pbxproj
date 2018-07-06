@@ -45,6 +45,9 @@
 		EAB38E3C20EE1A1500A1E954 /* UIImage+AxcTransfromZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E3520EE1A1500A1E954 /* UIImage+AxcTransfromZoom.m */; };
 		EAB38E3D20EE1A1500A1E954 /* UIImage+AxcQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E3720EE1A1500A1E954 /* UIImage+AxcQRCode.m */; };
 		EAB38E3E20EE1A1500A1E954 /* UIImage+AxcImageRotating.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E3820EE1A1500A1E954 /* UIImage+AxcImageRotating.m */; };
+		EAB38E4620EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E4520EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m */; };
+		EAB38E4C20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E4B20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m */; };
+		EAD01AE120EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD01AE020EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +147,12 @@
 		EAB38E3620EE1A1500A1E954 /* UIImage+AxcSpecialEffectsDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AxcSpecialEffectsDrawing.h"; sourceTree = "<group>"; };
 		EAB38E3720EE1A1500A1E954 /* UIImage+AxcQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcQRCode.m"; sourceTree = "<group>"; };
 		EAB38E3820EE1A1500A1E954 /* UIImage+AxcImageRotating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AxcImageRotating.m"; sourceTree = "<group>"; };
+		EAB38E4420EF034400A1E954 /* NSDate+AxcDateArithmeticEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+AxcDateArithmeticEx.h"; sourceTree = "<group>"; };
+		EAB38E4520EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AxcDateArithmeticEx.m"; sourceTree = "<group>"; };
+		EAB38E4A20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AxcOperationEx.h"; sourceTree = "<group>"; };
+		EAB38E4B20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AxcOperationEx.m"; sourceTree = "<group>"; };
+		EAD01ADF20EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+AxcActionBlockEx.h"; sourceTree = "<group>"; };
+		EAD01AE020EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+AxcActionBlockEx.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +274,7 @@
 		EA44AED220EC68320090664D /* Foundation+ */ = {
 			isa = PBXGroup;
 			children = (
+				EAB38E4920EF05F700A1E954 /* NSMutableArray+ */,
 				EA6995FB20E4C5C1000592B2 /* NSString+ */,
 				EA44AECE20EC67AB0090664D /* NSArray+ */,
 				EA44AECA20EC67430090664D /* NSDictionary+ */,
@@ -278,6 +288,7 @@
 		EA44AED320EC683E0090664D /* UIKit+ */ = {
 			isa = PBXGroup;
 			children = (
+				EAD01ADE20EF0E100037F096 /* UIGestureRecognizer+ */,
 				EAB38E2F20EE1A1500A1E954 /* UIImage+ */,
 				EAB38E2520EE178A00A1E954 /* UILabel+ */,
 				EAB38E2120EE15BD00A1E954 /* UITextField+ */,
@@ -523,8 +534,8 @@
 		EAB38E0820EDBE0C00A1E954 /* NSDate+ */ = {
 			isa = PBXGroup;
 			children = (
-				EAB38E0920EDBE4000A1E954 /* NSDate+AxcProcessingEx.h */,
-				EAB38E0A20EDBE4000A1E954 /* NSDate+AxcProcessingEx.m */,
+				EAB38E4820EF048400A1E954 /* 扩展和基础处理 */,
+				EAB38E4320EF032700A1E954 /* 日期加减 */,
 			);
 			path = "NSDate+";
 			sourceTree = "<group>";
@@ -646,6 +657,42 @@
 				EAB38E3120EE1A1500A1E954 /* UIImage+AxcSpecialEffectsDrawing.m */,
 			);
 			path = "特效&滤镜";
+			sourceTree = "<group>";
+		};
+		EAB38E4320EF032700A1E954 /* 日期加减 */ = {
+			isa = PBXGroup;
+			children = (
+				EAB38E4420EF034400A1E954 /* NSDate+AxcDateArithmeticEx.h */,
+				EAB38E4520EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m */,
+			);
+			path = "日期加减";
+			sourceTree = "<group>";
+		};
+		EAB38E4820EF048400A1E954 /* 扩展和基础处理 */ = {
+			isa = PBXGroup;
+			children = (
+				EAB38E0920EDBE4000A1E954 /* NSDate+AxcProcessingEx.h */,
+				EAB38E0A20EDBE4000A1E954 /* NSDate+AxcProcessingEx.m */,
+			);
+			path = "扩展和基础处理";
+			sourceTree = "<group>";
+		};
+		EAB38E4920EF05F700A1E954 /* NSMutableArray+ */ = {
+			isa = PBXGroup;
+			children = (
+				EAB38E4A20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.h */,
+				EAB38E4B20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m */,
+			);
+			path = "NSMutableArray+";
+			sourceTree = "<group>";
+		};
+		EAD01ADE20EF0E100037F096 /* UIGestureRecognizer+ */ = {
+			isa = PBXGroup;
+			children = (
+				EAD01ADF20EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.h */,
+				EAD01AE020EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m */,
+			);
+			path = "UIGestureRecognizer+";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -778,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB38E4620EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m in Sources */,
 				EA44AECD20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m in Sources */,
 				EAB38E0B20EDBE4000A1E954 /* NSDate+AxcProcessingEx.m in Sources */,
 				EA69960320E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m in Sources */,
@@ -799,6 +847,7 @@
 				EA44AEC920EC671C0090664D /* NSString+AxcDataConversionEx.m in Sources */,
 				EA9FB0D120E1E0CC006260C4 /* main.m in Sources */,
 				EA9FB0F620E1E0F8006260C4 /* AxcBaseVC.m in Sources */,
+				EAB38E4C20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m in Sources */,
 				EAB38E1F20EE13DE00A1E954 /* UIButton+AxcButtonContentLayout.m in Sources */,
 				EA69962020E6261D000592B2 /* UIView+AxcViewAppearanceEx.m in Sources */,
 				EAB38E3E20EE1A1500A1E954 /* UIImage+AxcImageRotating.m in Sources */,
@@ -811,6 +860,7 @@
 				EA69961B20E61C49000592B2 /* AxcParameterObj.m in Sources */,
 				EAB38E3C20EE1A1500A1E954 /* UIImage+AxcTransfromZoom.m in Sources */,
 				EA1D1CD620EDB9AB00BA095D /* NSString+AxcStringIsReasonable.m in Sources */,
+				EAD01AE120EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

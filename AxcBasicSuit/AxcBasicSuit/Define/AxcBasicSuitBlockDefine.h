@@ -29,7 +29,10 @@ typedef void (^AxcBasicSuitBarBtnItemBlock )(UIButton *barItemBtn);
  */
 typedef void (^AxcBasicSuitBtnTimeEndBlock )(void);
 
-
+/**
+ sender回调Block
+ */
+typedef void (^AxcBasicSuitSenderBlock )(id sender);
 
 
 

@@ -25,6 +25,7 @@
 /** 秒 */
 @property(nonatomic , assign ,readonly)NSInteger seconds;
 
+
 /**
  传入Fomant获取日期格式
  @param fomant fomant
@@ -50,5 +51,8 @@
 - (BOOL )AxcTool_compareMonthWithDate:(NSDate *)date;
 /** 比较两个日期的年，是否是同一年 */
 - (BOOL )AxcTool_compareYearsWithDate:(NSDate *)date;
+
+
+
 
 @end

@@ -9,7 +9,10 @@
 #import "NSString+AxcStringIsReasonable.h"              // NSString是否合理，存在、不为空
 #import "NSString+AxcReplaceRichText.h"                 // 将字符串标记颜色，并且变成富文本
 
+#import "NSMutableArray+AxcOperationEx.h"               // 可变数组操作
+
 #import "NSDate+AxcProcessingEx.h"                      // 日期处理扩展
+#import "NSDate+AxcDateArithmeticEx.h"                  // 日期加减法
 
 #pragma mark - UIKit 视图操作类扩展
 
@@ -31,6 +34,7 @@
 #import "UIImage+AxcSpecialEffectsDrawing.h"            // 特效渲染
 #import "UIImage+AxcImageRotating.h"                    // 绘制旋转图片
 
+#import "UIGestureRecognizer+AxcActionBlockEx.h"        // 手势使用Block方式触发
 
 #pragma mark - 宏定义
 
