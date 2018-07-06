@@ -10,7 +10,7 @@
 #define AxcIsEmailRegular                   @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 #define AxcIsURLRegular                     @"(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]"
 #define AxcIsCarNumberRegular               @"^[\u4e00-\u9fff]{1}[a-zA-Z]{1}[-][a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fff]$"
-#define AxcIsMacAddressRegular              @"([A-Fa-f\\d]{2}:){5}[A-Fa-f\\d]{2}"
+#define AxcIsMacAddressRegular              @"([A-Fa-f0-9]{2}-){5}[A-Fa-f0-9]{2}"
 #define AxcIsValidChineseRegular            @"^[\u4e00-\u9fa5]+$"
 #define AxcIsValidPostalcodeRegular         @"^[0-8]\\d{5}(?!\\d)$"
 #define AxcIsIPAddressRegular               @"^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"

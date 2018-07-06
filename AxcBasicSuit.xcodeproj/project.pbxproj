@@ -48,6 +48,7 @@
 		EAB38E4620EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E4520EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m */; };
 		EAB38E4C20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB38E4B20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m */; };
 		EAD01AE120EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD01AE020EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m */; };
+		EAD01AE520EF11930037F096 /* UIView+AxcScreenshotsViewEx.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD01AE420EF11930037F096 /* UIView+AxcScreenshotsViewEx.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,8 @@
 		EAB38E4B20EF061F00A1E954 /* NSMutableArray+AxcOperationEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AxcOperationEx.m"; sourceTree = "<group>"; };
 		EAD01ADF20EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+AxcActionBlockEx.h"; sourceTree = "<group>"; };
 		EAD01AE020EF0E230037F096 /* UIGestureRecognizer+AxcActionBlockEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+AxcActionBlockEx.m"; sourceTree = "<group>"; };
+		EAD01AE320EF11930037F096 /* UIView+AxcScreenshotsViewEx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AxcScreenshotsViewEx.h"; sourceTree = "<group>"; };
+		EAD01AE420EF11930037F096 /* UIView+AxcScreenshotsViewEx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AxcScreenshotsViewEx.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,9 +277,9 @@
 		EA44AED220EC68320090664D /* Foundation+ */ = {
 			isa = PBXGroup;
 			children = (
-				EAB38E4920EF05F700A1E954 /* NSMutableArray+ */,
 				EA6995FB20E4C5C1000592B2 /* NSString+ */,
 				EA44AECE20EC67AB0090664D /* NSArray+ */,
+				EAB38E4920EF05F700A1E954 /* NSMutableArray+ */,
 				EA44AECA20EC67430090664D /* NSDictionary+ */,
 				EAB38E0820EDBE0C00A1E954 /* NSDate+ */,
 				EA69962520E9D29B000592B2 /* NSData+ */,
@@ -387,6 +390,7 @@
 		EA69961020E4E408000592B2 /* UIVIew+ */ = {
 			isa = PBXGroup;
 			children = (
+				EAD01AE220EF116A0037F096 /* 截图生成图片 */,
 				EAB38E1120EE116700A1E954 /* 获取视图所在VC */,
 				EA69961D20E625EB000592B2 /* 快速定义外观 */,
 				EA69961C20E625CE000592B2 /* 快速设置Rect */,
@@ -695,6 +699,15 @@
 			path = "UIGestureRecognizer+";
 			sourceTree = "<group>";
 		};
+		EAD01AE220EF116A0037F096 /* 截图生成图片 */ = {
+			isa = PBXGroup;
+			children = (
+				EAD01AE320EF11930037F096 /* UIView+AxcScreenshotsViewEx.h */,
+				EAD01AE420EF11930037F096 /* UIView+AxcScreenshotsViewEx.m */,
+			);
+			path = "截图生成图片";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -827,6 +840,7 @@
 			files = (
 				EAB38E4620EF034400A1E954 /* NSDate+AxcDateArithmeticEx.m in Sources */,
 				EA44AECD20EC677F0090664D /* NSDictionary+AxcDataConversionEx.m in Sources */,
+				EAD01AE520EF11930037F096 /* UIView+AxcScreenshotsViewEx.m in Sources */,
 				EAB38E0B20EDBE4000A1E954 /* NSDate+AxcProcessingEx.m in Sources */,
 				EA69960320E4CC40000592B2 /* NSObject+AxcBasicSuitObjectEx.m in Sources */,
 				EA29153420E226D200832709 /* NSObject+AxcBasicSuitIndexPath.m in Sources */,

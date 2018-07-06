@@ -1,4 +1,6 @@
 
+/**  这个头文件可以放在PCH里，这里是允许全局引用的工具类  */
+
 #pragma mark - Foundation 数据操作类扩展
 
 #import "NSObject+AxcBasicSuitIndexPath.h"              // NSObject标记扩展
@@ -19,6 +21,7 @@
 #import "UIView+AxcViewRectEx.h"                        // 快速赋值视图Rect属性
 #import "UIView+AxcViewAppearanceEx.h"                  // 快速设置视图外观属性
 #import "UIView+AxcGetSuperVC.h"                        // 获取当前VC、父VC、显示VC等
+#import "UIView+AxcScreenshotsViewEx.h"                 // 对View截图
 
 #import "UIButton+AxcButtonCountDown.h"                 // 快速设置按钮倒计时
 #import "UIButton+AxcButtonContentLayout.h"             // 快速设置按钮布局模式
