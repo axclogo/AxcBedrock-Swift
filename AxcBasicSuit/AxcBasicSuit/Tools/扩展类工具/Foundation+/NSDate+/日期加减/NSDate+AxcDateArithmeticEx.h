@@ -26,8 +26,8 @@
 - (NSDate *)AxcTool_dateByAddingMonths:(NSInteger)months;
 
 /**
- 从这个日期加上N日
- @param weeks 日
+ 从这个日期加上N周
+ @param weeks 周
  @return NSDate
  */
 - (NSDate *)AxcTool_dateByAddingWeeks:(NSInteger)weeks;

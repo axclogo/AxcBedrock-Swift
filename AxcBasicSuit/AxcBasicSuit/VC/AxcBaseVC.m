@@ -218,7 +218,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
  */
 - (UIButton *)AxcBase_addBarButtonItem:(AxcBaseBarButtonItemBearing )bearing
                                  image:(NSString *)image{
-    return [self AxcBase_addBarButtonItem:bearing titles:@[image] handler:nil].firstObject;
+    return [self AxcBase_addBarButtonItem:bearing images:@[image] handler:nil].firstObject;
 }
 
 /**
@@ -240,7 +240,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
 - (UIButton *)AxcBase_addBarButtonItem:(AxcBaseBarButtonItemBearing )bearing
                                  image:(NSString *)image
                                handler:(AxcBasicSuitBarBtnItemBlock )handler{
-    return [self AxcBase_addBarButtonItem:bearing titles:@[image] handler:handler].firstObject;
+    return [self AxcBase_addBarButtonItem:bearing images:@[image] handler:handler].firstObject;
 }
 
 /**
@@ -260,7 +260,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
  */
 - (NSArray <UIButton *>*)AxcBase_addBarButtonItem:(AxcBaseBarButtonItemBearing )bearing
                                            images:(NSArray <NSString *>*)images{
-    return [self AxcBase_addBarButtonItem:bearing titles:images handler:nil];
+    return [self AxcBase_addBarButtonItem:bearing images:images handler:nil];
 }
 
 /**
