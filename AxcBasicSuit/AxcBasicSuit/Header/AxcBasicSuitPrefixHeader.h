@@ -10,6 +10,8 @@
 #import "NSString+AxcTextCalculation.h"                 // NSString快速计算宽高
 #import "NSString+AxcStringIsReasonable.h"              // NSString是否合理，存在、不为空
 #import "NSString+AxcReplaceRichText.h"                 // 将字符串标记颜色，并且变成富文本
+#import "NSString+AxcEnumerate.h"                       // 遍历字符串
+#import "NSString+AxcUrlEncode.h"                       // 编码解码
 
 #import "NSMutableArray+AxcOperationEx.h"               // 可变数组操作
 
@@ -36,6 +38,8 @@
 #import "UIImage+AxcTransfromZoom.h"                    // 缩放图片
 #import "UIImage+AxcSpecialEffectsDrawing.h"            // 特效渲染
 #import "UIImage+AxcImageRotating.h"                    // 绘制旋转图片
+
+#import "UIViewController+AxcVCBackButtonEvent.h"       // VC返回回调
 
 #import "UIGestureRecognizer+AxcActionBlockEx.h"        // 手势使用Block方式触发
 

@@ -35,6 +35,11 @@ typedef void (^AxcBasicSuitBtnTimeEndBlock )(void);
 typedef void (^AxcBasicSuitSenderBlock )(id sender);
 
 
+/**
+ 字符遍历回调Block
+ */
+typedef void (^AxcBasicSuitEnumerateBlock )(NSString *str,NSInteger idx, BOOL *stop);
+
 
 
 

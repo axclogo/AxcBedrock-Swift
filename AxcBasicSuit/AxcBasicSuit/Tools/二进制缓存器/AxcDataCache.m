@@ -8,9 +8,6 @@
 
 #import "AxcDataCache.h"
 
-#define AxcDataCachePath            @"/Documents/AxcDataCache"
-#define kAxcDataCache               @"AxcDataCache"
-#define kAxcDefaultCacheFolder      @"AxcDefaultCacheFolder"
 
 @implementation AxcDataCache
 
@@ -107,7 +104,14 @@
 + (void)AxcTool_clearDefaultCacheFolderCache{
     [self AxcTool_clearCacheWithFolderName:kAxcDefaultCacheFolder];
 }
-
+/** 清除saveKey的缓存 */
++ (void)AxcTool_clearCacheWithFolderName:(NSString *)folderName saveKey:(NSString *)saveKey{
+    NSString *dataFilePath = [NSString stringWithFormat:@"%@%@%@/%@",self.AxcTool_getCachePath,
+                              folderName.length?@"/":@"",
+                              folderName,
+                              saveKey.AxcTool_get_MD5_Str];
+    [self.AxcTool_getfileManager removeItemAtPath:dataFilePath error:nil];
+}
 /**
  清除某个文件夹下的数据缓存
  @param folderName 文件夹名称
@@ -116,6 +120,13 @@
     NSString *dataFilePath = [NSString stringWithFormat:@"%@%@%@",self.AxcTool_getCachePath,
                               folderName.length?@"/":@"",
                               folderName];
+    [self AxcTool_clearCacheWithDataFilePath:dataFilePath];
+}
+/**
+ 清除某个路径下的数据缓存
+ @param folderName 文件夹名称
+ */
++ (void)AxcTool_clearCacheWithDataFilePath:(NSString *)dataFilePath{
     kDISPATCH_GLOBAL_QUEUE_DEFAULT(^{ // 分线程
         CGFloat foderSize = [AxcCalculateTool AxcTool_GetFolderFileSizeMBytesWithPath:dataFilePath];
         if (foderSize > CGFLOAT_MIN) { // 有一丢丢也要删除

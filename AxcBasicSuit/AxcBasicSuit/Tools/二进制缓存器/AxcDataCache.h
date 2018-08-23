@@ -15,6 +15,12 @@
 
 #import "NSString+Axc_MD5_Ex.h"                         // MD5转换
 
+
+#define AxcDataCachePath            @"/Documents/AxcDataCache"
+#define kAxcDataCache               @"AxcDataCache"
+#define kAxcDefaultCacheFolder      @"AxcDefaultCacheFolder"
+
+
 @interface AxcDataCache : NSObject
 
 /** 获取缓存路径 */
@@ -68,6 +74,14 @@
  */
 + (void)AxcTool_clearCacheWithFolderName:(NSString *)folderName;
 
+/** 清除saveKey的缓存 */
++ (void)AxcTool_clearCacheWithFolderName:(NSString *)folderName saveKey:(NSString *)saveKey;
+
+/**
+ 清除某个路径下的数据缓存
+ @param folderName 文件夹名称
+ */
++ (void)AxcTool_clearCacheWithDataFilePath:(NSString *)dataFilePath;
 
 
 @end

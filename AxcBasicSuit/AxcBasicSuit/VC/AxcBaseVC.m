@@ -133,7 +133,7 @@
 }
 - (CGFloat )axcNavBarHeight{
     if (!_axcNavBarHeight){
-        CGFloat systemNavBarHeight = [self.tabBarController.tabBar frame].size.height;
+        CGFloat systemNavBarHeight = [self.navigationController.navigationBar frame].size.height;
         _axcNavBarHeight = systemNavBarHeight ? systemNavBarHeight : AxcGetNavBarHeight ;
     }
     return _axcNavBarHeight;
@@ -141,7 +141,7 @@
 - (CGFloat )axcStatusBarHeight{
     if (!_axcStatusBarHeight){
         CGFloat systemStatusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;;
-        _axcNavBarHeight = systemStatusBarHeight ? systemStatusBarHeight : AxcGetStatusBarHeight ;
+        _axcStatusBarHeight = systemStatusBarHeight ? systemStatusBarHeight : AxcGetStatusBarHeight ;
     }
     return _axcStatusBarHeight;
 }
@@ -316,12 +316,13 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
 - (NSArray <UIButton *>*)AxcBase_addBarButtonItem:(AxcBaseBarButtonItemBearing )bearing
                                  imgNameAndTitles:(NSArray <AxcBase_BarItemBtnModel *>*)imageTitles
                                           handler:(AxcBasicSuitBarBtnItemBlock )handler{
-    if (handler) { // 如果实现了Block
-        if (bearing == AxcBaseBarButtonItemLocationRight) { // 右边
-            self.rightBarItemBlock = handler;   // 指针移交
-        }else{
-            self.leftBarItemBlock = handler;   // 指针移交
-        }
+    SEL action = nil;
+    if (bearing == AxcBaseBarButtonItemLocationRight) { // 右边
+        if (handler)  self.rightBarItemBlock = handler;   // 指针移交
+        action = @selector(AxcBase_clickRightBarItemBtn:);
+    }else{
+        if (handler)  self.leftBarItemBlock = handler;   // 指针移交
+        action = @selector(AxcBase_clickLeftBarItemBtn:);
     }
     NSMutableArray <UIButton *>*btns = @[].mutableCopy;
     [imageTitles enumerateObjectsUsingBlock:^(AxcBase_BarItemBtnModel * _Nonnull imageTitle, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -330,7 +331,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
         UIButton *imageBtn = [self AxcBase_createButtonWithImage:image
                                                            title:imageTitle.title
                                                             font:self.defaultFont
-                                                          action:@selector(AxcBase_clickRightBarItemBtn:)];
+                                                          action:action];
         imageBtn.axcStringTag = [NSString stringWithFormat:@"%@%@%ld",
                                  bearing == AxcBaseBarButtonItemLocationRight ? kAxcBasicSuitBarRightItemTag : kAxcBasicSuitBarLeftItemTag,
                                  kAxcBasicSuitSegmentation,
@@ -375,11 +376,13 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
                                        font:(UIFont *)font
                                      action:(SEL )action{
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    CGFloat width = [title AxcTool_getWidthFont:font maxHeight:self.axcNavBarHeight];
-    button.axcTool_width = width;
     [button setTitleColor:self.themeColor forState:UIControlStateNormal];
     if (image) { [button setImage:image forState:UIControlStateNormal];}
-    if (title) { [button setTitle:title forState:UIControlStateNormal];}
+    if (title) {
+        [button setTitle:title forState:UIControlStateNormal];
+        CGFloat width = [title AxcTool_getWidthFont:font maxHeight:self.axcNavBarHeight];
+        button.axcTool_width = width;
+    }
     [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     return button;
 }
@@ -453,6 +456,25 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
 #pragma mark - 类扩展函数分层: 快速弹出指示框扩展实现
 
 @implementation AxcBaseVC (AxcBaseVC_PopAlentEx)
+/** 弹出一个警示框 - 自定标题Alent */
+- (void)AxcBase_popWarningAlentWithTitle:(NSString *)title
+                                     msg:(NSString *)msg
+                               handler:(void (^)(UIAlertAction *action))handler{
+    [self AxcBase_popAlentWithTitle:title
+                                msg:msg
+                  alertActionTitles:@[AxcLS(AxcBasicSuitDetermineText)]
+                  cancelActionTitle:nil handler:handler];
+}
+/** 弹出一个警示框 - 自定标题Sheet */
+- (void)AxcBase_popWarningAlentSheetWithTitle:(NSString *)title
+                                          msg:(NSString *)msg
+                                    handler:(void (^)(UIAlertAction *action))handler{
+    [self AxcBase_popAlentSheetWithTitle:title
+                                     msg:msg
+                       alertActionTitles:@[AxcLS(AxcBasicSuitDetermineText)]
+                       cancelActionTitle:nil handler:handler];
+}
+
 /** 弹出一个警示框 - Alent */
 - (void)AxcBase_popWarningAlentWithMsg:(NSString *)msg
                                handler:(void (^)(UIAlertAction *action))handler{
@@ -523,7 +545,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
                           handler:(void (^)(UIAlertAction *action))handler{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
                                                                    message:msg
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+                                                            preferredStyle:style];
     [alertActionTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIAlertAction* action = [UIAlertAction actionWithTitle:obj style:UIAlertActionStyleDefault
                                                        handler:handler];

@@ -232,6 +232,24 @@ typedef NS_ENUM(NSInteger, AxcBaseBarButtonItemBearing) {
 //***************** 基础快速Alent函数 *****************
 /**
  Alent - 弹出一个警示框
+ @param title 标题
+ @param msg 内容
+ @param handler 触发Block区别方法是：action.axcIntTag
+ */
+- (void)AxcBase_popWarningAlentWithTitle:(NSString *)title
+                                     msg:(NSString *)msg
+                                 handler:(void (^)(UIAlertAction *action))handler;
+/**
+ Sheet - 弹出一个警示框
+ @param title 标题
+ @param msg 内容
+ @param handler 触发Block区别方法是：action.axcIntTag
+ */
+- (void)AxcBase_popWarningAlentSheetWithTitle:(NSString *)title
+                                          msg:(NSString *)msg
+                                      handler:(void (^)(UIAlertAction *action))handler;
+/**
+ Alent - 弹出一个警示框
  @param msg 内容
  @param handler 触发Block区别方法是：action.axcIntTag
  */
