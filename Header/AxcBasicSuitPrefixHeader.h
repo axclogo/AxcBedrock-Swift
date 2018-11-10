@@ -39,10 +39,14 @@
 #import "UIImage+AxcSpecialEffectsDrawing.h"            // 特效渲染
 #import "UIImage+AxcImageRotating.h"                    // 绘制旋转图片
 
+#import "UIScrollView+AxcEmptyData.h"                   // 页面空数据源
+
 #import "UIViewController+AxcVCBackButtonEvent.h"       // VC返回回调
 #import "UIViewController+AxcVCPushName.h"              // VC根据类名推出VC
 
 #import "UIGestureRecognizer+AxcActionBlockEx.h"        // 手势使用Block方式触发
+
+#import "UISearchBar+AxcTextFieldEx.h"                  // UISearchBar的e文本输入扩展
 
 #pragma mark - 宏定义
 
