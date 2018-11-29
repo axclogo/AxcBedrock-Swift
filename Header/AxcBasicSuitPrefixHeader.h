@@ -39,7 +39,8 @@
 #import "UIImage+AxcSpecialEffectsDrawing.h"            // 特效渲染
 #import "UIImage+AxcImageRotating.h"                    // 绘制旋转图片
 
-#import "UIScrollView+AxcEmptyData.h"                   // 页面空数据源
+#import "UITableView+AxcEmptyData.h"                    // 页面空数据源TV
+#import "UICollectionView+AxcEmptyData.h"               // 页面空数据源CV
 
 #import "UIViewController+AxcVCBackButtonEvent.h"       // VC返回回调
 #import "UIViewController+AxcVCPushName.h"              // VC根据类名推出VC

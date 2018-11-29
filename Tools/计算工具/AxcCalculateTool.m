@@ -275,7 +275,7 @@
     NSInteger day = intevalTime / 60 / 60 / 24;
     NSInteger month = intevalTime / 60 / 60 / 24 / 30;
     NSInteger yers = intevalTime / 60 / 60 / 24 / 365;
-    if (minutes <= 10) {
+    if (minutes <= 1) {
         return AxcLS(AxcBasicSuitJustNowText);
     }else if (minutes < 60){
         return [NSString stringWithFormat: @"%ld%@%@",(long)minutes,AxcLS(AxcBasicSuitMinutesText)
@@ -303,6 +303,35 @@
     return AxcLS(AxcBasicSuitUnknownText);
 }
 
++ (NSString *)AxcTool_timeFromTime:(NSDate *)fromTime
+                     ToCurrentTime:(NSDate *)currentTime{
+    
+    NSComparisonResult result = [fromTime compare:currentTime];
+    if (result == NSOrderedSame){
+        return @"现在需要办";
+    }else if (result == NSOrderedAscending){
+        //currentTime比fromTime大
+        return @"已经超时啦！";
+    }else if (result == NSOrderedDescending){
+        //currentTime比fromTime小
+        //计算时间间隔（单位是秒）
+        
+        NSTimeInterval time = [fromTime timeIntervalSinceDate:currentTime];
+        
+        //计算天数、时、分、秒
+        
+        int days = ((int)time)/(3600*24);
+        
+        int hours = ((int)time)%(3600*24)/3600;
+        
+        int minutes = ((int)time)%(3600*24)%3600/60;
+        
+        int seconds = ((int)time)%(3600*24)%3600%60;
+        
+        return [[NSString alloc] initWithFormat:@"仅剩%i天%i时%i分%i秒",days,hours,minutes,seconds];
+    }
+    return @"";
+}
 
 
 

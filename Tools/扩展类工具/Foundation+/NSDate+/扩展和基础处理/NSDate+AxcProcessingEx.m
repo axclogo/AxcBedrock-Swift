@@ -38,6 +38,13 @@
     return [self AxcTool_getDateWithFomant:AxcSecondsFomat].integerValue;
 }
 
+/** 周 */
+- (NSInteger)week{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps = [calendar components:NSCalendarUnitWeekday fromDate:self];
+    return [comps weekday] - 1;
+}
 
 /**
  传入Fomant获取日期格式
@@ -48,6 +55,19 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = fomant;
     return [formatter stringFromDate:self];
+}
+
+
+/**
+ 传入字符和格式获取日期
+ @param dateString 字符日期
+ @param fomant 格式
+ @return 日期
+ */
++ (NSDate *)AxcTool_getDateString:(NSString *)dateString withFomant:(NSString *)fomant{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = fomant;
+    return [formatter dateFromString:dateString];
 }
 
 /** 是否是昨天 */

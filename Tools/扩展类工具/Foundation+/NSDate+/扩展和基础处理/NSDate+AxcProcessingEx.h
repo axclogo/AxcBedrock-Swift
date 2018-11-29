@@ -25,6 +25,8 @@
 /** 秒 */
 @property(nonatomic , assign ,readonly)NSInteger seconds;
 
+/** 周 */
+@property(nonatomic , assign ,readonly)NSInteger week;
 
 /**
  传入Fomant获取日期格式
@@ -32,6 +34,14 @@
  @return 日期格式
  */
 - (NSString *)AxcTool_getDateWithFomant:(NSString *)fomant;
+
+/**
+ 传入字符和格式获取日期
+ @param dateString 字符日期
+ @param fomant 格式
+ @return 日期
+ */
++ (NSDate *)AxcTool_getDateString:(NSString *)dateString withFomant:(NSString *)fomant;
 
 
 /** 是否是昨天 */

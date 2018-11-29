@@ -9,8 +9,6 @@
 #import "AxcBaseVC.h"
 #import <objc/runtime.h>
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 @interface AxcBaseVC ()
 @end
@@ -152,6 +150,7 @@
 // 设置Bar字体属性
 - (void)setAxcNavBarTextAttributes:(NSDictionary *)axcNavBarTextAttributes{
     self.navigationController.navigationBar.titleTextAttributes = axcNavBarTextAttributes;
+    self.navigationController.navigationBar.largeTitleTextAttributes = axcNavBarTextAttributes;
 }
 - (NSDictionary *)axcNavBarTextAttributes{
     return self.navigationController.navigationBar.titleTextAttributes;
@@ -351,7 +350,9 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
                           buttons:(NSArray <UIButton *>*)btns{
     NSMutableArray *barBtnItems = @[].mutableCopy;
     [btns enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:obj];
+        UIView *customView = [[UIView alloc] initWithFrame: obj.frame];
+        [customView addSubview: obj];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:customView];
         [barBtnItems addObject:item];
     }];
     switch (bearing) {
@@ -375,7 +376,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
                                       title:(NSString *)title
                                        font:(UIFont *)font
                                      action:(SEL )action{
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 25, 25)];
     [button setTitleColor:self.themeColor forState:UIControlStateNormal];
     if (image) { [button setImage:image forState:UIControlStateNormal];}
     if (title) {
@@ -554,7 +555,7 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
     }];
     if (cancelActionTitle.length) {
         UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:cancelActionTitle style:UIAlertActionStyleCancel
-                                                             handler:handler];
+                                                             handler:nil];
         cancelAction.axcIntTag = alertActionTitles.count;
         [alert addAction:cancelAction];
     }
@@ -562,5 +563,93 @@ static NSString * const kleftBarItemBlock  = @"leftBarItemBlock";
 }
 @end
 
+#pragma mark - 类扩展函数分层: 快速弹设置刷新tableView扩展
 
-#pragma clang diagnostic pop
+@implementation AxcBaseVC (MJRefresh_Ex)
+
+#ifdef MJRefresh_Exist
+
+- (void)tableView_headerAction{
+    [self AxcBase_tableEndRefreshing];
+}
+- (void)tableView_footerAction{
+    [self AxcBase_tableEndRefreshing];
+}
+- (void)AxcBase_tableEndRefreshing{
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView.mj_header endRefreshing];
+}
+- (void)AxcBase_tableEndRefreshingWithDataCount:(NSInteger )count{
+    [self AxcBase_tableEndRefreshingWithDataCount:count pageSize:9];
+}
+- (void)AxcBase_tableEndRefreshingWithDataCount:(NSInteger )count pageSize:(NSInteger )pageSize{
+    if (count <= pageSize) { // 没有更多数据了
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [self AxcBase_tableEndRefreshing];
+    }
+}
+- (void)AxcBase_settingTableType:(UITableViewStyle)tableType
+                         nibName:(NSString *)nibName
+                          cellID:(NSString *)cellID
+                      refreshing:(BOOL)refreshing
+                         loading:(BOOL)loading{
+    [self AxcBase_settingTableType:tableType nibName:nibName cellID:cellID];
+    if (refreshing) {
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+                                                                    refreshingAction:@selector(tableView_headerAction)];
+        self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    }
+    if (loading) {
+        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
+                                                                        refreshingAction:@selector(tableView_footerAction)];
+    }
+}
+
+
+// collectionView
+- (void)collectionView_headerAction{
+    [self AxcBase_collectionEndRefreshing];
+}
+- (void)collectionView_footerAction{
+    [self AxcBase_collectionEndRefreshing];
+}
+- (void)AxcBase_collectionEndRefreshing{
+    [self.collectionView.mj_header endRefreshing];
+    [self.collectionView.mj_footer endRefreshing];
+}
+- (void)AxcBase_collectionEndRefreshingWithDataCount:(NSInteger )count{
+    [self AxcBase_collectionEndRefreshingWithDataCount:count pageSize:9];
+}
+- (void)AxcBase_collectionEndRefreshingWithDataCount:(NSInteger )count pageSize:(NSInteger )pageSize{
+    if (count <= pageSize) { // 没有更多数据了
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+    }else{
+        [self AxcBase_collectionEndRefreshing];
+    }
+}
+- (void)AxcBase_settingCollectionLayout:(UICollectionViewLayout* )flowLayout
+                                nibName:(NSString *)nibName
+                                 cellID:(NSString *)cellID
+                             refreshing:(BOOL)refreshing
+                                loading:(BOOL)loading{
+    [self AxcBase_settingCollectionLayout:flowLayout nibName:nibName cellID:cellID];
+    if (refreshing) {
+        self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+                                                                         refreshingAction:@selector(collectionView_headerAction)];
+        self.collectionView.mj_header.automaticallyChangeAlpha = YES;
+    }
+    if (loading) {
+        self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
+                                                                             refreshingAction:@selector(collectionView_footerAction)];
+    }
+}
+
+#endif
+
+@end
+
+
+//#pragma clang diagnostic pop

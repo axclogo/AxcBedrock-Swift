@@ -320,3 +320,46 @@ typedef NS_ENUM(NSInteger, AxcBaseBarButtonItemBearing) {
                           handler:(void (^)(UIAlertAction *action))handler;
 @end
 
+#pragma mark - 类扩展函数分层: 快速弹设置刷新tableView扩展
+
+#define MJRefresh_Exist __has_include("MJRefresh.h")
+
+#if MJRefresh_Exist
+#import <MJRefresh.h>
+#endif
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface AxcBaseVC (MJRefresh_Ex)
+
+#ifdef MJRefresh_Exist
+
+// tableView
+- (void)tableView_headerAction;
+- (void)tableView_footerAction;
+- (void)AxcBase_tableEndRefreshing;
+- (void)AxcBase_tableEndRefreshingWithDataCount:(NSInteger )count;
+- (void)AxcBase_tableEndRefreshingWithDataCount:(NSInteger )count pageSize:(NSInteger )pageSize;
+- (void)AxcBase_settingTableType:(UITableViewStyle)tableType
+                         nibName:(NSString *)nibName
+                          cellID:(NSString *)cellID
+                      refreshing:(BOOL)refreshing
+                         loading:(BOOL)loading;
+
+// collectionView
+- (void)collectionView_headerAction;
+- (void)collectionView_footerAction;
+- (void)AxcBase_collectionEndRefreshing;
+- (void)AxcBase_collectionEndRefreshingWithDataCount:(NSInteger )count;
+- (void)AxcBase_collectionEndRefreshingWithDataCount:(NSInteger )count pageSize:(NSInteger )pageSize;
+- (void)AxcBase_settingCollectionLayout:(UICollectionViewLayout* )flowLayout
+                                nibName:(NSString *)nibName
+                                 cellID:(NSString *)cellID
+                             refreshing:(BOOL)refreshing
+                                loading:(BOOL)loading;
+
+#endif
+
+@end
+
+NS_ASSUME_NONNULL_END

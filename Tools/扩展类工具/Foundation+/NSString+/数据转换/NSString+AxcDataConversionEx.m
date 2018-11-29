@@ -26,7 +26,10 @@
  @return 字符
  */
 + (NSString *)AxcTool_stringWithData:(NSData *)data encoding:(NSStringEncoding )encoding{
-    return [[NSString alloc]initWithData:data encoding:encoding];
+    if (data && [data isKindOfClass:[NSData class]]) {
+        return [[NSString alloc]initWithData:data encoding:encoding];
+    }
+    return nil;
 }
 
 

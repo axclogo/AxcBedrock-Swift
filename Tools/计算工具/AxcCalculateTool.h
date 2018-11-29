@@ -174,4 +174,13 @@ typedef NS_ENUM(NSInteger, AxcBasicSuitStorageUnitType) {
                                  ToCurrentTime:(NSDate *)currentTime;
 
 
+/**
+ 计算两个日期的差值
+ @param fromTime 目标
+ @param currentTime 最近
+ @return X天X时X分X秒
+ */
++ (NSString *)AxcTool_timeFromTime:(NSDate *)fromTime
+                     ToCurrentTime:(NSDate *)currentTime;
+
 @end
