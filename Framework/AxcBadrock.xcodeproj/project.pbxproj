@@ -1,0 +1,1878 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		003A2FBD2681B90800F5D3E3 /* AxcBadrock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003A2FB32681B90800F5D3E3 /* AxcBadrock.framework */; };
+		003A2FC22681B90800F5D3E3 /* AxcBadrockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FC12681B90800F5D3E3 /* AxcBadrockTests.swift */; };
+		003A2FC42681B90800F5D3E3 /* AxcBadrock.h in Headers */ = {isa = PBXBuildFile; fileRef = 003A2FB62681B90800F5D3E3 /* AxcBadrock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		003A30D82681B94500F5D3E3 /* AxcBadrock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 003A2FCE2681B94100F5D3E3 /* AxcBadrock.bundle */; };
+		003A30D92681B94500F5D3E3 /* AxcBadrock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FCF2681B94100F5D3E3 /* AxcBadrock.swift */; };
+		003A30DA2681B94500F5D3E3 /* AxcListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FD22681B94100F5D3E3 /* AxcListEmptyView.swift */; };
+		003A30DB2681B94500F5D3E3 /* AxcTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FD42681B94100F5D3E3 /* AxcTextView.swift */; };
+		003A30DC2681B94500F5D3E3 /* AxcNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FD62681B94100F5D3E3 /* AxcNavBar.swift */; };
+		003A30DD2681B94500F5D3E3 /* AxcDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FD82681B94100F5D3E3 /* AxcDatePickerView.swift */; };
+		003A30DE2681B94500F5D3E3 /* AxcCaptchaCodeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FDA2681B94100F5D3E3 /* AxcCaptchaCodeControl.swift */; };
+		003A30DF2681B94500F5D3E3 /* AxcLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FDC2681B94100F5D3E3 /* AxcLineLabel.swift */; };
+		003A30E02681B94500F5D3E3 /* AxcHudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FDE2681B94100F5D3E3 /* AxcHudView.swift */; };
+		003A30E12681B94500F5D3E3 /* AxcProtocolControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FE02681B94100F5D3E3 /* AxcProtocolControl.swift */; };
+		003A30E22681B94500F5D3E3 /* AxcTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FE22681B94100F5D3E3 /* AxcTagView.swift */; };
+		003A30E32681B94500F5D3E3 /* AxcWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FE42681B94100F5D3E3 /* AxcWaveView.swift */; };
+		003A30E42681B94500F5D3E3 /* AxcBadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FE62681B94100F5D3E3 /* AxcBadgeLabel.swift */; };
+		003A30E52681B94500F5D3E3 /* AxcContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FE82681B94100F5D3E3 /* AxcContentScrollView.swift */; };
+		003A30E62681B94500F5D3E3 /* AxcTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FEA2681B94100F5D3E3 /* AxcTextField.swift */; };
+		003A30E72681B94500F5D3E3 /* AxcTextScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FEC2681B94100F5D3E3 /* AxcTextScrollView.swift */; };
+		003A30E82681B94500F5D3E3 /* AxcPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FEE2681B94100F5D3E3 /* AxcPickerView.swift */; };
+		003A30E92681B94500F5D3E3 /* AxcSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF02681B94100F5D3E3 /* AxcSegmentedControl.swift */; };
+		003A30EA2681B94500F5D3E3 /* AxcContentBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF22681B94100F5D3E3 /* AxcContentBannerView.swift */; };
+		003A30EB2681B94500F5D3E3 /* AxcProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF42681B94100F5D3E3 /* AxcProgressView.swift */; };
+		003A30EC2681B94500F5D3E3 /* AxcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF62681B94100F5D3E3 /* AxcButton.swift */; };
+		003A30ED2681B94500F5D3E3 /* AxcPageScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF82681B94200F5D3E3 /* AxcPageScrollController.swift */; };
+		003A30EE2681B94500F5D3E3 /* AxcPageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FF92681B94200F5D3E3 /* AxcPageScrollView.swift */; };
+		003A30EF2681B94500F5D3E3 /* AxcPageItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FFA2681B94200F5D3E3 /* AxcPageItemVC.swift */; };
+		003A30F02681B94500F5D3E3 /* AxcTextBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FFC2681B94200F5D3E3 /* AxcTextBannerView.swift */; };
+		003A30F12681B94500F5D3E3 /* AxcAlentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FFE2681B94200F5D3E3 /* AxcAlentVC.swift */; };
+		003A30F22681B94500F5D3E3 /* AxcAlentVCAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A2FFF2681B94200F5D3E3 /* AxcAlentVCAnimation.swift */; };
+		003A30F32681B94500F5D3E3 /* AxcCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30012681B94200F5D3E3 /* AxcCameraView.swift */; };
+		003A30F42681B94500F5D3E3 /* AxcWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30032681B94200F5D3E3 /* AxcWebVC.swift */; };
+		003A30F52681B94500F5D3E3 /* AxcBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30052681B94200F5D3E3 /* AxcBookView.swift */; };
+		003A30F62681B94500F5D3E3 /* AxcWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30072681B94200F5D3E3 /* AxcWebView.swift */; };
+		003A30F72681B94500F5D3E3 /* AxcPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30092681B94200F5D3E3 /* AxcPageControl.swift */; };
+		003A30F82681B94500F5D3E3 /* AxcChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A300B2681B94200F5D3E3 /* AxcChooseView.swift */; };
+		003A30F92681B94500F5D3E3 /* AxcBaseLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A300D2681B94200F5D3E3 /* AxcBaseLoadingView.swift */; };
+		003A30FA2681B94500F5D3E3 /* AxcLoadingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A300E2681B94200F5D3E3 /* AxcLoadingCircleView.swift */; };
+		003A30FB2681B94500F5D3E3 /* AxcPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30102681B94200F5D3E3 /* AxcPlayerView.swift */; };
+		003A30FC2681B94500F5D3E3 /* AxcConstFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30112681B94200F5D3E3 /* AxcConstFile.swift */; };
+		003A30FD2681B94500F5D3E3 /* AxcBaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30132681B94200F5D3E3 /* AxcBaseCollectionReusableView.swift */; };
+		003A30FE2681B94500F5D3E3 /* AxcBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30142681B94200F5D3E3 /* AxcBaseVC.swift */; };
+		003A30FF2681B94500F5D3E3 /* AxcBaseClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30152681B94200F5D3E3 /* AxcBaseClassProtocol.swift */; };
+		003A31002681B94500F5D3E3 /* AxcBaseNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30162681B94200F5D3E3 /* AxcBaseNavVC.swift */; };
+		003A31012681B94500F5D3E3 /* AxcBaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30172681B94200F5D3E3 /* AxcBaseControl.swift */; };
+		003A31022681B94500F5D3E3 /* AxcBaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30182681B94200F5D3E3 /* AxcBaseCollectionCell.swift */; };
+		003A31032681B94500F5D3E3 /* AxcBaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30192681B94200F5D3E3 /* AxcBaseLabel.swift */; };
+		003A31042681B94500F5D3E3 /* AxcBaseTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A301A2681B94200F5D3E3 /* AxcBaseTabbarVC.swift */; };
+		003A31052681B94500F5D3E3 /* AxcBaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A301B2681B94200F5D3E3 /* AxcBaseTableCell.swift */; };
+		003A31062681B94500F5D3E3 /* AxcBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A301C2681B94200F5D3E3 /* AxcBaseView.swift */; };
+		003A31072681B94500F5D3E3 /* AxcWKWebViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A301F2681B94200F5D3E3 /* AxcWKWebViewEx.swift */; };
+		003A31082681B94500F5D3E3 /* AxcGradientStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30222681B94200F5D3E3 /* AxcGradientStyleFilter.swift */; };
+		003A31092681B94500F5D3E3 /* AxcGeneratorStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30232681B94200F5D3E3 /* AxcGeneratorStyleFilter.swift */; };
+		003A310A2681B94500F5D3E3 /* AxcBlurStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30242681B94200F5D3E3 /* AxcBlurStyleFilter.swift */; };
+		003A310B2681B94500F5D3E3 /* AxcStylizeStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30252681B94200F5D3E3 /* AxcStylizeStyleFilter.swift */; };
+		003A310C2681B94500F5D3E3 /* AxcReductionStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30262681B94200F5D3E3 /* AxcReductionStyleFilter.swift */; };
+		003A310D2681B94500F5D3E3 /* AxcSharpenStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30272681B94200F5D3E3 /* AxcSharpenStyleFilter.swift */; };
+		003A310E2681B94500F5D3E3 /* AxcTileEffectStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30282681B94200F5D3E3 /* AxcTileEffectStyleFilter.swift */; };
+		003A310F2681B94500F5D3E3 /* AxcBaseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A302A2681B94200F5D3E3 /* AxcBaseFilter.swift */; };
+		003A31102681B94500F5D3E3 /* AxcBaseStyleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A302B2681B94200F5D3E3 /* AxcBaseStyleFilter.swift */; };
+		003A31112681B94500F5D3E3 /* AxcCIImageEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A302C2681B94200F5D3E3 /* AxcCIImageEx.swift */; };
+		003A31122681B94500F5D3E3 /* AxcCGImageEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A302E2681B94200F5D3E3 /* AxcCGImageEx.swift */; };
+		003A31132681B94500F5D3E3 /* AxcCGAffineTransformEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A302F2681B94200F5D3E3 /* AxcCGAffineTransformEx.swift */; };
+		003A31142681B94500F5D3E3 /* AxcZeroProtocolEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30302681B94200F5D3E3 /* AxcZeroProtocolEx.swift */; };
+		003A31152681B94500F5D3E3 /* AxcCGFloatEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30312681B94200F5D3E3 /* AxcCGFloatEx.swift */; };
+		003A31162681B94500F5D3E3 /* AxcCGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30322681B94200F5D3E3 /* AxcCGPointEx.swift */; };
+		003A31172681B94500F5D3E3 /* AxcCGPathEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30332681B94200F5D3E3 /* AxcCGPathEx.swift */; };
+		003A31182681B94500F5D3E3 /* AxcCGSizeEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30342681B94200F5D3E3 /* AxcCGSizeEx.swift */; };
+		003A31192681B94500F5D3E3 /* AxcCGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30352681B94200F5D3E3 /* AxcCGRectEx.swift */; };
+		003A311A2681B94500F5D3E3 /* AxcCGColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30362681B94200F5D3E3 /* AxcCGColorEx.swift */; };
+		003A311B2681B94500F5D3E3 /* AxcUITableViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30382681B94200F5D3E3 /* AxcUITableViewEx.swift */; };
+		003A311C2681B94500F5D3E3 /* AxcUIBarButtonItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30392681B94200F5D3E3 /* AxcUIBarButtonItemEx.swift */; };
+		003A311D2681B94500F5D3E3 /* AxcUINavigationBarEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303A2681B94200F5D3E3 /* AxcUINavigationBarEx.swift */; };
+		003A311E2681B94500F5D3E3 /* AxcUIImageViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303B2681B94200F5D3E3 /* AxcUIImageViewEx.swift */; };
+		003A311F2681B94500F5D3E3 /* AxcUIAlertControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303C2681B94200F5D3E3 /* AxcUIAlertControllerEx.swift */; };
+		003A31202681B94500F5D3E3 /* AxcUIAlertActionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303D2681B94200F5D3E3 /* AxcUIAlertActionEx.swift */; };
+		003A31212681B94500F5D3E3 /* AxcUIControlEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303E2681B94200F5D3E3 /* AxcUIControlEx.swift */; };
+		003A31222681B94500F5D3E3 /* AxcUICollectionReusableViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A303F2681B94200F5D3E3 /* AxcUICollectionReusableViewEx.swift */; };
+		003A31232681B94500F5D3E3 /* AxcUITextFieldEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30402681B94200F5D3E3 /* AxcUITextFieldEx.swift */; };
+		003A31242681B94500F5D3E3 /* AxcUITabBarItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30412681B94200F5D3E3 /* AxcUITabBarItemEx.swift */; };
+		003A31252681B94500F5D3E3 /* AxcUIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30422681B94200F5D3E3 /* AxcUIColorEx.swift */; };
+		003A31262681B94500F5D3E3 /* AxcUILabelEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30432681B94200F5D3E3 /* AxcUILabelEx.swift */; };
+		003A31272681B94500F5D3E3 /* AxcUIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30442681B94200F5D3E3 /* AxcUIViewEx.swift */; };
+		003A31282681B94500F5D3E3 /* AxcUITabBarControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30452681B94200F5D3E3 /* AxcUITabBarControllerEx.swift */; };
+		003A31292681B94500F5D3E3 /* AxcUIScrollViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30462681B94200F5D3E3 /* AxcUIScrollViewEx.swift */; };
+		003A312A2681B94500F5D3E3 /* AxcUICollectionViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30472681B94200F5D3E3 /* AxcUICollectionViewEx.swift */; };
+		003A312B2681B94500F5D3E3 /* AxcUIImageEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30482681B94200F5D3E3 /* AxcUIImageEx.swift */; };
+		003A312C2681B94500F5D3E3 /* AxcUINavigationControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30492681B94200F5D3E3 /* AxcUINavigationControllerEx.swift */; };
+		003A312D2681B94600F5D3E3 /* AxcUnifiedFontTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A304B2681B94200F5D3E3 /* AxcUnifiedFontTarget.swift */; };
+		003A312E2681B94600F5D3E3 /* AxcUnifiedImageTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A304C2681B94200F5D3E3 /* AxcUnifiedImageTarget.swift */; };
+		003A312F2681B94600F5D3E3 /* AxcUnifiedColorTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A304D2681B94200F5D3E3 /* AxcUnifiedColorTarget.swift */; };
+		003A31302681B94600F5D3E3 /* AxcUIMenuItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A304E2681B94300F5D3E3 /* AxcUIMenuItemEx.swift */; };
+		003A31312681B94600F5D3E3 /* AxcUITabBarEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A304F2681B94300F5D3E3 /* AxcUITabBarEx.swift */; };
+		003A31322681B94600F5D3E3 /* AxcUIResponderEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30502681B94300F5D3E3 /* AxcUIResponderEx.swift */; };
+		003A31332681B94600F5D3E3 /* AxcUITextViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30512681B94300F5D3E3 /* AxcUITextViewEx.swift */; };
+		003A31342681B94600F5D3E3 /* AxcUIGestureRecognizerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30522681B94300F5D3E3 /* AxcUIGestureRecognizerEx.swift */; };
+		003A31352681B94600F5D3E3 /* AxcUIViewControllerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30532681B94300F5D3E3 /* AxcUIViewControllerEx.swift */; };
+		003A31362681B94600F5D3E3 /* AxcUIFontEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30542681B94300F5D3E3 /* AxcUIFontEx.swift */; };
+		003A31372681B94600F5D3E3 /* AxcUIBezierPathEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30552681B94300F5D3E3 /* AxcUIBezierPathEx.swift */; };
+		003A31382681B94600F5D3E3 /* AxcUIEdgeInsetsEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30562681B94300F5D3E3 /* AxcUIEdgeInsetsEx.swift */; };
+		003A31392681B94600F5D3E3 /* AxcUINavigationItemEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30572681B94300F5D3E3 /* AxcUINavigationItemEx.swift */; };
+		003A313A2681B94600F5D3E3 /* AxcUIButtonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30582681B94300F5D3E3 /* AxcUIButtonEx.swift */; };
+		003A313B2681B94600F5D3E3 /* AxcUITextInputEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30592681B94300F5D3E3 /* AxcUITextInputEx.swift */; };
+		003A313C2681B94600F5D3E3 /* AxcUICollectionViewFlowLayoutEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A305A2681B94300F5D3E3 /* AxcUICollectionViewFlowLayoutEx.swift */; };
+		003A313D2681B94600F5D3E3 /* AxcNSObjectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A305C2681B94300F5D3E3 /* AxcNSObjectEx.swift */; };
+		003A313E2681B94600F5D3E3 /* AxcNSDictionaryEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A305D2681B94300F5D3E3 /* AxcNSDictionaryEx.swift */; };
+		003A313F2681B94600F5D3E3 /* AxcNSMutableDataEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A305E2681B94300F5D3E3 /* AxcNSMutableDataEx.swift */; };
+		003A31402681B94600F5D3E3 /* AxcNSShadowEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30602681B94300F5D3E3 /* AxcNSShadowEx.swift */; };
+		003A31412681B94600F5D3E3 /* AxcNSAttributedStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30612681B94300F5D3E3 /* AxcNSAttributedStringEx.swift */; };
+		003A31422681B94600F5D3E3 /* AxcNSMutableParagraphStyleEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30622681B94300F5D3E3 /* AxcNSMutableParagraphStyleEx.swift */; };
+		003A31432681B94600F5D3E3 /* AxcNSTextAttachmentEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30632681B94300F5D3E3 /* AxcNSTextAttachmentEx.swift */; };
+		003A31442681B94600F5D3E3 /* AxcNSParagraphStyleEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30642681B94300F5D3E3 /* AxcNSParagraphStyleEx.swift */; };
+		003A31452681B94600F5D3E3 /* AxcNSDataEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30652681B94300F5D3E3 /* AxcNSDataEx.swift */; };
+		003A31462681B94600F5D3E3 /* AxcNSStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30662681B94300F5D3E3 /* AxcNSStringEx.swift */; };
+		003A31472681B94600F5D3E3 /* AxcDispatchEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30692681B94300F5D3E3 /* AxcDispatchEx.swift */; };
+		003A31482681B94600F5D3E3 /* AxcRangeEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A306A2681B94300F5D3E3 /* AxcRangeEx.swift */; };
+		003A31492681B94600F5D3E3 /* AxcDateEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A306C2681B94300F5D3E3 /* AxcDateEx.swift */; };
+		003A314A2681B94600F5D3E3 /* AxcDictionaryEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A306E2681B94300F5D3E3 /* AxcDictionaryEx.swift */; };
+		003A314B2681B94600F5D3E3 /* AxcArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A306F2681B94300F5D3E3 /* AxcArrayEx.swift */; };
+		003A314C2681B94600F5D3E3 /* AxcDataEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30702681B94300F5D3E3 /* AxcDataEx.swift */; };
+		003A314D2681B94600F5D3E3 /* AxcDataStructEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30712681B94300F5D3E3 /* AxcDataStructEx.swift */; };
+		003A314E2681B94600F5D3E3 /* AxcStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30722681B94300F5D3E3 /* AxcStringEx.swift */; };
+		003A314F2681B94600F5D3E3 /* AxcUserDefaultsEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30732681B94300F5D3E3 /* AxcUserDefaultsEx.swift */; };
+		003A31502681B94600F5D3E3 /* AxcNotificationCenterEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30742681B94300F5D3E3 /* AxcNotificationCenterEx.swift */; };
+		003A31512681B94600F5D3E3 /* AxcSignedIntegerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30762681B94300F5D3E3 /* AxcSignedIntegerEx.swift */; };
+		003A31522681B94600F5D3E3 /* AxcCharacterEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30772681B94300F5D3E3 /* AxcCharacterEx.swift */; };
+		003A31532681B94600F5D3E3 /* AxcFloatingPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30782681B94300F5D3E3 /* AxcFloatingPointEx.swift */; };
+		003A31542681B94600F5D3E3 /* AxcBoolEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30792681B94300F5D3E3 /* AxcBoolEx.swift */; };
+		003A31552681B94600F5D3E3 /* AxcFixedWidthIntegerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A307A2681B94300F5D3E3 /* AxcFixedWidthIntegerEx.swift */; };
+		003A31562681B94600F5D3E3 /* AxcUnifiedNumberTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A307B2681B94300F5D3E3 /* AxcUnifiedNumberTarget.swift */; };
+		003A31572681B94600F5D3E3 /* AxcIndexPathEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A307C2681B94300F5D3E3 /* AxcIndexPathEx.swift */; };
+		003A31582681B94600F5D3E3 /* AxcUrlEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A307D2681B94300F5D3E3 /* AxcUrlEx.swift */; };
+		003A31592681B94600F5D3E3 /* AxcAVCaptureDeviceEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A307F2681B94300F5D3E3 /* AxcAVCaptureDeviceEx.swift */; };
+		003A315A2681B94600F5D3E3 /* AxcDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30822681B94300F5D3E3 /* AxcDirection.swift */; };
+		003A315B2681B94600F5D3E3 /* AxcDateChunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30842681B94300F5D3E3 /* AxcDateChunk.swift */; };
+		003A315C2681B94600F5D3E3 /* AxcRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30862681B94300F5D3E3 /* AxcRuntime.swift */; };
+		003A315D2681B94600F5D3E3 /* AxcRegisterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30882681B94300F5D3E3 /* AxcRegisterStruct.swift */; };
+		003A315E2681B94600F5D3E3 /* AxcPolarAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A308A2681B94300F5D3E3 /* AxcPolarAxis.swift */; };
+		003A315F2681B94600F5D3E3 /* AxcUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A308C2681B94300F5D3E3 /* AxcUserDefault.swift */; };
+		003A31602681B94600F5D3E3 /* AxcGCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A308E2681B94300F5D3E3 /* AxcGCD.swift */; };
+		003A31612681B94600F5D3E3 /* AxcCFTypeIDProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30902681B94300F5D3E3 /* AxcCFTypeIDProtocol.swift */; };
+		003A31622681B94600F5D3E3 /* AxcCFMutableDictionaryEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30912681B94300F5D3E3 /* AxcCFMutableDictionaryEx.swift */; };
+		003A31632681B94600F5D3E3 /* AxcCFDataEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30922681B94300F5D3E3 /* AxcCFDataEx.swift */; };
+		003A31642681B94600F5D3E3 /* AxcCFStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30932681B94300F5D3E3 /* AxcCFStringEx.swift */; };
+		003A31652681B94600F5D3E3 /* AxcCAPropertyAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30952681B94300F5D3E3 /* AxcCAPropertyAnimationEx.swift */; };
+		003A31662681B94600F5D3E3 /* AxcCATextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30962681B94300F5D3E3 /* AxcCATextLayer.swift */; };
+		003A31672681B94600F5D3E3 /* AxcCATransitionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30972681B94300F5D3E3 /* AxcCATransitionEx.swift */; };
+		003A31682681B94600F5D3E3 /* AxcCALayerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30982681B94300F5D3E3 /* AxcCALayerEx.swift */; };
+		003A31692681B94600F5D3E3 /* AxcCAKeyframeAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30992681B94300F5D3E3 /* AxcCAKeyframeAnimationEx.swift */; };
+		003A316A2681B94600F5D3E3 /* AxcCAShapeLayerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309A2681B94300F5D3E3 /* AxcCAShapeLayerEx.swift */; };
+		003A316B2681B94600F5D3E3 /* AxcCATransactionEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309B2681B94300F5D3E3 /* AxcCATransactionEx.swift */; };
+		003A316C2681B94600F5D3E3 /* AxcCAGradientLayerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309C2681B94300F5D3E3 /* AxcCAGradientLayerEx.swift */; };
+		003A316D2681B94600F5D3E3 /* AxcCABasicAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309D2681B94300F5D3E3 /* AxcCABasicAnimationEx.swift */; };
+		003A316E2681B94600F5D3E3 /* AxcCAAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309E2681B94300F5D3E3 /* AxcCAAnimationEx.swift */; };
+		003A316F2681B94600F5D3E3 /* AxcCAAnimationGroupEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A309F2681B94300F5D3E3 /* AxcCAAnimationGroupEx.swift */; };
+		003A31702681B94600F5D3E3 /* AxcCASpringAnimationEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30A02681B94300F5D3E3 /* AxcCASpringAnimationEx.swift */; };
+		003A31712681B94600F5D3E3 /* AxcUrlConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30A32681B94300F5D3E3 /* AxcUrlConfig.swift */; };
+		003A31722681B94600F5D3E3 /* AxcUrlConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30A42681B94300F5D3E3 /* AxcUrlConfigVC.swift */; };
+		003A31732681B94600F5D3E3 /* AxcCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30A62681B94300F5D3E3 /* AxcCacheManager.swift */; };
+		003A31742681B94600F5D3E3 /* AxcAuthorizedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30A92681B94300F5D3E3 /* AxcAuthorizedManager.swift */; };
+		003A31752681B94600F5D3E3 /* AxcLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30AB2681B94300F5D3E3 /* AxcLocationManager.swift */; };
+		003A31762681B94600F5D3E3 /* AxcCameraEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30AD2681B94400F5D3E3 /* AxcCameraEnum.swift */; };
+		003A31772681B94600F5D3E3 /* AxcCameraManagerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30AE2681B94400F5D3E3 /* AxcCameraManagerNew.swift */; };
+		003A31782681B94600F5D3E3 /* AxcCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30AF2681B94400F5D3E3 /* AxcCameraManager.swift */; };
+		003A31792681B94600F5D3E3 /* AxcHardwareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30B02681B94400F5D3E3 /* AxcHardwareManager.swift */; };
+		003A317A2681B94600F5D3E3 /* AxcVibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30B22681B94400F5D3E3 /* AxcVibrationManager.swift */; };
+		003A317B2681B94600F5D3E3 /* AxcLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30B42681B94400F5D3E3 /* AxcLanguageManager.swift */; };
+		003A317C2681B94600F5D3E3 /* AxcBaseVCAnimationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30B72681B94400F5D3E3 /* AxcBaseVCAnimationTransitioning.swift */; };
+		003A317D2681B94600F5D3E3 /* AxcAnimationMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30B92681B94400F5D3E3 /* AxcAnimationMaker.swift */; };
+		003A317E2681B94600F5D3E3 /* AxcAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30BA2681B94400F5D3E3 /* AxcAnimationManager.swift */; };
+		003A317F2681B94600F5D3E3 /* AxcConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30BC2681B94400F5D3E3 /* AxcConstraintDSL.swift */; };
+		003A31802681B94600F5D3E3 /* AxcConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30BD2681B94400F5D3E3 /* AxcConstraintConstantTarget.swift */; };
+		003A31812681B94600F5D3E3 /* AxcConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30BE2681B94400F5D3E3 /* AxcConstraintMakerRelatable.swift */; };
+		003A31822681B94600F5D3E3 /* AxcConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30BF2681B94400F5D3E3 /* AxcConstraintMaker.swift */; };
+		003A31832681B94600F5D3E3 /* AxcConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C02681B94400F5D3E3 /* AxcConstraintMakerExtendable.swift */; };
+		003A31842681B94600F5D3E3 /* AxcConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C12681B94400F5D3E3 /* AxcConstraintAttributes.swift */; };
+		003A31852681B94600F5D3E3 /* AxcConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C22681B94400F5D3E3 /* AxcConstraintDescription.swift */; };
+		003A31862681B94600F5D3E3 /* AxcConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C32681B94400F5D3E3 /* AxcConstraintMakerEditable.swift */; };
+		003A31872681B94600F5D3E3 /* AxcConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C42681B94400F5D3E3 /* AxcConstraint.swift */; };
+		003A31882681B94600F5D3E3 /* AxcFlowLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30C62681B94400F5D3E3 /* AxcFlowLayoutManager.swift */; };
+		003A31892681B94600F5D3E3 /* AxcBasePageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30CA2681B94400F5D3E3 /* AxcBasePageFlowLayout.swift */; };
+		003A318A2681B94600F5D3E3 /* AxcBaseTableFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30CD2681B94400F5D3E3 /* AxcBaseTableFlowLayout.swift */; };
+		003A318B2681B94600F5D3E3 /* AxcBaseFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30CF2681B94400F5D3E3 /* AxcBaseFlowLayout.swift */; };
+		003A318C2681B94600F5D3E3 /* AxcBaseBannerFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30D22681B94400F5D3E3 /* AxcBaseBannerFlowLayout.swift */; };
+		003A318D2681B94600F5D3E3 /* AxcBadrockBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30D42681B94400F5D3E3 /* AxcBadrockBundle.swift */; };
+		003A318E2681B94600F5D3E3 /* AxcBadrockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30D62681B94500F5D3E3 /* AxcBadrockProtocol.swift */; };
+		003A318F2681B94600F5D3E3 /* AxcGlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A30D72681B94500F5D3E3 /* AxcGlobalFunc.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		003A2FBE2681B90800F5D3E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 003A2FAA2681B90800F5D3E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 003A2FB22681B90800F5D3E3;
+			remoteInfo = AxcBadrock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		003A2FB32681B90800F5D3E3 /* AxcBadrock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AxcBadrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		003A2FB62681B90800F5D3E3 /* AxcBadrock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AxcBadrock.h; sourceTree = "<group>"; };
+		003A2FB72681B90800F5D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003A2FBC2681B90800F5D3E3 /* AxcBadrockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AxcBadrockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		003A2FC12681B90800F5D3E3 /* AxcBadrockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxcBadrockTests.swift; sourceTree = "<group>"; };
+		003A2FC32681B90800F5D3E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003A2FCE2681B94100F5D3E3 /* AxcBadrock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AxcBadrock.bundle; sourceTree = "<group>"; };
+		003A2FCF2681B94100F5D3E3 /* AxcBadrock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AxcBadrock.swift; path = "../../AxcBadrock-Swift/AxcBadrock/AxcBadrock.swift"; sourceTree = "<group>"; };
+		003A2FD22681B94100F5D3E3 /* AxcListEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcListEmptyView.swift; sourceTree = "<group>"; };
+		003A2FD42681B94100F5D3E3 /* AxcTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTextView.swift; sourceTree = "<group>"; };
+		003A2FD62681B94100F5D3E3 /* AxcNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNavBar.swift; sourceTree = "<group>"; };
+		003A2FD82681B94100F5D3E3 /* AxcDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDatePickerView.swift; sourceTree = "<group>"; };
+		003A2FDA2681B94100F5D3E3 /* AxcCaptchaCodeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCaptchaCodeControl.swift; sourceTree = "<group>"; };
+		003A2FDC2681B94100F5D3E3 /* AxcLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcLineLabel.swift; sourceTree = "<group>"; };
+		003A2FDE2681B94100F5D3E3 /* AxcHudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcHudView.swift; sourceTree = "<group>"; };
+		003A2FE02681B94100F5D3E3 /* AxcProtocolControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcProtocolControl.swift; sourceTree = "<group>"; };
+		003A2FE22681B94100F5D3E3 /* AxcTagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTagView.swift; sourceTree = "<group>"; };
+		003A2FE42681B94100F5D3E3 /* AxcWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcWaveView.swift; sourceTree = "<group>"; };
+		003A2FE62681B94100F5D3E3 /* AxcBadgeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBadgeLabel.swift; sourceTree = "<group>"; };
+		003A2FE82681B94100F5D3E3 /* AxcContentScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcContentScrollView.swift; sourceTree = "<group>"; };
+		003A2FEA2681B94100F5D3E3 /* AxcTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTextField.swift; sourceTree = "<group>"; };
+		003A2FEC2681B94100F5D3E3 /* AxcTextScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTextScrollView.swift; sourceTree = "<group>"; };
+		003A2FEE2681B94100F5D3E3 /* AxcPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPickerView.swift; sourceTree = "<group>"; };
+		003A2FF02681B94100F5D3E3 /* AxcSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcSegmentedControl.swift; sourceTree = "<group>"; };
+		003A2FF22681B94100F5D3E3 /* AxcContentBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcContentBannerView.swift; sourceTree = "<group>"; };
+		003A2FF42681B94100F5D3E3 /* AxcProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcProgressView.swift; sourceTree = "<group>"; };
+		003A2FF62681B94100F5D3E3 /* AxcButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcButton.swift; sourceTree = "<group>"; };
+		003A2FF82681B94200F5D3E3 /* AxcPageScrollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPageScrollController.swift; sourceTree = "<group>"; };
+		003A2FF92681B94200F5D3E3 /* AxcPageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPageScrollView.swift; sourceTree = "<group>"; };
+		003A2FFA2681B94200F5D3E3 /* AxcPageItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPageItemVC.swift; sourceTree = "<group>"; };
+		003A2FFC2681B94200F5D3E3 /* AxcTextBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTextBannerView.swift; sourceTree = "<group>"; };
+		003A2FFE2681B94200F5D3E3 /* AxcAlentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAlentVC.swift; sourceTree = "<group>"; };
+		003A2FFF2681B94200F5D3E3 /* AxcAlentVCAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAlentVCAnimation.swift; sourceTree = "<group>"; };
+		003A30012681B94200F5D3E3 /* AxcCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCameraView.swift; sourceTree = "<group>"; };
+		003A30032681B94200F5D3E3 /* AxcWebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcWebVC.swift; sourceTree = "<group>"; };
+		003A30052681B94200F5D3E3 /* AxcBookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBookView.swift; sourceTree = "<group>"; };
+		003A30072681B94200F5D3E3 /* AxcWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcWebView.swift; sourceTree = "<group>"; };
+		003A30092681B94200F5D3E3 /* AxcPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPageControl.swift; sourceTree = "<group>"; };
+		003A300B2681B94200F5D3E3 /* AxcChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcChooseView.swift; sourceTree = "<group>"; };
+		003A300D2681B94200F5D3E3 /* AxcBaseLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseLoadingView.swift; sourceTree = "<group>"; };
+		003A300E2681B94200F5D3E3 /* AxcLoadingCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcLoadingCircleView.swift; sourceTree = "<group>"; };
+		003A30102681B94200F5D3E3 /* AxcPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPlayerView.swift; sourceTree = "<group>"; };
+		003A30112681B94200F5D3E3 /* AxcConstFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AxcConstFile.swift; path = "../../AxcBadrock-Swift/AxcBadrock/AxcConstFile.swift"; sourceTree = "<group>"; };
+		003A30132681B94200F5D3E3 /* AxcBaseCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseCollectionReusableView.swift; sourceTree = "<group>"; };
+		003A30142681B94200F5D3E3 /* AxcBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseVC.swift; sourceTree = "<group>"; };
+		003A30152681B94200F5D3E3 /* AxcBaseClassProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseClassProtocol.swift; sourceTree = "<group>"; };
+		003A30162681B94200F5D3E3 /* AxcBaseNavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseNavVC.swift; sourceTree = "<group>"; };
+		003A30172681B94200F5D3E3 /* AxcBaseControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseControl.swift; sourceTree = "<group>"; };
+		003A30182681B94200F5D3E3 /* AxcBaseCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseCollectionCell.swift; sourceTree = "<group>"; };
+		003A30192681B94200F5D3E3 /* AxcBaseLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseLabel.swift; sourceTree = "<group>"; };
+		003A301A2681B94200F5D3E3 /* AxcBaseTabbarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseTabbarVC.swift; sourceTree = "<group>"; };
+		003A301B2681B94200F5D3E3 /* AxcBaseTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseTableCell.swift; sourceTree = "<group>"; };
+		003A301C2681B94200F5D3E3 /* AxcBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseView.swift; sourceTree = "<group>"; };
+		003A301F2681B94200F5D3E3 /* AxcWKWebViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcWKWebViewEx.swift; sourceTree = "<group>"; };
+		003A30222681B94200F5D3E3 /* AxcGradientStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcGradientStyleFilter.swift; sourceTree = "<group>"; };
+		003A30232681B94200F5D3E3 /* AxcGeneratorStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcGeneratorStyleFilter.swift; sourceTree = "<group>"; };
+		003A30242681B94200F5D3E3 /* AxcBlurStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBlurStyleFilter.swift; sourceTree = "<group>"; };
+		003A30252681B94200F5D3E3 /* AxcStylizeStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcStylizeStyleFilter.swift; sourceTree = "<group>"; };
+		003A30262681B94200F5D3E3 /* AxcReductionStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcReductionStyleFilter.swift; sourceTree = "<group>"; };
+		003A30272681B94200F5D3E3 /* AxcSharpenStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcSharpenStyleFilter.swift; sourceTree = "<group>"; };
+		003A30282681B94200F5D3E3 /* AxcTileEffectStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcTileEffectStyleFilter.swift; sourceTree = "<group>"; };
+		003A302A2681B94200F5D3E3 /* AxcBaseFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseFilter.swift; sourceTree = "<group>"; };
+		003A302B2681B94200F5D3E3 /* AxcBaseStyleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseStyleFilter.swift; sourceTree = "<group>"; };
+		003A302C2681B94200F5D3E3 /* AxcCIImageEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCIImageEx.swift; sourceTree = "<group>"; };
+		003A302E2681B94200F5D3E3 /* AxcCGImageEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGImageEx.swift; sourceTree = "<group>"; };
+		003A302F2681B94200F5D3E3 /* AxcCGAffineTransformEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGAffineTransformEx.swift; sourceTree = "<group>"; };
+		003A30302681B94200F5D3E3 /* AxcZeroProtocolEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcZeroProtocolEx.swift; sourceTree = "<group>"; };
+		003A30312681B94200F5D3E3 /* AxcCGFloatEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGFloatEx.swift; sourceTree = "<group>"; };
+		003A30322681B94200F5D3E3 /* AxcCGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGPointEx.swift; sourceTree = "<group>"; };
+		003A30332681B94200F5D3E3 /* AxcCGPathEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGPathEx.swift; sourceTree = "<group>"; };
+		003A30342681B94200F5D3E3 /* AxcCGSizeEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGSizeEx.swift; sourceTree = "<group>"; };
+		003A30352681B94200F5D3E3 /* AxcCGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGRectEx.swift; sourceTree = "<group>"; };
+		003A30362681B94200F5D3E3 /* AxcCGColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCGColorEx.swift; sourceTree = "<group>"; };
+		003A30382681B94200F5D3E3 /* AxcUITableViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITableViewEx.swift; sourceTree = "<group>"; };
+		003A30392681B94200F5D3E3 /* AxcUIBarButtonItemEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIBarButtonItemEx.swift; sourceTree = "<group>"; };
+		003A303A2681B94200F5D3E3 /* AxcUINavigationBarEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUINavigationBarEx.swift; sourceTree = "<group>"; };
+		003A303B2681B94200F5D3E3 /* AxcUIImageViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIImageViewEx.swift; sourceTree = "<group>"; };
+		003A303C2681B94200F5D3E3 /* AxcUIAlertControllerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIAlertControllerEx.swift; sourceTree = "<group>"; };
+		003A303D2681B94200F5D3E3 /* AxcUIAlertActionEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIAlertActionEx.swift; sourceTree = "<group>"; };
+		003A303E2681B94200F5D3E3 /* AxcUIControlEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIControlEx.swift; sourceTree = "<group>"; };
+		003A303F2681B94200F5D3E3 /* AxcUICollectionReusableViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUICollectionReusableViewEx.swift; sourceTree = "<group>"; };
+		003A30402681B94200F5D3E3 /* AxcUITextFieldEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITextFieldEx.swift; sourceTree = "<group>"; };
+		003A30412681B94200F5D3E3 /* AxcUITabBarItemEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITabBarItemEx.swift; sourceTree = "<group>"; };
+		003A30422681B94200F5D3E3 /* AxcUIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIColorEx.swift; sourceTree = "<group>"; };
+		003A30432681B94200F5D3E3 /* AxcUILabelEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUILabelEx.swift; sourceTree = "<group>"; };
+		003A30442681B94200F5D3E3 /* AxcUIViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIViewEx.swift; sourceTree = "<group>"; };
+		003A30452681B94200F5D3E3 /* AxcUITabBarControllerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITabBarControllerEx.swift; sourceTree = "<group>"; };
+		003A30462681B94200F5D3E3 /* AxcUIScrollViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIScrollViewEx.swift; sourceTree = "<group>"; };
+		003A30472681B94200F5D3E3 /* AxcUICollectionViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUICollectionViewEx.swift; sourceTree = "<group>"; };
+		003A30482681B94200F5D3E3 /* AxcUIImageEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIImageEx.swift; sourceTree = "<group>"; };
+		003A30492681B94200F5D3E3 /* AxcUINavigationControllerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUINavigationControllerEx.swift; sourceTree = "<group>"; };
+		003A304B2681B94200F5D3E3 /* AxcUnifiedFontTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUnifiedFontTarget.swift; sourceTree = "<group>"; };
+		003A304C2681B94200F5D3E3 /* AxcUnifiedImageTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUnifiedImageTarget.swift; sourceTree = "<group>"; };
+		003A304D2681B94200F5D3E3 /* AxcUnifiedColorTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUnifiedColorTarget.swift; sourceTree = "<group>"; };
+		003A304E2681B94300F5D3E3 /* AxcUIMenuItemEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIMenuItemEx.swift; sourceTree = "<group>"; };
+		003A304F2681B94300F5D3E3 /* AxcUITabBarEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITabBarEx.swift; sourceTree = "<group>"; };
+		003A30502681B94300F5D3E3 /* AxcUIResponderEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIResponderEx.swift; sourceTree = "<group>"; };
+		003A30512681B94300F5D3E3 /* AxcUITextViewEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITextViewEx.swift; sourceTree = "<group>"; };
+		003A30522681B94300F5D3E3 /* AxcUIGestureRecognizerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIGestureRecognizerEx.swift; sourceTree = "<group>"; };
+		003A30532681B94300F5D3E3 /* AxcUIViewControllerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIViewControllerEx.swift; sourceTree = "<group>"; };
+		003A30542681B94300F5D3E3 /* AxcUIFontEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIFontEx.swift; sourceTree = "<group>"; };
+		003A30552681B94300F5D3E3 /* AxcUIBezierPathEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIBezierPathEx.swift; sourceTree = "<group>"; };
+		003A30562681B94300F5D3E3 /* AxcUIEdgeInsetsEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIEdgeInsetsEx.swift; sourceTree = "<group>"; };
+		003A30572681B94300F5D3E3 /* AxcUINavigationItemEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUINavigationItemEx.swift; sourceTree = "<group>"; };
+		003A30582681B94300F5D3E3 /* AxcUIButtonEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUIButtonEx.swift; sourceTree = "<group>"; };
+		003A30592681B94300F5D3E3 /* AxcUITextInputEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUITextInputEx.swift; sourceTree = "<group>"; };
+		003A305A2681B94300F5D3E3 /* AxcUICollectionViewFlowLayoutEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUICollectionViewFlowLayoutEx.swift; sourceTree = "<group>"; };
+		003A305C2681B94300F5D3E3 /* AxcNSObjectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSObjectEx.swift; sourceTree = "<group>"; };
+		003A305D2681B94300F5D3E3 /* AxcNSDictionaryEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSDictionaryEx.swift; sourceTree = "<group>"; };
+		003A305E2681B94300F5D3E3 /* AxcNSMutableDataEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSMutableDataEx.swift; sourceTree = "<group>"; };
+		003A30602681B94300F5D3E3 /* AxcNSShadowEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSShadowEx.swift; sourceTree = "<group>"; };
+		003A30612681B94300F5D3E3 /* AxcNSAttributedStringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSAttributedStringEx.swift; sourceTree = "<group>"; };
+		003A30622681B94300F5D3E3 /* AxcNSMutableParagraphStyleEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSMutableParagraphStyleEx.swift; sourceTree = "<group>"; };
+		003A30632681B94300F5D3E3 /* AxcNSTextAttachmentEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSTextAttachmentEx.swift; sourceTree = "<group>"; };
+		003A30642681B94300F5D3E3 /* AxcNSParagraphStyleEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSParagraphStyleEx.swift; sourceTree = "<group>"; };
+		003A30652681B94300F5D3E3 /* AxcNSDataEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSDataEx.swift; sourceTree = "<group>"; };
+		003A30662681B94300F5D3E3 /* AxcNSStringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNSStringEx.swift; sourceTree = "<group>"; };
+		003A30692681B94300F5D3E3 /* AxcDispatchEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDispatchEx.swift; sourceTree = "<group>"; };
+		003A306A2681B94300F5D3E3 /* AxcRangeEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcRangeEx.swift; sourceTree = "<group>"; };
+		003A306C2681B94300F5D3E3 /* AxcDateEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDateEx.swift; sourceTree = "<group>"; };
+		003A306E2681B94300F5D3E3 /* AxcDictionaryEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDictionaryEx.swift; sourceTree = "<group>"; };
+		003A306F2681B94300F5D3E3 /* AxcArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcArrayEx.swift; sourceTree = "<group>"; };
+		003A30702681B94300F5D3E3 /* AxcDataEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDataEx.swift; sourceTree = "<group>"; };
+		003A30712681B94300F5D3E3 /* AxcDataStructEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDataStructEx.swift; sourceTree = "<group>"; };
+		003A30722681B94300F5D3E3 /* AxcStringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcStringEx.swift; sourceTree = "<group>"; };
+		003A30732681B94300F5D3E3 /* AxcUserDefaultsEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUserDefaultsEx.swift; sourceTree = "<group>"; };
+		003A30742681B94300F5D3E3 /* AxcNotificationCenterEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcNotificationCenterEx.swift; sourceTree = "<group>"; };
+		003A30762681B94300F5D3E3 /* AxcSignedIntegerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcSignedIntegerEx.swift; sourceTree = "<group>"; };
+		003A30772681B94300F5D3E3 /* AxcCharacterEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCharacterEx.swift; sourceTree = "<group>"; };
+		003A30782681B94300F5D3E3 /* AxcFloatingPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcFloatingPointEx.swift; sourceTree = "<group>"; };
+		003A30792681B94300F5D3E3 /* AxcBoolEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBoolEx.swift; sourceTree = "<group>"; };
+		003A307A2681B94300F5D3E3 /* AxcFixedWidthIntegerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcFixedWidthIntegerEx.swift; sourceTree = "<group>"; };
+		003A307B2681B94300F5D3E3 /* AxcUnifiedNumberTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUnifiedNumberTarget.swift; sourceTree = "<group>"; };
+		003A307C2681B94300F5D3E3 /* AxcIndexPathEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcIndexPathEx.swift; sourceTree = "<group>"; };
+		003A307D2681B94300F5D3E3 /* AxcUrlEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUrlEx.swift; sourceTree = "<group>"; };
+		003A307F2681B94300F5D3E3 /* AxcAVCaptureDeviceEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAVCaptureDeviceEx.swift; sourceTree = "<group>"; };
+		003A30822681B94300F5D3E3 /* AxcDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDirection.swift; sourceTree = "<group>"; };
+		003A30842681B94300F5D3E3 /* AxcDateChunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcDateChunk.swift; sourceTree = "<group>"; };
+		003A30862681B94300F5D3E3 /* AxcRuntime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcRuntime.swift; sourceTree = "<group>"; };
+		003A30882681B94300F5D3E3 /* AxcRegisterStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcRegisterStruct.swift; sourceTree = "<group>"; };
+		003A308A2681B94300F5D3E3 /* AxcPolarAxis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcPolarAxis.swift; sourceTree = "<group>"; };
+		003A308C2681B94300F5D3E3 /* AxcUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUserDefault.swift; sourceTree = "<group>"; };
+		003A308E2681B94300F5D3E3 /* AxcGCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcGCD.swift; sourceTree = "<group>"; };
+		003A30902681B94300F5D3E3 /* AxcCFTypeIDProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCFTypeIDProtocol.swift; sourceTree = "<group>"; };
+		003A30912681B94300F5D3E3 /* AxcCFMutableDictionaryEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCFMutableDictionaryEx.swift; sourceTree = "<group>"; };
+		003A30922681B94300F5D3E3 /* AxcCFDataEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCFDataEx.swift; sourceTree = "<group>"; };
+		003A30932681B94300F5D3E3 /* AxcCFStringEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCFStringEx.swift; sourceTree = "<group>"; };
+		003A30952681B94300F5D3E3 /* AxcCAPropertyAnimationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAPropertyAnimationEx.swift; sourceTree = "<group>"; };
+		003A30962681B94300F5D3E3 /* AxcCATextLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCATextLayer.swift; sourceTree = "<group>"; };
+		003A30972681B94300F5D3E3 /* AxcCATransitionEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCATransitionEx.swift; sourceTree = "<group>"; };
+		003A30982681B94300F5D3E3 /* AxcCALayerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCALayerEx.swift; sourceTree = "<group>"; };
+		003A30992681B94300F5D3E3 /* AxcCAKeyframeAnimationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAKeyframeAnimationEx.swift; sourceTree = "<group>"; };
+		003A309A2681B94300F5D3E3 /* AxcCAShapeLayerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAShapeLayerEx.swift; sourceTree = "<group>"; };
+		003A309B2681B94300F5D3E3 /* AxcCATransactionEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCATransactionEx.swift; sourceTree = "<group>"; };
+		003A309C2681B94300F5D3E3 /* AxcCAGradientLayerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAGradientLayerEx.swift; sourceTree = "<group>"; };
+		003A309D2681B94300F5D3E3 /* AxcCABasicAnimationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCABasicAnimationEx.swift; sourceTree = "<group>"; };
+		003A309E2681B94300F5D3E3 /* AxcCAAnimationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAAnimationEx.swift; sourceTree = "<group>"; };
+		003A309F2681B94300F5D3E3 /* AxcCAAnimationGroupEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCAAnimationGroupEx.swift; sourceTree = "<group>"; };
+		003A30A02681B94300F5D3E3 /* AxcCASpringAnimationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCASpringAnimationEx.swift; sourceTree = "<group>"; };
+		003A30A32681B94300F5D3E3 /* AxcUrlConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUrlConfig.swift; sourceTree = "<group>"; };
+		003A30A42681B94300F5D3E3 /* AxcUrlConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcUrlConfigVC.swift; sourceTree = "<group>"; };
+		003A30A62681B94300F5D3E3 /* AxcCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCacheManager.swift; sourceTree = "<group>"; };
+		003A30A92681B94300F5D3E3 /* AxcAuthorizedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAuthorizedManager.swift; sourceTree = "<group>"; };
+		003A30AB2681B94300F5D3E3 /* AxcLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcLocationManager.swift; sourceTree = "<group>"; };
+		003A30AD2681B94400F5D3E3 /* AxcCameraEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCameraEnum.swift; sourceTree = "<group>"; };
+		003A30AE2681B94400F5D3E3 /* AxcCameraManagerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCameraManagerNew.swift; sourceTree = "<group>"; };
+		003A30AF2681B94400F5D3E3 /* AxcCameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcCameraManager.swift; sourceTree = "<group>"; };
+		003A30B02681B94400F5D3E3 /* AxcHardwareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcHardwareManager.swift; sourceTree = "<group>"; };
+		003A30B22681B94400F5D3E3 /* AxcVibrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcVibrationManager.swift; sourceTree = "<group>"; };
+		003A30B42681B94400F5D3E3 /* AxcLanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcLanguageManager.swift; sourceTree = "<group>"; };
+		003A30B72681B94400F5D3E3 /* AxcBaseVCAnimationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseVCAnimationTransitioning.swift; sourceTree = "<group>"; };
+		003A30B92681B94400F5D3E3 /* AxcAnimationMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAnimationMaker.swift; sourceTree = "<group>"; };
+		003A30BA2681B94400F5D3E3 /* AxcAnimationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcAnimationManager.swift; sourceTree = "<group>"; };
+		003A30BC2681B94400F5D3E3 /* AxcConstraintDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintDSL.swift; sourceTree = "<group>"; };
+		003A30BD2681B94400F5D3E3 /* AxcConstraintConstantTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		003A30BE2681B94400F5D3E3 /* AxcConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		003A30BF2681B94400F5D3E3 /* AxcConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintMaker.swift; sourceTree = "<group>"; };
+		003A30C02681B94400F5D3E3 /* AxcConstraintMakerExtendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		003A30C12681B94400F5D3E3 /* AxcConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintAttributes.swift; sourceTree = "<group>"; };
+		003A30C22681B94400F5D3E3 /* AxcConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintDescription.swift; sourceTree = "<group>"; };
+		003A30C32681B94400F5D3E3 /* AxcConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		003A30C42681B94400F5D3E3 /* AxcConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcConstraint.swift; sourceTree = "<group>"; };
+		003A30C62681B94400F5D3E3 /* AxcFlowLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcFlowLayoutManager.swift; sourceTree = "<group>"; };
+		003A30CA2681B94400F5D3E3 /* AxcBasePageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBasePageFlowLayout.swift; sourceTree = "<group>"; };
+		003A30CD2681B94400F5D3E3 /* AxcBaseTableFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseTableFlowLayout.swift; sourceTree = "<group>"; };
+		003A30CF2681B94400F5D3E3 /* AxcBaseFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseFlowLayout.swift; sourceTree = "<group>"; };
+		003A30D22681B94400F5D3E3 /* AxcBaseBannerFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBaseBannerFlowLayout.swift; sourceTree = "<group>"; };
+		003A30D42681B94400F5D3E3 /* AxcBadrockBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBadrockBundle.swift; sourceTree = "<group>"; };
+		003A30D62681B94500F5D3E3 /* AxcBadrockProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxcBadrockProtocol.swift; sourceTree = "<group>"; };
+		003A30D72681B94500F5D3E3 /* AxcGlobalFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AxcGlobalFunc.swift; path = "../../AxcBadrock-Swift/AxcBadrock/AxcGlobalFunc.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		003A2FB02681B90800F5D3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A2FB92681B90800F5D3E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A2FBD2681B90800F5D3E3 /* AxcBadrock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003A2FA92681B90800F5D3E3 = {
+			isa = PBXGroup;
+			children = (
+				003A2FB52681B90800F5D3E3 /* AxcBadrock */,
+				003A2FC02681B90800F5D3E3 /* AxcBadrockTests */,
+				003A2FB42681B90800F5D3E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		003A2FB42681B90800F5D3E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FB32681B90800F5D3E3 /* AxcBadrock.framework */,
+				003A2FBC2681B90800F5D3E3 /* AxcBadrockTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		003A2FB52681B90800F5D3E3 /* AxcBadrock */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FCF2681B94100F5D3E3 /* AxcBadrock.swift */,
+				003A30D52681B94500F5D3E3 /* AxcBadrockProtocol功能性扩展协议 */,
+				003A30122681B94200F5D3E3 /* AxcBase基类库 */,
+				003A30112681B94200F5D3E3 /* AxcConstFile.swift */,
+				003A30D72681B94500F5D3E3 /* AxcGlobalFunc.swift */,
+				003A2FD02681B94100F5D3E3 /* AxcUIKit控件库 */,
+				003A301D2681B94200F5D3E3 /* Extension扩展类 */,
+				003A2FCD2681B94100F5D3E3 /* Resources */,
+				003A30A12681B94300F5D3E3 /* Unit工具类 */,
+				003A2FB62681B90800F5D3E3 /* AxcBadrock.h */,
+				003A2FB72681B90800F5D3E3 /* Info.plist */,
+			);
+			path = AxcBadrock;
+			sourceTree = "<group>";
+		};
+		003A2FC02681B90800F5D3E3 /* AxcBadrockTests */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FC12681B90800F5D3E3 /* AxcBadrockTests.swift */,
+				003A2FC32681B90800F5D3E3 /* Info.plist */,
+			);
+			path = AxcBadrockTests;
+			sourceTree = "<group>";
+		};
+		003A2FCD2681B94100F5D3E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FCE2681B94100F5D3E3 /* AxcBadrock.bundle */,
+			);
+			name = Resources;
+			path = "../../AxcBadrock-Swift/AxcBadrock/Resources";
+			sourceTree = "<group>";
+		};
+		003A2FD02681B94100F5D3E3 /* AxcUIKit控件库 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FD12681B94100F5D3E3 /* AxcListEmptyView列表空视图 */,
+				003A2FD32681B94100F5D3E3 /* AxcTextView文本输入 */,
+				003A2FD52681B94100F5D3E3 /* AxcNavBar自定导航栏 */,
+				003A2FD72681B94100F5D3E3 /* AxcDatePickerView时间选择 */,
+				003A2FD92681B94100F5D3E3 /* AxcCaptchaCodeControl验证码 */,
+				003A2FDB2681B94100F5D3E3 /* AxcLineLabel带线文字 */,
+				003A2FDD2681B94100F5D3E3 /* AxcHudView提示组件 */,
+				003A2FDF2681B94100F5D3E3 /* AxcProtocolControl同意协议 */,
+				003A2FE12681B94100F5D3E3 /* AxcTagView标签选择 */,
+				003A2FE32681B94100F5D3E3 /* AxcWaveView波浪视图 */,
+				003A2FE52681B94100F5D3E3 /* AxcBadgeLabel徽标 */,
+				003A2FE72681B94100F5D3E3 /* AxcContentScrollView内容滚动容器 */,
+				003A2FE92681B94100F5D3E3 /* AxcTextField文本输入 */,
+				003A2FEB2681B94100F5D3E3 /* AxcTextScrollView文字滚动 */,
+				003A2FED2681B94100F5D3E3 /* AxcPickerView滚轮选择 */,
+				003A2FEF2681B94100F5D3E3 /* AxcSegmentedControl分段单选 */,
+				003A2FF12681B94100F5D3E3 /* AxcContentBannerView轮播容器 */,
+				003A2FF32681B94100F5D3E3 /* AxcProgressView进度指示器 */,
+				003A2FF52681B94100F5D3E3 /* AxcButton按钮 */,
+				003A2FF72681B94200F5D3E3 /* AxcPageScrollController分页列表 */,
+				003A2FFB2681B94200F5D3E3 /* AxcTextBannerView文字轮播 */,
+				003A2FFD2681B94200F5D3E3 /* AxcAlentVC弹窗控制器 */,
+				003A30002681B94200F5D3E3 /* AxcCameraView摄像头视图 */,
+				003A30022681B94200F5D3E3 /* AxcWebVC网页控制器 */,
+				003A30042681B94200F5D3E3 /* AxcBookView书视图 */,
+				003A30062681B94200F5D3E3 /* AxcWebView网页视图 */,
+				003A30082681B94200F5D3E3 /* AxcPageControl分页控制器 */,
+				003A300A2681B94200F5D3E3 /* AxcChooseView选择视图 */,
+				003A300C2681B94200F5D3E3 /* AxcLoadingView加载动画视图 */,
+				003A300F2681B94200F5D3E3 /* AxcPlayerView视频播放 */,
+			);
+			name = "AxcUIKit控件库";
+			path = "../../AxcBadrock-Swift/AxcBadrock/AxcUIKit控件库";
+			sourceTree = "<group>";
+		};
+		003A2FD12681B94100F5D3E3 /* AxcListEmptyView列表空视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FD22681B94100F5D3E3 /* AxcListEmptyView.swift */,
+			);
+			path = "AxcListEmptyView列表空视图";
+			sourceTree = "<group>";
+		};
+		003A2FD32681B94100F5D3E3 /* AxcTextView文本输入 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FD42681B94100F5D3E3 /* AxcTextView.swift */,
+			);
+			path = "AxcTextView文本输入";
+			sourceTree = "<group>";
+		};
+		003A2FD52681B94100F5D3E3 /* AxcNavBar自定导航栏 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FD62681B94100F5D3E3 /* AxcNavBar.swift */,
+			);
+			path = "AxcNavBar自定导航栏";
+			sourceTree = "<group>";
+		};
+		003A2FD72681B94100F5D3E3 /* AxcDatePickerView时间选择 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FD82681B94100F5D3E3 /* AxcDatePickerView.swift */,
+			);
+			path = "AxcDatePickerView时间选择";
+			sourceTree = "<group>";
+		};
+		003A2FD92681B94100F5D3E3 /* AxcCaptchaCodeControl验证码 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FDA2681B94100F5D3E3 /* AxcCaptchaCodeControl.swift */,
+			);
+			path = "AxcCaptchaCodeControl验证码";
+			sourceTree = "<group>";
+		};
+		003A2FDB2681B94100F5D3E3 /* AxcLineLabel带线文字 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FDC2681B94100F5D3E3 /* AxcLineLabel.swift */,
+			);
+			path = "AxcLineLabel带线文字";
+			sourceTree = "<group>";
+		};
+		003A2FDD2681B94100F5D3E3 /* AxcHudView提示组件 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FDE2681B94100F5D3E3 /* AxcHudView.swift */,
+			);
+			path = "AxcHudView提示组件";
+			sourceTree = "<group>";
+		};
+		003A2FDF2681B94100F5D3E3 /* AxcProtocolControl同意协议 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FE02681B94100F5D3E3 /* AxcProtocolControl.swift */,
+			);
+			path = "AxcProtocolControl同意协议";
+			sourceTree = "<group>";
+		};
+		003A2FE12681B94100F5D3E3 /* AxcTagView标签选择 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FE22681B94100F5D3E3 /* AxcTagView.swift */,
+			);
+			path = "AxcTagView标签选择";
+			sourceTree = "<group>";
+		};
+		003A2FE32681B94100F5D3E3 /* AxcWaveView波浪视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FE42681B94100F5D3E3 /* AxcWaveView.swift */,
+			);
+			path = "AxcWaveView波浪视图";
+			sourceTree = "<group>";
+		};
+		003A2FE52681B94100F5D3E3 /* AxcBadgeLabel徽标 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FE62681B94100F5D3E3 /* AxcBadgeLabel.swift */,
+			);
+			path = "AxcBadgeLabel徽标";
+			sourceTree = "<group>";
+		};
+		003A2FE72681B94100F5D3E3 /* AxcContentScrollView内容滚动容器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FE82681B94100F5D3E3 /* AxcContentScrollView.swift */,
+			);
+			path = "AxcContentScrollView内容滚动容器";
+			sourceTree = "<group>";
+		};
+		003A2FE92681B94100F5D3E3 /* AxcTextField文本输入 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FEA2681B94100F5D3E3 /* AxcTextField.swift */,
+			);
+			path = "AxcTextField文本输入";
+			sourceTree = "<group>";
+		};
+		003A2FEB2681B94100F5D3E3 /* AxcTextScrollView文字滚动 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FEC2681B94100F5D3E3 /* AxcTextScrollView.swift */,
+			);
+			path = "AxcTextScrollView文字滚动";
+			sourceTree = "<group>";
+		};
+		003A2FED2681B94100F5D3E3 /* AxcPickerView滚轮选择 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FEE2681B94100F5D3E3 /* AxcPickerView.swift */,
+			);
+			path = "AxcPickerView滚轮选择";
+			sourceTree = "<group>";
+		};
+		003A2FEF2681B94100F5D3E3 /* AxcSegmentedControl分段单选 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FF02681B94100F5D3E3 /* AxcSegmentedControl.swift */,
+			);
+			path = "AxcSegmentedControl分段单选";
+			sourceTree = "<group>";
+		};
+		003A2FF12681B94100F5D3E3 /* AxcContentBannerView轮播容器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FF22681B94100F5D3E3 /* AxcContentBannerView.swift */,
+			);
+			path = "AxcContentBannerView轮播容器";
+			sourceTree = "<group>";
+		};
+		003A2FF32681B94100F5D3E3 /* AxcProgressView进度指示器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FF42681B94100F5D3E3 /* AxcProgressView.swift */,
+			);
+			path = "AxcProgressView进度指示器";
+			sourceTree = "<group>";
+		};
+		003A2FF52681B94100F5D3E3 /* AxcButton按钮 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FF62681B94100F5D3E3 /* AxcButton.swift */,
+			);
+			path = "AxcButton按钮";
+			sourceTree = "<group>";
+		};
+		003A2FF72681B94200F5D3E3 /* AxcPageScrollController分页列表 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FF82681B94200F5D3E3 /* AxcPageScrollController.swift */,
+				003A2FF92681B94200F5D3E3 /* AxcPageScrollView.swift */,
+				003A2FFA2681B94200F5D3E3 /* AxcPageItemVC.swift */,
+			);
+			path = "AxcPageScrollController分页列表";
+			sourceTree = "<group>";
+		};
+		003A2FFB2681B94200F5D3E3 /* AxcTextBannerView文字轮播 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FFC2681B94200F5D3E3 /* AxcTextBannerView.swift */,
+			);
+			path = "AxcTextBannerView文字轮播";
+			sourceTree = "<group>";
+		};
+		003A2FFD2681B94200F5D3E3 /* AxcAlentVC弹窗控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A2FFE2681B94200F5D3E3 /* AxcAlentVC.swift */,
+				003A2FFF2681B94200F5D3E3 /* AxcAlentVCAnimation.swift */,
+			);
+			path = "AxcAlentVC弹窗控制器";
+			sourceTree = "<group>";
+		};
+		003A30002681B94200F5D3E3 /* AxcCameraView摄像头视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30012681B94200F5D3E3 /* AxcCameraView.swift */,
+			);
+			path = "AxcCameraView摄像头视图";
+			sourceTree = "<group>";
+		};
+		003A30022681B94200F5D3E3 /* AxcWebVC网页控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30032681B94200F5D3E3 /* AxcWebVC.swift */,
+			);
+			path = "AxcWebVC网页控制器";
+			sourceTree = "<group>";
+		};
+		003A30042681B94200F5D3E3 /* AxcBookView书视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30052681B94200F5D3E3 /* AxcBookView.swift */,
+			);
+			path = "AxcBookView书视图";
+			sourceTree = "<group>";
+		};
+		003A30062681B94200F5D3E3 /* AxcWebView网页视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30072681B94200F5D3E3 /* AxcWebView.swift */,
+			);
+			path = "AxcWebView网页视图";
+			sourceTree = "<group>";
+		};
+		003A30082681B94200F5D3E3 /* AxcPageControl分页控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30092681B94200F5D3E3 /* AxcPageControl.swift */,
+			);
+			path = "AxcPageControl分页控制器";
+			sourceTree = "<group>";
+		};
+		003A300A2681B94200F5D3E3 /* AxcChooseView选择视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A300B2681B94200F5D3E3 /* AxcChooseView.swift */,
+			);
+			path = "AxcChooseView选择视图";
+			sourceTree = "<group>";
+		};
+		003A300C2681B94200F5D3E3 /* AxcLoadingView加载动画视图 */ = {
+			isa = PBXGroup;
+			children = (
+				003A300D2681B94200F5D3E3 /* AxcBaseLoadingView.swift */,
+				003A300E2681B94200F5D3E3 /* AxcLoadingCircleView.swift */,
+			);
+			path = "AxcLoadingView加载动画视图";
+			sourceTree = "<group>";
+		};
+		003A300F2681B94200F5D3E3 /* AxcPlayerView视频播放 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30102681B94200F5D3E3 /* AxcPlayerView.swift */,
+			);
+			path = "AxcPlayerView视频播放";
+			sourceTree = "<group>";
+		};
+		003A30122681B94200F5D3E3 /* AxcBase基类库 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30132681B94200F5D3E3 /* AxcBaseCollectionReusableView.swift */,
+				003A30142681B94200F5D3E3 /* AxcBaseVC.swift */,
+				003A30152681B94200F5D3E3 /* AxcBaseClassProtocol.swift */,
+				003A30162681B94200F5D3E3 /* AxcBaseNavVC.swift */,
+				003A30172681B94200F5D3E3 /* AxcBaseControl.swift */,
+				003A30182681B94200F5D3E3 /* AxcBaseCollectionCell.swift */,
+				003A30192681B94200F5D3E3 /* AxcBaseLabel.swift */,
+				003A301A2681B94200F5D3E3 /* AxcBaseTabbarVC.swift */,
+				003A301B2681B94200F5D3E3 /* AxcBaseTableCell.swift */,
+				003A301C2681B94200F5D3E3 /* AxcBaseView.swift */,
+			);
+			name = "AxcBase基类库";
+			path = "../../AxcBadrock-Swift/AxcBadrock/AxcBase基类库";
+			sourceTree = "<group>";
+		};
+		003A301D2681B94200F5D3E3 /* Extension扩展类 */ = {
+			isa = PBXGroup;
+			children = (
+				003A301E2681B94200F5D3E3 /* WebKit */,
+				003A30202681B94200F5D3E3 /* CoreImage */,
+				003A302D2681B94200F5D3E3 /* CoreGraphics */,
+				003A30372681B94200F5D3E3 /* UIKit */,
+				003A305B2681B94300F5D3E3 /* Foundation */,
+				003A30672681B94300F5D3E3 /* SwiftLib */,
+				003A307E2681B94300F5D3E3 /* AVFoundation */,
+				003A30802681B94300F5D3E3 /* Struct结构体 */,
+				003A308F2681B94300F5D3E3 /* CoreFoundation */,
+				003A30942681B94300F5D3E3 /* CoreAnimation */,
+			);
+			name = "Extension扩展类";
+			path = "../../AxcBadrock-Swift/AxcBadrock/Extension扩展类";
+			sourceTree = "<group>";
+		};
+		003A301E2681B94200F5D3E3 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				003A301F2681B94200F5D3E3 /* AxcWKWebViewEx.swift */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		003A30202681B94200F5D3E3 /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				003A30212681B94200F5D3E3 /* Filter滤镜 */,
+				003A302C2681B94200F5D3E3 /* AxcCIImageEx.swift */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		003A30212681B94200F5D3E3 /* Filter滤镜 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30222681B94200F5D3E3 /* AxcGradientStyleFilter.swift */,
+				003A30232681B94200F5D3E3 /* AxcGeneratorStyleFilter.swift */,
+				003A30242681B94200F5D3E3 /* AxcBlurStyleFilter.swift */,
+				003A30252681B94200F5D3E3 /* AxcStylizeStyleFilter.swift */,
+				003A30262681B94200F5D3E3 /* AxcReductionStyleFilter.swift */,
+				003A30272681B94200F5D3E3 /* AxcSharpenStyleFilter.swift */,
+				003A30282681B94200F5D3E3 /* AxcTileEffectStyleFilter.swift */,
+				003A30292681B94200F5D3E3 /* Base */,
+			);
+			path = "Filter滤镜";
+			sourceTree = "<group>";
+		};
+		003A30292681B94200F5D3E3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				003A302A2681B94200F5D3E3 /* AxcBaseFilter.swift */,
+				003A302B2681B94200F5D3E3 /* AxcBaseStyleFilter.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		003A302D2681B94200F5D3E3 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				003A302E2681B94200F5D3E3 /* AxcCGImageEx.swift */,
+				003A302F2681B94200F5D3E3 /* AxcCGAffineTransformEx.swift */,
+				003A30302681B94200F5D3E3 /* AxcZeroProtocolEx.swift */,
+				003A30312681B94200F5D3E3 /* AxcCGFloatEx.swift */,
+				003A30322681B94200F5D3E3 /* AxcCGPointEx.swift */,
+				003A30332681B94200F5D3E3 /* AxcCGPathEx.swift */,
+				003A30342681B94200F5D3E3 /* AxcCGSizeEx.swift */,
+				003A30352681B94200F5D3E3 /* AxcCGRectEx.swift */,
+				003A30362681B94200F5D3E3 /* AxcCGColorEx.swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		003A30372681B94200F5D3E3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				003A30382681B94200F5D3E3 /* AxcUITableViewEx.swift */,
+				003A30392681B94200F5D3E3 /* AxcUIBarButtonItemEx.swift */,
+				003A303A2681B94200F5D3E3 /* AxcUINavigationBarEx.swift */,
+				003A303B2681B94200F5D3E3 /* AxcUIImageViewEx.swift */,
+				003A303C2681B94200F5D3E3 /* AxcUIAlertControllerEx.swift */,
+				003A303D2681B94200F5D3E3 /* AxcUIAlertActionEx.swift */,
+				003A303E2681B94200F5D3E3 /* AxcUIControlEx.swift */,
+				003A303F2681B94200F5D3E3 /* AxcUICollectionReusableViewEx.swift */,
+				003A30402681B94200F5D3E3 /* AxcUITextFieldEx.swift */,
+				003A30412681B94200F5D3E3 /* AxcUITabBarItemEx.swift */,
+				003A30422681B94200F5D3E3 /* AxcUIColorEx.swift */,
+				003A30432681B94200F5D3E3 /* AxcUILabelEx.swift */,
+				003A30442681B94200F5D3E3 /* AxcUIViewEx.swift */,
+				003A30452681B94200F5D3E3 /* AxcUITabBarControllerEx.swift */,
+				003A30462681B94200F5D3E3 /* AxcUIScrollViewEx.swift */,
+				003A30472681B94200F5D3E3 /* AxcUICollectionViewEx.swift */,
+				003A30482681B94200F5D3E3 /* AxcUIImageEx.swift */,
+				003A30492681B94200F5D3E3 /* AxcUINavigationControllerEx.swift */,
+				003A304A2681B94200F5D3E3 /* AxcUnified统一协议 */,
+				003A304E2681B94300F5D3E3 /* AxcUIMenuItemEx.swift */,
+				003A304F2681B94300F5D3E3 /* AxcUITabBarEx.swift */,
+				003A30502681B94300F5D3E3 /* AxcUIResponderEx.swift */,
+				003A30512681B94300F5D3E3 /* AxcUITextViewEx.swift */,
+				003A30522681B94300F5D3E3 /* AxcUIGestureRecognizerEx.swift */,
+				003A30532681B94300F5D3E3 /* AxcUIViewControllerEx.swift */,
+				003A30542681B94300F5D3E3 /* AxcUIFontEx.swift */,
+				003A30552681B94300F5D3E3 /* AxcUIBezierPathEx.swift */,
+				003A30562681B94300F5D3E3 /* AxcUIEdgeInsetsEx.swift */,
+				003A30572681B94300F5D3E3 /* AxcUINavigationItemEx.swift */,
+				003A30582681B94300F5D3E3 /* AxcUIButtonEx.swift */,
+				003A30592681B94300F5D3E3 /* AxcUITextInputEx.swift */,
+				003A305A2681B94300F5D3E3 /* AxcUICollectionViewFlowLayoutEx.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		003A304A2681B94200F5D3E3 /* AxcUnified统一协议 */ = {
+			isa = PBXGroup;
+			children = (
+				003A304B2681B94200F5D3E3 /* AxcUnifiedFontTarget.swift */,
+				003A304C2681B94200F5D3E3 /* AxcUnifiedImageTarget.swift */,
+				003A304D2681B94200F5D3E3 /* AxcUnifiedColorTarget.swift */,
+			);
+			path = "AxcUnified统一协议";
+			sourceTree = "<group>";
+		};
+		003A305B2681B94300F5D3E3 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				003A305C2681B94300F5D3E3 /* AxcNSObjectEx.swift */,
+				003A305D2681B94300F5D3E3 /* AxcNSDictionaryEx.swift */,
+				003A305E2681B94300F5D3E3 /* AxcNSMutableDataEx.swift */,
+				003A305F2681B94300F5D3E3 /* AttributedString */,
+				003A30652681B94300F5D3E3 /* AxcNSDataEx.swift */,
+				003A30662681B94300F5D3E3 /* AxcNSStringEx.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		003A305F2681B94300F5D3E3 /* AttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				003A30602681B94300F5D3E3 /* AxcNSShadowEx.swift */,
+				003A30612681B94300F5D3E3 /* AxcNSAttributedStringEx.swift */,
+				003A30622681B94300F5D3E3 /* AxcNSMutableParagraphStyleEx.swift */,
+				003A30632681B94300F5D3E3 /* AxcNSTextAttachmentEx.swift */,
+				003A30642681B94300F5D3E3 /* AxcNSParagraphStyleEx.swift */,
+			);
+			path = AttributedString;
+			sourceTree = "<group>";
+		};
+		003A30672681B94300F5D3E3 /* SwiftLib */ = {
+			isa = PBXGroup;
+			children = (
+				003A30682681B94300F5D3E3 /* Dispatch线程 */,
+				003A306A2681B94300F5D3E3 /* AxcRangeEx.swift */,
+				003A306B2681B94300F5D3E3 /* Date时间类型 */,
+				003A306D2681B94300F5D3E3 /* DataStruct数据结构 */,
+				003A30732681B94300F5D3E3 /* AxcUserDefaultsEx.swift */,
+				003A30742681B94300F5D3E3 /* AxcNotificationCenterEx.swift */,
+				003A30752681B94300F5D3E3 /* BaseDataElement基础数据类型 */,
+				003A307C2681B94300F5D3E3 /* AxcIndexPathEx.swift */,
+				003A307D2681B94300F5D3E3 /* AxcUrlEx.swift */,
+			);
+			path = SwiftLib;
+			sourceTree = "<group>";
+		};
+		003A30682681B94300F5D3E3 /* Dispatch线程 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30692681B94300F5D3E3 /* AxcDispatchEx.swift */,
+			);
+			path = "Dispatch线程";
+			sourceTree = "<group>";
+		};
+		003A306B2681B94300F5D3E3 /* Date时间类型 */ = {
+			isa = PBXGroup;
+			children = (
+				003A306C2681B94300F5D3E3 /* AxcDateEx.swift */,
+			);
+			path = "Date时间类型";
+			sourceTree = "<group>";
+		};
+		003A306D2681B94300F5D3E3 /* DataStruct数据结构 */ = {
+			isa = PBXGroup;
+			children = (
+				003A306E2681B94300F5D3E3 /* AxcDictionaryEx.swift */,
+				003A306F2681B94300F5D3E3 /* AxcArrayEx.swift */,
+				003A30702681B94300F5D3E3 /* AxcDataEx.swift */,
+				003A30712681B94300F5D3E3 /* AxcDataStructEx.swift */,
+				003A30722681B94300F5D3E3 /* AxcStringEx.swift */,
+			);
+			path = "DataStruct数据结构";
+			sourceTree = "<group>";
+		};
+		003A30752681B94300F5D3E3 /* BaseDataElement基础数据类型 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30762681B94300F5D3E3 /* AxcSignedIntegerEx.swift */,
+				003A30772681B94300F5D3E3 /* AxcCharacterEx.swift */,
+				003A30782681B94300F5D3E3 /* AxcFloatingPointEx.swift */,
+				003A30792681B94300F5D3E3 /* AxcBoolEx.swift */,
+				003A307A2681B94300F5D3E3 /* AxcFixedWidthIntegerEx.swift */,
+				003A307B2681B94300F5D3E3 /* AxcUnifiedNumberTarget.swift */,
+			);
+			path = "BaseDataElement基础数据类型";
+			sourceTree = "<group>";
+		};
+		003A307E2681B94300F5D3E3 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				003A307F2681B94300F5D3E3 /* AxcAVCaptureDeviceEx.swift */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		003A30802681B94300F5D3E3 /* Struct结构体 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30812681B94300F5D3E3 /* AxcDirection按位与方位 */,
+				003A30832681B94300F5D3E3 /* AxcDateChunk时间块 */,
+				003A30852681B94300F5D3E3 /* AxcRuntime运行时 */,
+				003A30872681B94300F5D3E3 /* AxcRegisterStruct注册体 */,
+				003A30892681B94300F5D3E3 /* AxcPolarAxis极坐标 */,
+				003A308B2681B94300F5D3E3 /* AxcUserDefault小型存储 */,
+				003A308D2681B94300F5D3E3 /* AxcGCD线程 */,
+			);
+			path = "Struct结构体";
+			sourceTree = "<group>";
+		};
+		003A30812681B94300F5D3E3 /* AxcDirection按位与方位 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30822681B94300F5D3E3 /* AxcDirection.swift */,
+			);
+			path = "AxcDirection按位与方位";
+			sourceTree = "<group>";
+		};
+		003A30832681B94300F5D3E3 /* AxcDateChunk时间块 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30842681B94300F5D3E3 /* AxcDateChunk.swift */,
+			);
+			path = "AxcDateChunk时间块";
+			sourceTree = "<group>";
+		};
+		003A30852681B94300F5D3E3 /* AxcRuntime运行时 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30862681B94300F5D3E3 /* AxcRuntime.swift */,
+			);
+			path = "AxcRuntime运行时";
+			sourceTree = "<group>";
+		};
+		003A30872681B94300F5D3E3 /* AxcRegisterStruct注册体 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30882681B94300F5D3E3 /* AxcRegisterStruct.swift */,
+			);
+			path = "AxcRegisterStruct注册体";
+			sourceTree = "<group>";
+		};
+		003A30892681B94300F5D3E3 /* AxcPolarAxis极坐标 */ = {
+			isa = PBXGroup;
+			children = (
+				003A308A2681B94300F5D3E3 /* AxcPolarAxis.swift */,
+			);
+			path = "AxcPolarAxis极坐标";
+			sourceTree = "<group>";
+		};
+		003A308B2681B94300F5D3E3 /* AxcUserDefault小型存储 */ = {
+			isa = PBXGroup;
+			children = (
+				003A308C2681B94300F5D3E3 /* AxcUserDefault.swift */,
+			);
+			path = "AxcUserDefault小型存储";
+			sourceTree = "<group>";
+		};
+		003A308D2681B94300F5D3E3 /* AxcGCD线程 */ = {
+			isa = PBXGroup;
+			children = (
+				003A308E2681B94300F5D3E3 /* AxcGCD.swift */,
+			);
+			path = "AxcGCD线程";
+			sourceTree = "<group>";
+		};
+		003A308F2681B94300F5D3E3 /* CoreFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				003A30902681B94300F5D3E3 /* AxcCFTypeIDProtocol.swift */,
+				003A30912681B94300F5D3E3 /* AxcCFMutableDictionaryEx.swift */,
+				003A30922681B94300F5D3E3 /* AxcCFDataEx.swift */,
+				003A30932681B94300F5D3E3 /* AxcCFStringEx.swift */,
+			);
+			path = CoreFoundation;
+			sourceTree = "<group>";
+		};
+		003A30942681B94300F5D3E3 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				003A30952681B94300F5D3E3 /* AxcCAPropertyAnimationEx.swift */,
+				003A30962681B94300F5D3E3 /* AxcCATextLayer.swift */,
+				003A30972681B94300F5D3E3 /* AxcCATransitionEx.swift */,
+				003A30982681B94300F5D3E3 /* AxcCALayerEx.swift */,
+				003A30992681B94300F5D3E3 /* AxcCAKeyframeAnimationEx.swift */,
+				003A309A2681B94300F5D3E3 /* AxcCAShapeLayerEx.swift */,
+				003A309B2681B94300F5D3E3 /* AxcCATransactionEx.swift */,
+				003A309C2681B94300F5D3E3 /* AxcCAGradientLayerEx.swift */,
+				003A309D2681B94300F5D3E3 /* AxcCABasicAnimationEx.swift */,
+				003A309E2681B94300F5D3E3 /* AxcCAAnimationEx.swift */,
+				003A309F2681B94300F5D3E3 /* AxcCAAnimationGroupEx.swift */,
+				003A30A02681B94300F5D3E3 /* AxcCASpringAnimationEx.swift */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		003A30A12681B94300F5D3E3 /* Unit工具类 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30A22681B94300F5D3E3 /* AxcUrlConfig域名管理 */,
+				003A30A52681B94300F5D3E3 /* AxcCacheManager缓存管理 */,
+				003A30A72681B94300F5D3E3 /* AxcHardwareManager硬件管理 */,
+				003A30B32681B94400F5D3E3 /* AxcLanguageManager语言管理 */,
+				003A30B52681B94400F5D3E3 /* AxcAnimationManager动画管理 */,
+				003A30BB2681B94400F5D3E3 /* AxcLayout轻量级布局 */,
+				003A30C52681B94400F5D3E3 /* AxcFlowLayoutManager流布局管理 */,
+				003A30D32681B94400F5D3E3 /* AxcBadrockBundle资源管理 */,
+			);
+			name = "Unit工具类";
+			path = "../../AxcBadrock-Swift/AxcBadrock/Unit工具类";
+			sourceTree = "<group>";
+		};
+		003A30A22681B94300F5D3E3 /* AxcUrlConfig域名管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30A32681B94300F5D3E3 /* AxcUrlConfig.swift */,
+				003A30A42681B94300F5D3E3 /* AxcUrlConfigVC.swift */,
+			);
+			path = "AxcUrlConfig域名管理";
+			sourceTree = "<group>";
+		};
+		003A30A52681B94300F5D3E3 /* AxcCacheManager缓存管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30A62681B94300F5D3E3 /* AxcCacheManager.swift */,
+			);
+			path = "AxcCacheManager缓存管理";
+			sourceTree = "<group>";
+		};
+		003A30A72681B94300F5D3E3 /* AxcHardwareManager硬件管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30A82681B94300F5D3E3 /* AxcAuthorizedManager授权管理 */,
+				003A30AA2681B94300F5D3E3 /* AxcLocationManager定位管理 */,
+				003A30AC2681B94400F5D3E3 /* AxcCameraManager相机管理 */,
+				003A30B02681B94400F5D3E3 /* AxcHardwareManager.swift */,
+				003A30B12681B94400F5D3E3 /* AxcVibrationManager震动管理 */,
+			);
+			path = "AxcHardwareManager硬件管理";
+			sourceTree = "<group>";
+		};
+		003A30A82681B94300F5D3E3 /* AxcAuthorizedManager授权管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30A92681B94300F5D3E3 /* AxcAuthorizedManager.swift */,
+			);
+			path = "AxcAuthorizedManager授权管理";
+			sourceTree = "<group>";
+		};
+		003A30AA2681B94300F5D3E3 /* AxcLocationManager定位管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30AB2681B94300F5D3E3 /* AxcLocationManager.swift */,
+			);
+			path = "AxcLocationManager定位管理";
+			sourceTree = "<group>";
+		};
+		003A30AC2681B94400F5D3E3 /* AxcCameraManager相机管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30AD2681B94400F5D3E3 /* AxcCameraEnum.swift */,
+				003A30AE2681B94400F5D3E3 /* AxcCameraManagerNew.swift */,
+				003A30AF2681B94400F5D3E3 /* AxcCameraManager.swift */,
+			);
+			path = "AxcCameraManager相机管理";
+			sourceTree = "<group>";
+		};
+		003A30B12681B94400F5D3E3 /* AxcVibrationManager震动管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30B22681B94400F5D3E3 /* AxcVibrationManager.swift */,
+			);
+			path = "AxcVibrationManager震动管理";
+			sourceTree = "<group>";
+		};
+		003A30B32681B94400F5D3E3 /* AxcLanguageManager语言管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30B42681B94400F5D3E3 /* AxcLanguageManager.swift */,
+			);
+			path = "AxcLanguageManager语言管理";
+			sourceTree = "<group>";
+		};
+		003A30B52681B94400F5D3E3 /* AxcAnimationManager动画管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30B62681B94400F5D3E3 /* AxcBaseVCAnimationTransitioning转场动画 */,
+				003A30B82681B94400F5D3E3 /* AxcAnimationMaker动画链式语法 */,
+				003A30BA2681B94400F5D3E3 /* AxcAnimationManager.swift */,
+			);
+			path = "AxcAnimationManager动画管理";
+			sourceTree = "<group>";
+		};
+		003A30B62681B94400F5D3E3 /* AxcBaseVCAnimationTransitioning转场动画 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30B72681B94400F5D3E3 /* AxcBaseVCAnimationTransitioning.swift */,
+			);
+			path = "AxcBaseVCAnimationTransitioning转场动画";
+			sourceTree = "<group>";
+		};
+		003A30B82681B94400F5D3E3 /* AxcAnimationMaker动画链式语法 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30B92681B94400F5D3E3 /* AxcAnimationMaker.swift */,
+			);
+			path = "AxcAnimationMaker动画链式语法";
+			sourceTree = "<group>";
+		};
+		003A30BB2681B94400F5D3E3 /* AxcLayout轻量级布局 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30BC2681B94400F5D3E3 /* AxcConstraintDSL.swift */,
+				003A30BD2681B94400F5D3E3 /* AxcConstraintConstantTarget.swift */,
+				003A30BE2681B94400F5D3E3 /* AxcConstraintMakerRelatable.swift */,
+				003A30BF2681B94400F5D3E3 /* AxcConstraintMaker.swift */,
+				003A30C02681B94400F5D3E3 /* AxcConstraintMakerExtendable.swift */,
+				003A30C12681B94400F5D3E3 /* AxcConstraintAttributes.swift */,
+				003A30C22681B94400F5D3E3 /* AxcConstraintDescription.swift */,
+				003A30C32681B94400F5D3E3 /* AxcConstraintMakerEditable.swift */,
+				003A30C42681B94400F5D3E3 /* AxcConstraint.swift */,
+			);
+			path = "AxcLayout轻量级布局";
+			sourceTree = "<group>";
+		};
+		003A30C52681B94400F5D3E3 /* AxcFlowLayoutManager流布局管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30C62681B94400F5D3E3 /* AxcFlowLayoutManager.swift */,
+				003A30C72681B94400F5D3E3 /* FlowLayout布局对象 */,
+			);
+			path = "AxcFlowLayoutManager流布局管理";
+			sourceTree = "<group>";
+		};
+		003A30C72681B94400F5D3E3 /* FlowLayout布局对象 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30C82681B94400F5D3E3 /* AxcPage分页式布局 */,
+				003A30CB2681B94400F5D3E3 /* AxcTable列表式布局 */,
+				003A30CE2681B94400F5D3E3 /* AxcBase大基类 */,
+				003A30D02681B94400F5D3E3 /* AxcBanne横幅式布局 */,
+			);
+			path = "FlowLayout布局对象";
+			sourceTree = "<group>";
+		};
+		003A30C82681B94400F5D3E3 /* AxcPage分页式布局 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30C92681B94400F5D3E3 /* AxcBasePage基分页式 */,
+			);
+			path = "AxcPage分页式布局";
+			sourceTree = "<group>";
+		};
+		003A30C92681B94400F5D3E3 /* AxcBasePage基分页式 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30CA2681B94400F5D3E3 /* AxcBasePageFlowLayout.swift */,
+			);
+			path = "AxcBasePage基分页式";
+			sourceTree = "<group>";
+		};
+		003A30CB2681B94400F5D3E3 /* AxcTable列表式布局 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30CC2681B94400F5D3E3 /* AxcBaseTableFlowLayout基列表式 */,
+			);
+			path = "AxcTable列表式布局";
+			sourceTree = "<group>";
+		};
+		003A30CC2681B94400F5D3E3 /* AxcBaseTableFlowLayout基列表式 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30CD2681B94400F5D3E3 /* AxcBaseTableFlowLayout.swift */,
+			);
+			path = "AxcBaseTableFlowLayout基列表式";
+			sourceTree = "<group>";
+		};
+		003A30CE2681B94400F5D3E3 /* AxcBase大基类 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30CF2681B94400F5D3E3 /* AxcBaseFlowLayout.swift */,
+			);
+			path = "AxcBase大基类";
+			sourceTree = "<group>";
+		};
+		003A30D02681B94400F5D3E3 /* AxcBanne横幅式布局 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30D12681B94400F5D3E3 /* AxcBaseBanner基横幅式 */,
+			);
+			path = "AxcBanne横幅式布局";
+			sourceTree = "<group>";
+		};
+		003A30D12681B94400F5D3E3 /* AxcBaseBanner基横幅式 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30D22681B94400F5D3E3 /* AxcBaseBannerFlowLayout.swift */,
+			);
+			path = "AxcBaseBanner基横幅式";
+			sourceTree = "<group>";
+		};
+		003A30D32681B94400F5D3E3 /* AxcBadrockBundle资源管理 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30D42681B94400F5D3E3 /* AxcBadrockBundle.swift */,
+			);
+			path = "AxcBadrockBundle资源管理";
+			sourceTree = "<group>";
+		};
+		003A30D52681B94500F5D3E3 /* AxcBadrockProtocol功能性扩展协议 */ = {
+			isa = PBXGroup;
+			children = (
+				003A30D62681B94500F5D3E3 /* AxcBadrockProtocol.swift */,
+			);
+			name = "AxcBadrockProtocol功能性扩展协议";
+			path = "../../AxcBadrock-Swift/AxcBadrock/AxcBadrockProtocol功能性扩展协议";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		003A2FAE2681B90800F5D3E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A2FC42681B90800F5D3E3 /* AxcBadrock.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		003A2FB22681B90800F5D3E3 /* AxcBadrock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003A2FC72681B90800F5D3E3 /* Build configuration list for PBXNativeTarget "AxcBadrock" */;
+			buildPhases = (
+				003A2FAE2681B90800F5D3E3 /* Headers */,
+				003A2FAF2681B90800F5D3E3 /* Sources */,
+				003A2FB02681B90800F5D3E3 /* Frameworks */,
+				003A2FB12681B90800F5D3E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AxcBadrock;
+			productName = AxcBadrock;
+			productReference = 003A2FB32681B90800F5D3E3 /* AxcBadrock.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		003A2FBB2681B90800F5D3E3 /* AxcBadrockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003A2FCA2681B90800F5D3E3 /* Build configuration list for PBXNativeTarget "AxcBadrockTests" */;
+			buildPhases = (
+				003A2FB82681B90800F5D3E3 /* Sources */,
+				003A2FB92681B90800F5D3E3 /* Frameworks */,
+				003A2FBA2681B90800F5D3E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				003A2FBF2681B90800F5D3E3 /* PBXTargetDependency */,
+			);
+			name = AxcBadrockTests;
+			productName = AxcBadrockTests;
+			productReference = 003A2FBC2681B90800F5D3E3 /* AxcBadrockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		003A2FAA2681B90800F5D3E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					003A2FB22681B90800F5D3E3 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					003A2FBB2681B90800F5D3E3 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 003A2FAD2681B90800F5D3E3 /* Build configuration list for PBXProject "AxcBadrock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 003A2FA92681B90800F5D3E3;
+			productRefGroup = 003A2FB42681B90800F5D3E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				003A2FB22681B90800F5D3E3 /* AxcBadrock */,
+				003A2FBB2681B90800F5D3E3 /* AxcBadrockTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		003A2FB12681B90800F5D3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A30D82681B94500F5D3E3 /* AxcBadrock.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A2FBA2681B90800F5D3E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		003A2FAF2681B90800F5D3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A315F2681B94600F5D3E3 /* AxcUserDefault.swift in Sources */,
+				003A317C2681B94600F5D3E3 /* AxcBaseVCAnimationTransitioning.swift in Sources */,
+				003A31802681B94600F5D3E3 /* AxcConstraintConstantTarget.swift in Sources */,
+				003A316F2681B94600F5D3E3 /* AxcCAAnimationGroupEx.swift in Sources */,
+				003A310C2681B94500F5D3E3 /* AxcReductionStyleFilter.swift in Sources */,
+				003A31432681B94600F5D3E3 /* AxcNSTextAttachmentEx.swift in Sources */,
+				003A30E52681B94500F5D3E3 /* AxcContentScrollView.swift in Sources */,
+				003A315B2681B94600F5D3E3 /* AxcDateChunk.swift in Sources */,
+				003A316C2681B94600F5D3E3 /* AxcCAGradientLayerEx.swift in Sources */,
+				003A31152681B94500F5D3E3 /* AxcCGFloatEx.swift in Sources */,
+				003A315A2681B94600F5D3E3 /* AxcDirection.swift in Sources */,
+				003A31012681B94500F5D3E3 /* AxcBaseControl.swift in Sources */,
+				003A317D2681B94600F5D3E3 /* AxcAnimationMaker.swift in Sources */,
+				003A30EA2681B94500F5D3E3 /* AxcContentBannerView.swift in Sources */,
+				003A30F12681B94500F5D3E3 /* AxcAlentVC.swift in Sources */,
+				003A31212681B94500F5D3E3 /* AxcUIControlEx.swift in Sources */,
+				003A31252681B94500F5D3E3 /* AxcUIColorEx.swift in Sources */,
+				003A31462681B94600F5D3E3 /* AxcNSStringEx.swift in Sources */,
+				003A317F2681B94600F5D3E3 /* AxcConstraintDSL.swift in Sources */,
+				003A312D2681B94600F5D3E3 /* AxcUnifiedFontTarget.swift in Sources */,
+				003A318A2681B94600F5D3E3 /* AxcBaseTableFlowLayout.swift in Sources */,
+				003A311F2681B94500F5D3E3 /* AxcUIAlertControllerEx.swift in Sources */,
+				003A318B2681B94600F5D3E3 /* AxcBaseFlowLayout.swift in Sources */,
+				003A31352681B94600F5D3E3 /* AxcUIViewControllerEx.swift in Sources */,
+				003A31822681B94600F5D3E3 /* AxcConstraintMaker.swift in Sources */,
+				003A31042681B94500F5D3E3 /* AxcBaseTabbarVC.swift in Sources */,
+				003A31362681B94600F5D3E3 /* AxcUIFontEx.swift in Sources */,
+				003A31542681B94600F5D3E3 /* AxcBoolEx.swift in Sources */,
+				003A31072681B94500F5D3E3 /* AxcWKWebViewEx.swift in Sources */,
+				003A30FF2681B94500F5D3E3 /* AxcBaseClassProtocol.swift in Sources */,
+				003A31842681B94600F5D3E3 /* AxcConstraintAttributes.swift in Sources */,
+				003A30DC2681B94500F5D3E3 /* AxcNavBar.swift in Sources */,
+				003A31422681B94600F5D3E3 /* AxcNSMutableParagraphStyleEx.swift in Sources */,
+				003A31682681B94600F5D3E3 /* AxcCALayerEx.swift in Sources */,
+				003A31492681B94600F5D3E3 /* AxcDateEx.swift in Sources */,
+				003A30F72681B94500F5D3E3 /* AxcPageControl.swift in Sources */,
+				003A31882681B94600F5D3E3 /* AxcFlowLayoutManager.swift in Sources */,
+				003A31652681B94600F5D3E3 /* AxcCAPropertyAnimationEx.swift in Sources */,
+				003A31622681B94600F5D3E3 /* AxcCFMutableDictionaryEx.swift in Sources */,
+				003A31712681B94600F5D3E3 /* AxcUrlConfig.swift in Sources */,
+				003A31342681B94600F5D3E3 /* AxcUIGestureRecognizerEx.swift in Sources */,
+				003A313B2681B94600F5D3E3 /* AxcUITextInputEx.swift in Sources */,
+				003A311B2681B94500F5D3E3 /* AxcUITableViewEx.swift in Sources */,
+				003A318C2681B94600F5D3E3 /* AxcBaseBannerFlowLayout.swift in Sources */,
+				003A312B2681B94500F5D3E3 /* AxcUIImageEx.swift in Sources */,
+				003A31282681B94500F5D3E3 /* AxcUITabBarControllerEx.swift in Sources */,
+				003A31612681B94600F5D3E3 /* AxcCFTypeIDProtocol.swift in Sources */,
+				003A311E2681B94500F5D3E3 /* AxcUIImageViewEx.swift in Sources */,
+				003A31302681B94600F5D3E3 /* AxcUIMenuItemEx.swift in Sources */,
+				003A314D2681B94600F5D3E3 /* AxcDataStructEx.swift in Sources */,
+				003A315E2681B94600F5D3E3 /* AxcPolarAxis.swift in Sources */,
+				003A31112681B94500F5D3E3 /* AxcCIImageEx.swift in Sources */,
+				003A30D92681B94500F5D3E3 /* AxcBadrock.swift in Sources */,
+				003A31222681B94500F5D3E3 /* AxcUICollectionReusableViewEx.swift in Sources */,
+				003A312E2681B94600F5D3E3 /* AxcUnifiedImageTarget.swift in Sources */,
+				003A311A2681B94500F5D3E3 /* AxcCGColorEx.swift in Sources */,
+				003A31562681B94600F5D3E3 /* AxcUnifiedNumberTarget.swift in Sources */,
+				003A31032681B94500F5D3E3 /* AxcBaseLabel.swift in Sources */,
+				003A31642681B94600F5D3E3 /* AxcCFStringEx.swift in Sources */,
+				003A317E2681B94600F5D3E3 /* AxcAnimationManager.swift in Sources */,
+				003A30FE2681B94500F5D3E3 /* AxcBaseVC.swift in Sources */,
+				003A316D2681B94600F5D3E3 /* AxcCABasicAnimationEx.swift in Sources */,
+				003A30FA2681B94500F5D3E3 /* AxcLoadingCircleView.swift in Sources */,
+				003A30F82681B94500F5D3E3 /* AxcChooseView.swift in Sources */,
+				003A31002681B94500F5D3E3 /* AxcBaseNavVC.swift in Sources */,
+				003A30E82681B94500F5D3E3 /* AxcPickerView.swift in Sources */,
+				003A30F62681B94500F5D3E3 /* AxcWebView.swift in Sources */,
+				003A31202681B94500F5D3E3 /* AxcUIAlertActionEx.swift in Sources */,
+				003A31062681B94500F5D3E3 /* AxcBaseView.swift in Sources */,
+				003A312A2681B94500F5D3E3 /* AxcUICollectionViewEx.swift in Sources */,
+				003A30DF2681B94500F5D3E3 /* AxcLineLabel.swift in Sources */,
+				003A313E2681B94600F5D3E3 /* AxcNSDictionaryEx.swift in Sources */,
+				003A311C2681B94500F5D3E3 /* AxcUIBarButtonItemEx.swift in Sources */,
+				003A31142681B94500F5D3E3 /* AxcZeroProtocolEx.swift in Sources */,
+				003A30EC2681B94500F5D3E3 /* AxcButton.swift in Sources */,
+				003A31412681B94600F5D3E3 /* AxcNSAttributedStringEx.swift in Sources */,
+				003A311D2681B94500F5D3E3 /* AxcUINavigationBarEx.swift in Sources */,
+				003A315C2681B94600F5D3E3 /* AxcRuntime.swift in Sources */,
+				003A31732681B94600F5D3E3 /* AxcCacheManager.swift in Sources */,
+				003A31262681B94500F5D3E3 /* AxcUILabelEx.swift in Sources */,
+				003A313F2681B94600F5D3E3 /* AxcNSMutableDataEx.swift in Sources */,
+				003A30E02681B94500F5D3E3 /* AxcHudView.swift in Sources */,
+				003A313A2681B94600F5D3E3 /* AxcUIButtonEx.swift in Sources */,
+				003A31122681B94500F5D3E3 /* AxcCGImageEx.swift in Sources */,
+				003A31592681B94600F5D3E3 /* AxcAVCaptureDeviceEx.swift in Sources */,
+				003A310A2681B94500F5D3E3 /* AxcBlurStyleFilter.swift in Sources */,
+				003A31662681B94600F5D3E3 /* AxcCATextLayer.swift in Sources */,
+				003A31332681B94600F5D3E3 /* AxcUITextViewEx.swift in Sources */,
+				003A314C2681B94600F5D3E3 /* AxcDataEx.swift in Sources */,
+				003A312C2681B94500F5D3E3 /* AxcUINavigationControllerEx.swift in Sources */,
+				003A31772681B94600F5D3E3 /* AxcCameraManagerNew.swift in Sources */,
+				003A31022681B94500F5D3E3 /* AxcBaseCollectionCell.swift in Sources */,
+				003A31782681B94600F5D3E3 /* AxcCameraManager.swift in Sources */,
+				003A30E12681B94500F5D3E3 /* AxcProtocolControl.swift in Sources */,
+				003A316B2681B94600F5D3E3 /* AxcCATransactionEx.swift in Sources */,
+				003A30E42681B94500F5D3E3 /* AxcBadgeLabel.swift in Sources */,
+				003A31452681B94600F5D3E3 /* AxcNSDataEx.swift in Sources */,
+				003A31632681B94600F5D3E3 /* AxcCFDataEx.swift in Sources */,
+				003A31392681B94600F5D3E3 /* AxcUINavigationItemEx.swift in Sources */,
+				003A31082681B94500F5D3E3 /* AxcGradientStyleFilter.swift in Sources */,
+				003A30E92681B94500F5D3E3 /* AxcSegmentedControl.swift in Sources */,
+				003A310D2681B94500F5D3E3 /* AxcSharpenStyleFilter.swift in Sources */,
+				003A31552681B94600F5D3E3 /* AxcFixedWidthIntegerEx.swift in Sources */,
+				003A31722681B94600F5D3E3 /* AxcUrlConfigVC.swift in Sources */,
+				003A31812681B94600F5D3E3 /* AxcConstraintMakerRelatable.swift in Sources */,
+				003A31482681B94600F5D3E3 /* AxcRangeEx.swift in Sources */,
+				003A30DE2681B94500F5D3E3 /* AxcCaptchaCodeControl.swift in Sources */,
+				003A30F02681B94500F5D3E3 /* AxcTextBannerView.swift in Sources */,
+				003A31532681B94600F5D3E3 /* AxcFloatingPointEx.swift in Sources */,
+				003A31602681B94600F5D3E3 /* AxcGCD.swift in Sources */,
+				003A31312681B94600F5D3E3 /* AxcUITabBarEx.swift in Sources */,
+				003A30EB2681B94500F5D3E3 /* AxcProgressView.swift in Sources */,
+				003A31852681B94600F5D3E3 /* AxcConstraintDescription.swift in Sources */,
+				003A31472681B94600F5D3E3 /* AxcDispatchEx.swift in Sources */,
+				003A31672681B94600F5D3E3 /* AxcCATransitionEx.swift in Sources */,
+				003A31132681B94500F5D3E3 /* AxcCGAffineTransformEx.swift in Sources */,
+				003A312F2681B94600F5D3E3 /* AxcUnifiedColorTarget.swift in Sources */,
+				003A30EE2681B94500F5D3E3 /* AxcPageScrollView.swift in Sources */,
+				003A31752681B94600F5D3E3 /* AxcLocationManager.swift in Sources */,
+				003A318D2681B94600F5D3E3 /* AxcBadrockBundle.swift in Sources */,
+				003A30FD2681B94500F5D3E3 /* AxcBaseCollectionReusableView.swift in Sources */,
+				003A316A2681B94600F5D3E3 /* AxcCAShapeLayerEx.swift in Sources */,
+				003A30FC2681B94500F5D3E3 /* AxcConstFile.swift in Sources */,
+				003A30F92681B94500F5D3E3 /* AxcBaseLoadingView.swift in Sources */,
+				003A315D2681B94600F5D3E3 /* AxcRegisterStruct.swift in Sources */,
+				003A31862681B94600F5D3E3 /* AxcConstraintMakerEditable.swift in Sources */,
+				003A31402681B94600F5D3E3 /* AxcNSShadowEx.swift in Sources */,
+				003A31892681B94600F5D3E3 /* AxcBasePageFlowLayout.swift in Sources */,
+				003A30F42681B94500F5D3E3 /* AxcWebVC.swift in Sources */,
+				003A31182681B94500F5D3E3 /* AxcCGSizeEx.swift in Sources */,
+				003A31572681B94600F5D3E3 /* AxcIndexPathEx.swift in Sources */,
+				003A30DD2681B94500F5D3E3 /* AxcDatePickerView.swift in Sources */,
+				003A31092681B94500F5D3E3 /* AxcGeneratorStyleFilter.swift in Sources */,
+				003A313C2681B94600F5D3E3 /* AxcUICollectionViewFlowLayoutEx.swift in Sources */,
+				003A31872681B94600F5D3E3 /* AxcConstraint.swift in Sources */,
+				003A31832681B94600F5D3E3 /* AxcConstraintMakerExtendable.swift in Sources */,
+				003A310F2681B94500F5D3E3 /* AxcBaseFilter.swift in Sources */,
+				003A30EF2681B94500F5D3E3 /* AxcPageItemVC.swift in Sources */,
+				003A31372681B94600F5D3E3 /* AxcUIBezierPathEx.swift in Sources */,
+				003A31102681B94500F5D3E3 /* AxcBaseStyleFilter.swift in Sources */,
+				003A31762681B94600F5D3E3 /* AxcCameraEnum.swift in Sources */,
+				003A317B2681B94600F5D3E3 /* AxcLanguageManager.swift in Sources */,
+				003A31442681B94600F5D3E3 /* AxcNSParagraphStyleEx.swift in Sources */,
+				003A31052681B94500F5D3E3 /* AxcBaseTableCell.swift in Sources */,
+				003A31292681B94500F5D3E3 /* AxcUIScrollViewEx.swift in Sources */,
+				003A316E2681B94600F5D3E3 /* AxcCAAnimationEx.swift in Sources */,
+				003A318F2681B94600F5D3E3 /* AxcGlobalFunc.swift in Sources */,
+				003A313D2681B94600F5D3E3 /* AxcNSObjectEx.swift in Sources */,
+				003A30FB2681B94500F5D3E3 /* AxcPlayerView.swift in Sources */,
+				003A314B2681B94600F5D3E3 /* AxcArrayEx.swift in Sources */,
+				003A310B2681B94500F5D3E3 /* AxcStylizeStyleFilter.swift in Sources */,
+				003A317A2681B94600F5D3E3 /* AxcVibrationManager.swift in Sources */,
+				003A31522681B94600F5D3E3 /* AxcCharacterEx.swift in Sources */,
+				003A30DB2681B94500F5D3E3 /* AxcTextView.swift in Sources */,
+				003A314E2681B94600F5D3E3 /* AxcStringEx.swift in Sources */,
+				003A31702681B94600F5D3E3 /* AxcCASpringAnimationEx.swift in Sources */,
+				003A318E2681B94600F5D3E3 /* AxcBadrockProtocol.swift in Sources */,
+				003A31232681B94500F5D3E3 /* AxcUITextFieldEx.swift in Sources */,
+				003A30ED2681B94500F5D3E3 /* AxcPageScrollController.swift in Sources */,
+				003A30E32681B94500F5D3E3 /* AxcWaveView.swift in Sources */,
+				003A30E22681B94500F5D3E3 /* AxcTagView.swift in Sources */,
+				003A31742681B94600F5D3E3 /* AxcAuthorizedManager.swift in Sources */,
+				003A314A2681B94600F5D3E3 /* AxcDictionaryEx.swift in Sources */,
+				003A31162681B94500F5D3E3 /* AxcCGPointEx.swift in Sources */,
+				003A31502681B94600F5D3E3 /* AxcNotificationCenterEx.swift in Sources */,
+				003A30F52681B94500F5D3E3 /* AxcBookView.swift in Sources */,
+				003A31382681B94600F5D3E3 /* AxcUIEdgeInsetsEx.swift in Sources */,
+				003A31792681B94600F5D3E3 /* AxcHardwareManager.swift in Sources */,
+				003A30E62681B94500F5D3E3 /* AxcTextField.swift in Sources */,
+				003A31242681B94500F5D3E3 /* AxcUITabBarItemEx.swift in Sources */,
+				003A314F2681B94600F5D3E3 /* AxcUserDefaultsEx.swift in Sources */,
+				003A31582681B94600F5D3E3 /* AxcUrlEx.swift in Sources */,
+				003A30F22681B94500F5D3E3 /* AxcAlentVCAnimation.swift in Sources */,
+				003A30E72681B94500F5D3E3 /* AxcTextScrollView.swift in Sources */,
+				003A31192681B94500F5D3E3 /* AxcCGRectEx.swift in Sources */,
+				003A31172681B94500F5D3E3 /* AxcCGPathEx.swift in Sources */,
+				003A31272681B94500F5D3E3 /* AxcUIViewEx.swift in Sources */,
+				003A31512681B94600F5D3E3 /* AxcSignedIntegerEx.swift in Sources */,
+				003A31322681B94600F5D3E3 /* AxcUIResponderEx.swift in Sources */,
+				003A31692681B94600F5D3E3 /* AxcCAKeyframeAnimationEx.swift in Sources */,
+				003A30DA2681B94500F5D3E3 /* AxcListEmptyView.swift in Sources */,
+				003A30F32681B94500F5D3E3 /* AxcCameraView.swift in Sources */,
+				003A310E2681B94500F5D3E3 /* AxcTileEffectStyleFilter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		003A2FB82681B90800F5D3E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003A2FC22681B90800F5D3E3 /* AxcBadrockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		003A2FBF2681B90800F5D3E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 003A2FB22681B90800F5D3E3 /* AxcBadrock */;
+			targetProxy = 003A2FBE2681B90800F5D3E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		003A2FC52681B90800F5D3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		003A2FC62681B90800F5D3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		003A2FC82681B90800F5D3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JS3K8WTP9T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = AxcBadrock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = YuPao.AxcBadrock;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		003A2FC92681B90800F5D3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JS3K8WTP9T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = AxcBadrock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = YuPao.AxcBadrock;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		003A2FCB2681B90800F5D3E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JS3K8WTP9T;
+				INFOPLIST_FILE = AxcBadrockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuPao.AxcBadrockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		003A2FCC2681B90800F5D3E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JS3K8WTP9T;
+				INFOPLIST_FILE = AxcBadrockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuPao.AxcBadrockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		003A2FAD2681B90800F5D3E3 /* Build configuration list for PBXProject "AxcBadrock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003A2FC52681B90800F5D3E3 /* Debug */,
+				003A2FC62681B90800F5D3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		003A2FC72681B90800F5D3E3 /* Build configuration list for PBXNativeTarget "AxcBadrock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003A2FC82681B90800F5D3E3 /* Debug */,
+				003A2FC92681B90800F5D3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		003A2FCA2681B90800F5D3E3 /* Build configuration list for PBXNativeTarget "AxcBadrockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003A2FCB2681B90800F5D3E3 /* Debug */,
+				003A2FCC2681B90800F5D3E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 003A2FAA2681B90800F5D3E3 /* Project object */;
+}
