@@ -1,0 +1,76 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# iOS平台iPhone、iPad
+# iOS单元测试
+# iOS扩展小组件
+["iOS", "iOSTests", "iOS_WidgetExtension"].each do |t|
+  target t do
+    platform :ios, '10.0'
+    use_frameworks!
+    pod 'AxcBedrock', :path => '../'
+  end
+end
+
+
+# macOS平台Mac
+# macOS单元测试
+["macOS", "macOSTests"].each do |t|
+  target t do
+    platform :osx, '11.0'
+    use_frameworks!
+    pod 'AxcBedrock', :path => '../'
+  end
+end
+
+# 自我更新程序
+# 核心单元测试
+["Maintain", "CoreTests"].each do |t|
+  target t do
+    platform :osx, '11.0'
+    pod 'AxcBedrock/Core', :path => '../'
+    pod 'Kanna'
+  end
+end
+
+
+
+# 文件组删除
+def process_group_remove_path(aTarget, aGroup)
+    aGroup.files.each do |file|
+        aTarget.resources_build_phase.remove_file_reference(file)
+    end
+    # 递归
+    aGroup.groups.each do |group|
+        process_group_remove_path(aTarget,group)
+    end
+end
+
+# 关联文件到Target
+def correlation_file_to(project_name, target_name)
+  project = Xcodeproj::Project.open("#{project_name}.xcodeproj")  # 打开项目
+  target = project.targets.find { |t| t.name == target_name }; # 获取指定Target
+  group = project.main_group.find_subpath("#{target_name}/Source", true) # 创建文件组
+  # 移除原来的文件组
+  if !group.empty? then
+    process_group_remove_path(target, group)
+    group.clear()
+  end
+  # 重新添加文件组
+  source_folder = "../#{project_name}/**/*.swift" # 获取需要导入的文件目录规则
+  # 遍历文件目录
+  Dir.glob(source_folder) do |file_path|
+    absolute_path = File.realpath(file_path) # 获取绝对路径
+    if group.find_file_by_path(absolute_path) # 已经导入过
+      # 什么都不做
+    else # 没有导入过的才进行导入
+      file_ref = group.new_reference(absolute_path) # 加入文件组
+      target.add_file_references([file_ref]) # 关联到Target
+    end
+  end
+  project.save # 保存
+end
+
+# 将文件关联到Framework Target
+correlation_file_to("AxcBedrock", "Framework")
+
+

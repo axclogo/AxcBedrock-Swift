@@ -1,0 +1,6 @@
+module Pods_Maintain {
+  umbrella header "Pods-Maintain-umbrella.h"
+
+  export *
+  module * { export * }
+}

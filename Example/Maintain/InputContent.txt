@@ -1,0 +1,498 @@
+import Foundation
+
+//
+//  UIColor.h
+//  UIKit
+//
+//  Copyright (c) 2005-2018 Apple Inc. All rights reserved.
+//
+
+@available(iOS 2.0, *)
+open class UIColor : NSObject, NSSecureCoding, NSCopying, @unchecked Sendable {
+
+    
+    // Initializers for creating colors
+    public init(white: CGFloat, alpha: CGFloat)
+
+    public init(hue: CGFloat, saturation: CGFloat, brightness: CGFloat, alpha: CGFloat)
+
+    public init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
+    @available(iOS 10.0, *)
+    public init(displayP3Red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
+    public init(cgColor: CGColor)
+
+    public init(patternImage image: UIImage)
+
+    
+    @available(iOS 5.0, *)
+    public init(ciColor: CIColor)
+
+    
+    // Some convenience methods to create colors.  These colors will be as calibrated as possible.
+    // These colors are cached.
+    open class var black: UIColor { get } // 0.0 white
+
+    open class var darkGray: UIColor { get } // 0.333 white
+
+
+    open class var lightGray: UIColor { get } // 0.667 white
+
+    open class var white: UIColor { get } // 1.0 white
+
+    open class var gray: UIColor { get } // 0.5 white
+
+    open class var red: UIColor { get } // 1.0, 0.0, 0.0 RGB
+
+    open class var green: UIColor { get } // 0.0, 1.0, 0.0 RGB
+
+    open class var blue: UIColor { get } // 0.0, 0.0, 1.0 RGB
+
+    open class var cyan: UIColor { get } // 0.0, 1.0, 1.0 RGB
+
+    open class var yellow: UIColor { get } // 1.0, 1.0, 0.0 RGB
+
+    open class var magenta: UIColor { get } // 1.0, 0.0, 1.0 RGB
+
+    open class var orange: UIColor { get } // 1.0, 0.5, 0.0 RGB
+
+    open class var purple: UIColor { get } // 0.5, 0.0, 0.5 RGB
+
+    open class var brown: UIColor { get } // 0.6, 0.4, 0.2 RGB
+
+    open class var clear: UIColor { get } // 0.0 white, 0.0 alpha
+
+    
+    // Set the color: Sets the fill and stroke colors in the current drawing context. Should be implemented by subclassers.
+    open func set()
+
+    
+    // Set the fill or stroke colors individually. These should be implemented by subclassers.
+    open func setFill()
+
+    open func setStroke()
+
+    
+    // Convenience methods for getting components.
+    // If the receiver is of a compatible color space, any non-NULL parameters are populated and 'YES' is returned. Otherwise, the parameters are left unchanged and 'NO' is returned.
+    @available(iOS 5.0, *)
+    open func getWhite(_ white: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?) -> Bool
+
+    @available(iOS 5.0, *)
+    open func getHue(_ hue: UnsafeMutablePointer<CGFloat>?, saturation: UnsafeMutablePointer<CGFloat>?, brightness: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?) -> Bool
+
+    @available(iOS 5.0, *)
+    open func getRed(_ red: UnsafeMutablePointer<CGFloat>?, green: UnsafeMutablePointer<CGFloat>?, blue: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?) -> Bool
+
+    
+    // Returns a color in the same color space as the receiver with the specified alpha component.
+    open func withAlphaComponent(_ alpha: CGFloat) -> UIColor
+
+    
+    // Access the underlying CGColor or CIColor.
+    open var cgColor: CGColor { get }
+
+    
+    @available(iOS 5.0, *)
+    open var ciColor: CIColor { get }
+}
+
+extension UIColor : NSItemProviderReading, NSItemProviderWriting {
+}
+
+extension CIColor {
+
+    
+    @available(iOS 5.0, *)
+    public convenience init(color: UIColor)
+}
+
+extension UIColor {
+
+    @available(iOS 11.0, *)
+    public /*not inherited*/ init?(named name: String) // load from main bundle
+
+    @available(iOS 11.0, *)
+    public /*not inherited*/ init?(named name: String, in bundle: Bundle?, compatibleWith traitCollection: UITraitCollection?)
+}
+
+extension UIColor {
+
+    
+    @available(iOS 13.0, *)
+    public init(dynamicProvider: @escaping (UITraitCollection) -> UIColor)
+
+    
+    /* Resolve any color to its most fundamental form (a non-dynamic color) for a specific trait collection.
+     */
+    @available(iOS 13.0, *)
+    open func resolvedColor(with traitCollection: UITraitCollection) -> UIColor
+}
+
+import Foundation
+
+//
+//  UIInterface.h
+//  UIKit
+//
+//  Copyright (c) 2005-2018 Apple Inc. All rights reserved.
+//
+
+// for UINavigationBar and UIToolBar
+
+public enum UIBarStyle : Int, @unchecked Sendable {
+
+    
+    case `default` = 0
+
+    case black = 1
+
+    
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use UIBarStyleBlack instead.")
+    public static var blackOpaque: UIBarStyle { get }
+
+    @available(iOS, introduced: 2.0, deprecated: 13.0, message: "Use UIBarStyleBlack and set the translucent property to YES instead.")
+    case blackTranslucent = 2
+}
+
+@available(iOS 8.0, *)
+public enum UIUserInterfaceSizeClass : Int, @unchecked Sendable {
+
+    
+    case unspecified = 0
+
+    case compact = 1
+
+    case regular = 2
+}
+
+@available(iOS 12.0, *)
+public enum UIUserInterfaceStyle : Int, @unchecked Sendable {
+
+    
+    case unspecified = 0
+
+    case light = 1
+
+    case dark = 2
+}
+
+@available(iOS 5.0, *)
+public enum UIUserInterfaceLayoutDirection : Int, @unchecked Sendable {
+
+    
+    case leftToRight = 0
+
+    case rightToLeft = 1
+}
+
+// These values are only used for the layout direction trait, which informs but does not completely dictate the layout direction of views. To determine the effective layout direction of a view, consult the UIView.effectiveUserInterfaceLayoutDirection property, whose values are members of the UIUserInterfaceLayoutDirection enum.
+@available(iOS 10.0, *)
+public enum UITraitEnvironmentLayoutDirection : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case leftToRight = 0
+
+    case rightToLeft = 1
+}
+
+@available(iOS 10.0, *)
+public enum UIDisplayGamut : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1 // UIKit will not set this anymore, instead a sensible default is chosen based on the device capabilities and settings always
+
+    case SRGB = 0
+
+    case P3 = 1
+}
+
+/* The value of the "high contrast" Accessibility setting is available via `UIAccessibilityDarkerSystemColorsEnabled()`,
+ * and is also expressed as the UIAccessibilityContrast trait.
+ */
+@available(iOS 13.0, *)
+public enum UIAccessibilityContrast : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case normal = 0
+
+    case high = 1
+}
+
+@available(iOS 13.0, *)
+public enum UILegibilityWeight : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case regular = 0
+
+    case bold = 1
+}
+
+@available(iOS 13.0, *)
+public enum UIUserInterfaceLevel : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case base = 0
+
+    case elevated = 1
+}
+
+@available(iOS 14.0, *)
+public enum UIUserInterfaceActiveAppearance : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case inactive = 0
+
+    case active = 1
+}
+
+public enum UINSToolbarItemPresentationSize : Int, @unchecked Sendable {
+
+    
+    case unspecified = -1
+
+    case regular = 0
+
+    case small = 1
+
+    case large = 3
+}
+
+// System colors
+
+extension UIColor {
+
+    
+    /* Some colors that are used by system elements and applications.
+     * These return named colors whose values may vary between different contexts and releases.
+     * Do not make assumptions about the color spaces or actual colors used.
+     */
+    @available(iOS 7.0, *)
+    open class var systemRed: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemGreen: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemBlue: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemOrange: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemYellow: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemPink: UIColor { get }
+
+    @available(iOS 9.0, *)
+    open class var systemPurple: UIColor { get }
+
+    @available(iOS 7.0, *)
+    open class var systemTeal: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemIndigo: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemBrown: UIColor { get }
+
+    @available(iOS 15.0, *)
+    open class var systemMint: UIColor { get }
+
+    @available(iOS 15.0, *)
+    open class var systemCyan: UIColor { get }
+
+    
+    /* Shades of gray. systemGray is the base gray color.
+     */
+    @available(iOS 7.0, *)
+    open class var systemGray: UIColor { get }
+
+    
+    /* The numbered variations, systemGray2 through systemGray6, are grays which increasingly
+     * trend away from systemGray and in the direction of systemBackgroundColor.
+     *
+     * In UIUserInterfaceStyleLight: systemGray2 is slightly lighter than systemGray.
+     *                               systemGray3 is lighter than that, and so on.
+     * In UIUserInterfaceStyleDark:  systemGray2 is slightly darker than systemGray.
+     *                               systemGray3 is darker than that, and so on.
+     */
+    @available(iOS 13.0, *)
+    open class var systemGray2: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemGray3: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemGray4: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemGray5: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var systemGray6: UIColor { get }
+
+    
+    /* This color represents the tint color of a view.
+     *
+     * Like other dynamic colors, UIColor.tintColor relies on UITraitCollection.currentTraitCollection
+     * being set to a view's trait collection when it is used, so that it can resolve to that view's
+     * tint color. If you use UIColor.tintColor outside a view's context, and do not resolve it
+     * manually with a view's trait collection, it will return the system default tint color.
+     *
+     * Setting UIColor.tintColor directly to a view's tintColor property behaves the same as setting nil.
+     * However, you cannot set a custom dynamic color (e.g. using +[UIColor colorWithDynamicProvider:])
+     * that can resolve to UIColor.tintColor to a view's tintColor property.
+     */
+    @available(iOS 15.0, *)
+    open class var tintColor: UIColor { get }
+
+    
+    /* Foreground colors for static text and related elements.
+     */
+    @available(iOS 13.0, *)
+    open class var label: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var secondaryLabel: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var tertiaryLabel: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var quaternaryLabel: UIColor { get }
+
+    
+    /* Foreground color for standard system links.
+     */
+    @available(iOS 13.0, *)
+    open class var link: UIColor { get }
+
+    
+    /* Foreground color for placeholder text in controls or text fields or text views.
+     */
+    @available(iOS 13.0, *)
+    open class var placeholderText: UIColor { get }
+
+    
+    /* Foreground colors for separators (thin border or divider lines).
+     * `separatorColor` may be partially transparent, so it can go on top of any content.
+     * `opaqueSeparatorColor` is intended to look similar, but is guaranteed to be opaque, so it will
+     * completely cover anything behind it. Depending on the situation, you may need one or the other.
+     */
+    @available(iOS 13.0, *)
+    open class var separator: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var opaqueSeparator: UIColor { get }
+
+    
+    /* We provide two design systems (also known as "stacks") for structuring an iOS app's backgrounds.
+     *
+     * Each stack has three "levels" of background colors. The first color is intended to be the
+     * main background, farthest back. Secondary and tertiary colors are layered on top
+     * of the main background, when appropriate.
+     *
+     * Inside of a discrete piece of UI, choose a stack, then use colors from that stack.
+     * We do not recommend mixing and matching background colors between stacks.
+     * The foreground colors above are designed to work in both stacks.
+     *
+     * 1. systemBackground
+     *    Use this stack for views with standard table views, and designs which have a white
+     *    primary background in light mode.
+     */
+    @available(iOS 13.0, *)
+    open class var systemBackground: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var secondarySystemBackground: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var tertiarySystemBackground: UIColor { get }
+
+    
+    /* 2. systemGroupedBackground
+     *    Use this stack for views with grouped content, such as grouped tables and
+     *    platter-based designs. These are like grouped table views, but you may use these
+     *    colors in places where a table view wouldn't make sense.
+     */
+    @available(iOS 13.0, *)
+    open class var systemGroupedBackground: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var secondarySystemGroupedBackground: UIColor { get }
+
+    @available(iOS 13.0, *)
+    open class var tertiarySystemGroupedBackground: UIColor { get }
+
+    
+    /* Fill colors for UI elements.
+     * These are meant to be used over the background colors, since their alpha component is less than 1.
+     *
+     * systemFillColor is appropriate for filling thin and small shapes.
+     * Example: The track of a slider.
+     */
+    @available(iOS 13.0, *)
+    open class var systemFill: UIColor { get }
+
+    
+    /* secondarySystemFillColor is appropriate for filling medium-size shapes.
+     * Example: The background of a switch.
+     */
+    @available(iOS 13.0, *)
+    open class var secondarySystemFill: UIColor { get }
+
+    
+    /* tertiarySystemFillColor is appropriate for filling large shapes.
+     * Examples: Input fields, search bars, buttons.
+     */
+    @available(iOS 13.0, *)
+    open class var tertiarySystemFill: UIColor { get }
+
+    
+    /* quaternarySystemFillColor is appropriate for filling large areas containing complex content.
+     * Example: Expanded table cells.
+     */
+    @available(iOS 13.0, *)
+    open class var quaternarySystemFill: UIColor { get }
+
+    
+    /* lightTextColor is always light, and darkTextColor is always dark, regardless of the current UIUserInterfaceStyle.
+     * When possible, we recommend using `labelColor` and its variants, instead.
+     */
+    open class var lightText: UIColor { get } // for a dark background
+
+    open class var darkText: UIColor { get } // for a light background
+
+    
+    /* groupTableViewBackgroundColor is now the same as systemGroupedBackgroundColor.
+     */
+    @available(iOS, introduced: 2.0, deprecated: 13.0)
+    open class var groupTableViewBackground: UIColor { get }
+}
+
+// System fonts
+
+extension UIFont {
+
+    open class var labelFontSize: CGFloat { get }
+
+    open class var buttonFontSize: CGFloat { get }
+
+    open class var smallSystemFontSize: CGFloat { get }
+
+    open class var systemFontSize: CGFloat { get }
+}
+

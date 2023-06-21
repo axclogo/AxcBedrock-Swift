@@ -1,0 +1,6 @@
+framework module AxcBedrock {
+  umbrella header "AxcBedrock-umbrella.h"
+
+  export *
+  module * { export * }
+}
