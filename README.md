@@ -5,13 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 [![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 
-## Example
+## 示例
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
 
-## Installation
+## 安装
 
 AxcBedrock is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -20,10 +19,10 @@ it, simply add the following line to your Podfile:
 pod 'AxcBedrock'
 ```
 
-## Author
+## 作者
 
-ooppstef, chengz@jumei.com
+ooppstef, axclogo@163.com
 
-## License
+## 证书
 
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
