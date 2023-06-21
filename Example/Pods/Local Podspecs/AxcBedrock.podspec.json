@@ -1,8 +1,8 @@
 {
   "name": "AxcBedrock",
-  "version": "5.0.5",
+  "version": "1.0.0",
   "swift_versions": "5.0",
-  "summary": "基岩工具库",
+  "summary": "Axc的基岩工具库",
   "description": "基岩工具库，将坑洼不平的各种苹果开发平台的Api调用统一，帮助iOS开发并快速过渡到任意平台开发，并能迅速操作基础Api\n目前支持iOS与MacOS双平台运作，Api相似度99%，可以平滑从iOS过渡到MacOS",
   "homepage": "https://github.com/axclogo/AxcBedrock",
   "license": {
@@ -13,8 +13,8 @@
     "Axclogo": "axclogo@163.com"
   },
   "source": {
-    "git": "http://gitlab.zhaogong.vrtbbs.com/yupaoios/components/AxcBedrock.git",
-    "tag": "5.0.5"
+    "git": "https://github.com/axclogo/AxcBedrock-Swift.git",
+    "tag": "1.0.0"
   },
   "pod_target_xcconfig": {
     "CODE_SIGNING_ALLOWED": "NO"
@@ -112,7 +112,6 @@
         ]
       },
       "pod_target_xcconfig": {
-        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
       }
     },
     {
@@ -144,7 +143,6 @@
         ]
       },
       "pod_target_xcconfig": {
-        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
       }
     }
   ],

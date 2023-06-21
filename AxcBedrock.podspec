@@ -9,11 +9,11 @@
 Pod::Spec.new do |s|
     s.name             = 'AxcBedrock'
     
-    s.version          = '5.0.5'
+    s.version          = '1.0.0'
     
     s.swift_version    = '5.0'
     
-    s.summary          = '基岩工具库'
+    s.summary          = 'Axc的基岩工具库'
     
     s.description      =
     <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     
     s.author           = { 'Axclogo' => 'axclogo@163.com' }
     
-    s.source           = { :git => 'http://gitlab.zhaogong.vrtbbs.com/yupaoios/components/AxcBedrock.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/axclogo/AxcBedrock-Swift.git', :tag => s.version.to_s }
     
     s.pod_target_xcconfig = {
         'CODE_SIGNING_ALLOWED' => 'NO'
@@ -129,10 +129,6 @@ Pod::Spec.new do |s|
         c.ios.source_files = ios_source_files
         c.dependency 'AxcBedrock/Core'
         c.pod_target_xcconfig = {
-            'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-            # 通过宏定义检测加载平台
-#            'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => 'AxcBedrock_UIKit_Is_Load',
-#            'GCC_PREPROCESSOR_DEFINITIONS' => 'AxcBedrock_UIKit_Is_Load=1'
         }
     end
     
@@ -141,10 +137,6 @@ Pod::Spec.new do |s|
         c.osx.source_files = osx_source_files
         c.dependency 'AxcBedrock/Core'
         c.pod_target_xcconfig = {
-            'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-            # 通过宏定义检测加载平台
-#            'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => 'AxcBedrock_AppKit_Is_Load',
-#            'GCC_PREPROCESSOR_DEFINITIONS' => 'AxcBedrock_AppKit_Is_Load=1'
         }
     end
 end

@@ -1,12 +1,12 @@
 PODS:
-  - AxcBedrock (5.0.5):
-    - AxcBedrock/Core (= 5.0.5)
-    - AxcBedrock/iOS (= 5.0.5)
-    - AxcBedrock/macOS (= 5.0.5)
-  - AxcBedrock/Core (5.0.5)
-  - AxcBedrock/iOS (5.0.5):
+  - AxcBedrock (1.0.0):
+    - AxcBedrock/Core (= 1.0.0)
+    - AxcBedrock/iOS (= 1.0.0)
+    - AxcBedrock/macOS (= 1.0.0)
+  - AxcBedrock/Core (1.0.0)
+  - AxcBedrock/iOS (1.0.0):
     - AxcBedrock/Core
-  - AxcBedrock/macOS (5.0.5):
+  - AxcBedrock/macOS (1.0.0):
     - AxcBedrock/Core
   - Kanna (5.2.7)
 
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AxcBedrock: 6c530612f4ad10ba37cbc2aa0d8f0f1d83a714aa
+  AxcBedrock: cdb1ed1c4da599fbccca13bee3770303de30cd60
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
 
 PODFILE CHECKSUM: df4d65bab10a1faa665faa8da2344a8fccab2839
