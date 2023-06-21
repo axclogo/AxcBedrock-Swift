@@ -1,4 +1,0 @@
-framework module YPBedrock {
-  header "YPBedrock-Swift.h"
-  requires objc
-}

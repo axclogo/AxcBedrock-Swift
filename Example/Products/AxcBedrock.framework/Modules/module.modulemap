@@ -1,0 +1,4 @@
+framework module AxcBedrock {
+  header "AxcBedrock-Swift.h"
+  requires objc
+}
