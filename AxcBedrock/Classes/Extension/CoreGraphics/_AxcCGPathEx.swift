@@ -11,7 +11,7 @@ import CoreGraphics
 
 // 暂时内部私有使用，等合适成熟后可随时开放
 
-extension AxcSpace where Base == CGPath {
+extension AxcSpace where Base: CGPath {
     /// 获取点位
     /// - Parameters:
     ///   - percent: 百分比
@@ -163,7 +163,7 @@ extension AxcSpace where Base == CGPath {
     func linearLength(p0: CGPoint, p1: CGPoint) -> CGFloat {
         return p0.axc.distance(to: p1)
     }
-    
+
     /// 两点间的百分比的某一个点位
     /// - Parameters:
     ///   - t: 百分比

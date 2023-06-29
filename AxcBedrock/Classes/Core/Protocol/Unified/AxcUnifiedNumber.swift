@@ -380,3 +380,42 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         return arc4random() % value
     }
 }
+
+// MARK: 通用转换
+
+public extension AxcSpace where Base: AxcUnifiedNumber {
+    /// 转换成UIEdgeInsets
+    var uiEdge: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(base)
+    }
+
+    /// 转换成UIEdgeInsets的Top，其他为0
+    var uiEdgeTop: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(base, 0, 0, 0)
+    }
+
+    /// 转换成UIEdgeInsets的Left，其他为0
+    var uiEdgeLeft: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, 0)
+    }
+
+    /// 转换成UIEdgeInsets的Bottom，其他为0
+    var uiEdgeBottom: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(0, 0, base, 0)
+    }
+
+    /// 转换成UIEdgeInsets的Right，其他为0
+    var uiEdgeRight: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(0, 0, 0, base)
+    }
+
+    /// 转换成UIEdgeInsets的Left、Right，其他为0
+    var uiEdgeHorizontal: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, base)
+    }
+
+    /// 转换成UIEdgeInsets的Top、Bottom，其他为0
+    var uiEdgeVertical: AxcBedrockEdgeInsets {
+        return AxcBedrockEdgeInsets.Axc.Create(base, 0, base, 0)
+    }
+}

@@ -55,6 +55,163 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
 // MARK: 常规绘图Api
 
 public extension AxcSpace where Base: AxcBedrockBezierPath {
+    /// （💈跨平台标识）通过CGPath创建一个曲线
+    /// - Parameter cgPath: cgPath
+    /// - Returns: 曲线
+    static func Create(cgPath: CGPath) -> AxcBedrockBezierPath {
+        #if os(macOS)
+        let bezierPath: AxcBedrockBezierPath = .init()
+        cgPath.applyWithBlock { (elementPointer: UnsafePointer<CGPathElement>) in
+            let element = elementPointer.pointee
+            let points = element.points
+            switch element.type {
+            case .moveToPoint:
+                bezierPath.move(to: points.pointee)
+            case .addLineToPoint:
+                bezierPath.line(to: points.pointee)
+            case .addQuadCurveToPoint:
+                let qp0 = bezierPath.currentPoint
+                let qp1 = points.pointee
+                let qp2 = points.successor().pointee
+                let m = 2.0 / 3.0
+                let cp1 = NSPoint(
+                    x: qp0.x + ((qp1.x - qp0.x) * m),
+                    y: qp0.y + ((qp1.y - qp0.y) * m)
+                )
+                let cp2 = NSPoint(
+                    x: qp2.x + ((qp1.x - qp2.x) * m),
+                    y: qp2.y + ((qp1.y - qp2.y) * m)
+                )
+                bezierPath.curve(to: qp2, controlPoint1: cp1, controlPoint2: cp2)
+            case .addCurveToPoint:
+                let cp1 = points.pointee
+                let cp2 = points.advanced(by: 1).pointee
+                let target = points.advanced(by: 2).pointee
+                bezierPath.curve(to: target, controlPoint1: cp1, controlPoint2: cp2)
+            case .closeSubpath:
+                bezierPath.close()
+            @unknown default:
+                AxcBedrockLib.FatalLog("未知类型 \(element.type)")
+            }
+        }
+        return bezierPath
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+
+        return .init(cgPath: cgPath)
+        #endif
+    }
+
+    /// （💈跨平台标识）绘制一个圆角矩形
+    /// - Parameters:
+    ///   - rect: 矩形框
+    ///   - corners: 圆角位置
+    ///   - cornerRadii: 圆角大小
+    /// - Returns: 曲线
+    static func Create(roundedRect rect: CGRect,
+                       byRoundingCorners corners: AxcCorner,
+                       cornerRadii: CGSize) -> AxcBedrockBezierPath {
+        #if os(macOS)
+        let path = CGMutablePath()
+
+        let minX = rect.minX
+        let minY = rect.minY
+        let maxX = rect.maxX
+        let maxY = rect.maxY
+
+        let topLeftRadius = cornerRadii.width
+        let topRightRadius = cornerRadii.height
+        let bottomLeftRadius = cornerRadii.height
+        let bottomRightRadius = cornerRadii.width
+
+        // Top Left
+        if corners.contains(.topLeft) {
+            path.move(to: CGPoint(x: minX + topLeftRadius, y: minY))
+        } else {
+            path.move(to: CGPoint(x: minX, y: minY))
+        }
+
+        // Top Right
+        if corners.contains(.topRight) {
+            path.addLine(to: CGPoint(x: maxX - topRightRadius, y: minY))
+            path.addCurve(to: CGPoint(x: maxX, y: minY + topRightRadius),
+                          control1: CGPoint(x: maxX - (topRightRadius / 2), y: minY),
+                          control2: CGPoint(x: maxX, y: minY + (topRightRadius / 2)))
+        } else {
+            path.addLine(to: CGPoint(x: maxX, y: minY))
+        }
+
+        // Bottom Right
+        if corners.contains(.bottomRight) {
+            path.addLine(to: CGPoint(x: maxX, y: maxY - bottomRightRadius))
+            path.addCurve(to: CGPoint(x: maxX - bottomRightRadius, y: maxY),
+                          control1: CGPoint(x: maxX, y: maxY - (bottomRightRadius / 2)),
+                          control2: CGPoint(x: maxX - (bottomRightRadius / 2), y: maxY))
+        } else {
+            path.addLine(to: CGPoint(x: maxX, y: maxY))
+        }
+
+        // Bottom Left
+        if corners.contains(.bottomLeft) {
+            path.addLine(to: CGPoint(x: minX + bottomLeftRadius, y: maxY))
+            path.addCurve(to: CGPoint(x: minX, y: maxY - bottomLeftRadius),
+                          control1: CGPoint(x: minX + (bottomLeftRadius / 2), y: maxY),
+                          control2: CGPoint(x: minX, y: maxY - (bottomLeftRadius / 2)))
+        } else {
+            path.addLine(to: CGPoint(x: minX, y: maxY))
+        }
+
+        // Top Left
+        if corners.contains(.topLeft) {
+            path.addLine(to: CGPoint(x: minX, y: minY + topLeftRadius))
+            path.addCurve(to: CGPoint(x: minX + topLeftRadius, y: minY),
+                          control1: CGPoint(x: minX, y: minY + (topLeftRadius / 2)),
+                          control2: CGPoint(x: minX + (topLeftRadius / 2), y: minY))
+        } else {
+            path.addLine(to: CGPoint(x: minX, y: minY))
+        }
+
+        path.closeSubpath()
+        return path.axc.nsBezierPath
+
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+
+        return UIBezierPath(roundedRect: rect,
+                            byRoundingCorners: corners.toUIRectCorner,
+                            cornerRadii: cornerRadii)
+        #endif
+    }
+
+    /// （💈跨平台标识）绘制一个圆
+    /// - Parameters:
+    ///   - center: 圆心
+    ///   - radius: 半径
+    ///   - startAngle: 起始角度
+    ///   - endAngle: 终止角度
+    ///   - clockwise: 是否顺时针
+    /// - Returns: 曲线
+    static func Create(arcCenter center: CGPoint,
+                       radius: CGFloat,
+                       startAngle: CGFloat,
+                       endAngle: CGFloat,
+                       clockwise: Bool) -> AxcBedrockBezierPath {
+        #if os(macOS)
+        let bezierPath = NSBezierPath()
+        bezierPath.appendArc(withCenter: center,
+                             radius: radius,
+                             startAngle: startAngle,
+                             endAngle: endAngle,
+                             clockwise: clockwise)
+        return bezierPath
+
+        #elseif os(iOS) || os(tvOS) || os(watchOS)
+        return UIBezierPath(arcCenter: center,
+                            radius: radius,
+                            startAngle: startAngle,
+                            endAngle: endAngle,
+                            clockwise: clockwise)
+        #endif
+    }
+
     /// （💈跨平台标识）绘制一个十字准星
     /// - Parameters:
     ///   - reticleCenter: 中心
@@ -225,9 +382,9 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
         for i in 0 ..< pointCount {
             let angle = startAngle.angleValue + intervalAngle * CGFloat(i) // 变化角度
             let polarAxisPoint: CGPoint = CGPoint.Axc.CreatePolarAxis(center: center,
-                                                                     distance: radius,
-                                                                     angle: angle,
-                                                                     startAngle: startAngle)
+                                                                      distance: radius,
+                                                                      angle: angle,
+                                                                      startAngle: startAngle)
             points.append(polarAxisPoint)
         }
         let bezierPath = Create(points: points, isReversing: isReversing, isClose: true)
@@ -266,10 +423,10 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
                 _endRadian = _startRadian + arcAngle.axc.angleToRadian
             }
             bezierPath.axc.addArc(withCenter: center,
-                                 radius: radius,
-                                 startAngle: _startRadian,
-                                 endAngle: _endRadian,
-                                 clockwise: !isReversing)
+                                  radius: radius,
+                                  startAngle: _startRadian,
+                                  endAngle: _endRadian,
+                                  clockwise: !isReversing)
             if !connection {
                 var moveRadian: CGFloat = 0
                 if isReversing {
@@ -278,8 +435,8 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
                     moveRadian = _startRadian + spacingRadian
                 }
                 let polarAxisPoint: CGPoint = CGPoint.Axc.CreatePolarAxis(center: center,
-                                                                         distance: radius,
-                                                                         radian: moveRadian)
+                                                                          distance: radius,
+                                                                          radian: moveRadian)
                 bezierPath.move(to: polarAxisPoint)
             }
         }
@@ -288,7 +445,7 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
         }
         return bezierPath
     }
-    
+
     /// （💈跨平台标识）绘制辐射圆
     /// - Parameters:
     ///   - center: 中心点
@@ -311,7 +468,7 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
         for (idx, height) in linesHeight.enumerated() {
             var startPointAngle: CGFloat = 0
             var isClockwise = clockwise.isClockwise
-            #if os(macOS)  // 桌面端和移动端坐标系相反
+            #if os(macOS) // 桌面端和移动端坐标系相反
             isClockwise = !isClockwise
             #endif
             if isClockwise {
@@ -320,12 +477,12 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
                 startPointAngle = startAngle.angleValue - CGFloat(idx) * angle
             }
             let point_1 = CGPoint.Axc.CreatePolarAxis(center: center,
-                                                     distance: radius,
-                                                     angle: startPointAngle)
+                                                      distance: radius,
+                                                      angle: startPointAngle)
             let radius_2 = radius + AssertTransformCGFloat(height)
             let point_2 = CGPoint.Axc.CreatePolarAxis(center: center,
-                                                     distance: radius_2,
-                                                     angle: startPointAngle)
+                                                      distance: radius_2,
+                                                      angle: startPointAngle)
             groupPoints.append([point_1, point_2])
         }
         return Create(groupPoints: groupPoints, isReversing: isReversing)
@@ -355,7 +512,6 @@ public extension AxcSpace where Base: AxcBedrockBezierPath {
         base.line(to: point)
 
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-
         base.addLine(to: point)
         #endif
     }

@@ -13,15 +13,15 @@ extension CGPath: AxcSpaceProtocol { }
 
 // MARK: - 数据转换
 
-public extension AxcSpace where Base == CGPath { }
+public extension AxcSpace where Base: CGPath { }
 
 // MARK: - 类方法
 
-public extension AxcSpace where Base == CGPath { }
+public extension AxcSpace where Base: CGPath { }
 
 // MARK: - 属性 & Api
 
-public extension AxcSpace where Base == CGPath {
+public extension AxcSpace where Base: CGPath {
     /// Length
     var length: CGFloat {
         return getLength(with: elements)
@@ -38,4 +38,4 @@ public extension AxcSpace where Base == CGPath {
 
 // MARK: - 决策判断
 
-public extension AxcSpace where Base == CGPath { }
+public extension AxcSpace where Base: CGPath { }
