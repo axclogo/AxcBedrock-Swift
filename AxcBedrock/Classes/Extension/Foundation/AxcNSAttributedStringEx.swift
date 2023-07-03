@@ -30,7 +30,6 @@ public extension AxcSpace where Base: NSAttributedString {
 // MARK: - 属性 & Api
 
 public extension AxcSpace where Base: NSAttributedString {
-
     /// 为这段富文本新增一种属性
     @discardableResult
     func applying(_ attributes: [NSAttributedString.Key: Any],
@@ -53,6 +52,57 @@ public extension AxcSpace where Base: NSAttributedString {
             #endif
         }
         copy.addAttributes(attributes, range: attRange)
+        return copy
+    }
+
+    /// 为这段富文本移除多种属性
+    @discardableResult
+    func remove(attributeKeyRanges: [NSAttributedString.Key: AxcUnifiedRange?]) -> NSAttributedString {
+        guard !base.string.isEmpty else { return base }
+        let copy = mutableAttributedString()
+        attributeKeyRanges.forEach { arrKey, range in
+            var attRange = NSRange(0 ..< base.length)
+            if let range,
+               let nsRange = NSRange.Axc.CreateOptional(range) {
+                attRange = nsRange
+            }
+            if attRange.upperBound > base.length { // 超出长度
+                let log = "所设置的Range超出字符串长度上限！\nRange:\(attRange)\nLength:\(base.length)"
+                AxcBedrockLib.Log(log)
+                #if DEBUG
+                AxcBedrockLib.FatalLog(log)
+                #else
+                let newLength = base.length - attRange.location
+                attRange = .init(location: attRange.location, length: newLength)
+                #endif
+            }
+            copy.removeAttribute(arrKey, range: attRange)
+        }
+        return copy
+    }
+
+    /// 为这段富文本移除单个属性
+    @discardableResult
+    func remove(attributeKey: NSAttributedString.Key,
+                range: AxcUnifiedRange? = nil) -> NSAttributedString {
+        guard !base.string.isEmpty else { return base }
+        let copy = mutableAttributedString()
+        var attRange = NSRange(0 ..< base.length)
+        if let range,
+           let nsRange = NSRange.Axc.CreateOptional(range) {
+            attRange = nsRange
+        }
+        if attRange.upperBound > base.length { // 超出长度
+            let log = "所设置的Range超出字符串长度上限！\nRange:\(attRange)\nLength:\(base.length)"
+            AxcBedrockLib.Log(log)
+            #if DEBUG
+            AxcBedrockLib.FatalLog(log)
+            #else
+            let newLength = base.length - attRange.location
+            attRange = .init(location: attRange.location, length: newLength)
+            #endif
+        }
+        copy.removeAttribute(attributeKey, range: attRange)
         return copy
     }
 

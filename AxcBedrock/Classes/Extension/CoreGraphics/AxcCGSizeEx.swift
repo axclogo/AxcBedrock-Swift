@@ -42,6 +42,46 @@ public extension AxcSpace where Base == CGSize {
 // MARK: - 属性 & Api
 
 public extension AxcSpace where Base == CGSize {
+    /// 相加
+    /// - Parameter size: 大小
+    /// - Returns: 结果
+    func add(size: CGSize) -> CGSize {
+        var newSize: CGSize = base
+        newSize.width += size.width
+        newSize.height += size.height
+        return newSize
+    }
+
+    /// 相加
+    /// - Parameter size: 大小
+    /// - Returns: 结果
+    func add(edge: AxcBedrockEdgeInsets) -> CGSize {
+        var newSize: CGSize = base
+        newSize.width += edge.axc.horizontal
+        newSize.height += edge.axc.vertical
+        return newSize
+    }
+
+    /// 相减
+    /// - Parameter size: 大小
+    /// - Returns: 结果
+    func subtract(size: CGSize) -> CGSize {
+        var newSize: CGSize = base
+        newSize.width -= size.width
+        newSize.height -= size.height
+        return newSize
+    }
+
+    /// 相减
+    /// - Parameter size: 大小
+    /// - Returns: 结果
+    func subtract(edge: AxcBedrockEdgeInsets) -> CGSize {
+        var newSize: CGSize = base
+        newSize.width -= edge.axc.horizontal
+        newSize.height -= edge.axc.vertical
+        return newSize
+    }
+
     /// 获取宽高中一个最大的
     var bigger: CGFloat {
         return Swift.max(base.width, base.height)

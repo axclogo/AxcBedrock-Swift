@@ -23,9 +23,12 @@ public extension AxcSpace where Base: NSTextField {
                             alignment: NSTextAlignment = .left,
                             toolTip: String? = nil) -> Base {
         let label = NSTextField()
-        label.backgroundColor = .clear
+        label.isBezeled = false
         label.isEditable = false // 不可编辑
         label.isBordered = false // 不显示边框
+        label.isSelectable = false
+        label.drawsBackground = true // 渲染背景色
+        label.backgroundColor = .clear
         if let text {
             label.stringValue = text
         }

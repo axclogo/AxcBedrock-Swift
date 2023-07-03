@@ -336,14 +336,14 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 阈值限位
-    func limitThan(less: AxcUnifiedNumber, greater: AxcUnifiedNumber) -> Base {
+    func limitThan(min: AxcUnifiedNumber, max: AxcUnifiedNumber) -> Base {
         guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
             AxcBedrockLib.FatalLog("\(Base.self)类型无法做阈值限位！")
         }
         let compareValue: Double = Double.Axc.Create(base)
         var newValue: Double = compareValue
-        let lessValue: Double = Double.Axc.Create(less)
-        let greaterValue: Double = Double.Axc.Create(greater)
+        let lessValue: Double = Double.Axc.Create(min)
+        let greaterValue: Double = Double.Axc.Create(max)
         if newValue < lessValue {
             newValue = lessValue
         }
@@ -370,6 +370,11 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         #endif
         return newValue as! Base
     }
+    
+    /// 最大阈值限位
+    func limitMinZero(max: AxcUnifiedNumber) -> Base {
+        return limitThan(min: 0, max: max)
+    }
 }
 
 // MARK: 类方法
@@ -384,38 +389,38 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 // MARK: 通用转换
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
-    /// 转换成UIEdgeInsets
-    var uiEdge: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets
+    var edge: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(base)
     }
 
-    /// 转换成UIEdgeInsets的Top，其他为0
-    var uiEdgeTop: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Top，其他为0
+    var edgeTop: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(base, 0, 0, 0)
     }
 
-    /// 转换成UIEdgeInsets的Left，其他为0
-    var uiEdgeLeft: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Left，其他为0
+    var edgeLeft: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, 0)
     }
 
-    /// 转换成UIEdgeInsets的Bottom，其他为0
-    var uiEdgeBottom: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Bottom，其他为0
+    var edgeBottom: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(0, 0, base, 0)
     }
 
-    /// 转换成UIEdgeInsets的Right，其他为0
-    var uiEdgeRight: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Right，其他为0
+    var edgeRight: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(0, 0, 0, base)
     }
 
-    /// 转换成UIEdgeInsets的Left、Right，其他为0
-    var uiEdgeHorizontal: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Left、Right，其他为0
+    var edgeHorizontal: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, base)
     }
 
-    /// 转换成UIEdgeInsets的Top、Bottom，其他为0
-    var uiEdgeVertical: AxcBedrockEdgeInsets {
+    /// 转换成EdgeInsets的Top、Bottom，其他为0
+    var edgeVertical: AxcBedrockEdgeInsets {
         return AxcBedrockEdgeInsets.Axc.Create(base, 0, base, 0)
     }
 }

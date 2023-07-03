@@ -61,11 +61,16 @@ public extension AxcSpace where Base: NSAttributedString {
                   options: AxcBedrockNSStringDrawingOptions = [
                       .usesLineFragmentOrigin,
                       .usesFontLeading,
+                      .usesDeviceMetrics,
+                      .truncatesLastVisibleLine
                   ]) -> CGSize {
+        let attributes = attributes()
         let rect = base.string.boundingRect(with: maxSize,
                                             options: options,
-                                            attributes: attributes(),
+                                            attributes: attributes,
                                             context: nil)
-        return rect.size
+        let newWidth = rect.size.width.axc.ceil + 1
+        let newHeight = rect.size.height.axc.ceil + 1
+        return CGSize(width: newWidth, height: newHeight)
     }
 }

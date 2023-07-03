@@ -35,9 +35,9 @@ public extension AxcSpace where Base == String {
         guard let cgImage = CGImage.Axc.CreateHD(with: ciImage, size: size) else { return nil }
         #if os(macOS)
         return AxcBedrockImage(cgImage: cgImage, size: .zero)
-        
+
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        
+
         return AxcBedrockImage(cgImage: cgImage)
         #endif
     }
@@ -161,24 +161,36 @@ public extension AxcSpace where Base == String {
 
 public extension AxcSpace where Base == String {
     /// （💈跨平台标识）计算文字的宽度
-    func textWidth(maxHeight: CGFloat, font: AxcBedrockFont) -> CGFloat {
+    func textWidth(maxHeight: CGFloat,
+                   font: AxcUnifiedFont,
+                   paragraphStyle: NSParagraphStyle? = nil) -> CGFloat {
         let maxSize = CGSize(width: .Axc.Max, height: maxHeight)
-        return textSize(maxSize: maxSize, font: font).width
+        return textSize(maxSize: maxSize, font: font, paragraphStyle: paragraphStyle).width
     }
 
     /// （💈跨平台标识）计算文字的高度
-    func textHeight(maxWidth: CGFloat, font: AxcBedrockFont) -> CGFloat {
+    func textHeight(maxWidth: CGFloat,
+                    font: AxcUnifiedFont,
+                    paragraphStyle: NSParagraphStyle? = nil) -> CGFloat {
         let maxSize = CGSize(width: maxWidth, height: .Axc.Max)
-        return textSize(maxSize: maxSize, font: font).height
+        return textSize(maxSize: maxSize, font: font, paragraphStyle: paragraphStyle).height
     }
 
     /// （💈跨平台标识）计算文字的大小
     func textSize(maxSize: CGSize,
-                  font: AxcBedrockFont,
+                  font: AxcUnifiedFont,
+                  paragraphStyle: NSParagraphStyle? = nil,
                   options: AxcBedrockNSStringDrawingOptions = [
                       .usesLineFragmentOrigin,
                       .usesFontLeading,
                   ]) -> CGSize {
-        return attributedStr(font: font).axc.textSize(maxSize: maxSize, options: options)
+        // 配置富文本属性
+        let attStr = makeAttributed { make in
+            make.set(font: font)
+            if let paragraphStyle = paragraphStyle {
+                make.set(paragraphStyle: paragraphStyle)
+            }
+        }
+        return attStr.axc.textSize(maxSize: maxSize, options: options)
     }
 }

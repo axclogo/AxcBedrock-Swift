@@ -36,15 +36,19 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(font: AxcUnifiedFont, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.font: assertTransformFont(font)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
     /// （💈跨平台标识）设置段落样式
     @discardableResult
-    func set(paragraphStyle: NSParagraphStyle, range: AxcUnifiedRange? = nil) -> Self {
-        attributedString.axc.applying([.paragraphStyle: paragraphStyle],
-                                     range: range)
+    func set(paragraphStyle: NSParagraphStyle?, range: AxcUnifiedRange? = nil) -> Self {
+        if let paragraphStyle {
+            attributedString.axc.applying([.paragraphStyle: paragraphStyle],
+                                          range: range)
+        } else {
+            attributedString.axc.remove(attributeKeyRanges: [.paragraphStyle: range])
+        }
         return self
     }
 
@@ -52,7 +56,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(foregroundColor: AxcUnifiedColor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.foregroundColor: assertTransformColor(foregroundColor)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -60,7 +64,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(backgroundColor: AxcUnifiedColor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.backgroundColor: assertTransformColor(backgroundColor)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -69,7 +73,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(ligature: Bool, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.ligature: assertTransformNumber(ligature)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -77,7 +81,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(kern: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.kern: assertTransformNumber(kern)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -86,7 +90,7 @@ public extension AxcMaker.AttributedString {
     @available(iOS 14.0, *)
     func set(tracking: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.tracking: assertTransformNumber(tracking)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -94,7 +98,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(number: Bool, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.strikethroughStyle: assertTransformNumber(number)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -102,7 +106,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(strikethroughColor: AxcUnifiedColor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.strikethroughColor: assertTransformColor(strikethroughColor)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -110,7 +114,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(underlineStyle: Bool, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.underlineStyle: assertTransformNumber(underlineStyle)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -118,7 +122,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(underlineColor: AxcUnifiedColor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.underlineColor: assertTransformColor(underlineColor)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -126,7 +130,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(strokeWidth: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.strokeWidth: assertTransformNumber(strokeWidth)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -134,7 +138,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(strokeColor: AxcUnifiedColor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.strokeColor: assertTransformColor(strokeColor)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -142,7 +146,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(shadow: NSShadow, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.shadow: shadow],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -150,7 +154,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(textEffect: String, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.textEffect: textEffect],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -158,7 +162,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(attachment: NSTextAttachment, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.attachment: attachment],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -166,7 +170,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(link: AxcUnifiedUrl, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.link: assertTransformURL(link)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -174,7 +178,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(baselineOffset: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.baselineOffset: assertTransformNumber(baselineOffset)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -182,7 +186,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(obliqueness: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.obliqueness: assertTransformNumber(obliqueness)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -190,7 +194,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(expansion: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.expansion: assertTransformNumber(expansion)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -203,7 +207,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(number: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.writingDirection: assertTransformNumber(number)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -211,7 +215,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(verticalGlyphForm: Bool, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.verticalGlyphForm: assertTransformNumber(verticalGlyphForm)],
-                                     range: range)
+                                      range: range)
         return self
     }
 }
@@ -225,7 +229,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(cursor: NSCursor, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.cursor: cursor],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -233,7 +237,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(toolTip: String, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.toolTip: toolTip],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -241,7 +245,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(markedClauseSegment: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.markedClauseSegment: assertTransformNumber(markedClauseSegment)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -250,7 +254,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(textAlternatives: NSTextAlternatives, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.textAlternatives: textAlternatives],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -259,7 +263,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(spellingState: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.spellingState: assertTransformNumber(spellingState)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -267,7 +271,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(superscript: AxcUnifiedNumber, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.superscript: assertTransformNumber(superscript)],
-                                     range: range)
+                                      range: range)
         return self
     }
 
@@ -275,7 +279,7 @@ public extension AxcMaker.AttributedString {
     @discardableResult
     func set(glyphInfo: NSGlyphInfo, range: AxcUnifiedRange? = nil) -> Self {
         attributedString.axc.applying([.glyphInfo: glyphInfo],
-                                     range: range)
+                                      range: range)
         return self
     }
 }

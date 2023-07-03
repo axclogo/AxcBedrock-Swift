@@ -70,16 +70,28 @@ public extension AxcSpace where Base == CGRect {
     /// （💈跨平台标识）将矩形的内容区域向内缩小
     /// - Parameter edge: 边距
     /// - Returns: Rect
-    func inset(edgeInsets: AxcBedrockEdgeInsets) -> CGRect {
+    func inside(edge: AxcBedrockEdgeInsets) -> CGRect {
         #if os(macOS)
         var newRect = base
-        newRect.origin.x += edgeInsets.left
-        newRect.origin.y += edgeInsets.top
-        newRect.size.width -= edgeInsets.axc.horizontal
-        newRect.size.height -= edgeInsets.axc.vertical
+        newRect.origin.x += edge.left
+        newRect.origin.y += edge.top
+        newRect.size.width -= edge.axc.horizontal
+        newRect.size.height -= edge.axc.vertical
         return newRect
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        return base.inset(by: edgeInsets)
+        return base.inset(by: edge)
         #endif
+    }
+
+    /// （💈跨平台标识）将矩形的内容区域向外扩大
+    /// - Parameter edge: 边距
+    /// - Returns: Rect
+    func outside(edge: AxcBedrockEdgeInsets) -> CGRect {
+        var newRect = base
+        newRect.origin.x -= edge.left
+        newRect.origin.y -= edge.top
+        newRect.size.width += edge.axc.horizontal
+        newRect.size.height += edge.axc.vertical
+        return newRect
     }
 }

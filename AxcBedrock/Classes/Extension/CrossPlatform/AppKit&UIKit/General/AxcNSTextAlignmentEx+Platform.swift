@@ -5,9 +5,13 @@
 //  Created by 赵新 on 2022/4/8.
 //
 
-#if canImport(UIKit)
+#if os(macOS)
+import AppKit
+
+#elseif os(iOS) || os(tvOS) || os(watchOS)
 
 import UIKit
+#endif
 
 // MARK: - NSTextAlignment + AxcSpaceProtocol
 
@@ -46,5 +50,3 @@ public extension AxcSpace where Base == NSTextAlignment { }
 // MARK: - 运算符
 
 public extension AxcSpace where Base == NSTextAlignment { }
-
-#endif
