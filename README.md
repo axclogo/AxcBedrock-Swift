@@ -5,9 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 [![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 
+![bedrock](./readme_source/bedrock.png)<br>
+
+
 ## 示例
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 
 
 ## 安装
