@@ -77,10 +77,48 @@ public extension AxcUIImageViewSpace {
         base.tintColor = assertTransformColor(tintUnifiedColor)
     }
 
+    /// 设置Git图片
+    /// - Parameters:
+    ///   - bundle: 资源包
+    ///   - name: git文件名，可以例如：xxxx、xxxx.gif、xxxx.GIF
+    ///   - duration: 时间，默认空，自动计算每张图展示0.2秒
+    ///   - repeatCount: 重复次数，默认 0 无限
+    func setGifImage(with bundle: Bundle? = nil,
+                     name: String,
+                     duration: AxcUnifiedNumber? = nil,
+                     repeatCount: Int = 0) {
+        var sourceBundle = Bundle.main
+        if let bundle {
+            sourceBundle = bundle
+        }
+        var gifPath: String?
+        if let fileExtension = name.components(separatedBy: ".").last,
+           fileExtension.lowercased() == "gif",
+           let path = sourceBundle.path(forResource: name, ofType: nil) {
+            gifPath = path
+        } else if let path = sourceBundle.path(forResource: name, ofType: "gif") {
+            gifPath = path
+        } else if let path = sourceBundle.path(forResource: name, ofType: "GIF") {
+            gifPath = path
+        }
+        guard let gifPath else { return }
+        let url = URL(fileURLWithPath: gifPath)
+        guard let gifSource = CGImageSourceCreateWithURL(url as CFURL, nil) else { return }
+        let frameCount = CGImageSourceGetCount(gifSource)
+        var imgLists: [UIImage] = []
+        for idx in 0 ..< frameCount {
+            if let imageRef = CGImageSourceCreateImageAtIndex(gifSource, idx, nil) {
+                let img = UIImage(cgImage: imageRef)
+                imgLists.append(img)
+            }
+        }
+        playImages(imgLists, duration: duration, repeatCount: repeatCount)
+    }
+
     /// 播放图片组
     /// - Parameters:
     ///   - images: 图片组
-    ///   - duration: 时间，默认空，自动计算每张图展示0.2秒
+    ///   - duration: 时间，默认空，空则自动计算每张图展示0.2秒
     ///   - repeatCount: 重复次数，默认 0 无限
     func playImages(_ images: [UIImage],
                     duration: AxcUnifiedNumber? = nil,
