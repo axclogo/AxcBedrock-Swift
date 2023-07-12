@@ -55,6 +55,7 @@ let attText = "这是一段富文本".axc.makeAttributed { make in
 | iOS表现 | MacOS表现 |
 | ---------------- | ---------------- |
 | ![bedrock](./readme_source/attributedText_iOS_example.png)<br>  | ![bedrock](./readme_source/attributedText_MacOS_example.png)<br>  |
+
 需要注意的是，AxcUnifiedXXX的类为通用类，例如上面示例的设置Font和Color的类分别为：
 AxcUnifiedFont和AxcUnifiedColor
 这样的类可以兼容并采取以下写法：
