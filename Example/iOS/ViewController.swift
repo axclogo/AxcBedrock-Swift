@@ -22,8 +22,15 @@ class ViewController: UIViewController {
         
         
         let attText = "这是一段富文本".axc.makeAttributed { make in
-            make.set(font: 15, range: 0...1)
+            make.set(font: 15.axc.uiFont, range: 0...1)
+                .set(font: 15.4, range: NSRange(location: 0, length: 4))
+                .set(font: UIFont.systemFont(ofSize: 15), range: NSRange(location: 0, length: 4))
+                .set(font: UIFont.systemFont(ofSize: 15), range: 0...1)
+            
                 .set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
+                .set(foregroundColor: "FFBBAA", range: 1...2)
+                .set(foregroundColor: UIColor.red, range: 1...2)
+                .set(foregroundColor: 0xFFBBAA, range: NSRange(location: 0, length: 4))
         }
 
         label.attributedText = attText
