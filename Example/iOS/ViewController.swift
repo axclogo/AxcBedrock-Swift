@@ -15,37 +15,53 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .groupTableViewBackground
         
-        view.addSubview(label)
-        label.frame = CGRect(x: 20, y: 100, width: 300, height: 30)
-        
-        
-        let attText = "这是一段富文本".axc.makeAttributed { make in
-            make.set(font: 15.axc.uiFont, range: 0...1)
-                .set(font: 15.4, range: NSRange(location: 0, length: 4))
-                .set(font: UIFont.systemFont(ofSize: 15), range: NSRange(location: 0, length: 4))
-                .set(font: UIFont.systemFont(ofSize: 15), range: 0...1)
-            
-                .set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
-                .set(foregroundColor: "FFBBAA", range: 1...2)
-                .set(foregroundColor: UIColor.red, range: 1...2)
-                .set(foregroundColor: 0xFFBBAA, range: NSRange(location: 0, length: 4))
-        }
+        view.layer.addSublayer(shapeLayer)
+        shapeLayer.frame = view.bounds
+        shapeLayer.frame.origin.y = 50
 
-        label.attributedText = attText
-        
+        let center = 200.axc.cgPoint
+        let radius: CGFloat = 100
+
+
+
+        var linesHeight: [AxcUnifiedNumber] = []
+        for i in 0...1000 {
+            if (arc4random() % 2) == 0 {
+                linesHeight.append(80)
+            }else{
+                linesHeight.append(-80)
+            }
+        }
+        let bz = UIBezierPath.Axc.CreateRadiateCircle(center: center,
+                                                     radius: radius,
+                                                     linesHeight: linesHeight,
+                                                     clockwise: .clockwise,
+                                                     startAngle: .direction(.left),
+                                                     openingAngle: 0,
+                                                     isReversing: false)
+        shapeLayer.path = bz.axc.cgPath
+
     }
-    
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        return label
+
+    lazy var shapeLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.lineWidth = 1
+        layer.strokeColor = UIColor.systemBlue.cgColor
+        layer.fillColor = UIColor.clear.cgColor
+        return layer
     }()
 
-}
 
-
-class AA: Decodable {
+    @IBAction func clickAction(_ sender: Any) {
+        let animation = CABasicAnimation.Axc.CreateAnimation { make in
+            make.set(key: .strokeEnd)
+            make.set(fromValue: 0)
+                .set(toValue: 1)
+                .set(duration: 3)
+        }
+        shapeLayer.add(animation, forKey: "")
+    }
     
 }
