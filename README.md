@@ -2,15 +2,14 @@
 ![language](https://img.shields.io/badge/Language-swift-8E44AD.svg)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)
-![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-1.12.1-brightgreen.svg)
-[![Version](https://img.shields.io/cocoapods/v/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 [![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
+![CocoaPods](https://img.shields.io/badge/CocoaPods-1.12.1-brightgreen.svg)
 ![Axc](https://img.shields.io/badge/Axc-Kit-orange.svg)
 
 # 介绍
 ![bedrock](./readme_source/bedrock.png)<br>
 AxcBedrock是一个Swift工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
+
 如同MineCraft中的基岩一样，作为世界基础，承担起所有方块.
 
 # 安装
