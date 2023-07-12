@@ -8,21 +8,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 ![Axc](https://img.shields.io/badge/Axc-Kit-orange.svg)
 
-![bedrock](./readme_source/bedrock.png)<br>
-AxcBedrock是一个Swift工具库，为iOS和macOS应用程序提供常用的函数和扩展。
-
 # 介绍
-提供常用的Swift函数和扩展
-所有API使用都遵循这种格式的命名规范：
-```swift
-// 实例功能调用：
-xxxx.axc.xxxx
-// 类功能调用
-Xxxx.Axc.Xxxx
-```
-以此可轻松访问您需要的所有函数和扩展。
-
-支持iOS和macOS应用程序
+![bedrock](./readme_source/bedrock.png)<br>
+AxcBedrock是一个Swift工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
+如同MineCraft中的基岩一样，作为世界基础，承担起所有方块.
 
 # 安装
 您可以使用CocoaPods快速安装AxcBedrock:
@@ -35,13 +24,25 @@ pod 'AxcBedrock'
 # 用法
 使用AxcBedrock中的函数和扩展非常简单。只需将AxcBedrock导入到您的项目中，即可开始使用。
 
+所有API使用都遵循这种格式的命名规范：
+```swift
+// 实例功能调用：
+xxxx.axc.xxxx
+// 类功能调用
+Xxxx.Axc.Xxxx
+```
+以此可轻松访问您需要的所有函数和扩展。
+
 以下是一个简单的示例，演示如何使用AxcBedrock中的功能：
 
+```swift
 import AxcBedrock
 
 let myString = "hello world"
 let testString = myString.axc.keepPrefix(count: 3)
 print(testString) // "hel"
+```
+
 有关AxcBedrock中可用函数和扩展的完整列表，请参见文档。
 
 # 问题
