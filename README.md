@@ -4,7 +4,6 @@
 ![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 ![CocoaPods](https://img.shields.io/badge/CocoaPods-1.12.1-brightgreen.svg)
-[![Version](https://img.shields.io/cocoapods/v/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
 ![Axc](https://img.shields.io/badge/Axc-Kit-orange.svg)
 
 # 介绍
