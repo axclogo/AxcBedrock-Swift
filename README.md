@@ -8,9 +8,13 @@
 
 # 介绍
 ![bedrock](./readme_source/bedrock.png)<br>
-AxcBedrock是一个Swift工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
+AxcBedrock是一个基础的工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
 
-如同MineCraft中的基岩一样，作为世界基础，承担起所有方块.
+如同MineCraft中的基岩一样，作为世界基础，承担起所有方块。
+
+在将来，还会继续支持Dart等语言（时间够的话😄）[Dart版本点这里（还在开发中..）](https://github.com/axclogo/AxcBedrock-Dart) 
+
+主要思想是想打通开发的连贯性，不局限于一个平台或一个语言，打通开发人员的习惯，让所有底层Api或简单小操作的调用统一
 
 # 安装
 您可以使用CocoaPods快速安装AxcBedrock:
@@ -109,7 +113,7 @@ shapeLayer.path = bz.axc.cgPath
 
 即便是跨平台，一份代码也够了
 
-有关AxcBedrock中可用函数和扩展的完整列表，请参见文档。
+##更多有关AxcBedrock中可用函数和扩展的完整列表，请参见代码或导出Swift-Docc文档。
 
 # 问题
 如果您在使用AxcBedrock时遇到问题或错误，请在GitHub上提交问题。
@@ -118,6 +122,7 @@ shapeLayer.path = bz.axc.cgPath
 
 # 联系
 E-mail邮箱：axclogo@163.com
+
 WeChat：zx532432339 
 
 # 贡献
@@ -125,12 +130,14 @@ AxcBedrock是开源的，并感谢任何形式的贡献。如果您发现错误�
 
 **目前需协助帮忙~如果有想法的请联系我！或者提PR，谢谢！Orz**
 
-## 需要协助一起完善的任务有：
+## 需要协助一起的任务还有：
 1.完善单元测试部分
 
 2.支持Swift Package Manager
 
 3.如果有需要优化的地方，提出优化项
+
+4.如果有想一起开发Dart版的Bedrock，请联系我！
 
 # 证书
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
