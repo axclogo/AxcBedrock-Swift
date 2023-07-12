@@ -116,15 +116,24 @@ shapeLayer.path = bz.axc.cgPath
 
 如果您在使用过程中，不知道或不明白有哪些Api，也可以在GitHub上提交问题。
 
-# 作者
-axclogo@163.com
+# 联系
+E-mail邮箱：axclogo@163.com
+WeChat：zx532432339 
 
 # 贡献
 AxcBedrock是开源的，并感谢任何形式的贡献。如果您发现错误或想改进库，请提交拉取请求。
 
-**目前急需协助帮忙完善单元测试部分~如果有想法的请联系我！谢谢！Orz**
+**目前需协助帮忙~如果有想法的请联系我！或者提PR，谢谢！Orz**
+
+## 需要协助一起完善的任务有：
+1.完善单元测试部分
+
+2.支持Swift Package Manager
+
+3.如果有需要优化的地方，提出优化项
 
 # 证书
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
 
-# 如果这个库有帮助到你，或者启发了你什么灵感，请给个Star⭐️ ~ ~ Thanks♪(･ω･)ﾉ
+# 如果这个库有帮助到你，或者帮助你启发了什么，请给个Star⭐️ ~ ~ Thanks♪(･ω･)ﾉ
+
