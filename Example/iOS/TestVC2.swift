@@ -18,7 +18,7 @@ class TestVC2: UIViewController {
         let vcs = navigationController?.viewControllers
         print(vcs)
         
-        let currentVC = YPApp.CurrentVC(filterClassNames: [TestVC2.YP.ClassName])
+        let currentVC = AxcApp.CurrentVC(filterClassNames: [TestVC2.Axc.ClassName])
         print(currentVC)
     }
 }

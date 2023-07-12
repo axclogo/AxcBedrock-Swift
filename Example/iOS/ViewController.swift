@@ -15,22 +15,27 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dic = ["a": 1]
-        let data = dic.yp.jsonData
+        view.backgroundColor = .white
         
-        let a1 = AA.YP.Create(fromJsonObject: dic)
+        view.addSubview(label)
+        label.frame = CGRect(x: 20, y: 100, width: 300, height: 30)
         
-        let c3 = AA.YP.Create(fromJsonData: data)
         
-        let obj: AA? = dic.yp.jsonClass()
+        let attText = "这是一段富文本".axc.makeAttributed { make in
+            make.set(font: 15, range: 0...1)
+                .set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
+        }
 
-        let obj2: AA? = [1,2,3].yp.jsonClass()
-
+        label.attributedText = attText
+        
     }
+    
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        return label
+    }()
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        navigationController?.pushViewController(TestVC(), animated: true)
-    }
 }
 
 

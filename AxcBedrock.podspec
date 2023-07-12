@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
     
     
     #iOS平台
-    s.ios.deployment_target = '11.0'
+    s.ios.deployment_target = '10.0'
     
     # iOS平台文件
     ios_source_files =

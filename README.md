@@ -24,6 +24,7 @@ pod 'AxcBedrock'
 # 用法
 使用AxcBedrock中的函数和扩展非常简单。只需将AxcBedrock导入到您的项目中，即可开始使用。
 
+## 格式/规范
 所有API使用都遵循这种格式的命名规范：
 ```swift
 // 实例功能调用：
@@ -33,6 +34,8 @@ Xxxx.Axc.Xxxx
 ```
 以此可轻松访问您需要的所有函数和扩展。
 
+## 示例
+### 调用示例
 以下是一个简单的示例，演示如何使用AxcBedrock中的功能：
 
 ```swift
@@ -42,6 +45,18 @@ let myString = "hello world"
 let testString = myString.axc.keepPrefix(count: 3)
 print(testString) // "hel"
 ```
+
+### 富文本操作示例
+```swift
+let attText = "这是一段富文本".axc.makeAttributed { make in
+    make.set(font: 15, range: 0...1)
+        .set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
+}
+```
+| iOS表现 | MacOS表现 |
+| ---------------- | ---------------- |
+| ![bedrock](./readme_source/attributedText_iOS_example.png)<br>  | ![bedrock](./readme_source/attributedText_MacOS_example.png)<br>  |
+
 
 有关AxcBedrock中可用函数和扩展的完整列表，请参见文档。
 

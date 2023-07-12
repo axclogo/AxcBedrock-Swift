@@ -20,7 +20,7 @@ class TestVC: UIViewController {
         
         
     }
-    let a = UIDevice.YP.UsedDiskSpace_GB
+    let a = UIDevice.Axc.UsedDiskSpace_GB
     
 //    var current = 0
 //
