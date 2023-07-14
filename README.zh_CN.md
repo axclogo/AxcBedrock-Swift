@@ -8,8 +8,8 @@
 
 
 # 语言
-- en [English](./.README.md)
-- zh_CN [简体中文](./.README.zh_CN.md)
+- en [English](./README.md)
+- zh_CN [简体中文](./README.zh_CN.md)
 
 # 介绍
 ![bedrock](./readme_source/bedrock.png)<br>
