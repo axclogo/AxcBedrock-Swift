@@ -100,16 +100,6 @@ public extension AxcSpace where Base == Data {
         }
     }
 
-    /// 转换成Json对象
-    var jsonObj: Any? {
-        return jsonObj()
-    }
-
-    /// 根据选择转换成数据对象
-    func jsonObj(options: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
-        return try? JSONSerialization.jsonObject(with: base, options: options)
-    }
-
     /// 将data map成支持Codable协议的某个对象
     func jsonMap<T: Codable>(_ type: T.Type) -> T? {
         return try? JSONDecoder().decode(type, from: base)

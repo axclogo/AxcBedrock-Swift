@@ -35,11 +35,18 @@ public extension AxcSpace where Base == String {
 
     /// 字符串转Data
     var data: Data? {
-        return data()
+        return data(using: .utf8)
     }
 
     /// 字符串转Data
+    @available(*, deprecated, renamed: "data(using:)")
     func data(_ using: String.Encoding = .utf8) -> Data? {
+        guard !base.isEmpty else { return nil }
+        return base.data(using: using, allowLossyConversion: false)
+    }
+    
+    /// 字符串转Data
+    func data(using: String.Encoding = .utf8) -> Data? {
         guard !base.isEmpty else { return nil }
         return base.data(using: using, allowLossyConversion: false)
     }
@@ -68,12 +75,6 @@ public extension AxcSpace where Base == String {
             }
         guard data.count > 0 else { return nil }
         return data
-    }
-
-    /// 如果这个字符串本身是json，那么调用此可以直接获取Object
-    /// 也可以用来判断是否为json字符串，nil 就不是json字符串
-    var jsonObj: Any? {
-        return data?.axc.jsonObj
     }
 
     /// 字符串全填充转NSRange

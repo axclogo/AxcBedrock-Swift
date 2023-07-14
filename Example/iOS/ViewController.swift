@@ -24,7 +24,9 @@ class ViewController: UIViewController {
         let center = 200.axc.cgPoint
         let radius: CGFloat = 100
 
-
+        "".axc.data
+        "".axc.data(using: .utf8)
+        "".axc.jsonData
 
         var linesHeight: [AxcUnifiedNumber] = []
         for i in 0...1000 {

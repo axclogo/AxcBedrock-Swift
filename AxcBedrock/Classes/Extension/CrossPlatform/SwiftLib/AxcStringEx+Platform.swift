@@ -47,7 +47,7 @@ public extension AxcSpace where Base == String {
     var qrCodeCIImage: CIImage? {
         guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
         filter.setDefaults()
-        guard let data = data else { return nil }
+        guard let data = data(.utf8) else { return nil }
         filter.setValue(data, forKey: "inputMessage")
         guard let outPutImage = filter.outputImage else { return nil }
         return outPutImage
