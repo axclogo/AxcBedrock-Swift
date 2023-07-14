@@ -6,49 +6,55 @@
 ![CocoaPods](https://img.shields.io/badge/CocoaPods-1.12.1-brightgreen.svg)
 ![Axc](https://img.shields.io/badge/Axc-Kit-orange.svg)
 
-# 介绍
+
+# Language
+- en [English](./.README.md)
+- zh_CN [简体中文](./.README.zh_CN.md)
+
+# Introduce
 ![bedrock](./readme_source/bedrock.png)<br>
-AxcBedrock是一个基础的工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
+AxcBedrock is a basic tool library that provides commonly used functions and extensions for iOS and macOS applications.
 
-如同MineCraft中的基岩一样，作为世界基础，承担起所有方块。
+Like Bedrock in MineCraft, as the foundation of the world, it bears all the blocks.
 
-在将来，还会继续支持Dart等语言（时间够的话😄）[Dart版本点这里（还在开发中..）](https://github.com/axclogo/AxcBedrock-Dart) 
+In the future, it will continue to support languages such as Dart (if time permits 😄) [Click here for the Dart version (still in development..)](https://github.com/axclogo/AxcBedrock-Dart) 
 
-主要思想是想打通开发的连贯性，不局限于一个平台或一个语言，打通开发人员的习惯，让所有底层Api或简单小操作的调用统一
+The main idea is to establish coherence in development, not limited to one platform or one language, to connect developers' habits, and to unify the invocation of all underlying APIs or simple small operations.
 
-功能方面与[SwifterSwift](https://github.com/SwifterSwift/SwifterSwift)相似，主要的区别在于调用和使用。
+In terms of functionality, it is similar to [SwifterSwift](https://github.com/SwifterSwift/SwifterSwift), with the main difference being in invocation and use.
 
-例如SwifterSwift是基于extension直接做的功能，但是由于大项目中的extension存在过多，在调用api和查找api时Xcode的补全可能会存在卡顿、api过多无法找到需要的问题
+For example, SwifterSwift is based on direct extension functions, but because of too many extensions in a large project, when calling APIs and finding APIs, Xcode's completion may cause lagging and it may be difficult to find the needed API.
 
-所以AxcBedrock是基于命名空间模式的封装，在需要调用的地方打出.axc，然后查找对应的api即可。
+Therefore, AxcBedrock is based on namespace mode encapsulation, with the suffix ".axc" added where it needs to be invoked, and then the corresponding API can be searched.
 
-不敢说很多项目，但是我在做的项目中这个方案确实解决了代码补全侵染的问题，也具有良好的美观性，并且不会和主项目的extension造成命名重复的问题。
+I can't say there are many projects, but in the projects I am involved in, this solution really solves the problem of code completion creeping in. It also has good aesthetics and will not cause naming conflicts with the extensions of the main project.
 
 
-# 安装
-您可以使用CocoaPods快速安装AxcBedrock:
+# Install
+You can quickly install AxcBedrock using CocoaPods:
+
 Podfile:
 ```ruby
 pod 'AxcBedrock'
 ```
-您也可以手动将源代码添加到项目中。
+Alternatively, you can manually add the source code to your project.
 
-# 用法
-使用AxcBedrock中的函数和扩展非常简单。只需将AxcBedrock导入到您的项目中，即可开始使用。
+# Usage
+Using the functions and extensions in AxcBedrock is very simple. Simply import AxcBedrock into your project and you can start using it.
 
-## 格式/规范
-所有API使用都遵循这种格式的命名规范：
+## Format/Specification
+All API usage follows this naming convention:
 ```swift
-// 实例功能调用：
+// Call instance function:
 xxxx.axc.xxxx
-// 类功能调用
+// Call class function:
 Xxxx.Axc.Xxxx
 ```
-以此可轻松访问您需要的所有函数和扩展。
+In this way, you can easily access all the functions and extensions you need.
 
-## 部分示例
-### 调用示例
-以下是一个简单的示例，演示如何使用AxcBedrock中的功能：
+## Examples
+### Example Call
+Here is a simple example to demonstrate how to use the functionality in AxcBedrock:
 
 ```swift
 import AxcBedrock
@@ -58,22 +64,22 @@ let testString = myString.axc.keepPrefix(count: 3)
 print(testString) // "hel"
 ```
 
-### 富文本操作示例
+### AttributedText Operations
 ```swift
 let attText = "这是一段富文本".axc.makeAttributed { make in
     make.set(font: 15, range: 0...1)
 .set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
 }
 ```
-| iOS表现 | MacOS表现 |
+| iOS performance | MacOS performance |
 | ---------------- | ---------------- |
 | ![bedrock](./readme_source/attributedText_iOS_example.png)<br>  | ![bedrock](./readme_source/attributedText_MacOS_example.png)<br>  |
 
-需要注意的是，AxcUnifiedXXX的类为通用类，例如上面示例的设置Font和Color的类分别为：
+Note that the classes AxcUnifiedXXX are universal classes. For example, the classes for setting font and color in the example above are:
 
-AxcUnifiedFont和AxcUnifiedColor
+AxcUnifiedFont and AxcUnifiedColor.
 
-这样的类可以兼容并采取以下写法：
+These classes can be used interchangeably and can be written in the following ways:
 
 **AxcUnifiedFont:**
 ```swift
@@ -95,9 +101,9 @@ make.set(font: UIFont.systemFont(ofSize: 15), range: NSRange(location: 0, length
 .set(foregroundColor: 0xFFBBAA, range: 1...2)
 .set(foregroundColor: 0xFFBBAA, range: NSRange(location: 0, length: 4))
 ```
-当然，无论UIColor还是NSColor都可以支持，但是要在对应的平台上使用
+Of course, both UIColor and NSColor are supported, but they must be used on the corresponding platform.
 
-### 贝塞尔曲线操作示例
+### Bezier Operation
 ```swift
 var linesHeight: [AxcUnifiedNumber] = []
 for i in 0...1000 {
@@ -116,40 +122,39 @@ let bz = UI/NS BezierPath.Axc.CreateRadiateCircle(center: center,
                                                   isReversing: false)
 shapeLayer.path = bz.axc.cgPath
 ```
-| iOS表现 | MacOS表现 |
+| iOS performance | MacOS performance |
 | ---------------- | ---------------- |
 | ![bedrock](./readme_source/bezierPath_iOS_example.png)<br>  | ![bedrock](./readme_source/bezierPath_MacOS_example.png)<br> 
 
-即便是跨平台，一份代码也够了
+Even across platforms, one codebase is enough.
 
-##更多有关AxcBedrock中可用函数和扩展的完整列表，请参见代码或导出Swift-Docc文档。
+## For a complete list of available functions and extensions in AxcBedrock, please refer to the code or export the Swift-Docc documentation.
 
-# 问题
-如果您在使用AxcBedrock时遇到问题或错误，请在GitHub上提交问题。
+# Question
+If you encounter any issues or errors while using AxcBedrock, please submit an issue on GitHub.
 
-如果您在使用过程中，不知道或不明白有哪些Api，也可以在GitHub上提交问题。
+If you are unsure or unclear about any API while using it, you can also submit an issue on GitHub.
 
-# 联系
-E-mail邮箱：axclogo@163.com
 
-WeChat：zx532432339 
 
-# 贡献
-AxcBedrock是开源的，并感谢任何形式的贡献。如果您发现错误或想改进库，请提交拉取请求。
+# Connection
+E-mail：axclogo@163.com
 
-**目前需协助帮忙~如果有想法的请联系我！或者提PR，谢谢！Orz**
+QQ：532432339 
 
-## 需要协助一起的任务还有：
-1.完善单元测试部分
+# Contribution
+AxcBedrock is open source and thanks for any contributions. If you find any errors or want to improve the library, please submit a pull request.
 
-2.支持Swift Package Manager
+**Currently I need help~ If you have any ideas, please contact me! Or submit a PR, thank you! Orz**
 
-3.如果有需要优化的地方，提出优化项
+Tasks that need help:
+- Improve the unit test section
+- Support Swift Package Manager
+- If there are areas that need optimization, propose optimization items
+- If you want to develop a Dart version of Bedrock together, please contact me!
 
-4.如果有想一起开发Dart版的Bedrock，请联系我！
-
-# 证书
+# LICENSE
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
 
-# 如果这个库有帮助到你，或者帮助你启发了什么，请给个Star⭐️ ~ ~ Thanks♪(･ω･)ﾉ
+# Please give a Star⭐️ to this repository if it has been helpful to you or has inspired you in any way. ~ ~ Thanks♪(･ω･)ﾉ
 
