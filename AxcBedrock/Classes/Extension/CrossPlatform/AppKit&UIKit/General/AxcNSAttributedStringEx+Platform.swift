@@ -62,7 +62,7 @@ public extension AxcSpace where Base: NSAttributedString {
                       .usesLineFragmentOrigin,
                       .usesFontLeading,
                       .usesDeviceMetrics,
-                      .truncatesLastVisibleLine
+                      .truncatesLastVisibleLine,
                   ]) -> CGSize {
         let attributes = attributes()
         let rect = base.string.boundingRect(with: maxSize,
@@ -72,5 +72,26 @@ public extension AxcSpace where Base: NSAttributedString {
         let newWidth = rect.size.width.axc.ceil + 1
         let newHeight = rect.size.height.axc.ceil + 1
         return CGSize(width: newWidth, height: newHeight)
+    }
+
+    // MARK: 根据宽度获取每行的富文本
+
+    /// 根据宽度计算每行的文本
+    /// - Parameter maxWidth: 最大宽度
+    /// - Returns: 每一行的富文本数组
+    func getAttributedStringLines(maxWidth: CGFloat) -> [NSAttributedString] {
+        let frameSetter = CTFramesetterCreateWithAttributedString(base as! CFAttributedString)
+        let path = CGMutablePath()
+        path.addRect(CGRect(x: 0, y: 0, width: maxWidth, height: .greatestFiniteMagnitude))
+        let ctFrame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, base.length), path, nil)
+        let ctLines = CTFrameGetLines(ctFrame) as! [CTLine]
+        var lines: [NSAttributedString] = []
+        for ctLine in ctLines {
+            let lineRange = CTLineGetStringRange(ctLine)
+            let range = NSRange(location: lineRange.location, length: lineRange.length)
+            let lineString = base.attributedSubstring(from: range)
+            lines.append(lineString)
+        }
+        return lines
     }
 }
