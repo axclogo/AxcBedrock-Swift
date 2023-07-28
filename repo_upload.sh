@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #【配置】
-new_version="1.0.0" # 这里设置要上传的版本号
+new_version="1.1.0" # 这里设置要上传的版本号
 pod_sources="https://github.com/CocoaPods/Specs" # 这里设置sources
 
 
@@ -66,9 +66,7 @@ sed "s/${old_content}/${new_content}/g" "$podspec_bak_file" > "$podspec_file"
 echo "检查文件状态"
 git status -s
 echo "提交变更文件"
-git add $podspec_file # .podspec变更
-git add $podspec_bak_file # .podspec.bak备份文件变更
-git add $my_file_name # 因版本号，提交自身的变更
+git add -A
 git commit -m "[repo upload]-repo上传$new_version"
 echo '同步远端分支'
 git config pull.rebase true
