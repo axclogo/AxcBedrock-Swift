@@ -65,14 +65,16 @@ sed "s/${old_content}/${new_content}/g" "$podspec_bak_file" > "$podspec_file"
 # ===================
 echo "检查文件状态"
 git status -s
-echo "提交变更文件"
-git add -A
-git commit -m "[repo upload]-repo上传$new_version"
-echo '同步远端分支'
-git config pull.rebase true
-git pull
-echo '推送远端分支'
-git push
+if [ -n "$(git status --porcelain)" ]; then
+    echo "检测到变更，正在提交变更文件"
+    git add -A
+    git commit -m "[repo upload]-repo上传$new_version"
+    echo '同步远端分支'
+    git config pull.rebase true
+    git pull
+    echo '推送远端分支'
+    git push
+if
 echo "打标签 - [$new_version]"
 git tag $new_version
 echo '推送到远端标签'
