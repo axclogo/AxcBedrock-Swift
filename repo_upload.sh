@@ -65,6 +65,7 @@ sed "s/${old_content}/${new_content}/g" "$podspec_bak_file" > "$podspec_file"
 # ===================
 echo "检查文件状态"
 git status -s
+# 如果有文件变动，则提交掉
 if [ -n "$(git status --porcelain)" ]; then
     echo "检测到变更，正在提交变更文件"
     git add -A
@@ -74,7 +75,8 @@ if [ -n "$(git status --porcelain)" ]; then
     git pull
     echo '推送远端分支'
     git push
-if
+fi
+
 echo "打标签 - [$new_version]"
 git tag $new_version
 echo '推送到远端标签'
@@ -84,3 +86,5 @@ echo '准备上传至cocoapods repo'
 pod trunk push ${podspec_file} --allow-warnings &
 pod_repo_push=$! # 同步执行该命令
 wait $pod_repo_push # 等待线程
+
+echo "🎉cocoapods repo推送完成！"
