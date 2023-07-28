@@ -18,6 +18,17 @@
 			name = FrameworkMaker;
 			productName = FrameworkMaker;
 		};
+		DC6FD7B12A7392E3003A1DBF /* PodRepoUpload */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DC6FD7B42A7392E3003A1DBF /* Build configuration list for PBXAggregateTarget "PodRepoUpload" */;
+			buildPhases = (
+				DC6FD7B62A739305003A1DBF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = PodRepoUpload;
+			productName = PodRepoUpload;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -1454,6 +1465,10 @@
 						DevelopmentTeam = Z9RU647CJW;
 						ProvisioningStyle = Automatic;
 					};
+					DC6FD7B12A7392E3003A1DBF = {
+						CreatedOnToolsVersion = 14.3.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "AxcBedrock" */;
@@ -1479,6 +1494,7 @@
 				0CF02A7F29A643CD00A9A2FA /* Maintain */,
 				0CF905702A2358F1000450EE /* Framework */,
 				0C05957C2A239A450041892C /* FrameworkMaker */,
+				DC6FD7B12A7392E3003A1DBF /* PodRepoUpload */,
 			);
 		};
 /* End PBXProject section */
@@ -1762,6 +1778,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS/Pods-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DC6FD7B62A739305003A1DBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "root_dir=$(dirname \"${SRCROOT}\")\ncd $root_dir\nls\npodspec_file=${PROJECT_NAME}.podspec\n# podspec_path=${root_dir}/${podspec_file}\necho \"备份原始文件：${podspec_file}\"\ncp \"$podspec_file\" \"$podspec_file.bak\"\npodspec_bak_file=${podspec_file}.bak\necho \"备份文件：${podspec_bak_file}\"\n\n# 这里设置要上传的版本号\nnew_version = \"2.0.0\"\n\n# 获取老版本号\npodspec_file_content=$(cat $podspec_file)\npattern=\"= '(.*)' # Auto Version\"\nold_version=\"\"\nif [[ $podspec_file_content =~ $pattern ]]; then\n   old_version=\"${BASH_REMATCH[1]}\"\n   echo \"提取的版本号为：$old_version\"\nelse\n   echo \"无法提取版本号，请检查podspec文件中的格式\"\n   exit 1\nfi\n\necho \"准备修改版本号${old_version} >>> ${new_version}\"\nold_content=\"= '${old_version}' # Auto Version\"\nnew_content=\"= '${new_version}' # Auto Version\"\n\n# 替换文件内容\nsed \"s/${old_content}/${new_content}/g\" \"$podspec_bak_file\" > \"$podspec_file\"\n";
 		};
 		E709C95A94EE5D43590289AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2871,6 +2904,22 @@
 			};
 			name = Release;
 		};
+		DC6FD7B22A7392E3003A1DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC6FD7B32A7392E3003A1DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2960,6 +3009,15 @@
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
 				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC6FD7B42A7392E3003A1DBF /* Build configuration list for PBXAggregateTarget "PodRepoUpload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC6FD7B22A7392E3003A1DBF /* Debug */,
+				DC6FD7B32A7392E3003A1DBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

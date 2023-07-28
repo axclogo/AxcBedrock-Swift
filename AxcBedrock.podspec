@@ -7,33 +7,33 @@
 #
 
 Pod::Spec.new do |s|
-    s.name             = 'AxcBedrock'
+    s.name          = 'AxcBedrock'
     
-    s.version          = '1.0.0'
+    s.version       = '1.0.0'
     
-    s.swift_version    = '5.0'
+    s.summary       = 'Axc的基岩工具库'
     
-    s.summary          = 'Axc的基岩工具库'
-    
-    s.description      =
+    s.description   =
     <<-DESC
     基岩工具库，将坑洼不平的各种苹果开发平台的Api调用统一，帮助iOS开发并快速过渡到任意平台开发，并能迅速操作基础Api
     目前支持iOS与MacOS双平台运作，Api相似度99%，可以平滑从iOS过渡到MacOS
     DESC
     
-    s.homepage         = 'https://github.com/axclogo/AxcBedrock'
+    s.homepage      = 'https://github.com/axclogo/AxcBedrock'
     
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.license       = { :type => 'MIT', :file => 'LICENSE' }
     
-    s.author           = { 'Axclogo' => 'axclogo@163.com' }
+    s.author        = { 'Axclogo' => 'axclogo@163.com' }
     
-    s.source           = { :git => 'https://github.com/axclogo/AxcBedrock-Swift.git', :tag => s.version.to_s }
+    s.source        = { :git => 'https://github.com/axclogo/AxcBedrock-Swift.git', :tag => s.version.to_s }
+    
+    s.swift_version = '5.0'
+    
+    s.requires_arc  = true
     
     s.pod_target_xcconfig = {
         'CODE_SIGNING_ALLOWED' => 'NO'
     }
-    
-    s.requires_arc = true
     
     # 设置子库 ===>
     # 文件类型
