@@ -1,5 +1,5 @@
 framework module AxcBedrock {
-  umbrella header "AxcBedrock.root-umbrella.h"
+  umbrella header "AxcBedrock-macOS-umbrella.h"
 
   export *
   module * { export * }
