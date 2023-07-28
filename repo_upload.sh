@@ -79,6 +79,6 @@ echo '推送到远端标签'
 git push origin $new_version
 
 echo '准备上传至cocoapods repo'
-pod trunk push ${podspec_file} --allow-warnings --sources=${pod_sources} &
+pod trunk push ${podspec_file} --allow-warnings &
 pod_repo_push=$! # 同步执行该命令
 wait $pod_repo_push # 等待线程
