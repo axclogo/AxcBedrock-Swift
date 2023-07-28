@@ -12,7 +12,7 @@
 - zh_CN [简体中文](./README.zh_CN.md)
 
 # Introduce
-![bedrock](./readme_source/bedrock.png)<br>
+![bedrock](./ReadmeSource/bedrock.png)<br>
 AxcBedrock is a basic tool library that provides commonly used functions and extensions for iOS and macOS applications.
 
 Like Bedrock in MineCraft, as the foundation of the world, it bears all the blocks.
@@ -73,7 +73,7 @@ let attText = "这是一段富文本".axc.makeAttributed { make in
 ```
 | iOS performance | MacOS performance |
 | ---------------- | ---------------- |
-| ![bedrock](./readme_source/attributedText_iOS_example.png)<br>  | ![bedrock](./readme_source/attributedText_MacOS_example.png)<br>  |
+| ![bedrock](./ReadmeSource/attributedText_iOS_example.png)<br>  | ![bedrock](./ReadmeSource/attributedText_MacOS_example.png)<br>  |
 
 Note that the classes AxcUnifiedXXX are universal classes. For example, the classes for setting font and color in the example above are:
 
@@ -124,7 +124,7 @@ shapeLayer.path = bz.axc.cgPath
 ```
 | iOS performance | MacOS performance |
 | ---------------- | ---------------- |
-| ![bedrock](./readme_source/bezierPath_iOS_example.png)<br>  | ![bedrock](./readme_source/bezierPath_MacOS_example.png)<br> 
+| ![bedrock](./ReadmeSource/bezierPath_iOS_example.png)<br>  | ![bedrock](./ReadmeSource/bezierPath_MacOS_example.png)<br> 
 
 Even across platforms, one codebase is enough.
 

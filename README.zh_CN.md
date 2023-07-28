@@ -12,7 +12,7 @@
 - zh_CN [简体中文](./README.zh_CN.md)
 
 # 介绍
-![bedrock](./readme_source/bedrock.png)<br>
+![bedrock](./ReadmeSource/bedrock.png)<br>
 AxcBedrock是一个基础的工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
 
 如同MineCraft中的基岩一样，作为世界基础，承担起所有方块。
@@ -73,7 +73,7 @@ let attText = "这是一段富文本".axc.makeAttributed { make in
 ```
 | iOS表现 | MacOS表现 |
 | ---------------- | ---------------- |
-| ![bedrock](./readme_source/attributedText_iOS_example.png)<br>  | ![bedrock](./readme_source/attributedText_MacOS_example.png)<br>  |
+| ![bedrock](./ReadmeSource/attributedText_iOS_example.png)<br>  | ![bedrock](./ReadmeSource/attributedText_MacOS_example.png)<br>  |
 
 需要注意的是，AxcUnifiedXXX的类为通用类，例如上面示例的设置Font和Color的类分别为：
 
@@ -124,7 +124,7 @@ shapeLayer.path = bz.axc.cgPath
 ```
 | iOS表现 | MacOS表现 |
 | ---------------- | ---------------- |
-| ![bedrock](./readme_source/bezierPath_iOS_example.png)<br>  | ![bedrock](./readme_source/bezierPath_MacOS_example.png)<br> 
+| ![bedrock](./ReadmeSource/bezierPath_iOS_example.png)<br>  | ![bedrock](./ReadmeSource/bezierPath_MacOS_example.png)<br> 
 
 即便是跨平台，一份代码也够了
 
