@@ -680,6 +680,8 @@
 		DB9CCC8E2E95096FD4C9F792 /* AxcUIViewAnimationCurveEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxcUIViewAnimationCurveEx.swift; path = ../../AxcBedrock/Classes/Extension/UIKit/AxcUIViewAnimationCurveEx.swift; sourceTree = "<group>"; };
 		DC3368FF2A42E80B006ADCF2 /* AxcBedrock.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = AxcBedrock.podspec; path = ../AxcBedrock.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DC3369002A42E9FC006ADCF2 /* placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeholder.swift; sourceTree = "<group>"; };
+		DC6FD7BB2A73AEAC003A1DBF /* repo_upload.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = repo_upload.sh; path = ../repo_upload.sh; sourceTree = "<group>"; };
+		DC6FD7BC2A73AEB7003A1DBF /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; };
 		DCA5A5E970F17D8B9EDAD41D /* AxcAnimationMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AxcAnimationMaker.swift; path = ../../AxcBedrock/Classes/Extension/QuartzCore/Obj/Maker/AxcAnimationMaker.swift; sourceTree = "<group>"; };
 		DD3123F65EFD966B4FBA78D1 /* Pods_YPBedrock_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPBedrock_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2AF7166B3C20BA11A1BBCF /* AxcUnifiedColor+CoreImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AxcUnifiedColor+CoreImage.swift"; path = "../../AxcBedrock/Classes/Extension/CoreImage/Linkage/AxcUnifiedColor+CoreImage.swift"; sourceTree = "<group>"; };
@@ -1209,6 +1211,8 @@
 			isa = PBXGroup;
 			children = (
 				DC3368FF2A42E80B006ADCF2 /* AxcBedrock.podspec */,
+				DC6FD7BC2A73AEB7003A1DBF /* Podfile */,
+				DC6FD7BB2A73AEAC003A1DBF /* repo_upload.sh */,
 				CC4D1C0872B811A1988A9DFC /* README.md */,
 				9B8EC7A3FF1ED23EDA631D49 /* LICENSE */,
 				0CE9B2C629A854D000AFE792 /* 扩展模版说明.swift */,
