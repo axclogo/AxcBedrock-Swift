@@ -28,6 +28,14 @@ wait $pod_lib_lint # 等待线程
 
 echo "🍺 repo校验成功！🎉🎉🎉🎉🎉🎉"
 
+# git同步
+echo '正在切换到远端分支'
+git checkout master
+git branch
+echo '同步远端分支'
+git config pull.rebase true
+git pull
+# ===================
 # 开始处理版本号
 echo "备份原始文件：${podspec_file}"
 cp "$podspec_file" "$podspec_file.bak"
@@ -47,21 +55,13 @@ fi
 echo "准备修改版本号${old_version} >>> ${new_version}"
 old_content="= '${old_version}' # Auto Version"
 new_content="= '${new_version}' # Auto Version"
-
-# 替换文件内容
 sed "s/${old_content}/${new_content}/g" "$podspec_bak_file" > "$podspec_file"
-echo "文件修改完成，正在提交git..."
-# git同步
-echo '正在切换到远端分支'
-git checkout master
-git branch
-echo '同步远端分支'
-git config pull.rebase true
-git pull
+# ===================
 echo "检查文件状态"
 git status -s
 echo "提交变更文件"
 git add $podspec_file # .podspec变更
+git add $podspec_bak_file # .podspec.bak备份文件变更
 git add $my_file_name # 因版本号，提交自身的变更
 git commit -m "[repo upload]-repo上传$new_version"
 echo '同步远端分支'
