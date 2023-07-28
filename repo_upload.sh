@@ -17,6 +17,12 @@ podspec_file=${project_name}.podspec
 cd $src_root_dir # 目录切换
 ls
 
+# 检查设置的版本是否和远端的tag列表重复
+if git rev-parse $new_version >/dev/null 2>&1; then
+  echo "❌错误！version $new_version 已存在于本地仓库！"
+  exit 1
+fi
+
 # 设置信号，当接收来自pod命令失败时自身也退出
 trap "exit" ERR
 
