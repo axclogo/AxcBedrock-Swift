@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
     baseFilePath = "AxcBedrock/Classes"
     
     # 核心文件（不可或缺）
-    Core_files = [
+    core_files = [
     "#{baseFilePath}/Core/**/*.#{fileType}",
     "#{baseFilePath}/Utils/**/*.#{fileType}",
     "#{baseFilePath}/Enum/**/*.#{fileType}",
@@ -50,25 +50,25 @@ Pod::Spec.new do |s|
     "#{baseFilePath}/Extension/Foundation/**/*.#{fileType}"
     ]
     # 属性包装器文件
-    Wrapper_files = "#{baseFilePath}/Wrapper/**/*.#{fileType}"
+    wrapper_files = "#{baseFilePath}/Wrapper/**/*.#{fileType}"
     # 跨平台文件
-    CrossPlatform_files = "#{baseFilePath}/Extension/CrossPlatform/**/*.#{fileType}"
+    crossPlatform_files = "#{baseFilePath}/Extension/CrossPlatform/**/*.#{fileType}"
     # 其他库文件路径
     # 因为拆分更细化的子库属实没必要，如果使用子库的话上传至Repo还需要进一步校验
     # 于是改为文件路径导入方式
     #    _files = "#{baseFilePath}/Extension/xxxx/**/*.#{fileType}"
-    AVFoundation_files = "#{baseFilePath}/Extension/AVFoundation/**/*.#{fileType}"
-    CoreFoundation_files = "#{baseFilePath}/Extension/CoreFoundation/**/*.#{fileType}"
-    CoreGraphics_files = "#{baseFilePath}/Extension/CoreGraphics/**/*.#{fileType}"
-    CoreImage_files = "#{baseFilePath}/Extension/CoreImage/**/*.#{fileType}"
-    CoreLocation_files = "#{baseFilePath}/Extension/CoreLocation/**/*.#{fileType}"
-    CoreMedia_files = "#{baseFilePath}/Extension/CoreMedia/**/*.#{fileType}"
-    CoreText_files = "#{baseFilePath}/Extension/CoreText/**/*.#{fileType}"
-    CoreVideo_files = "#{baseFilePath}/Extension/CoreVideo/**/*.#{fileType}"
-    LocalAuthentication_files = "#{baseFilePath}/Extension/LocalAuthentication/**/*.#{fileType}"
-    MapKit_files = "#{baseFilePath}/Extension/MapKit/**/*.#{fileType}"
-    QuartzCore_files = "#{baseFilePath}/Extension/QuartzCore/**/*.#{fileType}"
-    WebKit_files = "#{baseFilePath}/Extension/WebKit/**/*.#{fileType}"
+    avFoundation_files = "#{baseFilePath}/Extension/AVFoundation/**/*.#{fileType}"
+    coreFoundation_files = "#{baseFilePath}/Extension/CoreFoundation/**/*.#{fileType}"
+    coreGraphics_files = "#{baseFilePath}/Extension/CoreGraphics/**/*.#{fileType}"
+    coreImage_files = "#{baseFilePath}/Extension/CoreImage/**/*.#{fileType}"
+    coreLocation_files = "#{baseFilePath}/Extension/CoreLocation/**/*.#{fileType}"
+    coreMedia_files = "#{baseFilePath}/Extension/CoreMedia/**/*.#{fileType}"
+    coreText_files = "#{baseFilePath}/Extension/CoreText/**/*.#{fileType}"
+    coreVideo_files = "#{baseFilePath}/Extension/CoreVideo/**/*.#{fileType}"
+    localAuthentication_files = "#{baseFilePath}/Extension/LocalAuthentication/**/*.#{fileType}"
+    mapKit_files = "#{baseFilePath}/Extension/MapKit/**/*.#{fileType}"
+    quartzCore_files = "#{baseFilePath}/Extension/QuartzCore/**/*.#{fileType}"
+    webKit_files = "#{baseFilePath}/Extension/WebKit/**/*.#{fileType}"
     
     
     #iOS平台
@@ -76,23 +76,23 @@ Pod::Spec.new do |s|
     
     # iOS平台文件
     ios_source_files =
-    Core_files +
+    core_files +
     [
     "#{baseFilePath}/Extension/UIKit/**/*.#{fileType}", # 主要文件
-    Wrapper_files, # 属性包装器
-    CrossPlatform_files, # 跨平台
-    AVFoundation_files,
-    CoreFoundation_files,
-    CoreGraphics_files,
-    CoreImage_files,
-    CoreLocation_files,
-    CoreMedia_files,
-    CoreText_files,
-    CoreVideo_files,
-    LocalAuthentication_files,
-    MapKit_files,
-    QuartzCore_files,
-    WebKit_files
+    wrapper_files, # 属性包装器
+    crossPlatform_files, # 跨平台
+    avFoundation_files,
+    coreFoundation_files,
+    coreGraphics_files,
+    coreImage_files,
+    coreLocation_files,
+    coreMedia_files,
+    coreText_files,
+    coreVideo_files,
+    localAuthentication_files,
+    mapKit_files,
+    quartzCore_files,
+    webKit_files
     ]
     s.ios.source_files = ios_source_files
     
@@ -102,26 +102,26 @@ Pod::Spec.new do |s|
     
     # macOS平台文件
     osx_source_files =
-    Core_files +
+    core_files +
     [
     "#{baseFilePath}/Extension/AppKit/**/*.#{fileType}", # 主要文件
-    Wrapper_files, # 属性包装器
-    CrossPlatform_files, # 跨平台
-    CoreFoundation_files,
-    CoreGraphics_files,
-    CoreImage_files,
-    CoreLocation_files,
-    CoreMedia_files,
-    CoreText_files,
-    CoreVideo_files,
-    QuartzCore_files,
-    WebKit_files
+    wrapper_files, # 属性包装器
+    crossPlatform_files, # 跨平台
+    coreFoundation_files,
+    coreGraphics_files,
+    coreImage_files,
+    coreLocation_files,
+    coreMedia_files,
+    coreText_files,
+    coreVideo_files,
+    quartzCore_files,
+    webKit_files
     ]
     s.osx.source_files = osx_source_files
     
     # Core主模块
     s.subspec 'Core' do |c|
-        c.source_files = Core_files
+        c.source_files = core_files
     end
     
     # iOS平台
@@ -140,8 +140,3 @@ Pod::Spec.new do |s|
         }
     end
 end
-7113
-22715
-27240
-22484
-30258
