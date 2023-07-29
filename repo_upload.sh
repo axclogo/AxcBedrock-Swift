@@ -7,21 +7,34 @@ pod_sources="https://github.com/CocoaPods/Specs" # 这里设置sources
 
 #【入参】
 # 设置基础变量
-my_file_name=$(basename $0) # 自身文件名
 src_root_dir=$(dirname $0) # 本文件目录
-echo $src_root_dir
-project_name=$1 # 项目名称
-podspec_file=${project_name}.podspec
+project_name="" # 项目名称
 
 #【开始】
 cd $src_root_dir # 目录切换
 ls
+
+#【校验】
+# 查找所有的.podspec文件
+podspec_files=$(find . -type f -name "*.podspec")
+# 获取文件数量
+file_count=$(echo "$podspec_files" | wc -l)
+# 如果只有一个文件，则获取文件名
+if [ "$file_count" -eq 1 ]; then
+    project_name=$(basename "$podspec_files")
+    echo "要上传的项目名：[$project_name]"
+else # 如果没有文件或多个，则报错返回
+    echo "❌错误：未找到或存在多个.podspec文件"
+    exit 1
+fi
 
 # 检查设置的版本是否和远端的tag列表重复
 if git rev-parse $new_version >/dev/null 2>&1; then
   echo "❌错误！version $new_version 已存在于本地仓库！"
   exit 1
 fi
+
+podspec_file=${project_name}.podspec
 
 # 设置信号，当接收来自pod命令失败时自身也退出
 trap "exit" ERR
