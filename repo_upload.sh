@@ -16,12 +16,14 @@ ls
 
 #【校验】
 # 查找所有的.podspec文件
-podspec_files=$(find . -type f -name "*.podspec")
+podspec_files=( $(find . -type f -name "*.podspec") )
 # 获取文件数量
-file_count=$(echo "$podspec_files" | wc -l)
+file_count=${#podspec_files[@]}
 # 如果只有一个文件，则获取文件名
 if [ "$file_count" -eq 1 ]; then
-    project_name=$(basename "$podspec_files")
+    file_name=${podspec_files[0]##*/}
+    file_name=${file_name%.*}
+    project_name=$file_name
     echo "要上传的项目名：[$project_name]"
 else # 如果没有文件或多个，则报错返回
     echo "❌错误：未找到或存在多个.podspec文件"
