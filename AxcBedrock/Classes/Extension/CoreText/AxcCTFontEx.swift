@@ -56,11 +56,11 @@ public extension AxcSpace where Base: CTFont {
            let fontSize = CGFloat.Axc.CreateOptional(fontPoint) {
             return CTFontCreate(size: fontSize, name: ".SFUI-Regular")
 
-        }else if let fontPoint,
-                 let platformFont = unifiedValue as? AxcBedrockFont {
+        } else if let fontPoint,
+                  let platformFont = unifiedValue as? AxcBedrockFont {
             let fontSize = AssertTransformCGFloat(fontPoint)
             return CTFontCreate(size: fontSize, name: platformFont.fontName)
-            
+
         } else if let fontPoint = fontPoint,
                   let cgFont = AxcBedrockLib.Func.CFType(unifiedValue, as: CGFont.self),
                   let name = cgFont.postScriptName?.axc.string {
@@ -72,7 +72,7 @@ public extension AxcSpace where Base: CTFont {
         }
         return nil
     }
-    
+
     private static func CTFontCreate(size: CGFloat, name: String) -> CTFont? {
         /*
          CoreText note: Client requested name ".SFUI-Regular", it will get TimesNewRomanPSMT rather than the intended font.
@@ -89,8 +89,6 @@ public extension AxcSpace where Base: CTFont {
         }
     }
 }
-
-#warning("方法未迁移")
 
 // MARK: - 属性 & Api
 

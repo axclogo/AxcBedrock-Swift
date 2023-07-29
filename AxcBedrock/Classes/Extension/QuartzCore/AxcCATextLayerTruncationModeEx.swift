@@ -7,24 +7,13 @@
 
 import QuartzCore
 
-// MARK: - CATextLayerAlignmentMode + AxcSpaceProtocol
+// MARK: - CATextLayerTruncationMode + AxcSpaceProtocol
 
 extension CATextLayerTruncationMode: AxcSpaceProtocol { }
 
 // MARK: - 数据转换
 
-public extension AxcSpace where Base == CATextLayerTruncationMode {
-    /// 转换成NSLineBreakMode
-    var nsLineBreakMode: NSLineBreakMode? {
-        switch base {
-        case .start: return .byTruncatingHead
-        case .end: return .byTruncatingTail
-        case .middle: return .byTruncatingMiddle
-        case .none: return .byWordWrapping
-        default: return nil
-        }
-    }
-}
+public extension AxcSpace where Base == CATextLayerTruncationMode { }
 
 // MARK: - 类方法
 

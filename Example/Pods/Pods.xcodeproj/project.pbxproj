@@ -503,6 +503,8 @@
 		DAF490D3F7D0050BCA6687C7ED44776A /* _AxcLazyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E1E8587D9E762C6BE4C9C7638C187 /* _AxcLazyCache.swift */; };
 		DB5F52E538B0E98F8BED2DEADF39B852 /* AxcIntEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2462924F678249CCCC4666ACE811C1 /* AxcIntEx.swift */; };
 		DC3A575301414ACBEDED5E22340447E4 /* AxcLibraryTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20203ABD1557570A76CB5CF9CF4AB79 /* AxcLibraryTarget.swift */; };
+		DC5F4B192A749F6600186CE3 /* AxcCATextLayerAlignmentModeEx+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F4B182A749F6600186CE3 /* AxcCATextLayerAlignmentModeEx+UIKit.swift */; };
+		DC5F4B1B2A749FC700186CE3 /* AxcCATextLayerTruncationModeEx+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5F4B1A2A749FC700186CE3 /* AxcCATextLayerTruncationModeEx+UIKit.swift */; };
 		DCEC2E075324F6CCAA54521CEBDD1A42 /* AxcEncodableEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7541205C8B6F0DE254601FD6D92C469 /* AxcEncodableEx.swift */; };
 		DCF88B37B601E71A45469960835CBB5D /* AxcEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D677C840928ADFDCE705CCA176449 /* AxcEnum.swift */; };
 		DD3BA65A5E36DA9ED66CE85626FDC9E5 /* AxcStringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97E53B809223BB4754B904C53F11389 /* AxcStringEx.swift */; };
@@ -943,6 +945,8 @@
 		DB7535BCEBD4F102FA99D35261D2BEB4 /* AxcBedrockFontWeight.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcBedrockFontWeight.swift; sourceTree = "<group>"; };
 		DBAE111CF4179027108E0B95757EB69D /* Pods-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS-Info.plist"; sourceTree = "<group>"; };
 		DC1B446E17317F46D7036E90A45F794E /* AxcAVCaptureDeviceEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcAVCaptureDeviceEx.swift; sourceTree = "<group>"; };
+		DC5F4B182A749F6600186CE3 /* AxcCATextLayerAlignmentModeEx+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AxcCATextLayerAlignmentModeEx+UIKit.swift"; sourceTree = "<group>"; };
+		DC5F4B1A2A749FC700186CE3 /* AxcCATextLayerTruncationModeEx+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AxcCATextLayerTruncationModeEx+UIKit.swift"; sourceTree = "<group>"; };
 		DC929F493FB76EF8408D85E67128C428 /* AxcBedrockGestureEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcBedrockGestureEx.swift; sourceTree = "<group>"; };
 		DE632FD5C12590AC98CC0327E5BD489F /* AxcBedrock-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AxcBedrock-macOS-prefix.pch"; path = "../AxcBedrock-macOS/AxcBedrock-macOS-prefix.pch"; sourceTree = "<group>"; };
 		DEDD49D90230B1ADA0C2BEFBDE9F1D84 /* AxcCTFontEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcCTFontEx.swift; sourceTree = "<group>"; };
@@ -1386,6 +1390,8 @@
 			isa = PBXGroup;
 			children = (
 				696EC7D83371496FF2B19B0765010208 /* AxcCAMediaTimingFunctionNameEx+UIKit.swift */,
+				DC5F4B182A749F6600186CE3 /* AxcCATextLayerAlignmentModeEx+UIKit.swift */,
+				DC5F4B1A2A749FC700186CE3 /* AxcCATextLayerTruncationModeEx+UIKit.swift */,
 			);
 			path = QuartzCore;
 			sourceTree = "<group>";
@@ -3046,6 +3052,7 @@
 				B8D0F2ADCA9F7EB8DBA95757F86E1084 /* AxcCFStringEx.swift in Sources */,
 				231B4F892F03F503FB6F02E9B587A48F /* AxcCFTypeIDProtocol.swift in Sources */,
 				6E93C67362A1F76042FE76D196BDCE2E /* AxcCGAffineTransformEx.swift in Sources */,
+				DC5F4B192A749F6600186CE3 /* AxcCATextLayerAlignmentModeEx+UIKit.swift in Sources */,
 				A976B964625BCA0339D717F1379020F9 /* AxcCGAffineTransformEx+QuartzCore.swift in Sources */,
 				1B867E2962F66390EB8902130C76BF7F /* AxcCGColorEx.swift in Sources */,
 				0D24AABBAA25CF3AE6B2449F636954D5 /* AxcCGFloatEx.swift in Sources */,
@@ -3095,6 +3102,7 @@
 				B89BA7D47F966F9F3013908E6226C706 /* AxcFunc.swift in Sources */,
 				0C45CA7622268A8A1EFE116C46BFD803 /* AxcGCD.swift in Sources */,
 				320D9CD947EA2D862CAED55EA247E3E2 /* AxcGCDTarget.swift in Sources */,
+				DC5F4B1B2A749FC700186CE3 /* AxcCATextLayerTruncationModeEx+UIKit.swift in Sources */,
 				ABC82603DB8D6709794195E7A43755A6 /* AxcIntEx.swift in Sources */,
 				9A4708433193023175C7CC97F8F2FC50 /* AxcKeyframeAnimationMaker.swift in Sources */,
 				E0D711EE4E846310EA3A0C91BA583679 /* AxcLAContextEx.swift in Sources */,

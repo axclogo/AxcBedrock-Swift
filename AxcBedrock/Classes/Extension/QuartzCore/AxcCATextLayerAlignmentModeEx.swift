@@ -13,19 +13,7 @@ extension CATextLayerAlignmentMode: AxcSpaceProtocol { }
 
 // MARK: - 数据转换
 
-public extension AxcSpace where Base == CATextLayerAlignmentMode {
-    /// 转换成NSTextAlignment
-    var nsTextAlignment: NSTextAlignment? {
-        switch base {
-        case .natural: return .natural
-        case .left: return .left
-        case .right: return .right
-        case .center: return .center
-        case .justified: return .justified
-        default: return nil
-        }
-    }
-}
+public extension AxcSpace where Base == CATextLayerAlignmentMode { }
 
 // MARK: - 类方法
 

@@ -15,10 +15,10 @@ class TestVC2: UIViewController {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vcs = navigationController?.viewControllers
-        print(vcs)
-        
-        let currentVC = AxcApp.CurrentVC(filterClassNames: [TestVC2.Axc.ClassName])
-        print(currentVC)
+//        let vcs = navigationController?.viewControllers
+//        print(vcs)
+//        
+//        let currentVC = AxcApp.CurrentVC(filterClassNames: [TestVC2.Axc.ClassName])
+//        print(currentVC)
     }
 }

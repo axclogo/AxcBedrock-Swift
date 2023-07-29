@@ -238,28 +238,11 @@ extension AxcDevice {
             "iProd8,1": "AirPods Pro",
             "iProd8,6": "AirPods Max",
         ]
-        #warning("有待维护")
+        // TODO: 待扩展
         let macos_deviceMapJson: [String: String] = [
             "iMac21,1": "iMac (24-inch, M1, 2021)",
             "iMac21,2": "iMac (24-inch, M1, 2021)",
-            "Macmini9,1":"Mac mini (M1, 2020)",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            "":"",
-            
+            "Macmini9,1":"Mac mini (M1, 2020)"
         ]
         return iosDeviceMapJson.merging(macos_deviceMapJson) { s1, s2 in
             return s1

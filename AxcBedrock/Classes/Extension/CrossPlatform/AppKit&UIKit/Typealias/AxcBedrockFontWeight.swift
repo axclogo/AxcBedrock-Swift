@@ -11,6 +11,18 @@ public typealias AxcBedrockFontWeight = AxcBedrockLib.FontWeight
 #if os(macOS)
 import AppKit
 
+#elseif os(iOS) || os(tvOS) || os(watchOS)
+
+import UIKit
+
+// public extension AxcBedrockLib {
+//    typealias FontWeight = UIFont.Weight
+// }
+
+#endif
+
+// MARK: - [AxcBedrockLib.FontWeight]
+
 public extension AxcBedrockLib {
     /// 字重
     enum FontWeight {
@@ -25,16 +37,6 @@ public extension AxcBedrockLib {
         case black
     }
 }
-
-#elseif os(iOS) || os(tvOS) || os(watchOS)
-
-import UIKit
-
-public extension AxcBedrockLib {
-    typealias FontWeight = UIFont.Weight
-}
-
-#endif
 
 // MARK: - [AxcBedrockLib.FontWeight]
 
@@ -53,9 +55,9 @@ public extension AxcBedrockFontWeight {
         case .heavy: return 0.56
         case .black: return 0.62
         }
-        
+
         #elseif os(iOS) || os(tvOS) || os(watchOS)
-        
+
         switch self {
         case .ultraLight: return UIFont.Weight.ultraLight.rawValue
         case .thin: return UIFont.Weight.thin.rawValue
@@ -66,13 +68,12 @@ public extension AxcBedrockFontWeight {
         case .bold: return UIFont.Weight.bold.rawValue
         case .heavy: return UIFont.Weight.heavy.rawValue
         case .black: return UIFont.Weight.black.rawValue
-        default: return UIFont.Weight.regular.rawValue
         }
         #endif
     }
 }
 
-// MARK: CustomStringConvertible
+// MARK: - AxcBedrockFontWeight + CustomStringConvertible
 
 extension AxcBedrockFontWeight: CustomStringConvertible {
     /// 描述
@@ -87,7 +88,6 @@ extension AxcBedrockFontWeight: CustomStringConvertible {
         case .bold: return "Bold"
         case .heavy: return "Heavy"
         case .black: return "Black"
-        default: return "regular"
         }
     }
 }

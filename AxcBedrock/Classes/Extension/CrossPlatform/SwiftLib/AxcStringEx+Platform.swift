@@ -42,12 +42,13 @@ public extension AxcSpace where Base == String {
         #endif
     }
 
-    #warning(" 更新滤镜")
+    
+    // TODO: 更新滤镜为对象扩展
     /// 获取以这个字符串为内容生成CIImage格式的二维码
     var qrCodeCIImage: CIImage? {
         guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
         filter.setDefaults()
-        guard let data = data(.utf8) else { return nil }
+        guard let data = data(using: .utf8) else { return nil }
         filter.setValue(data, forKey: "inputMessage")
         guard let outPutImage = filter.outputImage else { return nil }
         return outPutImage

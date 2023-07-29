@@ -24,12 +24,12 @@ class ViewController: UIViewController {
         let center = 200.axc.cgPoint
         let radius: CGFloat = 100
 
-        "".axc.data
-        "".axc.data(using: .utf8)
-        "".axc.jsonData
+//        "".axc.data
+//        "".axc.data(using: .utf8)
+//        "".axc.jsonData
 
         var linesHeight: [AxcUnifiedNumber] = []
-        for i in 0...1000 {
+        for _ in 0...1000 {
             if (arc4random() % 2) == 0 {
                 linesHeight.append(80)
             }else{
