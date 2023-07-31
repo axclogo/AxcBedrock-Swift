@@ -35,17 +35,26 @@ class ViewController: NSViewController {
             kCICategoryNonSquarePixels,
             kCICategoryHighDynamicRange,
             kCICategoryBuiltIn,
-            //            @available(macOS 10.5, *)
-            kCICategoryFilterGenerator,
         ]
         
-        for category in allCategory {
-            let filterNames = CIFilter.filterNames(inCategory: category)
-            print("\(category)>>>>>>>>>>>>")
-            for filterName in filterNames {
-                print(filterName)
-            }
-            print("\(category)<<<<<<<<<<<<")
-        }
+//        for category in allCategory {
+//            let filterNames = CIFilter.filterNames(inCategory: category)
+//            let _ccc = category.axc.removePrefix(string: "CICategory")
+//            print("enum \(_ccc){")
+//            for filterName in filterNames {
+////                print("\(category) --- \(filterName)")
+//                var newStr = filterName.axc.removePrefix(string: "CI")
+//                let first = newStr.prefix(1).lowercased()
+//                newStr = newStr.axc.removePrefix(count: 1) ?? ""
+//                let printStr = "    case \(first + newStr)"
+//                print(printStr)
+//            }
+//            print("}")
+////            print("\(category)<<<<<<<<<<<<")
+//        }
+        
+        
+        let str = "\n\n\n\n\n\nasdasdasdasdasd     \n\n\n"
+        print(str.trimmingCharacters(in: .whitespacesAndNewlines))
     }
 }

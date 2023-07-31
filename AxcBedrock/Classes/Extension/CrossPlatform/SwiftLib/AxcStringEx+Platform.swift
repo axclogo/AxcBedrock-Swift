@@ -52,6 +52,7 @@ public extension AxcSpace where Base == String {
         filter.setValue(data, forKey: "inputMessage")
         guard let outPutImage = filter.outputImage else { return nil }
         return outPutImage
+            
     }
 }
 
