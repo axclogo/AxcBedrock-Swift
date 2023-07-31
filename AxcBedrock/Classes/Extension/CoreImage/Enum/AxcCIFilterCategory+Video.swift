@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Video]
+
 public extension AxcCIFilterCategory {
     /// 视频
     enum Video: String {
@@ -466,3 +468,7 @@ public extension AxcCIFilterCategory {
         case zoomBlur
     }
 }
+
+// MARK: - AxcCIFilterCategory.Video + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Video: _AxcCIFilterNameProtocol { }

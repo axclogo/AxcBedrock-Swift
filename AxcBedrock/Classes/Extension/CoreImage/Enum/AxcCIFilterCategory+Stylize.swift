@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Stylize]
+
 public extension AxcCIFilterCategory {
     /// 风格化效果
     enum Stylize: String {
@@ -84,3 +86,7 @@ public extension AxcCIFilterCategory {
         case spotLight
     }
 }
+
+// MARK: - AxcCIFilterCategory.Stylize + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Stylize: _AxcCIFilterNameProtocol { }

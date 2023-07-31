@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Generator]
+
 public extension AxcCIFilterCategory {
     /// 生成器
     enum Generator: String {
@@ -44,3 +46,7 @@ public extension AxcCIFilterCategory {
         case textImageGenerator
     }
 }
+
+// MARK: - AxcCIFilterCategory.Generator + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Generator: _AxcCIFilterNameProtocol { }

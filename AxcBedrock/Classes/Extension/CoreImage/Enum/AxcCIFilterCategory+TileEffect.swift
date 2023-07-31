@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.TileEffect]
+
 public extension AxcCIFilterCategory {
     /// 平铺效果
     enum TileEffect: String {
@@ -46,3 +48,7 @@ public extension AxcCIFilterCategory {
         case twelvefoldReflectedTile
     }
 }
+
+// MARK: - AxcCIFilterCategory.TileEffect + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.TileEffect: _AxcCIFilterNameProtocol { }

@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.DistortionEffect]
+
 public extension AxcCIFilterCategory {
     /// 扭曲效果
     enum DistortionEffect: String {
@@ -48,3 +50,7 @@ public extension AxcCIFilterCategory {
         case vortexDistortion
     }
 }
+
+// MARK: - AxcCIFilterCategory.DistortionEffect + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.DistortionEffect: _AxcCIFilterNameProtocol { }

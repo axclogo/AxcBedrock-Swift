@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.ColorAdjustment]
+
 public extension AxcCIFilterCategory {
     /// 颜色调整
     enum ColorAdjustment: String {
@@ -48,3 +50,7 @@ public extension AxcCIFilterCategory {
         case whitePointAdjust
     }
 }
+
+// MARK: - AxcCIFilterCategory.ColorAdjustment + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.ColorAdjustment: _AxcCIFilterNameProtocol { }

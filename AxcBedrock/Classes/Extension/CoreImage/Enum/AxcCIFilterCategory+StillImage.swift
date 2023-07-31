@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.StillImage]
+
 public extension AxcCIFilterCategory {
     /// 静态图像
     enum StillImage: String {
@@ -478,3 +480,7 @@ public extension AxcCIFilterCategory {
         case zoomBlur
     }
 }
+
+// MARK: - AxcCIFilterCategory.StillImage + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.StillImage: _AxcCIFilterNameProtocol { }

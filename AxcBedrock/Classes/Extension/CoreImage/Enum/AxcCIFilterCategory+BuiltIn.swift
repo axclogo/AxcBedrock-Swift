@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.BuiltIn]
+
 public extension AxcCIFilterCategory {
     /// 内置
     enum BuiltIn: String {
@@ -476,3 +478,7 @@ public extension AxcCIFilterCategory {
         case zoomBlur
     }
 }
+
+// MARK: - AxcCIFilterCategory.BuiltIn + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.BuiltIn: _AxcCIFilterNameProtocol { }

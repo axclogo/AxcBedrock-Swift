@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.HighDynamicRange]
+
 public extension AxcCIFilterCategory {
     /// 高动态范围
     enum HighDynamicRange: String {
@@ -338,3 +340,7 @@ public extension AxcCIFilterCategory {
         case zoomBlur
     }
 }
+
+// MARK: - AxcCIFilterCategory.HighDynamicRange + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.HighDynamicRange: _AxcCIFilterNameProtocol { }

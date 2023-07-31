@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.GeometryAdjustment]
+
 public extension AxcCIFilterCategory {
     /// 几何调整
     enum GeometryAdjustment: String {
@@ -40,3 +42,7 @@ public extension AxcCIFilterCategory {
         case straightenFilter
     }
 }
+
+// MARK: - AxcCIFilterCategory.GeometryAdjustment + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.GeometryAdjustment: _AxcCIFilterNameProtocol { }

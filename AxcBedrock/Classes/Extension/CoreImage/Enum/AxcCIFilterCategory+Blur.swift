@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Blur]
+
 public extension AxcCIFilterCategory {
     /// 模糊效果
     enum Blur: String {
@@ -42,3 +44,7 @@ public extension AxcCIFilterCategory {
         case zoomBlur
     }
 }
+
+// MARK: - AxcCIFilterCategory.Blur + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Blur: _AxcCIFilterNameProtocol { }

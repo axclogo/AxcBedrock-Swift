@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Interlaced]
+
 public extension AxcCIFilterCategory {
     /// 交错
     enum Interlaced: String {
@@ -166,3 +168,7 @@ public extension AxcCIFilterCategory {
         case xRay
     }
 }
+
+// MARK: - AxcCIFilterCategory.Interlaced + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Interlaced: _AxcCIFilterNameProtocol { }

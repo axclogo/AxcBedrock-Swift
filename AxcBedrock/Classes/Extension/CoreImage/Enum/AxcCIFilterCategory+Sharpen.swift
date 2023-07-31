@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Sharpen]
+
 public extension AxcCIFilterCategory {
     /// 锐化效果
     enum Sharpen: String {
@@ -16,3 +18,7 @@ public extension AxcCIFilterCategory {
         case unsharpMask
     }
 }
+
+// MARK: - AxcCIFilterCategory.Sharpen + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Sharpen: _AxcCIFilterNameProtocol { }

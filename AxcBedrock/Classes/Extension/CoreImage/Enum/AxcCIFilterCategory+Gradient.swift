@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Gradient]
+
 public extension AxcCIFilterCategory {
     /// 渐变效果
     enum Gradient: String {
@@ -22,3 +24,7 @@ public extension AxcCIFilterCategory {
         case smoothLinearGradient
     }
 }
+
+// MARK: - AxcCIFilterCategory.Gradient + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Gradient: _AxcCIFilterNameProtocol { }

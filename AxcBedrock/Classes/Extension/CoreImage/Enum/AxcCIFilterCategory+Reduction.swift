@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Reduction]
+
 public extension AxcCIFilterCategory {
     /// 降低效果
     enum Reduction: String {
@@ -38,3 +40,7 @@ public extension AxcCIFilterCategory {
         case rowAverage
     }
 }
+
+// MARK: - AxcCIFilterCategory.Reduction + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Reduction: _AxcCIFilterNameProtocol { }

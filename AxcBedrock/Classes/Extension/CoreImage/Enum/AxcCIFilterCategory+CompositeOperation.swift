@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.CompositeOperation]
+
 public extension AxcCIFilterCategory {
     /// 合成操作
     enum CompositeOperation: String {
@@ -72,3 +74,7 @@ public extension AxcCIFilterCategory {
         case vividLightBlendMode
     }
 }
+
+// MARK: - AxcCIFilterCategory.CompositeOperation + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.CompositeOperation: _AxcCIFilterNameProtocol { }

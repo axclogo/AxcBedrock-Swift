@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.NonSquarePixels]
+
 public extension AxcCIFilterCategory {
     /// 非方形像素
     enum NonSquarePixels: String {
@@ -166,3 +168,7 @@ public extension AxcCIFilterCategory {
         case xRay
     }
 }
+
+// MARK: - AxcCIFilterCategory.NonSquarePixels + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.NonSquarePixels: _AxcCIFilterNameProtocol { }

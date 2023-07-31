@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.ColorEffect]
+
 public extension AxcCIFilterCategory {
     /// 颜色效果
     enum ColorEffect: String {
@@ -78,3 +80,7 @@ public extension AxcCIFilterCategory {
         case xRay
     }
 }
+
+// MARK: - AxcCIFilterCategory.ColorEffect + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.ColorEffect: _AxcCIFilterNameProtocol { }

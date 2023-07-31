@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.HalftoneEffect]
+
 public extension AxcCIFilterCategory {
     /// 半色调效果
     enum HalftoneEffect: String {
@@ -22,3 +24,7 @@ public extension AxcCIFilterCategory {
         case lineScreen
     }
 }
+
+// MARK: - AxcCIFilterCategory.HalftoneEffect + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.HalftoneEffect: _AxcCIFilterNameProtocol { }

@@ -57,3 +57,33 @@ public extension AxcBedrockLib {
         case builtIn(type: BuiltIn)
     }
 }
+
+// MARK: - AxcCIFilterCategory + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory: _AxcCIFilterNameProtocol {
+    /// 键值
+    var rawValue: String {
+        switch self {
+        case let .distortionEffect(type: type): return type.rawValue
+        case let .geometryAdjustment(type: type): return type.rawValue
+        case let .compositeOperation(type: type): return type.rawValue
+        case let .halftoneEffect(type: type): return type.rawValue
+        case let .colorAdjustment(type: type): return type.rawValue
+        case let .colorEffect(type: type): return type.rawValue
+        case let .transition(type: type): return type.rawValue
+        case let .tileEffect(type: type): return type.rawValue
+        case let .generator(type: type): return type.rawValue
+        case let .reduction(type: type): return type.rawValue
+        case let .gradient(type: type): return type.rawValue
+        case let .stylize(type: type): return type.rawValue
+        case let .sharpen(type: type): return type.rawValue
+        case let .blur(type: type): return type.rawValue
+        case let .video(type: type): return type.rawValue
+        case let .stillImage(type: type): return type.rawValue
+        case let .interlaced(type: type): return type.rawValue
+        case let .nonSquarePixels(type: type): return type.rawValue
+        case let .highDynamicRange(type: type): return type.rawValue
+        case let .builtIn(type: type): return type.rawValue
+        }
+    }
+}

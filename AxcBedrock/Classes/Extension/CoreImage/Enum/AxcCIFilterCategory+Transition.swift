@@ -7,6 +7,8 @@
 
 import CoreImage
 
+// MARK: - [AxcCIFilterCategory.Transition]
+
 public extension AxcCIFilterCategory {
     /// 过渡效果
     enum Transition: String {
@@ -34,3 +36,7 @@ public extension AxcCIFilterCategory {
         case swipeTransition
     }
 }
+
+// MARK: - AxcCIFilterCategory.Transition + _AxcCIFilterNameProtocol
+
+extension AxcCIFilterCategory.Transition: _AxcCIFilterNameProtocol { }
