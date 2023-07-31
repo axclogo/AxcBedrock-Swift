@@ -44,7 +44,7 @@ public extension AxcSpace where Base == String {
         guard !base.isEmpty else { return nil }
         return base.data(using: using, allowLossyConversion: false)
     }
-    
+
     /// 字符串转Data
     func data(using: String.Encoding = .utf8) -> Data? {
         guard !base.isEmpty else { return nil }
@@ -109,7 +109,7 @@ public extension AxcSpace where Base == String {
     func date(format: String,
               identifier: AxcSpace<TimeZone>.TimeZoneIdentifier? = .gmt(.GMT)) -> Date? {
         let formatter = DateFormatter.Axc.Create(format: format,
-                                                identifier: identifier)
+                                                 identifier: identifier)
         return formatter.date(from: base)
     }
 
@@ -631,6 +631,7 @@ import CommonCrypto
 public extension AxcSpace where Base == String {
     // MARK: 摘要算法枚举
 
+    /// 摘要算法枚举
     enum Digest: CustomStringConvertible {
         /// 摘要枚举
         case md2, md4, md5, sha1, sha224, sha256, sha384, sha512
@@ -833,7 +834,7 @@ public extension AxcSpace where Base == String {
         return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: base)
     }
 
-    /// 判断是否含有汉字
+    /// 判断是否含包含汉字
     func isContantChinese() -> Bool {
         for item in base {
             if ("\u{4E00}" <= item && item <= "\u{9FA5}") {
@@ -842,8 +843,15 @@ public extension AxcSpace where Base == String {
         }
         return false
     }
+
+    /// 判断是否包含emoji
+    @available(iOSApplicationExtension 10.2, *)
+    func isContantEmoji() -> Bool {
+        for character in base {
+            if character.axc.isEmoji() {
+                return true
+            }
+        }
+        return false
+    }
 }
-
-// MARK: - 运算符/操作符
-
-public extension AxcSpace where Base == String { }

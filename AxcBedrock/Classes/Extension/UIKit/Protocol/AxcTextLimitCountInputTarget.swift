@@ -24,7 +24,16 @@ public extension AxcTextLimitCountInputTargetSpace {
     /// - Parameters:
     ///   - maxCount: 最大数量
     ///   - countGreaterThanBlock: 超出后回调
+    @available(*, deprecated, renamed: "setLimitInput(maxCount:countGreaterThanBlock:)")
     func limitInput(maxCount: Int, countGreaterThanBlock: AxcBlock.TwoParam<Base, Int>) {
+        setLimitInput(maxCount: maxCount, countGreaterThanBlock: countGreaterThanBlock)
+    }
+
+    /// 限制输入数量
+    /// - Parameters:
+    ///   - maxCount: 最大数量
+    ///   - countGreaterThanBlock: 超出后回调
+    func setLimitInput(maxCount: Int, countGreaterThanBlock: AxcBlock.TwoParam<Base, Int>) {
         guard let text = base._text else { return }
         let langWhitelist = ["zh-Hans"] // 输入法白名单
         if let lang = base._textInputMode?.primaryLanguage,

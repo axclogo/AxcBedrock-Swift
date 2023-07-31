@@ -64,3 +64,18 @@ public extension AxcSpace where Base == Character {
         return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".randomElement()!
     }
 }
+
+// MARK: - 决策判断
+
+public extension AxcSpace where Base == Character {
+    /// 判断是否是Emoji
+    @available(iOSApplicationExtension 10.2, *)
+    func isEmoji() -> Bool {
+        for scalar in base.unicodeScalars {
+            if scalar.properties.isEmoji {
+                return true
+            }
+        }
+        return false
+    }
+}

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let center = 200.axc.cgPoint
         let radius: CGFloat = 100
 
-        let a = 3.axc.edge
+        let a = 3.axc.edgeInsets
         
 //        "".axc.data
 //        "".axc.data(using: .utf8)

@@ -10,22 +10,22 @@
   extension <#class#>: YPSpaceProtocol {}
 
   // MARK: - 数据转换
-  public extension YPSpace where Base: <#class#> {
+  public extension AxcSpace where Base: <#class#> {
 
   }
 
   // MARK: - 类方法
-  public extension YPSpace where Base: <#class#> {
+  public extension AxcSpace where Base: <#class#> {
 
   }
 
   // MARK: - 属性 & Api
-  public extension YPSpace where Base: <#class#> {
+  public extension AxcSpace where Base: <#class#> {
 
   }
 
   // MARK: - 决策判断
-  public extension YPSpace where Base: <#class#> {
+  public extension AxcSpace where Base: <#class#> {
 
   }
 
