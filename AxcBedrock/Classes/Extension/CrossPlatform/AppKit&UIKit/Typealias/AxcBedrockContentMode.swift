@@ -11,7 +11,7 @@ public typealias AxcBedrockContentMode = AxcEnum.ContentMode
 #if os(iOS) || os(tvOS)
 import UIKit
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     typealias ContentMode = UIView.ContentMode
 }
 
