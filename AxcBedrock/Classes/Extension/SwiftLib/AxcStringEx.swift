@@ -845,6 +845,7 @@ public extension AxcSpace where Base == String {
     }
 
     /// 判断是否包含emoji
+    @available(iOS 10.2, *)
     @available(iOSApplicationExtension 10.2, *)
     func isContantEmoji() -> Bool {
         for character in base {

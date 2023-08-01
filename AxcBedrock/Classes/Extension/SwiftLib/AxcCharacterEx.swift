@@ -69,6 +69,7 @@ public extension AxcSpace where Base == Character {
 
 public extension AxcSpace where Base == Character {
     /// 判断是否是Emoji
+    @available(iOS 10.2, *)
     @available(iOSApplicationExtension 10.2, *)
     func isEmoji() -> Bool {
         for scalar in base.unicodeScalars {
