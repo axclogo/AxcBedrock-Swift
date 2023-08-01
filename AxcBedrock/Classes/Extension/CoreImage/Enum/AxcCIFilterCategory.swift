@@ -8,11 +8,11 @@
 import CoreImage
 
 /// CI滤镜类别
-public typealias AxcCIFilterCategory = AxcBedrockLib.CIFilterCategory
+public typealias AxcCIFilterCategory = AxcEnum.CIFilterCategory
 
 // MARK: - [AxcBedrockLib.CIFilterCategory]
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     /// CI滤镜类别
     enum CIFilterCategory {
         /// 扭曲效果

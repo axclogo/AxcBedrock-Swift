@@ -7,9 +7,9 @@
 
 import Foundation
 
-// MARK: - [AxcBedrockLib.LogLevel]
+// MARK: - [AxcEnum.LogLevel]
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     /// 日志等级
     @objc
     enum LogLevel: Int {
@@ -29,7 +29,7 @@ public protocol AxcLogInfoDelegate: NSObjectProtocol {
     /// - Parameters:
     ///   - logLevel: 日志等级
     ///   - logContent: 日志内容
-    func logOutput(logObj: AxcLogInfoTarget, logLevel: AxcBedrockLib.LogLevel, logContent: String)
+    func logOutput(logObj: AxcLogInfoTarget, logLevel: AxcEnum.LogLevel, logContent: String)
 
     /// 致命错误事件
     /// - Parameters:
@@ -41,7 +41,7 @@ public protocol AxcLogInfoDelegate: NSObjectProtocol {
 // MARK: - 默认实现
 
 public extension AxcLogInfoDelegate {
-    func logOutput(logObj: AxcLogInfoTarget, logLevel: AxcBedrockLib.LogLevel, logContent: String) {
+    func logOutput(logObj: AxcLogInfoTarget, logLevel: AxcEnum.LogLevel, logContent: String) {
         print(logContent)
     }
 

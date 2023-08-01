@@ -89,7 +89,7 @@ public extension AxcLibraryTarget {
     ///   - logType: 日志类型，如“数据库日志”、“路由日志”等
     ///   - items: 打印的元素
     static func Log(_ items: Any...,
-                    logLevel: AxcBedrockLib.LogLevel = .info) {
+                    logLevel: AxcEnum.LogLevel = .info) {
         Shared.log(items, logLevel: logLevel)
     }
 
