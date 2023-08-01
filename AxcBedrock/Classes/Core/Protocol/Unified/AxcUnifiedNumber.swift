@@ -336,6 +336,12 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 阈值限位
+    @available(*, deprecated, renamed: "limitThan(min:max:)")
+    func limitThan(less: AxcUnifiedNumber, greater: AxcUnifiedNumber) -> Base {
+        return limitThan(min: less, max: greater)
+    }
+
+    /// 阈值限位
     func limitThan(min: AxcUnifiedNumber, max: AxcUnifiedNumber) -> Base {
         guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
             AxcBedrockLib.FatalLog("\(Base.self)类型无法做阈值限位！")
@@ -370,7 +376,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         #endif
         return newValue as! Base
     }
-    
+
     /// 最大阈值限位
     func limitMinZero(max: AxcUnifiedNumber) -> Base {
         return limitThan(min: 0, max: max)
