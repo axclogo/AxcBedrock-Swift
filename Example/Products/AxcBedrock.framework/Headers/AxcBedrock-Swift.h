@@ -335,23 +335,6 @@ SWIFT_CLASS("_TtC10AxcBedrock13AxcBedrockLib")
 
 
 
-@interface AxcBedrockLib (SWIFT_EXTENSION(AxcBedrock))
-@end
-
-/// 日志等级
-typedef SWIFT_ENUM(NSInteger, LogLevel, closed) {
-/// 信息
-  LogLevelInfo = 0,
-/// 警告
-  LogLevelWarning = 1,
-/// 错误
-  LogLevelError = 2,
-};
-
-
-
-
-
 
 
 
