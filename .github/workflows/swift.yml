@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *' 
+  workflow_dispatch:
+
+jobs:
+  random-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: run script
+        run: echo 'test'
+
