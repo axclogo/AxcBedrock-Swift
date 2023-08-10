@@ -6,18 +6,18 @@
 //
 
 /// （💈跨平台标识）内容填充模式
-public typealias AxcBedrockContentMode = AxcBedrockLib.ContentMode
+public typealias AxcBedrockContentMode = AxcEnum.ContentMode
 
 #if os(iOS) || os(tvOS)
 import UIKit
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     typealias ContentMode = UIView.ContentMode
 }
 
 #elseif os(macOS) || os(watchOS)
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     enum ContentMode: Int {
         case scaleToFill
         case scaleAspectFit

@@ -9,8 +9,8 @@
 import UIKit
 
 /// 响应菜单事件类型
-public typealias AxcResponderMenuActionType = AxcBedrockLib.ResponderMenuActionType
-public extension AxcBedrockLib {
+public typealias AxcResponderMenuActionType = AxcEnum.ResponderMenuActionType
+public extension AxcEnum {
     /// 响应菜单事件类型
     enum ResponderMenuActionType: String, CaseIterable {
         /// 通过响应者和选择器实例化枚举

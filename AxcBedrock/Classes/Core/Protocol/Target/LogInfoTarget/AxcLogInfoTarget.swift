@@ -68,7 +68,7 @@ public extension AxcLogInfoTarget {
     ///   - items: 打印的元素
     /// 如：AxcBedrockLib[模块日志](2023.02.16)➡️这里是日志内容"
     func log(_ items: Any...,
-             logLevel: AxcBedrockLib.LogLevel = .info) {
+             logLevel: AxcEnum.LogLevel = .info) {
         let logPerfix: String = _createLogPrefix()
         let logContent: String = "\(logPerfix)\(items)"
         logDelegate?.logOutput(logObj: self, logLevel: logLevel, logContent: logContent)

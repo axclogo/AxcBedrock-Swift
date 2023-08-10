@@ -19,32 +19,32 @@ public extension AxcSpace where Base == Measurement<UnitAngle> {
 // MARK: - 类方法
 public extension AxcSpace where Base == Measurement<UnitAngle> {
     /// 创建一个' Measurement '角度的指定值(以度为单位)
-    static func degrees(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateDegrees(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .degrees)
     }
 
     /// 创建指定角度的测量值，以弧分为单位
-    static func arcMinutes(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateArcMinutes(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .arcMinutes)
     }
 
     /// 创建一个以弧秒为指定值的角度测量值
-    static func arcSeconds(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateArcSeconds(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .arcSeconds)
     }
 
     /// 创建一个以弧度为指定值的角度测量
-    static func radians(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateRadians(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .radians)
     }
 
     /// 创建一个带有指定值的斜度的角度测量
-    static func gradians(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateGradians(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .gradians)
     }
 
     /// 创建一个角度的测量值，该值以转数表示
-    static func revolutions(_ value: AxcUnifiedNumber) -> Base {
+    static func CreateRevolutions(_ value: AxcUnifiedNumber) -> Base {
         return Measurement(value: Double.Axc.Create(value), unit: .revolutions)
     }
 }

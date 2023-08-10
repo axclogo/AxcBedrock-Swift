@@ -6,7 +6,7 @@
 //
 
 /// （💈跨平台标识）字重样式
-public typealias AxcBedrockFontWeight = AxcBedrockLib.FontWeight
+public typealias AxcBedrockFontWeight = AxcEnum.FontWeight
 
 #if os(macOS)
 import AppKit
@@ -23,7 +23,7 @@ import UIKit
 
 // MARK: - [AxcBedrockLib.FontWeight]
 
-public extension AxcBedrockLib {
+public extension AxcEnum {
     /// 字重
     enum FontWeight {
         case ultraLight
