@@ -200,7 +200,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         if base is UInt { return UInt(absValue) as! Base } else
         if base is UInt8 { return UInt8(absValue) as! Base } else
         if base is UInt16 { return UInt16(absValue) as! Base } else
-        if base is UInt32 { return absValue as! Base } else
+        if base is UInt32 { return UInt32(absValue) as! Base } else
         if base is UInt64 { return UInt64(absValue) as! Base } else
         if base is Float { return Float(absValue) as! Base } else
         if base is Double { return Double(absValue) as! Base } else
@@ -230,7 +230,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         if base is UInt32 { return UInt32(ceilValue) as! Base } else
         if base is UInt64 { return UInt64(ceilValue) as! Base } else
         if base is Float { return Float(ceilValue) as! Base } else
-        if base is Double { return ceilValue as! Base } else
+        if base is Double { return Double(ceilValue) as! Base } else
         if base is CGFloat { return CGFloat(ceilValue) as! Base } else
         if base is String { return "\(ceilValue)" as! Base } else
         if base is NSString { return "\(ceilValue)" as! Base }
@@ -257,7 +257,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         if base is UInt32 { return UInt32(floorValue) as! Base } else
         if base is UInt64 { return UInt64(floorValue) as! Base } else
         if base is Float { return Float(floorValue) as! Base } else
-        if base is Double { return floorValue as! Base } else
+        if base is Double { return Double(floorValue) as! Base } else
         if base is CGFloat { return CGFloat(floorValue) as! Base } else
         if base is String { return "\(floorValue)" as! Base } else
         if base is NSString { return "\(floorValue)" as! Base }
@@ -321,8 +321,6 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
         return angleValue as! Base
     }
 }
-
-// MARK: 数学转换
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 保留小数位数
