@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
     s.name          = 'AxcBedrock'
     
-    s.version       = '1.1.0' # Auto Version
+    s.version       = '1.1.1' # Auto Version
     
     s.summary       = 'Axc的基岩工具库'
     
