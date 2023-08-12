@@ -42,8 +42,11 @@ public extension AxcJSONSerializationTarget {
         switch serializationJsonMode {
         // 自动序列化对象
         case let .autoSerializationObject(serializationObj):
-            guard let serializationObj, JSONSerialization.isValidJSONObject(serializationObj) else { return nil }
-            return try? JSONSerialization.data(withJSONObject: serializationObj, options: writingOptions)
+            guard let serializationObj,
+                  JSONSerialization.isValidJSONObject(serializationObj),
+                  let jsonData = try? JSONSerialization.data(withJSONObject: serializationObj, options: writingOptions)
+            else { return nil }
+            return jsonData
         // 自定义序列化
         case let .customSerializationData(data):
             return data
@@ -64,8 +67,8 @@ public extension AxcJSONSerializationTarget {
     func jsonSerializationObj(writingOptions: JSONSerialization.WritingOptions = .prettyPrinted,
                               readingOptions: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
         guard let jsonData = jsonSerializationData(writingOptions: writingOptions),
-              let decodedObj = try? JSONSerialization.jsonObject(with: jsonData, options: readingOptions) else { return nil }
-        return decodedObj
+              let jsonObj = try? JSONSerialization.jsonObject(with: jsonData, options: readingOptions) else { return nil }
+        return jsonObj
     }
 }
 

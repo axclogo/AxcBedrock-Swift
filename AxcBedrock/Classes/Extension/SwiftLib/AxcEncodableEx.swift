@@ -48,13 +48,7 @@ public extension AxcSpace where Base: Encodable {
     var jsonEncodeData: Data? {
         return try? JSONEncoder().encode(base)
     }
-
-    /// 使用JSONDecoder转换成数据对象
-    func jsonDecodeObj<T: Decodable>(_ type: T.Type) -> T? {
-        guard let jsonEncodeData else { return nil }
-        return try? JSONDecoder().decode(type, from: jsonEncodeData)
-    }
-
+    
     /// 使用JSONSerialization转换成JsonString，默认编码utf8
     var jsonEncodeString: String? {
         return jsonEncodeString(encoding: .utf8)

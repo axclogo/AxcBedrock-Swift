@@ -53,6 +53,8 @@ Pod::Spec.new do |s|
     wrapper_files = "#{baseFilePath}/Wrapper/**/*.#{fileType}"
     # 跨平台文件
     crossPlatform_files = "#{baseFilePath}/Extension/CrossPlatform/**/*.#{fileType}"
+    # XCTest单元测试文件
+#    xcTest_files = "#{baseFilePath}/Extension/XCTest/**/*.#{fileType}"
     # 其他库文件路径
     # 因为拆分更细化的子库属实没必要，如果使用子库的话上传至Repo还需要进一步校验
     # 于是改为文件路径导入方式
