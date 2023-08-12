@@ -17,10 +17,10 @@ final class BinaryFloatingPointTest: XCTestCase {
 
     func testRounded() {
         let num = 3.1415927
-        XCTAssertEqual(num.yp.rounded(numPlaces: 3, rule: .up), 3.142)
-        XCTAssertEqual(num.yp.rounded(numPlaces: 3, rule: .down), 3.141)
-        XCTAssertEqual(num.yp.rounded(numPlaces: 2, rule: .awayFromZero), 3.15)
-        XCTAssertEqual(num.yp.rounded(numPlaces: 4, rule: .towardZero), 3.1415)
-        XCTAssertEqual(num.yp.rounded(numPlaces: -1, rule: .toNearestOrEven), 3)
+        XCTAssertEqual(num.axc.rounded(numPlaces: 3, rule: .up), 3.142)
+        XCTAssertEqual(num.axc.rounded(numPlaces: 3, rule: .down), 3.141)
+        XCTAssertEqual(num.axc.rounded(numPlaces: 2, rule: .awayFromZero), 3.15)
+        XCTAssertEqual(num.axc.rounded(numPlaces: 4, rule: .towardZero), 3.1415)
+        XCTAssertEqual(num.axc.rounded(numPlaces: -1, rule: .toNearestOrEven), 3)
     }
 }

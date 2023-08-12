@@ -1,12 +1,12 @@
 PODS:
-  - AxcBedrock (1.1.1):
-    - AxcBedrock/Core (= 1.1.1)
-    - AxcBedrock/iOS (= 1.1.1)
-    - AxcBedrock/macOS (= 1.1.1)
-  - AxcBedrock/Core (1.1.1)
-  - AxcBedrock/iOS (1.1.1):
+  - AxcBedrock (1.1.2):
+    - AxcBedrock/Core (= 1.1.2)
+    - AxcBedrock/iOS (= 1.1.2)
+    - AxcBedrock/macOS (= 1.1.2)
+  - AxcBedrock/Core (1.1.2)
+  - AxcBedrock/iOS (1.1.2):
     - AxcBedrock/Core
-  - AxcBedrock/macOS (1.1.1):
+  - AxcBedrock/macOS (1.1.2):
     - AxcBedrock/Core
   - Kanna (5.2.7)
 
@@ -24,9 +24,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AxcBedrock: 77830f99bc594aa74c5fdc54f687a0d985083b2e
+  AxcBedrock: 2a0e61fed156e894ae17da183934a921b1579533
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
 
-PODFILE CHECKSUM: df4d65bab10a1faa665faa8da2344a8fccab2839
+PODFILE CHECKSUM: a499e5892c447cffd71613684680a27bd4e4b1f1
 
 COCOAPODS: 1.12.1

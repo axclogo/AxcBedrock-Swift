@@ -5,87 +5,68 @@
 //  Created by 赵新 on 2023/7/14.
 //
 
-import Foundation
-
-// MARK: - [AxcEncodableSpace]
-
-public struct AxcEncodableSpace<Base> where Base: Encodable {
-    init(_ base: Base) {
-        self.base = base
-    }
-
-    var base: Base
-}
-
-public extension Encodable {
-    /// 命名空间
-    var axc: AxcEncodableSpace<Self> {
-        set { }
-        get { return .init(self) }
-    }
-
-    /// 命名空间， 类型方法
-    static var Axc: AxcEncodableSpace<Self>.Type {
-        return AxcEncodableSpace.self
-    }
-}
-
 // MARK: - 数据转换
 
-public extension AxcEncodableSpace { }
+public extension AxcSpace where Base: Encodable { }
 
 // MARK: - 类方法
 
-public extension AxcEncodableSpace { }
+public extension AxcSpace where Base: Encodable { }
 
-// MARK: - 属性 & Api
+// MARK: - 废弃兼容
 
-public extension AxcEncodableSpace {
+public extension AxcSpace where Base: Encodable {
     /// 转jsondata
+    @available(*, deprecated, renamed: "jsonSerializationData")
     var jsonData: Data? {
-        return try? JSONEncoder().encode(base)
+        return jsonSerializationData
     }
 
     /// 转换成Json对象
+    @available(*, deprecated, renamed: "jsonSerializationObj")
     var jsonObj: Any? {
-        return jsonObj()
+        return jsonSerializationObj
     }
 
     /// 根据选择转换成数据对象
+    @available(*, deprecated, renamed: "jsonSerializationObj(writingOptions:readingOptions:)")
     func jsonObj(options: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
-        guard let jsonData else { return nil }
-        return try? JSONSerialization.jsonObject(with: jsonData, options: options)
+        return jsonSerializationObj(readingOptions: options)
     }
 
     /// 转json字符串
+    @available(*, deprecated, renamed: "jsonSerializationString")
     var jsonString: String? {
-        guard let jsonData else { return nil }
-        return String(data: jsonData, encoding: .utf8)
+        return jsonSerializationString
     }
-    
-    /// 转化成对应的字典
-    var dictionary: [String: Any] {
-        return dictionary_optional ?? [:]
+}
+
+// MARK: - 属性 & Api
+
+public extension AxcSpace where Base: Encodable {
+    /// 使用JSONEncoder转jsondata
+    var jsonEncodeData: Data? {
+        return try? JSONEncoder().encode(base)
     }
-    
-    /// 转化成对应的字典-可选
-    var dictionary_optional: [String: Any]? {
-        guard let dict = jsonObj as? [String: Any] else { return nil }
-        return dict
+
+    /// 使用JSONDecoder转换成数据对象
+    func jsonDecodeObj<T: Decodable>(_ type: T.Type) -> T? {
+        guard let jsonEncodeData else { return nil }
+        return try? JSONDecoder().decode(type, from: jsonEncodeData)
     }
-    
-    /// 转化成对应的字典
-    var array: [Any] {
-        return array_optional ?? []
+
+    /// 使用JSONSerialization转换成JsonString，默认编码utf8
+    var jsonEncodeString: String? {
+        return jsonEncodeString(encoding: .utf8)
     }
-    
-    /// 转化成对应的字典-可选
-    var array_optional: [Any]? {
-        guard let dict = jsonObj as? [Any] else { return nil }
-        return dict
+
+    /// 使用JSONSerialization转换成JsonString
+    func jsonEncodeString(encoding: String.Encoding) -> String? {
+        guard let jsonEncodeData else { return nil }
+        return String(data: jsonEncodeData, encoding: encoding)
     }
 }
 
 // MARK: - 决策判断
 
-public extension AxcEncodableSpace { }
+public extension AxcSpace where Base: Encodable { }

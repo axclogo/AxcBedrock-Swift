@@ -57,13 +57,13 @@ extension Application {
         }
         // 设置文件Url
         inputContentFilePath = filePath
-            .yp.replacing("%EF%9C%81")
-            .yp.replacing("%0A")
+            .axc.replacing("%EF%9C%81")
+            .axc.replacing("%0A")
             .removingPercentEncoding?
-            .yp.replacing("\n")
+            .axc.replacing("\n")
         inputContentFilePath = removeSpace(inputContentFilePath!)
         // 设置工程目录
-        projectPath = inputContentFilePath?.yp.replacing("/AxcBedrock/Example/Renewal/InputContent.txt")
+        projectPath = inputContentFilePath?.axc.replacing("/AxcBedrock/Example/Renewal/InputContent.txt")
         if !isSuccess { // 递归
             setInputContentFile()
         }
@@ -73,14 +73,14 @@ extension Application {
     func getInputContent() -> String {
         let fileUrl = URL(fileURLWithPath: inputContentFilePath!)
         guard let fileData = try? Data(contentsOf: fileUrl),
-              let fileString = fileData.yp.string_optional
+              let fileString = fileData.axc.string_optional
         else { return "" }
         return fileString
     }
     
     func removeSpace(_ str: String) -> String {
         if str.hasPrefix(" ") {
-            let newStr = str.yp.removePrefix(count: 1)
+            let newStr = str.axc.removePrefix(count: 1)
             return removeSpace(newStr!)
         }
         return str

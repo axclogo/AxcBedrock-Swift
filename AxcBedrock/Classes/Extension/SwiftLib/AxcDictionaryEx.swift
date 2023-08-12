@@ -67,16 +67,6 @@ public extension AxcDictionarySpace where Key == String {
     }
 }
 
-// MARK: - AxcDictionarySpace + AxcCollectionJsonTarget
-
-/// 遵循协议
-extension AxcDictionarySpace: AxcCollectionJsonTarget {
-    public typealias CollectionType = [Key: Value]
-    /// 协议的需要转换的类型
-    public var collection: [Key: Value]? {
-        return base
-    }
-}
 
 // MARK: - 类方法
 

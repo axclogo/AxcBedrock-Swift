@@ -25,7 +25,13 @@ public extension AxcSpace where Base == Data {
     }
 
     /// 通过给定的编码来返回字符串
+    @available(*, deprecated, renamed: "string(encoding:)")
     func string(_ encoding: String.Encoding) -> String? {
+        return string(encoding: encoding)
+    }
+
+    /// 通过给定的编码来返回字符串
+    func string(encoding: String.Encoding) -> String? {
         return String(data: base, encoding: encoding)
     }
 
@@ -100,11 +106,6 @@ public extension AxcSpace where Base == Data {
         }
     }
 
-    /// 将data map成支持Codable协议的某个对象
-    func jsonMap<T: Codable>(_ type: T.Type) -> T? {
-        return try? JSONDecoder().decode(type, from: base)
-    }
-
     /// 以字节数组的形式返回数据
     var bytes: UnsafeRawPointer { nsData.bytes }
 
@@ -115,8 +116,8 @@ public extension AxcSpace where Base == Data {
         (base as NSData).getBytes(&bytesArray, length: count * MemoryLayout<UInt8>.size)
         return bytesArray
     }
-
 }
+
 
 // MARK: - Hash摘要算法
 

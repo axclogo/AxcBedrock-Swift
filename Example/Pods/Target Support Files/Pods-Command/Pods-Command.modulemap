@@ -1,0 +1,6 @@
+module Pods_Command {
+  umbrella header "Pods-Command-umbrella.h"
+
+  export *
+  module * { export * }
+}

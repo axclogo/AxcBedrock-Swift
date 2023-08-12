@@ -44,6 +44,6 @@ func console_inputBool(prompt: String) -> Bool {
 func console_input(prompt: String) -> String {
     print("👉🏻\(prompt)：")
     let stdin = FileHandle.standardInput
-    let inputContent = stdin.availableData.yp.string
+    let inputContent = stdin.availableData.axc.string
     return inputContent
 }

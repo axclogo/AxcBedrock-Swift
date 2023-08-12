@@ -14,9 +14,9 @@ class TestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("总共：\(UIDevice.YP.TotalDiskSpace_Bytes) - \(UIDevice.YP.TotalDiskSpace_MB) - \(UIDevice.YP.TotalDiskSpace_GB)")
-//        print("已使用：\(UIDevice.YP.UsedDiskSpace_Bytes) - \(UIDevice.YP.UsedDiskSpace_MB) - \(UIDevice.YP.UsedDiskSpace_GB)")
-//        print("可使用：\(UIDevice.YP.FreeDiskSpace_Bytes) - \(UIDevice.YP.FreeDiskSpace_MB) - \(UIDevice.YP.FreeDiskSpace_GB)")
+//        print("总共：\(UIDevice.Axc.TotalDiskSpace_Bytes) - \(UIDevice.Axc.TotalDiskSpace_MB) - \(UIDevice.Axc.TotalDiskSpace_GB)")
+//        print("已使用：\(UIDevice.Axc.UsedDiskSpace_Bytes) - \(UIDevice.Axc.UsedDiskSpace_MB) - \(UIDevice.Axc.UsedDiskSpace_GB)")
+//        print("可使用：\(UIDevice.Axc.FreeDiskSpace_Bytes) - \(UIDevice.Axc.FreeDiskSpace_MB) - \(UIDevice.Axc.FreeDiskSpace_GB)")
         
         
     }

@@ -24,7 +24,7 @@ end
 
 # 自我更新程序
 # 核心单元测试
-["Maintain", "CoreTests"].each do |t|
+["Maintain", "CoreTests", "Command"].each do |t|
   target t do
     platform :osx, '11.0'
     pod 'AxcBedrock/Core', :path => '../'

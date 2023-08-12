@@ -18,16 +18,16 @@ final class AnyObjectTest: XCTestCase {
 
     /// 类转字符串
     func testStringFromClass() {
-        let caseStr = NSString().yp.stringFromClass
-        let caseStr1 = NSString.YP.StringFromClass
+        let caseStr = NSString().axc.stringFromClass
+        let caseStr1 = NSString.Axc.StringFromClass
         XCTAssertEqual(caseStr, caseStr1)
     }
 
     /// 字符串转类
     func testClassFromString() {
-        let anyClass = "NSString".yp.classFromString as? NSString.Type
-        let caseStr1 = NSString.YP.StringFromClass
-        let caseStr2 = anyClass?.YP.StringFromClass ?? ""
+        let anyClass = "NSString".axc.classFromString as? NSString.Type
+        let caseStr1 = NSString.Axc.StringFromClass
+        let caseStr2 = anyClass?.Axc.StringFromClass ?? ""
         XCTAssertEqual(caseStr1, caseStr2)
     }
 }

@@ -35,20 +35,25 @@ public extension AxcSpace where Base == String {
 
     /// 字符串转Data
     var data: Data? {
-        return data(using: .utf8)
+        return data(encoding: .utf8)
     }
 
     /// 字符串转Data
-    @available(*, deprecated, renamed: "data(using:)")
+    @available(*, deprecated, renamed: "data(encoding:)")
     func data(_ using: String.Encoding = .utf8) -> Data? {
-        guard !base.isEmpty else { return nil }
-        return base.data(using: using, allowLossyConversion: false)
+        return data(encoding: using)
     }
 
     /// 字符串转Data
+    @available(*, deprecated, renamed: "data(encoding:)")
     func data(using: String.Encoding = .utf8) -> Data? {
+        return data(encoding: using)
+    }
+
+    /// 字符串转Data
+    func data(encoding: String.Encoding = .utf8) -> Data? {
         guard !base.isEmpty else { return nil }
-        return base.data(using: using, allowLossyConversion: false)
+        return base.data(using: encoding, allowLossyConversion: false)
     }
 
     /// 字符串转base64Data
@@ -248,7 +253,7 @@ public extension AxcSpace where Base == String {
         { return nsMutableAttString.string } else
         // 其他类型
         if let url = unifiedValue as? URL { return url.absoluteString } else
-        if let data = unifiedValue as? Data { return data.axc.string(.utf8) ?? "" } else
+        if let data = unifiedValue as? Data { return data.axc.string(encoding: .utf8) ?? "" } else
         if let date = unifiedValue as? Date { return date.axc.string(.iso8601Day) }
         return nil
     }
@@ -613,6 +618,37 @@ public extension AxcSpace where Base == String {
         }
         return ranges
     }
+
+    /// 获取当前字符串的编码类型
+    var encodingType: String.Encoding? {
+        // 按照使用频率从高到低排序，减少循环次数，优化命中率
+        let encodingAllValues: [String.Encoding] = [
+            .utf8,
+            .utf16, .utf16LittleEndian, .utf16BigEndian,
+            .utf32, .utf32LittleEndian, .utf32BigEndian,
+            .isoLatin1,
+            .ascii,
+            .nextstep,
+            .nonLossyASCII,
+            .shiftJIS,
+            .isoLatin2,
+            .symbol,
+            .iso2022JP,
+            .windowsCP1252, .windowsCP1250, .windowsCP1254, .windowsCP1251,
+            .macOSRoman,
+            .japaneseEUC,
+        ]
+        // 尝试将字符串转换为 Data 对象，使用不同的编码类型
+        for encoding in encodingAllValues {
+            if let data = string.data(using: encoding),
+               let convertedString = String(data: data, encoding: encoding),
+               string == convertedString { // 如果转换后的字符串与原始字符串相等，则表示找到了匹配的编码类型
+                return encoding
+            }
+        }
+        // 如果没有找到匹配的编码类型，则返回 nil
+        return nil
+    }
 }
 
 // MARK: - [AxcBlock.Algorithm]
@@ -832,6 +868,14 @@ public extension AxcSpace where Base == String {
     /// - Returns: 结果
     func isConform(pattern: String) -> Bool {
         return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: base)
+    }
+
+    func isJSONString(encoding: String.Encoding) -> Bool {
+        guard let data = data(encoding: encoding),
+              let jsonObj = try? JSONSerialization.jsonObject(with: data, options: [])
+        else { return false }
+        let result = jsonObj is [String: Any] || jsonObj is [Any]
+        return result
     }
 
     /// 判断是否含包含汉字

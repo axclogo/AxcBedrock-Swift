@@ -44,16 +44,6 @@ public extension AxcArraySpace {
     }
 }
 
-// MARK: - AxcArraySpace + AxcCollectionJsonTarget
-
-/// 遵循协议
-extension AxcArraySpace: AxcCollectionJsonTarget {
-    public typealias CollectionType = [Element]
-    /// 协议的需要转换的类型
-    public var collection: [Element]? {
-        return base
-    }
-}
 
 // MARK: - 类方法
 
@@ -69,7 +59,7 @@ public extension AxcArraySpace {
         if count > 0 {
             array.reserveCapacity(count)
             while array.count < count {
-                array.append(try expression())
+                try array.append(expression())
             }
         }
         return array

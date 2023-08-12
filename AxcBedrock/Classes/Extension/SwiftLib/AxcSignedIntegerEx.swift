@@ -5,27 +5,7 @@
 //  Created by 赵新 on 2022/2/12.
 //
 
-import Foundation
-
-// MARK: - [AxcSignedIntegerSpace]
-
-public struct AxcSignedIntegerSpace<Base> where Base: SignedInteger {
-    init(_ base: Base) {
-        self.base = base
-    }
-
-    var base: Base
-}
-
-public extension SignedInteger {
-    /// 命名空间
-    var axc: AxcSignedIntegerSpace<Self> {
-        set { }
-        get { return .init(self) }
-    }
-}
-
-public extension AxcSignedIntegerSpace {
+public extension AxcSpace where Base: SignedInteger {
     /// 年
     var year: AxcTimeMark {
         return AxcTimeMark(year: Int(base))

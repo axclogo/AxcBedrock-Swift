@@ -57,15 +57,15 @@ class MaintainUnifiedColor: NSObject {
         for string in codeList {
             // 获取名称
             guard var name = matches(string: string, pattern: "var(.*):").first else { return }
-            name = name.yp.replacing(strings: ["var", " ", ":"])
+            name = name.axc.replacing(strings: ["var", " ", ":"])
             var colorAttribute = ColorAttribute(name: name)
             // 获取版本
             let availablePattern = "@available(.*)"
-            if string.yp.isConform(pattern: availablePattern) {
+            if string.axc.isConform(pattern: availablePattern) {
                 if var availableStr = matches(string: string, pattern: availablePattern).first,
                    var versionStr = matches(string: availableStr, pattern: "iOS (.*),").first {
-                    versionStr = versionStr.yp.replacing(strings: ["iOS", ",", " "])
-                    if let versionFloat = versionStr.yp.float_optional,
+                    versionStr = versionStr.axc.replacing(strings: ["iOS", ",", " "])
+                    if let versionFloat = versionStr.axc.float_optional,
                        versionFloat > 10 {
                         colorAttribute.available = availableStr
                     }

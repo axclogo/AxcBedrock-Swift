@@ -5,40 +5,17 @@
 //  Created by 赵新 on 2022/2/15.
 //
 
-// MARK: - [AxcStringProtocolSpace]
-
-public struct AxcStringProtocolSpace<Base> where Base: StringProtocol {
-    init(_ base: Base) {
-        self.base = base
-    }
-
-    var base: Base
-}
-
-public extension StringProtocol {
-    /// 命名空间
-    var axc: AxcStringProtocolSpace<Self> {
-        set { }
-        get { return .init(self) }
-    }
-
-    /// 命名空间， 类型方法
-    static var Axc: AxcStringProtocolSpace<Self>.Type {
-        return AxcStringProtocolSpace.self
-    }
-}
-
 // MARK: - 数据转换
 
-public extension AxcStringProtocolSpace { }
+public extension AxcSpace where Base: StringProtocol { }
 
 // MARK: - 类方法
 
-public extension AxcStringProtocolSpace { }
+public extension AxcSpace where Base: StringProtocol { }
 
 // MARK: - 属性 & Api
 
-public extension AxcStringProtocolSpace {
+public extension AxcSpace where Base: StringProtocol {
     /// 获取两个字符串相同连续的字符
     ///
     ///        "Hello world!".axc.commonSuffix(with: "It's cold!") = "ld!"
@@ -72,4 +49,4 @@ public extension AxcStringProtocolSpace {
 
 // MARK: - 决策判断
 
-public extension AxcStringProtocolSpace { }
+public extension AxcSpace where Base: StringProtocol { }

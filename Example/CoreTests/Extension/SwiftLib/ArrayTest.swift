@@ -24,7 +24,7 @@ final class ArrayTest: XCTestCase {
     /// 随机
     func testRandom() {
         let list = [1, 2, 3, 4]
-        let listRandom = list.yp.random
+        let listRandom = list.axc.random
         XCTAssertNotNil(listRandom)
         XCTAssertTrue(list.contains(listRandom!))
     }
@@ -32,37 +32,37 @@ final class ArrayTest: XCTestCase {
     func testAppend() {
         let base = [1, 2, 3]
         let newElements = [4, 5]
-        let result = base.yp.append(newElements)
+        let result = base.axc.append(newElements)
         XCTAssertEqual(result, [1, 2, 3, 4, 5])
     }
 
     func testInsert() {
         // 测试索引正常插入
         let arr = ["a", "b", "c"]
-        let new = arr.yp.insert("d", at: 2)
+        let new = arr.axc.insert("d", at: 2)
         XCTAssertEqual(new, ["a", "b", "d", "c"])
 
         // 测试索引小于0
         let arr2 = ["a", "b", "c"]
-        let new2 = arr2.yp.insert("d", at: -1)
+        let new2 = arr2.axc.insert("d", at: -1)
         XCTAssertEqual(new2, ["d", "a", "b", "c"])
 
         // 测试索引越界
         let arr3 = ["a", "b", "c"]
-        let new3 = arr3.yp.insert("d", at: 5)
+        let new3 = arr3.axc.insert("d", at: 5)
         XCTAssertEqual(new3, ["a", "b", "c", "d"])
     }
 
     func testRemoveAtIndex() {
         let array = ["a", "b", "c"]
-        XCTAssertEqual(array.yp.remove(at: 0), ["b", "c"])
-        XCTAssertEqual(array.yp.remove(at: 3), ["a", "b", "c"])
+        XCTAssertEqual(array.axc.remove(at: 0), ["b", "c"])
+        XCTAssertEqual(array.axc.remove(at: 3), ["a", "b", "c"])
     }
 
     func testRemoveLast() {
         var array = [1, 2, 3, 4]
-        XCTAssertEqual(array.yp.removeLast { $0 > 0 }, [1, 2, 3])
-        XCTAssertEqual(array.yp.removeLast { $0 > 2 }, [1, 2])
-        XCTAssertEqual(array.yp.removeLast { $0 > 3 }, [1, 2])
+        XCTAssertEqual(array.axc.removeLast { $0 > 0 }, [1, 2, 3])
+        XCTAssertEqual(array.axc.removeLast { $0 > 2 }, [1, 2])
+        XCTAssertEqual(array.axc.removeLast { $0 > 3 }, [1, 2])
     }
 }

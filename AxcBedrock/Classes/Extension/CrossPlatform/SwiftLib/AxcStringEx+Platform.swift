@@ -45,7 +45,7 @@ public extension AxcSpace where Base == String {
     /// 获取以这个字符串为内容生成CIImage格式的二维码
     var qrCodeCIImage: CIImage? {
         guard let filter = CIFilter.Axc.CreateOptional(category: .generator(type: .qrCodeGenerator)) else { return nil }
-        guard let data = data(using: .utf8) else { return nil }
+        guard let data = data(encoding: .utf8) else { return nil }
         filter.setValue(data, forKey: "inputMessage")
         guard let outPutImage = filter.outputImage else { return nil }
         return outPutImage
