@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #【配置】
-new_version="1.1.2" # 这里设置要上传的版本号
+new_version="1.1.3" # 这里设置要上传的版本号
 pod_sources="https://github.com/CocoaPods/Specs" # 这里设置sources
 
 
