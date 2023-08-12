@@ -97,7 +97,7 @@ git status -s
 if [ -n "$(git status --porcelain)" ]; then
     echo "检测到变更，正在提交变更文件"
     git add -A
-    git commit -m "[repo upload]-repo上传$new_version"
+    git commit -m "[repo upload]-$new_version"
     echo '同步远端分支'
     git config pull.rebase true
     git pull
