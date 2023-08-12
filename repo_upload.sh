@@ -14,6 +14,19 @@ project_name="" # 项目名称
 cd $src_root_dir # 目录切换
 ls
 
+while true; do
+read -p "Target: [FrameworkMaker]是否已经通过编译？[y/n]：" answer
+    if [[ $answer == "y" || $answer == "Y" ]]; then
+        echo "执行下一步"
+        break  # 结束循环
+    elif [[ $answer == "n" || $answer == "N" ]]; then
+        echo "退出"
+        exit
+    else
+        echo "无效的输入"
+    fi
+done
+
 #【校验】
 # 查找所有的.podspec文件
 podspec_files=( $(find . -type f -name "*.podspec") )
