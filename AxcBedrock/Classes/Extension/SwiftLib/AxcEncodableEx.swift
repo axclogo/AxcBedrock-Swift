@@ -5,6 +5,8 @@
 //  Created by 赵新 on 2023/7/14.
 //
 
+import Foundation
+
 // MARK: - 数据转换
 
 public extension AxcSpace where Base: Encodable { }
@@ -33,13 +35,13 @@ public extension AxcSpace where Base: Encodable {
     func jsonObj(options: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
         return jsonSerializationObj(readingOptions: options)
     }
-    
+
     /// 转json字符串
     @available(*, deprecated, renamed: "jsonSerializationString")
     var jsonStr: String? {
         return jsonSerializationString
     }
-    
+
     /// 转json字符串
     @available(*, deprecated, renamed: "jsonSerializationString")
     var jsonString: String? {
@@ -54,7 +56,7 @@ public extension AxcSpace where Base: Encodable {
     var jsonEncodeData: Data? {
         return try? JSONEncoder().encode(base)
     }
-    
+
     /// 使用JSONSerialization转换成JsonString，默认编码utf8
     var jsonEncodeString: String? {
         return jsonEncodeString(encoding: .utf8)
