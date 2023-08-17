@@ -33,7 +33,13 @@ public extension AxcSpace where Base: Encodable {
     func jsonObj(options: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
         return jsonSerializationObj(readingOptions: options)
     }
-
+    
+    /// 转json字符串
+    @available(*, deprecated, renamed: "jsonSerializationString")
+    var jsonStr: String? {
+        return jsonSerializationString
+    }
+    
     /// 转json字符串
     @available(*, deprecated, renamed: "jsonSerializationString")
     var jsonString: String? {
