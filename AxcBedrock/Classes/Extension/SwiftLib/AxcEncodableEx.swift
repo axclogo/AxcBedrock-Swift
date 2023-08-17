@@ -41,12 +41,6 @@ public extension AxcSpace where Base: Encodable {
     var jsonStr: String? {
         return jsonSerializationString
     }
-
-    /// 转json字符串
-    @available(*, deprecated, renamed: "jsonSerializationString")
-    var jsonString: String? {
-        return jsonSerializationString
-    }
 }
 
 // MARK: - 属性 & Api
