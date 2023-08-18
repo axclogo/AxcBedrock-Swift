@@ -16,6 +16,21 @@ public extension AxcDevice {
         let battery = abs(Int(UIDevice.current.batteryLevel * 100))
         return battery
     }
+
+    /// 判断手机是否是全面屏
+    @available(iOSApplicationExtension, unavailable)
+    static func IsFullScreenDevice() -> Bool {
+        var result: Bool = false
+        guard let mainWindow = AxcApp.KeyWindow else { return result }
+        if #available(iOS 11.0, *) {
+            let safeAreaInsets = mainWindow.safeAreaInsets
+            result = safeAreaInsets.top > 20 || safeAreaInsets.bottom > 0
+        } else {
+            let statusBarHeight = UIApplication.shared.statusBarFrame.height
+            result = statusBarHeight > 20
+        }
+        return result
+    }
 }
 
 // MARK: - [AxcDevice.Style]
