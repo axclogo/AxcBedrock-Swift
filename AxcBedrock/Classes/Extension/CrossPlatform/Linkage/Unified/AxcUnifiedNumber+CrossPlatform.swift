@@ -12,37 +12,37 @@ import Foundation
 public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 转换成EdgeInsets
     var edgeInsets: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(base)
+        return AxcBedrockEdgeInsets.Axc.Create(all: base)
     }
 
     /// 转换成EdgeInsets的Top，其他为0
     var edgeInsetsTop: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(base, 0, 0, 0)
+        return AxcBedrockEdgeInsets.Axc.Create(top: base, left: 0, bottom: 0, right: 0)
     }
 
     /// 转换成EdgeInsets的Left，其他为0
     var edgeInsetsLeft: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, 0)
+        return AxcBedrockEdgeInsets.Axc.Create(top: 0, left: base, bottom: 0, right: 0)
     }
 
     /// 转换成EdgeInsets的Bottom，其他为0
     var edgeInsetsBottom: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(0, 0, base, 0)
+        return AxcBedrockEdgeInsets.Axc.Create(top: 0, left: 0, bottom: base, right: 0)
     }
 
     /// 转换成EdgeInsets的Right，其他为0
     var edgeInsetsRight: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(0, 0, 0, base)
+        return AxcBedrockEdgeInsets.Axc.Create(top: 0, left: 0, bottom: 0, right: base)
     }
 
     /// 转换成EdgeInsets的Left、Right，其他为0
     var edgeInsetsHorizontal: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(0, base, 0, base)
+        return AxcBedrockEdgeInsets.Axc.Create(top: 0, left: base, bottom: 0, right: base)
     }
 
     /// 转换成EdgeInsets的Top、Bottom，其他为0
     var edgeInsetsVertical: AxcBedrockEdgeInsets {
-        return AxcBedrockEdgeInsets.Axc.Create(base, 0, base, 0)
+        return AxcBedrockEdgeInsets.Axc.Create(top: base, left: 0, bottom: base, right: 0)
     }
 }
 

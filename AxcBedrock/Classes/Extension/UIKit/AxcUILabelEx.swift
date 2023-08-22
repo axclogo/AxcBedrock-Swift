@@ -42,7 +42,14 @@ public extension AxcSpace where Base: UILabel {
 
     /// 实例化富文本
     /// - Parameter attributedText: 富文本
+    @available(*, deprecated, renamed: "Create(attributedText:)")
     static func Create(_ attributedText: NSAttributedString) -> Base {
+        return Create(attributedText: attributedText)
+    }
+
+    /// 实例化富文本
+    /// - Parameter attributedText: 富文本
+    static func Create(attributedText: NSAttributedString) -> Base {
         let label: Base = .init()
         label.attributedText = attributedText
         label.numberOfLines = 0

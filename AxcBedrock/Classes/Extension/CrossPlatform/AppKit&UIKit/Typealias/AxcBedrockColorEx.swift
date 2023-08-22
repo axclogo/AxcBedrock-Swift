@@ -36,7 +36,7 @@ public extension AxcSpace where Base: AxcBedrockColor {
     var hexString: String {
         let key = "\(base.hashValue)"
         let hexString: String = AxcLazyCache.MemoryCache(table: .platformColorTable,
-                                                        key: key) {
+                                                         key: key) {
             var red: CGFloat = 0
             var green: CGFloat = 0
             var blue: CGFloat = 0
@@ -133,7 +133,7 @@ public extension AxcSpace where Base: AxcBedrockColor {
     ///   - alpha: 阿尔法通道值
     static func Create(gray: CGFloat,
                        alpha: CGFloat = 1) -> AxcBedrockColor {
-        return Create(gray, gray, gray, alpha: alpha)
+        return Create(red: gray, green: gray, blue: gray, alpha: alpha)
     }
 
     // MARK: HexString创建
@@ -159,7 +159,7 @@ public extension AxcSpace where Base: AxcBedrockColor {
         let red = CGFloat((hex & 0xFF0000) >> 16)
         let green = CGFloat((hex & 0xFF00) >> 8)
         let blue = CGFloat((hex & 0xFF) >> 0)
-        return AxcBedrockColor.Axc.Create(red, green, blue, alpha: alpha)
+        return AxcBedrockColor.Axc.Create(red: red, green: green, blue: blue, alpha: alpha)
     }
 
     // MARK: hexInt创建
@@ -170,9 +170,9 @@ public extension AxcSpace where Base: AxcBedrockColor {
     ///   - alpha: 阿尔法通道值
     static func Create(hexInt: Int,
                        alpha: CGFloat = 1) -> AxcBedrockColor {
-        let color = Create(CGFloat((hexInt & 0xFF0000) >> 16),
-                           CGFloat((hexInt & 0xFF00) >> 8),
-                           CGFloat((hexInt & 0xFF)), alpha: alpha)
+        let color = Create(red: CGFloat((hexInt & 0xFF0000) >> 16),
+                           green: CGFloat((hexInt & 0xFF00) >> 8),
+                           blue: CGFloat((hexInt & 0xFF)), alpha: alpha)
         return color
     }
 
@@ -184,14 +184,28 @@ public extension AxcSpace where Base: AxcBedrockColor {
     ///   - g: 绿色值
     ///   - b: 蓝色值
     ///   - a: 透明度值
+    @available(*, deprecated, renamed: "Create(red:green:blue:alpha:)")
     static func Create(_ r: AxcUnifiedNumber,
                        _ g: AxcUnifiedNumber,
                        _ b: AxcUnifiedNumber,
                        alpha: AxcUnifiedNumber = 1) -> AxcBedrockColor {
+        return Create(red: r, green: g, blue: b, alpha: alpha)
+    }
+
+    /// （💈跨平台标识）通过RGBA创建，内部会自动除以255 不会为空
+    /// - Parameters:
+    ///   - r: 红色值
+    ///   - g: 绿色值
+    ///   - b: 蓝色值
+    ///   - a: 透明度值
+    static func Create(red: AxcUnifiedNumber,
+                       green: AxcUnifiedNumber,
+                       blue: AxcUnifiedNumber,
+                       alpha: AxcUnifiedNumber = 1) -> AxcBedrockColor {
         let _255 = 255.axc.cgFloat
-        let red = CGFloat.Axc.Create(r) / _255
-        let green = CGFloat.Axc.Create(g) / _255
-        let blue = CGFloat.Axc.Create(b) / _255
+        let red = CGFloat.Axc.Create(red) / _255
+        let green = CGFloat.Axc.Create(green) / _255
+        let blue = CGFloat.Axc.Create(blue) / _255
         let alpha = CGFloat.Axc.Create(alpha)
         #if os(macOS)
         return NSColor(srgbRed: red,
@@ -212,9 +226,9 @@ public extension AxcSpace where Base: AxcBedrockColor {
 
     /// （💈跨平台标识）获取一个随机色
     static var RandomUIColor: AxcBedrockColor {
-        return Create(CGFloat.Axc.Random(255),
-                      CGFloat.Axc.Random(255),
-                      CGFloat.Axc.Random(255))
+        return Create(red: CGFloat.Axc.Random(255),
+                      green: CGFloat.Axc.Random(255),
+                      blue: CGFloat.Axc.Random(255))
     }
 
     // MARK: 主题色

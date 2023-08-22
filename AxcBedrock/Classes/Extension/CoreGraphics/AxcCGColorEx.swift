@@ -5,9 +5,9 @@
 //  Created by 赵新 on 2023/1/18.
 //
 
-import CoreGraphics
 import CoreImage
 import Foundation
+import CoreGraphics
 
 fileprivate extension AxcLazyCache.TableKey {
     /// 颜色转换缓存表，启用缓存
@@ -52,7 +52,7 @@ public extension AxcSpace where Base == CGColor {
         }
         if let string = unifiedValue as? String {
             _color = CGColor.Axc.Create(hexStr: string)
- 
+
         } else if let nsString = unifiedValue as? NSString {
             _color = CGColor.Axc.Create(hexStr: nsString.axc.string)
 
@@ -88,7 +88,7 @@ public extension AxcSpace where Base == CGColor {
     ///   - alpha: 阿尔法通道值
     static func CreateOptional(gray: CGFloat,
                                alpha: CGFloat = 1) -> CGColor? {
-        return CreateOptional(gray, gray, gray, alpha: alpha)
+        return CreateOptional(red: gray, green: gray, blue: gray, alpha: alpha)
     }
 
     // MARK: HexString创建
@@ -114,7 +114,7 @@ public extension AxcSpace where Base == CGColor {
         let red = CGFloat((hex & 0xFF0000) >> 16)
         let green = CGFloat((hex & 0xFF00) >> 8)
         let blue = CGFloat((hex & 0xFF) >> 0)
-        guard let color = CGColor.Axc.CreateOptional(red, green, blue, alpha: alpha) else { return nil }
+        guard let color = CGColor.Axc.CreateOptional(red: red, green: green, blue: blue, alpha: alpha) else { return nil }
         return color
     }
 
@@ -135,9 +135,9 @@ public extension AxcSpace where Base == CGColor {
     ///   - alpha: 阿尔法通道值
     static func CreateOptional(hexInt: Int,
                                alpha: CGFloat = 1) -> CGColor? {
-        let color = CreateOptional(CGFloat((hexInt & 0xFF0000) >> 16),
-                                   CGFloat((hexInt & 0xFF00) >> 8),
-                                   CGFloat((hexInt & 0xFF)), alpha: alpha)
+        let color = CreateOptional(red: CGFloat((hexInt & 0xFF0000) >> 16),
+                                   green: CGFloat((hexInt & 0xFF00) >> 8),
+                                   blue: CGFloat((hexInt & 0xFF)), alpha: alpha)
         return color
     }
 
@@ -149,11 +149,25 @@ public extension AxcSpace where Base == CGColor {
     ///   - g: 绿色值
     ///   - b: 蓝色值
     ///   - a: 透明度值
+    @available(*, deprecated, renamed: "Create(red:green:blue:alpha:)")
     static func Create(_ r: AxcUnifiedNumber,
                        _ g: AxcUnifiedNumber,
                        _ b: AxcUnifiedNumber,
                        alpha: AxcUnifiedNumber = 1) -> CGColor {
-        return CreateOptional(r, g, b, alpha: alpha) ?? AxcBedrockColor.black.cgColor
+        return CreateOptional(red: r, green: g, blue: b, alpha: alpha) ?? AxcBedrockColor.black.cgColor
+    }
+
+    /// 通过RGBA创建，内部会自动除以255 具有默认值
+    /// - Parameters:
+    ///   - r: 红色值
+    ///   - g: 绿色值
+    ///   - b: 蓝色值
+    ///   - a: 透明度值
+    static func Create(red: AxcUnifiedNumber,
+                       green: AxcUnifiedNumber,
+                       blue: AxcUnifiedNumber,
+                       alpha: AxcUnifiedNumber = 1) -> CGColor {
+        return CreateOptional(red: red, green: green, blue: blue, alpha: alpha) ?? AxcBedrockColor.black.cgColor
     }
 
     /// 通过RGBA创建，内部会自动除以255 可选
@@ -162,14 +176,28 @@ public extension AxcSpace where Base == CGColor {
     ///   - g: 绿色值
     ///   - b: 蓝色值
     ///   - a: 透明度值
+    @available(*, deprecated, renamed: "CreateOptional(red:green:blue:alpha:)")
     static func CreateOptional(_ r: AxcUnifiedNumber,
                                _ g: AxcUnifiedNumber,
                                _ b: AxcUnifiedNumber,
                                alpha: AxcUnifiedNumber = 1) -> CGColor? {
+        return CreateOptional(red: r, green: g, blue: b, alpha: alpha)
+    }
+
+    /// 通过RGBA创建，内部会自动除以255 可选
+    /// - Parameters:
+    ///   - r: 红色值
+    ///   - g: 绿色值
+    ///   - b: 蓝色值
+    ///   - a: 透明度值
+    static func CreateOptional(red: AxcUnifiedNumber,
+                               green: AxcUnifiedNumber,
+                               blue: AxcUnifiedNumber,
+                               alpha: AxcUnifiedNumber = 1) -> CGColor? {
         let _255 = 255.axc.cgFloat
-        let red = CGFloat.Axc.Create(r) / _255
-        let green = CGFloat.Axc.Create(g) / _255
-        let blue = CGFloat.Axc.Create(b) / _255
+        let red = CGFloat.Axc.Create(red) / _255
+        let green = CGFloat.Axc.Create(green) / _255
+        let blue = CGFloat.Axc.Create(blue) / _255
         let alpha = CGFloat.Axc.Create(alpha)
         if #available(iOS 13.0, *) {
             return CGColor(red: red,
@@ -188,9 +216,9 @@ public extension AxcSpace where Base == CGColor {
 
     /// 获取一个随机色
     static var RandomUIColor: CGColor {
-        return Create(CGFloat.Axc.Random(255),
-                      CGFloat.Axc.Random(255),
-                      CGFloat.Axc.Random(255))
+        return Create(red: CGFloat.Axc.Random(255),
+                      green: CGFloat.Axc.Random(255),
+                      blue: CGFloat.Axc.Random(255))
     }
 }
 

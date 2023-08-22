@@ -46,6 +46,7 @@ public extension AxcBedrockEdgeInsetsSpace { }
 
 public extension AxcBedrockEdgeInsetsSpace {
     /// （💈跨平台标识）无前缀实例化 AxcBedrockEdgeInsets
+    @available(*, deprecated, renamed: "Create(top:left:bottom:right:)")
     static func Create(_ top: AxcUnifiedNumber,
                        _ left: AxcUnifiedNumber,
                        _ bottom: AxcUnifiedNumber,
@@ -57,8 +58,27 @@ public extension AxcBedrockEdgeInsetsSpace {
         return AxcBedrockEdgeInsets(top: top, left: left, bottom: bottom, right: right)
     }
 
+    /// （💈跨平台标识）实例化 AxcBedrockEdgeInsets
+    static func Create(top: AxcUnifiedNumber,
+                       left: AxcUnifiedNumber,
+                       bottom: AxcUnifiedNumber,
+                       right: AxcUnifiedNumber) -> AxcBedrockEdgeInsets {
+        let top = CGFloat.Axc.Create(top)
+        let left = CGFloat.Axc.Create(left)
+        let bottom = CGFloat.Axc.Create(bottom)
+        let right = CGFloat.Axc.Create(right)
+        return AxcBedrockEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+
     /// （💈跨平台标识）统一实例化
+    @available(*, deprecated, renamed: "Create(all:)")
     static func Create(_ all: AxcUnifiedNumber) -> AxcBedrockEdgeInsets {
+        let all = CGFloat.Axc.Create(all)
+        return AxcBedrockEdgeInsets(top: all, left: all, bottom: all, right: all)
+    }
+
+    /// （💈跨平台标识）统一实例化
+    static func Create(all: AxcUnifiedNumber) -> AxcBedrockEdgeInsets {
         let all = CGFloat.Axc.Create(all)
         return AxcBedrockEdgeInsets(top: all, left: all, bottom: all, right: all)
     }
@@ -163,7 +183,7 @@ public extension AxcBedrockEdgeInsetsSpace {
         newEdge.bottom += vertical
         return newEdge
     }
-    
+
     /// （💈跨平台标识）设置水平方向（左右）
     func add(horizontal: CGFloat) -> AxcBedrockEdgeInsets {
         var newEdge = base
@@ -171,7 +191,7 @@ public extension AxcBedrockEdgeInsetsSpace {
         newEdge.right += horizontal
         return newEdge
     }
-    
+
     /// （💈跨平台标识）设置水平方向（左右）
     func add(size: CGSize) -> AxcBedrockEdgeInsets {
         var newEdge = base

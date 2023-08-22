@@ -165,7 +165,18 @@ public extension AxcImageSpace {
     ///   - name: 图片名
     ///   - bundle: 资源
     /// - Returns: 图片对象
+    @available(*, deprecated, renamed: "Create(name:in:)")
     static func Create(_ name: String,
+                       in bundle: Bundle?) -> Base? {
+        return Create(name: name, in: bundle)
+    }
+
+    /// （💈跨平台标识）创建图片
+    /// - Parameters:
+    ///   - name: 图片名
+    ///   - bundle: 资源
+    /// - Returns: 图片对象
+    static func Create(name: String,
                        in bundle: Bundle?) -> Base? {
         #if os(macOS)
         guard let bundle = bundle else {
