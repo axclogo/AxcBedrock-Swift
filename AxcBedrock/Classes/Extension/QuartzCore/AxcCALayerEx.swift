@@ -103,11 +103,17 @@ public extension AxcSpace where Base: CALayer {
     ///   - radius: 圆角半径
     ///   - maskedCorners: 圆角方位
     @available(iOS 11.0, tvOS 11.0, *)
-    func set(corners: AxcCorner,
-             cornerRadius: CGFloat) {
-        base.cornerRadius = cornerRadius
-        base.masksToBounds = true
-        base.maskedCorners = corners.toCACornerMask
+    func set(corners: AxcCorner?,
+             cornerRadius: CGFloat?) {
+        if let corners, let cornerRadius {
+            base.cornerRadius = cornerRadius
+            base.masksToBounds = true
+            base.maskedCorners = corners.toCACornerMask
+        }else{
+            base.cornerRadius = 0
+            base.masksToBounds = false
+            base.maskedCorners = AxcCorner.all.toCACornerMask
+        }
     }
 
     /// 读写x
