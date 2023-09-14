@@ -9,7 +9,12 @@ import Foundation
 
 // MARK: - 数据转换
 
-public extension AxcSpace where Base: NSAttributedString { }
+public extension AxcSpace where Base: NSAttributedString {
+    /// 转换为 CFAttributedString
+    var cfAttributedString: CFAttributedString {
+        return base as! CFAttributedString
+    }
+}
 
 // MARK: - 类方法
 

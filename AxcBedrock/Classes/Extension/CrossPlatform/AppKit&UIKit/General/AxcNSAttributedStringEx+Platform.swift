@@ -76,11 +76,11 @@ public extension AxcSpace where Base: NSAttributedString {
 
     // MARK: 根据宽度获取每行的富文本
 
-    /// 根据宽度计算每行的文本
-    /// - Parameter maxWidth: 最大宽度
-    /// - Returns: 每一行的富文本数组
-    func getAttributedStringLines(maxWidth: CGFloat) -> [NSAttributedString] {
-        let frameSetter = CTFramesetterCreateWithAttributedString(base as! CFAttributedString)
+    /// 根据宽度分割成多行富文本
+    /// - Parameter width: 最大宽度
+    /// - Returns: 由每一行富文本构成的数组
+    func componentsLines(maxWidth: CGFloat) -> [NSAttributedString] {
+        let frameSetter = CTFramesetterCreateWithAttributedString(cfAttributedString)
         let path = CGMutablePath()
         path.addRect(CGRect(x: 0, y: 0, width: maxWidth, height: .greatestFiniteMagnitude))
         let ctFrame = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, base.length), path, nil)
