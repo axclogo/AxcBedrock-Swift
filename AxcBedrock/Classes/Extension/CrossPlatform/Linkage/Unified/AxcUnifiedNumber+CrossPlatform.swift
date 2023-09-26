@@ -136,4 +136,48 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
     var nsEdgeVertical: AxcBedrockEdgeInsets {
         return edgeInsetsVertical
     }
+
+    // MARK: Other
+
+    /// 转换成EdgeInsets
+    @available(*, deprecated, renamed: "edgeInsets")
+    var edge: AxcBedrockEdgeInsets {
+        return edgeInsets
+    }
+
+    /// 转换成EdgeInsets的Top，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsTop")
+    var edgeTop: AxcBedrockEdgeInsets {
+        return edgeInsetsTop
+    }
+
+    /// 转换成EdgeInsets的Left，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsLeft")
+    var edgeLeft: AxcBedrockEdgeInsets {
+        return edgeInsetsLeft
+    }
+
+    /// 转换成EdgeInsets的Bottom，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsBottom")
+    var edgeBottom: AxcBedrockEdgeInsets {
+        return edgeInsetsBottom
+    }
+
+    /// 转换成EdgeInsets的Right，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsRight")
+    var edgeRight: AxcBedrockEdgeInsets {
+        return edgeInsetsRight
+    }
+
+    /// 转换成EdgeInsets的Left、Right，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsHorizontal")
+    var edgeHorizontal: AxcBedrockEdgeInsets {
+        return edgeInsetsHorizontal
+    }
+
+    /// 转换成EdgeInsets的Top、Bottom，其他为0
+    @available(*, deprecated, renamed: "edgeInsetsVertical")
+    var edgeVertical: AxcBedrockEdgeInsets {
+        return edgeInsetsVertical
+    }
 }
