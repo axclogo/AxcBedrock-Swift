@@ -29,7 +29,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 
     /// 转换成CGPoint
     var cgPoint: CGPoint {
-        return CGPoint.Axc.Create(assertTransformCGFloat(base))
+        return CGPoint.Axc.Create(all: assertTransformCGFloat(base))
     }
 
     /// 转换成CGSize

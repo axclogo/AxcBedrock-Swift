@@ -181,6 +181,20 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
     var secondsDate: Date {
         return Date(timeIntervalSince1970: double)
     }
+
+    /// 存储空间转换
+    /// - Parameter units: 单位
+    /// - Returns: 转换值
+    func storageSpace(units: ByteCountFormatter.Units) -> Double {
+        let bytes = Int64.Axc.Create(base)
+        let formatter = ByteCountFormatter()
+        formatter.allowedUnits = units
+        formatter.countStyle = .binary
+        formatter.includesUnit = false
+        let string = formatter.string(fromByteCount: bytes).axc.replacing(",", with: "")
+        let byteSize = string.axc.double
+        return byteSize
+    }
 }
 
 // MARK: 数学转换

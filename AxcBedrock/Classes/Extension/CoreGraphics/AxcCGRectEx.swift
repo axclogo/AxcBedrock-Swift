@@ -32,7 +32,14 @@ public extension AxcSpace where Base == CGRect {
     }
 
     /// 统一实例化
+    @available(*, deprecated, renamed: "Create(all:)")
     static func Create(_ all: AxcUnifiedNumber) -> CGRect {
+        let all = CGFloat.Axc.Create(all)
+        return CGRect(x: all, y: all, width: all, height: all)
+    }
+
+    /// 统一实例化
+    static func Create(all: AxcUnifiedNumber) -> CGRect {
         let all = CGFloat.Axc.Create(all)
         return CGRect(x: all, y: all, width: all, height: all)
     }
@@ -139,7 +146,6 @@ public extension AxcSpace where Base == CGRect {
             height: size.height
         )
     }
-    
 }
 
 // MARK: - 决策判断
