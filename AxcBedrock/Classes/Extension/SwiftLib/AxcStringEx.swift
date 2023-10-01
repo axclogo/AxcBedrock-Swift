@@ -649,10 +649,15 @@ public extension AxcSpace where Base == String {
         // 如果没有找到匹配的编码类型，则返回 nil
         return nil
     }
-    
+
     /// 最后一个路径名称
     var lastPathComponent: String {
         return nsString.lastPathComponent
+    }
+
+    /// 路径的扩展名
+    var pathExtension: String {
+        return nsString.pathExtension
     }
 }
 

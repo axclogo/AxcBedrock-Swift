@@ -48,11 +48,10 @@ public extension AxcFileUtil {
     /// - Returns: 大小，单位Bytes
     static func FileSize_Bytes(path: String) -> Int64? {
         var size: Int64?
-        guard let attributed = try? FileManager.default.attributesOfItem(atPath: path) else { return nil }
-        let isDir = (attributed[FileAttributeKey.type] as? FileAttributeType) == FileAttributeType.typeDirectory
-        if isDir {
+        if IsDirectory(path: path) { // 是目录则递归
             size = FolderSize_Bytes(path: path)
-        } else {
+        } else { // 读取大小信息
+            guard let attributed = try? FileManager.default.attributesOfItem(atPath: path) else { return nil }
             size = (attributed[FileAttributeKey.size] as? NSNumber)?.int64Value
         }
         return size
@@ -104,5 +103,15 @@ public extension AxcFileUtil {
             }
         }
         return totalFileSize
+    }
+
+    /// 是否是目录
+    static func IsDirectory(path: String) -> Bool {
+        let fileManager = FileManager.default
+        var isDirectory: ObjCBool = false
+        if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
+            return isDirectory.boolValue
+        }
+        return false
     }
 }
