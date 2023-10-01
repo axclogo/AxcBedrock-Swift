@@ -185,7 +185,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 存储空间转换
     /// - Parameter units: 单位
     /// - Returns: 转换值
-    func storageSpace(units: ByteCountFormatter.Units) -> Double {
+    func storageSpace(units: ByteCountFormatter.Units, multiple: UInt = 1024) -> Double {
         let bytes = Int64.Axc.Create(base)
         let formatter = ByteCountFormatter()
         formatter.allowedUnits = units

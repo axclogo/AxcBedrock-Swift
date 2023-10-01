@@ -26,6 +26,13 @@ public extension AxcFileUtil {
         return FileSize(path: path, units: .useMB)
     }
 
+    /// 文件大小-KB
+    /// - Parameter path: 路径
+    /// - Returns: 大小，单位KB
+    static func FileSize_KB(path: String) -> Double? {
+        return FileSize(path: path, units: .useKB)
+    }
+
     /// 文件大小
     /// - Parameters:
     /// - Parameter path: 路径
@@ -43,10 +50,10 @@ public extension AxcFileUtil {
         var size: Int64?
         guard let attributed = try? FileManager.default.attributesOfItem(atPath: path) else { return nil }
         let isDir = (attributed[FileAttributeKey.type] as? FileAttributeType) == FileAttributeType.typeDirectory
-        if !isDir {
-            size = (attributed[FileAttributeKey.size] as? NSNumber)?.int64Value
-        } else {
+        if isDir {
             size = FolderSize_Bytes(path: path)
+        } else {
+            size = (attributed[FileAttributeKey.size] as? NSNumber)?.int64Value
         }
         return size
     }
@@ -63,6 +70,13 @@ public extension AxcFileUtil {
     /// - Returns: 大小，单位MB
     static func FolderSize_MB(path: String) -> Double? {
         return FolderSize(path: path, units: .useMB)
+    }
+
+    /// 文件夹大小-KB
+    /// - Parameter path: 路径
+    /// - Returns: 大小，单位KB
+    static func FolderSize_KB(path: String) -> Double? {
+        return FolderSize(path: path, units: .useKB)
     }
 
     /// 文件夹大小
