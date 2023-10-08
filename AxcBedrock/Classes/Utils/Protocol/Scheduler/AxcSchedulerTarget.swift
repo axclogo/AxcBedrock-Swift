@@ -45,7 +45,7 @@ public extension AxcSchedulerTarget {
     }
 
     var logType: String? {
-        return "调度器日志"
+        return "调度器"
     }
 }
 

@@ -19,7 +19,7 @@ public extension AxcTimeCheckerTarget {
     // MARK: 日志协议
 
     var logType: String? {
-        return "时间检测器日志"
+        return "时间检测器"
     }
 }
 

@@ -51,10 +51,6 @@ public extension AxcLibraryTarget {
         logPrefix.append(moduleName)
         return logPrefix
     }
-
-    var logType: String? {
-        return "内部日志"
-    }
 }
 
 // MARK: - 全局临时附加值功能

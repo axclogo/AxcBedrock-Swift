@@ -20,7 +20,7 @@ public protocol AxcLogInfoTarget: NSObjectProtocol {
 
     /// 日志类型
     /// 如 数据库日志、单例日志、模块日志等
-    var logType: String? { get }
+    var logType: String { get }
 
     /// 日志时间戳样式
     var logDateFormat: String { get }
@@ -33,8 +33,8 @@ public extension AxcLogInfoTarget {
         return "\(Self.self)"
     }
 
-    var logType: String? {
-        return nil
+    var logType: String {
+        return ""
     }
 
     var logDateFormat: String {
@@ -69,7 +69,7 @@ public extension AxcLogInfoTarget {
     /// 如：AxcBedrockLib[模块日志](2023.02.16)➡️这里是日志内容"
     func log(_ items: Any...,
              logLevel: AxcEnum.LogLevel = .info) {
-        let logPerfix: String = _createLogPrefix()
+        let logPerfix: String = _createLogPrefix(logLevel: logLevel)
         let logContent: String = "\(logPerfix)\(items)"
         logDelegate?.logOutput(logObj: self, logLevel: logLevel, logContent: logContent)
     }
@@ -78,12 +78,12 @@ public extension AxcLogInfoTarget {
     /// debug开发环境下会崩溃提示使用不规范，线上环境可以让线程睡眠不崩溃
     /// - Parameter debugMsg:
     /// - Returns: Never
-    /// 如：AxcBedrockLib[模块日志](2023.02.16)➡️⚠️⚠️⚠️这里是日志内容"
+    /// 如：AxcBedrockLib[模块日志](2023.02.16)➡️❌❌❌这里是日志内容"
     func fatalLog(_ items: Any...,
                   printCount: Int = 12,
                   isNoDebugSleep: Bool = true) -> Never {
-        let logPerfix: String = _createLogPrefix()
-        let logContent: String = "\(logPerfix)⚠️⚠️⚠️\(items)"
+        let logPerfix: String = _createLogPrefix(logLevel: .error)
+        let logContent: String = "\(logPerfix)❌❌❌\(items)"
         logDelegate?.fatalErrorEvent(logObj: self, content: logContent, isNoDebugSleep: isNoDebugSleep)
         #if DEBUG
         for _ in 0 ..< printCount {
@@ -105,9 +105,15 @@ fileprivate var k_weakDelegateObj = "k_fileprivate.AxcBedrock.weakDelegateObj"
 
 fileprivate extension AxcLogInfoTarget {
     /// 获取统一的日志前缀
-    func _createLogPrefix() -> String {
+    func _createLogPrefix(logLevel: AxcEnum.LogLevel?) -> String {
         var logPrefix: String = logPrefix
-        if let logType {
+        if let logLevel {
+            switch logLevel {
+            case .info: logPrefix.append("[\(logType)🔖]")
+            case .warning: logPrefix.append("[\(logType)⚠️]")
+            case .error: logPrefix.append("[\(logType)❌]")
+            }
+        } else {
             logPrefix.append("[\(logType)]")
         }
         let date = Date()

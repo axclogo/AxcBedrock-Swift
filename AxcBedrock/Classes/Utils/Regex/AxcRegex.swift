@@ -141,7 +141,7 @@ public extension AxcRegex {
         }()
 
         /// 正则表达式中每个捕获组匹配的字符串
-        public lazy var captures: [String?] = {
+        public lazy var captures: [String] = {
             let captureRanges = stride(from: 0,
                                        to: result.numberOfRanges,
                                        by: 1)
@@ -150,14 +150,14 @@ public extension AxcRegex {
                 .map { [unowned self] in
                     Range($0, in: self.baseString)
                 }
-
-            return captureRanges.map { [unowned self] captureRange in
+            var captures: [String] = []
+            captureRanges.forEach { [unowned self] captureRange in
                 if let captureRange = captureRange {
-                    return String(describing: self.baseString[captureRange])
+                    let capture = String(describing: self.baseString[captureRange])
+                    captures.append(capture)
                 }
-
-                return nil
             }
+            return captures
         }()
 
         /// 描述信息

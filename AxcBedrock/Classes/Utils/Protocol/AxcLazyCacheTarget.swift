@@ -72,7 +72,7 @@ public extension AxcLazyCacheTarget {
     }
 
     var logType: String? {
-        return "懒缓存器日志"
+        return "懒缓存器"
     }
 }
 
