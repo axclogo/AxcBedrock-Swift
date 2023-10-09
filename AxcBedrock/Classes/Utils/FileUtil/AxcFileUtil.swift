@@ -105,9 +105,39 @@ public extension AxcFileUtil {
         return totalFileSize
     }
 
-    /// 是否是目录
-    static func IsDirectory(path: String) -> Bool {
+    /// 深度遍历某个文件夹下以及内部的所有文件
+    /// - Parameters:
+    ///   - path: 目录路径
+    ///   - directoryBlock: 回调
+    ///   - fileBlock: 回调
+    static func VisitDirectory(atPath path: String,
+                               directoryBlock: ((_ fileManager: FileManager, _ directoryPath: String, _ directoryName: String) -> Bool)? = nil,
+                               fileBlock: (_ fileManager: FileManager, _ filePath: String, _ fileName: String) -> Void) {
         let fileManager = FileManager.default
+        do {
+            let contents = try fileManager.contentsOfDirectory(atPath: path)
+            for content in contents {
+                let contentPath = path.axc.appendPathComponent(content)
+                if IsDirectory(fileManager: fileManager, path: contentPath) { // 如果是文件夹，递归调用遍历文件夹函数
+                    var isVisit = true
+                    if let directoryBlock {
+                        isVisit = directoryBlock(fileManager, contentPath, content)
+                    }
+                    if isVisit { // 继续游走
+                        VisitDirectory(atPath: contentPath, fileBlock: fileBlock)
+                    }
+                } else { // 如果是文件，回调
+                    fileBlock(fileManager, contentPath, content)
+                }
+            }
+        } catch {
+            AxcBedrockLib.FatalLog("Error while enumerating contents of directory: \(error.localizedDescription)")
+        }
+    }
+
+    /// 是否是目录
+    static func IsDirectory(fileManager: FileManager? = nil, path: String) -> Bool {
+        let fileManager = fileManager ?? FileManager.default
         var isDirectory: ObjCBool = false
         if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
             return isDirectory.boolValue
