@@ -12,14 +12,23 @@ import UIKit
 public extension AxcCorner {
     /// 转换成UIRectCorner
     var toUIRectCorner: UIRectCorner {
-        switch self {
-        case .topLeft: return .topLeft
-        case .topRight: return .topRight
-        case .bottomLeft: return .bottomLeft
-        case .bottomRight: return .bottomRight
-        case .all: return .allCorners
-        default: return []
+        var uiRectCorner: UIRectCorner = []
+        if self.contains(.topLeft) {
+            uiRectCorner.insert(.topLeft)
         }
+        if self.contains(.topRight) {
+            uiRectCorner.insert(.topRight)
+        }
+        if self.contains(.bottomLeft) {
+            uiRectCorner.insert(.bottomLeft)
+        }
+        if self.contains(.bottomRight) {
+            uiRectCorner.insert(.bottomRight)
+        }
+        if self.contains(.all) {
+            uiRectCorner.insert(.allCorners)
+        }
+        return uiRectCorner
     }
 }
 
