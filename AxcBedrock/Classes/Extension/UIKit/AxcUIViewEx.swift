@@ -16,13 +16,21 @@ public extension AxcSpace where Base: UIView {
     /// - Parameters:
     ///   - opaque: 是否透明，不透明可以优化处理速度
     ///   - scale: 缩放
-    func screenshot(opaque: Bool = false, scale: CGFloat = UIScreen.main.scale) -> UIImage? {
+    func screenshot(opaque: Bool = false,
+                    scale: CGFloat = UIScreen.main.scale,
+                    useViewDrawing: Bool = false) -> UIImage? {
         let size = base.bounds.size
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
-//        base.drawHierarchy(in: CGRect(origin: .zero, size: size), afterScreenUpdates: true)
+        ctx.saveGState()
         ctx.scaleBy(x: 1, y: 1)
-        base.layer.render(in: ctx)
+        if useViewDrawing, base.responds(to: #selector(UIView.drawHierarchy(in:afterScreenUpdates:))) {
+            // afterScreenUpdates true:包含最近的屏幕更新内容 false:不包含刚加入视图层次但未显示的内容
+            base.drawHierarchy(in: CGRect(origin: .zero, size: size), afterScreenUpdates: true)
+        } else {
+            base.layer.render(in: ctx)
+        }
+        ctx.restoreGState()
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
