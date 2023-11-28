@@ -58,16 +58,16 @@ public extension AxcSpace where Base == String {
 
     /// 字符串转base64Data
     var base64Data: Data? {
-        return base64Data(options: NSData.Base64DecodingOptions())
+        return base64Data()
     }
 
     /// 字符串转base64Data
     /// - Parameter options: Base64DecodingOptions选项
     /// - Returns: Data
     func base64Data(encoding: String.Encoding = .utf8,
-                    options: Data.Base64DecodingOptions) -> Data? {
+                    options: Data.Base64EncodingOptions = []) -> Data? {
         guard let encodingData = data(encoding: encoding) else { return nil }
-        return Data(base64Encoded: encodingData, options: options)
+        return encodingData.base64EncodedData(options: options)
     }
 
     /// 转成十六进制后转Data
