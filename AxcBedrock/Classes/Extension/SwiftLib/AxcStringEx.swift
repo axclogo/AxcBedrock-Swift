@@ -58,14 +58,16 @@ public extension AxcSpace where Base == String {
 
     /// 字符串转base64Data
     var base64Data: Data? {
-        return base64Data(NSData.Base64DecodingOptions())
+        return base64Data(options: NSData.Base64DecodingOptions())
     }
 
     /// 字符串转base64Data
     /// - Parameter options: Base64DecodingOptions选项
     /// - Returns: Data
-    func base64Data(_ options: Data.Base64DecodingOptions) -> Data? {
-        return Data(base64Encoded: base, options: options)
+    func base64Data(encoding: String.Encoding = .utf8,
+                    options: Data.Base64DecodingOptions) -> Data? {
+        guard let encodingData = data(encoding: encoding) else { return nil }
+        return Data(base64Encoded: encodingData, options: options)
     }
 
     /// 转成十六进制后转Data
@@ -153,24 +155,48 @@ public extension AxcSpace where Base == String {
     // MARK: 编码转换
 
     /// 获取这个字符串UrlEncoded编码字符
+    @available(*, deprecated, renamed: "urlEncodedString")
     var urlEncoded: String? {
+        return urlEncodedString
+    }
+
+    /// 获取这个字符串UrlEncoded编码字符
+    var urlEncodedString: String? {
         guard let encodedStr = base.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         return encodedStr
     }
 
     /// 获取这个字符串UrlDecode解码字符
+    @available(*, deprecated, renamed: "urlDecodedString")
     var urlDecoded: String? {
+        return urlDecodedString
+    }
+
+    /// 获取这个字符串UrlDecode解码字符
+    var urlDecodedString: String? {
         guard let decodedStr = base.removingPercentEncoding else { return nil }
         return decodedStr
     }
 
     /// 获取这个字符串base64的编码字符串
+    @available(*, deprecated, renamed: "base64EncodedString")
     var base64Encoded: String? {
+        return base64EncodedString
+    }
+
+    /// 获取这个字符串base64的编码字符串
+    var base64EncodedString: String? {
         return data?.axc.base64Str
     }
 
     /// 解码base64的编码字符串
+    @available(*, deprecated, renamed: "base64DecodedString")
     var base64Decoded: String? {
+        return base64DecodedString
+    }
+
+    /// 解码base64的编码字符串
+    var base64DecodedString: String? {
         if let data = Data(base64Encoded: base, options: .ignoreUnknownCharacters) {
             return data.axc.string
         }
@@ -200,14 +226,18 @@ public extension AxcSpace where Base == String {
     }
 
     /// 转换成Html格式的文本
+    @available(*, deprecated, renamed: "htmlString")
     var htmlStr: String {
+        return htmlString
+    }
+
+    var htmlString: String {
         let htmlStr: String =
             """
             <header>
             <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'>
-            <style>img{max-width:100%}</style>
             </header>
-            <body id=\"content\">
+            <body>
             \(base)
             </body>
             """

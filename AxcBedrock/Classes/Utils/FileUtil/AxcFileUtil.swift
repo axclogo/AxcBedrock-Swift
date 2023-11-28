@@ -5,7 +5,7 @@
 //  Created by 赵新 on 1/10/2023.
 //
 
-import Cocoa
+import Foundation
 
 // MARK: - [AxcFileUtil]
 

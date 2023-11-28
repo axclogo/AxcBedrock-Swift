@@ -266,3 +266,61 @@ public extension AxcSpace where Base: UIView {
 public extension AxcSpace where Base: UIView { }
 
 #endif
+
+//#if canImport(Metal)
+//
+//import Metal
+//import MetalKit
+//
+//public extension AxcSpace where Base: UIView {
+//    /// 截图，生成UIImage
+//    func screenshotUsingMetal() -> UIImage? {
+//        // 创建一个Metal设备
+//        guard let device = MTLCreateSystemDefaultDevice() else {
+//            print("Metal is not supported on this device")
+//            return nil
+//        }
+//
+//        // 创建一个Metal渲染目标
+//        let renderPassDescriptor = MTLRenderPassDescriptor()
+//        guard let textureDescriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm, width: Int(base.bounds.width), height: Int(base.bounds.height), mipmapped: false) else {
+//            print("Failed to create texture descriptor")
+//            return nil
+//        }
+//        guard let texture = device.makeTexture(descriptor: textureDescriptor) else {
+//            print("Failed to create texture")
+//            return nil
+//        }
+//        renderPassDescriptor.colorAttachments[0].texture = texture
+//        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+//        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0, 0, 0, 0)
+//
+//        // 创建一个Metal渲染目标视图
+//        guard let metalView = MTKView(frame: base.bounds, device: device) else {
+//            print("Failed to create Metal view")
+//            return nil
+//        }
+//        metalView.framebufferOnly = true
+//        metalView.enableSetNeedsDisplay = false
+//        metalView.device = device
+//        metalView.delegate = self
+//
+//        // 将UIView添加到Metal渲染目标视图中
+//        metalView.addSubview(base)
+//
+//        // 使用Metal渲染目标视图渲染
+//        let commandQueue = device.makeCommandQueue()
+//        let commandBuffer = commandQueue?.makeCommandBuffer()
+//        let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+//        renderEncoder?.endEncoding()
+//        commandBuffer?.present(metalView.currentDrawable!)
+//        commandBuffer?.commit()
+//        commandBuffer?.waitUntilCompleted()
+//
+//        // 将Metal渲染目标转换为UIImage
+//        let image = metalView.currentDrawable?.texture.toUIImage()
+//
+//        return image
+//    }
+//}
+//#endif
