@@ -546,6 +546,9 @@
 		DB9567D16A9FDDF6263056EF63D2FB36 /* AxcPropertyAnimationMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9B044244767B52EBA554385352C4D3 /* AxcPropertyAnimationMaker.swift */; };
 		DBA04AC6D9C72B5D8CF8706764B90075 /* AxcFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7224015DF2DE29A1BB4940787F5F7D /* AxcFunc.swift */; };
 		DC0887203BF0408E3930A45F1ECFEACA /* AxcTransitionMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705C3690102BF04959DABB290820236E /* AxcTransitionMaker.swift */; };
+		DC1E2AE62C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E2AE52C5236D50084585A /* AxcKeyedDecodingContainer.swift */; };
+		DC1E2AE72C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E2AE52C5236D50084585A /* AxcKeyedDecodingContainer.swift */; };
+		DC1E2AE82C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E2AE52C5236D50084585A /* AxcKeyedDecodingContainer.swift */; };
 		DC629D4D5CB3C510B9CC6ACFB3E884D7 /* AxcJSONSerializationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C8482D400DC1DE5E651C8E0953949B /* AxcJSONSerializationTarget.swift */; };
 		DDCA43F2963D96741C0BBC416A95051B /* AxcLazyCacheTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6442B896091D63799D59523866DD393B /* AxcLazyCacheTarget.swift */; };
 		DE38982416DD8A918EC77FC310155446 /* AxcBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9243FC02D8E312F8531B0AF53E558423 /* AxcBlock.swift */; };
@@ -943,7 +946,7 @@
 		8E7C993FA62F0E3D35E9443D153B194D /* AxcLayerAnimationMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcLayerAnimationMaker.swift; sourceTree = "<group>"; };
 		8E981AAFD8AA919B95048968E71DF4C2 /* AxcLocaleEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcLocaleEx.swift; sourceTree = "<group>"; };
 		8ECD70CEB6BFA9950EE37A6207429311 /* AxcUnifiedImage+CoreGraphic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "AxcUnifiedImage+CoreGraphic.swift"; sourceTree = "<group>"; };
-		90257E2E6F72F63F6A759B677EA17674 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		90257E2E6F72F63F6A759B677EA17674 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		90C519724F320262ADDB85BE33EF8391 /* AxcDispatchQueueEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcDispatchQueueEx.swift; sourceTree = "<group>"; };
 		914D93CF3FADF3B82E8F4C07B9F6B916 /* AxcCGPointEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcCGPointEx.swift; sourceTree = "<group>"; };
 		9243FC02D8E312F8531B0AF53E558423 /* AxcBlock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcBlock.swift; sourceTree = "<group>"; };
@@ -962,7 +965,7 @@
 		9AFB5B8F211DD2B79F84F7836E586228 /* AxcWebViewConfigurationMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcWebViewConfigurationMaker.swift; sourceTree = "<group>"; };
 		9CDC02943A4E59CF03C608FE678ED3AD /* AxcUnifiedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcUnifiedString.swift; sourceTree = "<group>"; };
 		9D6CEF6FD52453CE15C99CDC136EC9C8 /* AxcSharedTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcSharedTarget.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA487740CBDA1780EF718C013ACB83C /* AxcBedrock-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AxcBedrock-iOS-umbrella.h"; path = "../AxcBedrock-iOS/AxcBedrock-iOS-umbrella.h"; sourceTree = "<group>"; };
 		9DD895DF1F1E2E2531F82C86EC8A7801 /* Pods-iOS_WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS_WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		9ED9708FBAA4E8C8DA1CD5BF1A68D848 /* AxcSystem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcSystem.swift; sourceTree = "<group>"; };
@@ -1042,17 +1045,18 @@
 		D3BB18EF02843D704230A2A0FAC6957F /* AxcCIFilterCategory+Stylize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "AxcCIFilterCategory+Stylize.swift"; sourceTree = "<group>"; };
 		D5D3EFC71E43E8CF6E9349CE09878635 /* Pods-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		D624B1DC514FC31DF2BAF517A539F24D /* AxcSchedulerTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcSchedulerTarget.swift; sourceTree = "<group>"; };
-		D67079C7CEDB6423EC01EA534504B99C /* AxcBedrock.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AxcBedrock.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D67079C7CEDB6423EC01EA534504B99C /* AxcBedrock.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AxcBedrock.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D74701BAA68EEE2890C3BA53D09353C2 /* AxcBedrock-macOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "AxcBedrock-macOS"; path = AxcBedrock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D879631D4D03701155337BA9DB0C616E /* AxcShadowMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcShadowMaker.swift; sourceTree = "<group>"; };
 		D978CECEE100E61B6CB0385387FD7C82 /* Pods-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-iOS"; path = Pods_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA283B52083E024B575B5EA7B40C6F77 /* AxcAnimationMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcAnimationMaker.swift; sourceTree = "<group>"; };
 		DB5219B22C4E1EB4B15504108772C09F /* AxcKeyframeAnimationMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcKeyframeAnimationMaker.swift; sourceTree = "<group>"; };
 		DB784CCFC9CFC1399E3A24A760C85CE8 /* _AxcAssertUnifiedTransformTarget+SwiftLib.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "_AxcAssertUnifiedTransformTarget+SwiftLib.swift"; sourceTree = "<group>"; };
+		DC1E2AE52C5236D50084585A /* AxcKeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxcKeyedDecodingContainer.swift; sourceTree = "<group>"; };
 		DD206A06133F2033BFAE8B852CD5F3F1 /* AxcCLLocationCoordinate2DEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcCLLocationCoordinate2DEx.swift; sourceTree = "<group>"; };
 		DD3EC62A91C62CCDA6D0CAFBA31B4710 /* AxcBedrock-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AxcBedrock-iOS-dummy.m"; path = "../AxcBedrock-iOS/AxcBedrock-iOS-dummy.m"; sourceTree = "<group>"; };
 		DE50BE615E215FD87ECAA6F9C3A24FDE /* AxcCIFilterCategory+GeometryAdjustment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "AxcCIFilterCategory+GeometryAdjustment.swift"; sourceTree = "<group>"; };
-		DEE3453E35FAD1BA18A9CD6590E5BB8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DEE3453E35FAD1BA18A9CD6590E5BB8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DFC477F349EFF1A5A696BBDA0235FD84 /* AxcUnifiedColor+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "AxcUnifiedColor+Foundation.swift"; sourceTree = "<group>"; };
 		E0525BB00472F9520259CE4122156376 /* Pods-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E05C35A948E9F54711EC84D669396179 /* AxcCATextLayerAlignmentModeEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AxcCATextLayerAlignmentModeEx.swift; sourceTree = "<group>"; };
@@ -1218,7 +1222,6 @@
 				528641203A532DEAC2E21D0A4A0AC941 /* Linkage */,
 				893CC61D6C8025B1789FCED6A6EED492 /* Obj */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -1232,7 +1235,6 @@
 				EAA7655A6F74532F601C8F564BFF2B8A /* Linkage */,
 				5585699B3B609C580A0C6A9ACFDCDDBA /* Protocol */,
 			);
-			name = CoreImage;
 			path = CoreImage;
 			sourceTree = "<group>";
 		};
@@ -1241,7 +1243,6 @@
 			children = (
 				73A029CB955E2B3689BAA4AFC25135B8 /* AxcCorner+UIKit.swift */,
 			);
-			name = Enum;
 			path = Enum;
 			sourceTree = "<group>";
 		};
@@ -1251,7 +1252,6 @@
 				5E61C45534ACF6BF6E44424C7FC91D48 /* _AxcLazyCache.swift */,
 				A338AF2FFDF3A517CD3DA93AB5540AE6 /* _AxcTimeChecker.swift */,
 			);
-			name = _Private;
 			path = _Private;
 			sourceTree = "<group>";
 		};
@@ -1262,7 +1262,6 @@
 				7E6D02A3023D020840CF6378CC205C32 /* AxcCATextLayerAlignmentModeEx+UIKit.swift */,
 				BADF16998C89FBF3F041043C75DEAF6F /* AxcCATextLayerTruncationModeEx+UIKit.swift */,
 			);
-			name = QuartzCore;
 			path = QuartzCore;
 			sourceTree = "<group>";
 		};
@@ -1271,7 +1270,6 @@
 			children = (
 				33888B377F9ED0A1261F313CDB13AD31 /* AxcCalculator.swift */,
 			);
-			name = Calculator;
 			path = Calculator;
 			sourceTree = "<group>";
 		};
@@ -1297,7 +1295,6 @@
 			children = (
 				E117D3065FFA19EF9F0295C0F3A7D2B5 /* AxcUIImageSelector.swift */,
 			);
-			name = Selector;
 			path = Selector;
 			sourceTree = "<group>";
 		};
@@ -1306,7 +1303,6 @@
 			children = (
 				F1FB587E2BD4EBF40DF8F5CF184A59FE /* Unified */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -1335,7 +1331,6 @@
 				EB05C228BEE4ACE52D141FDFEB783FE0 /* AxcCIFilterCategory+Transition.swift */,
 				96A02C01F5390D8EF81610706444729B /* AxcCIFilterCategory+Video.swift */,
 			);
-			name = Enum;
 			path = Enum;
 			sourceTree = "<group>";
 		};
@@ -1345,7 +1340,6 @@
 				21DB5BFD0EA2B54CC6A91A2FB4CDCCE3 /* AxcApp+UIKit.swift */,
 				89105E52C2CD54FA8DD2C7213E574C7E /* AxcDevice+UIKit.swift */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -1355,7 +1349,6 @@
 				8053E397B3BDD4FDC71FB2BDD7C5B0EA /* AxcCGAffineTransformEx+QuartzCore.swift */,
 				7C1CE0E3C6EAAF064934AE3518DE4064 /* AxcCorner+QuartzCore.swift */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -1364,7 +1357,6 @@
 			children = (
 				F79EB58F869BC739D2C52BE7655BD977 /* AxcDataEx+AppKit.swift */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -1392,7 +1384,6 @@
 				9D6084E2BBE23CB385B818A3DE57F98C /* Maker */,
 				17ED085312FC6F8BB6D68C67F32E73B2 /* Selector */,
 			);
-			name = Obj;
 			path = Obj;
 			sourceTree = "<group>";
 		};
@@ -1408,7 +1399,6 @@
 				3C6DF13E6E28276EAE764CD3160D1FBB /* libxmlParserOption.swift */,
 				BECC63E818A667E57BB70B31CDA6E6DC /* Support Files */,
 			);
-			name = Kanna;
 			path = Kanna;
 			sourceTree = "<group>";
 		};
@@ -1418,7 +1408,6 @@
 				8615AB5CC006492667041AF7647836EB /* AxcAVCaptureDeviceEx.swift */,
 				88D5412F2DBA5878F12C90B5976A3959 /* AxcAVCaptureSessionEx.swift */,
 			);
-			name = AVFoundation;
 			path = AVFoundation;
 			sourceTree = "<group>";
 		};
@@ -1444,7 +1433,6 @@
 			children = (
 				ACD30D29057EB8E8B201081AE45D6D27 /* AxcStringEx+AppKit.swift */,
 			);
-			name = SwiftLib;
 			path = SwiftLib;
 			sourceTree = "<group>";
 		};
@@ -1463,7 +1451,6 @@
 				6BDD2F67A253CC965078231C0266A96C /* AxcUnifiedFont+AppKit.swift */,
 				1AA6E346CB45CAC26850D0D5ED27BD0A /* AxcUnifiedImage+AppKit.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -1481,7 +1468,6 @@
 				BB950441E37A2B2924844A44F811DD94 /* AxcStringEx+Platform.swift */,
 				B8EEBD1E5D024E982EDA133BCC113288 /* Maker */,
 			);
-			name = SwiftLib;
 			path = SwiftLib;
 			sourceTree = "<group>";
 		};
@@ -1492,7 +1478,6 @@
 				39C8482D400DC1DE5E651C8E0953949B /* AxcJSONSerializationTarget.swift */,
 				CED42D56263D5C58F1DF4C78F5A3D799 /* _Private */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -1501,7 +1486,6 @@
 			children = (
 				B45CDD03BA1557B01945427B46AE3C92 /* AxcGCD.swift */,
 			);
-			name = GCD;
 			path = GCD;
 			sourceTree = "<group>";
 		};
@@ -1519,7 +1503,6 @@
 				C5DADEBE3125D482DFFAF866F6A6AB74 /* AxcResponderMenuActionTarget.swift */,
 				07625BDB010EC4781442462B9E37551F /* AxcTextLimitCountInputTarget.swift */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -1530,7 +1513,6 @@
 				ABC2CAAD9597102EE8A00B5783A71AB1 /* AxcCLLocationEx.swift */,
 				A77294E05E0F27D11E09C8792408D6E1 /* AxcCLVisitEx.swift */,
 			);
-			name = CoreLocation;
 			path = CoreLocation;
 			sourceTree = "<group>";
 		};
@@ -1549,7 +1531,6 @@
 			children = (
 				D2ECBD9A6E4DD7F2ED8027F8EBBFA763 /* AxcCGRectEx+Platform.swift */,
 			);
-			name = CoreGraphics;
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
@@ -1590,7 +1571,6 @@
 			children = (
 				25E88B34AD11CEE88BF29B35C40BA88A /* AxcCGPathEx+AppKit.swift */,
 			);
-			name = CoreGraphics;
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
@@ -1599,7 +1579,6 @@
 			children = (
 				8BCE6200B6DEC5239664CAA562F1743F /* AxcRunTime.swift */,
 			);
-			name = Runtime;
 			path = Runtime;
 			sourceTree = "<group>";
 		};
@@ -1609,7 +1588,6 @@
 				3EC495E46D128F9F793B157EFE835E79 /* AxcBedrockIndexPath.swift */,
 				B81621265CEF0E5440EC4A7DAFC2DA11 /* AxcBedrockNSStringDrawingOptions.swift */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -1618,7 +1596,6 @@
 			children = (
 				A03E172F2630C5F6D0E4D88F38F33C1C /* AxcRegex.swift */,
 			);
-			name = Regex;
 			path = Regex;
 			sourceTree = "<group>";
 		};
@@ -1637,7 +1614,6 @@
 				BB9B9204D026FA0A7F591C188C93DD9E /* _AxcAssertUnifiedTransformTarget+Foundation.swift */,
 				6FF2C653B986F833CABEFFC948BCC59D /* Unified */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -1646,7 +1622,6 @@
 			children = (
 				1FF25E4E5CB86D243C8A84C6D579F3E0 /* _AxcCIFilterNameProtocol.swift */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -1684,7 +1659,6 @@
 				2F6D742255996C1CFBD85541532506BA /* AxcDataEx+UIKit.swift */,
 				B13CDC8F22FB843946D81C605EF46CCB /* AxcNotificationEx+UIKit.swift */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -1693,7 +1667,6 @@
 			children = (
 				F3E87FBF416E4758BB9C08423657D5D5 /* Unified */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -1722,9 +1695,9 @@
 				751593354178FAB011C43DB71E4680B7 /* AxcStringProtocolEx.swift */,
 				68E87621E8E06541BBA5C7E72856D7A6 /* AxcSubstringEx.swift */,
 				181B67CCBCD8A50CDEC0F43C4287DD1E /* AxcUIntEx.swift */,
+				DC1E2AE52C5236D50084585A /* AxcKeyedDecodingContainer.swift */,
 				3620EEE069C33CFD26A53847ACBEA11F /* Protocol */,
 			);
-			name = SwiftLib;
 			path = SwiftLib;
 			sourceTree = "<group>";
 		};
@@ -1734,7 +1707,6 @@
 				D624B1DC514FC31DF2BAF517A539F24D /* AxcSchedulerTarget.swift */,
 				BB431E84BED56C4FC127602E106B8FF6 /* AxcSchedulerTask.swift */,
 			);
-			name = Scheduler;
 			path = Scheduler;
 			sourceTree = "<group>";
 		};
@@ -1780,7 +1752,6 @@
 				2C4E39B09E3F340F9E23CC3F37FFE035 /* AxcSpringAnimationMaker.swift */,
 				705C3690102BF04959DABB290820236E /* AxcTransitionMaker.swift */,
 			);
-			name = Maker;
 			path = Maker;
 			sourceTree = "<group>";
 		};
@@ -1790,7 +1761,6 @@
 				BD3C627063F7E0A8AF9E682DC23971DF /* AxcLibraryTarget.swift */,
 				2954D4AF9FA557AA5F982DCD41EFE76C /* AxcModuleError.swift */,
 			);
-			name = ModuleTarget;
 			path = ModuleTarget;
 			sourceTree = "<group>";
 		};
@@ -1800,7 +1770,6 @@
 				DF9D141C8D9BEF6EA76C395650D3B42B /* Delegate */,
 				6B21D326EFDEE06830CE7B6756A86C8E /* Maker */,
 			);
-			name = Obj;
 			path = Obj;
 			sourceTree = "<group>";
 		};
@@ -1810,7 +1779,6 @@
 				DFC477F349EFF1A5A696BBDA0235FD84 /* AxcUnifiedColor+Foundation.swift */,
 				B5B4C128F48E4CA2220BB4046C5063C0 /* AxcUnifiedRange+Foundation.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -1820,7 +1788,6 @@
 				7FA090CA587529AA1199AF6D24D80C19 /* AxcWeakObj.swift */,
 				BD3F655675A2CC02AECB7041AAC27EB5 /* AxcWeakSet.swift */,
 			);
-			name = Weak;
 			path = Weak;
 			sourceTree = "<group>";
 		};
@@ -1830,7 +1797,6 @@
 				82FD19669309FDF10440CE3CF2C659AB /* AxcLogInfoDelegate.swift */,
 				2BE455CF8F0C9C00ED532D0603CAD1E7 /* AxcLogInfoTarget.swift */,
 			);
-			name = LogInfoTarget;
 			path = LogInfoTarget;
 			sourceTree = "<group>";
 		};
@@ -1859,7 +1825,6 @@
 				8ECD70CEB6BFA9950EE37A6207429311 /* AxcUnifiedImage+CoreGraphic.swift */,
 				3FC71904EF0F963A3CEF05737D6152F6 /* AxcUnifiedNumber+CoreGraphic.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -1868,7 +1833,6 @@
 			children = (
 				E8F7A7276697CB507421142573EB03FB /* AxcStringEx+UIKit.swift */,
 			);
-			name = SwiftLib;
 			path = SwiftLib;
 			sourceTree = "<group>";
 		};
@@ -1877,7 +1841,6 @@
 			children = (
 				88F27654398C79400BE3D15E6E8D0586 /* AxcCMSampleBufferEx.swift */,
 			);
-			name = CoreMedia;
 			path = CoreMedia;
 			sourceTree = "<group>";
 		};
@@ -1886,7 +1849,6 @@
 			children = (
 				B8ABC6AB2F37FFCD97516535519968DD /* AxcFileUtil.swift */,
 			);
-			name = FileUtil;
 			path = FileUtil;
 			sourceTree = "<group>";
 		};
@@ -1897,7 +1859,6 @@
 				E49BCF8C15CBCE25BB6F686E4C553449 /* Obj */,
 				79DBEA8CF7258AFA5A50C035126A9E25 /* Unified */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -1908,7 +1869,6 @@
 				8B0058FD8D81793B2B4939C0EC5300BC /* AxcUnifiedFont+UIKit.swift */,
 				11CB00CAD89ABB3671772233F7B5D69A /* AxcUnifiedImage+UIKit.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -1942,7 +1902,6 @@
 			children = (
 				E178ED2EDD1CB3EEBECE3C9305151E77 /* AxcResponderMenuActionType.swift */,
 			);
-			name = Enum;
 			path = Enum;
 			sourceTree = "<group>";
 		};
@@ -1955,7 +1914,6 @@
 				98E307C7AF8FA024C92404FB56E6BF0A /* AxcNSShadowEx+Platform.swift */,
 				683EA4D48192F2C6E2A15FFF40BC0118 /* AxcNSTextAlignmentEx+Platform.swift */,
 			);
-			name = General;
 			path = General;
 			sourceTree = "<group>";
 		};
@@ -1974,7 +1932,6 @@
 				60E6DFB16E664C5D78B1FD2B9594693A /* AxcCGSizeEx.swift */,
 				7F8767E6D1845CBA39B28F5F7B8CC58E /* Linkage */,
 			);
-			name = CoreGraphics;
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
@@ -1983,7 +1940,6 @@
 			children = (
 				CC4A443CEC68A8789B93AF6DB394B9E6 /* AxcTimeMark.swift */,
 			);
-			name = Obj;
 			path = Obj;
 			sourceTree = "<group>";
 		};
@@ -1999,7 +1955,6 @@
 				35CD4C7438A780C55EE18520CD0843C9 /* AxcNSViewEx.swift */,
 				DADEE07693708196000F014FD310B208 /* Linkage */,
 			);
-			name = AppKit;
 			path = AppKit;
 			sourceTree = "<group>";
 		};
@@ -2027,7 +1982,6 @@
 			children = (
 				B34FD8F00B77DBF73E7206BE3817363D /* AxcMKMapViewEx.swift */,
 			);
-			name = MapKit;
 			path = MapKit;
 			sourceTree = "<group>";
 		};
@@ -2042,7 +1996,6 @@
 				354D076B5DA4A902A17A84DD2A75D90A /* SwiftLib */,
 				AE854F7548BE818EAD8A5A305583281D /* Utils */,
 			);
-			name = CrossPlatform;
 			path = CrossPlatform;
 			sourceTree = "<group>";
 		};
@@ -2051,7 +2004,6 @@
 			children = (
 				165F2FE28B183BE1AFF71F9F38024D75 /* AxcTextAttachmentMaker.swift */,
 			);
-			name = Maker;
 			path = Maker;
 			sourceTree = "<group>";
 		};
@@ -2060,7 +2012,6 @@
 			children = (
 				9AFB5B8F211DD2B79F84F7836E586228 /* AxcWebViewConfigurationMaker.swift */,
 			);
-			name = Maker;
 			path = Maker;
 			sourceTree = "<group>";
 		};
@@ -2069,7 +2020,6 @@
 			children = (
 				53A9382C17D795EFCA95A0B73B62C0A0 /* AxcCVBufferEx.swift */,
 			);
-			name = CoreVideo;
 			path = CoreVideo;
 			sourceTree = "<group>";
 		};
@@ -2078,7 +2028,6 @@
 			children = (
 				C736383B18CFF1D21D37AEC3A7BA6AA8 /* AxcDevice+Platform.swift */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -2112,7 +2061,6 @@
 				742913CD0AB2C5706AC2E29542579963 /* LogInfoTarget */,
 				6E4CEE03721E65D2797544123C77782E /* ModuleTarget */,
 			);
-			name = Target;
 			path = Target;
 			sourceTree = "<group>";
 		};
@@ -2123,7 +2071,6 @@
 				1BEA6A41A3D902398C68BC301A35F336 /* AxcParagraphStyleMaker.swift */,
 				D879631D4D03701155337BA9DB0C616E /* AxcShadowMaker.swift */,
 			);
-			name = Maker;
 			path = Maker;
 			sourceTree = "<group>";
 		};
@@ -2133,7 +2080,6 @@
 				0B5AB3A616D9775661BEF4272FBA8957 /* _AxcDeviceMap.swift */,
 				538BDF61EAC7B63C8A22761274BECD9C /* AxcDevice.swift */,
 			);
-			name = Device;
 			path = Device;
 			sourceTree = "<group>";
 		};
@@ -2196,7 +2142,6 @@
 			children = (
 				A45D28307234DFBA6AD8B90FEB9C8AC0 /* Maker */,
 			);
-			name = Obj;
 			path = Obj;
 			sourceTree = "<group>";
 		};
@@ -2205,7 +2150,6 @@
 			children = (
 				DB784CCFC9CFC1399E3A24A760C85CE8 /* _AxcAssertUnifiedTransformTarget+SwiftLib.swift */,
 			);
-			name = _Private;
 			path = _Private;
 			sourceTree = "<group>";
 		};
@@ -2230,7 +2174,6 @@
 				2D86868B9D455C8A7D3263BC42C4D332 /* AxcTimeCheckerTarget.swift */,
 				64B2BAED49F48DE0774C7CDC6E182200 /* Scheduler */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -2240,7 +2183,6 @@
 				86F8F31F0CD004C86F1EA6D7F9B5161A /* General */,
 				F58E5C387954948BAEC61E52E9E84BB1 /* Typealias */,
 			);
-			name = "AppKit&UIKit";
 			path = "AppKit&UIKit";
 			sourceTree = "<group>";
 		};
@@ -2249,7 +2191,6 @@
 			children = (
 				564B87203B0659E6833F47930F0215FD /* AxcApp.swift */,
 			);
-			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
@@ -2261,7 +2202,6 @@
 				5FF6033DE03B555856A9AECC85F72643 /* AxcCTLineEx.swift */,
 				189C1105E7DE8022B3B1D2DE578B8D2D /* Linkage */,
 			);
-			name = CoreText;
 			path = CoreText;
 			sourceTree = "<group>";
 		};
@@ -2270,7 +2210,6 @@
 			children = (
 				095C2C92B6D7E62D1B6959384BF97EB2 /* AxcUITextFieldDelegate.swift */,
 			);
-			name = Delegate;
 			path = Delegate;
 			sourceTree = "<group>";
 		};
@@ -2290,7 +2229,6 @@
 				2DD352129B9C8D884EC12E9F1F4BA1FA /* SwiftLib */,
 				2ECF0D496DD376DE1F338A952AE2E5A4 /* Unified */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -2299,7 +2237,6 @@
 			children = (
 				A976D137547475F8B202D518046F4D07 /* AxcAnimationDelegate.swift */,
 			);
-			name = Delegate;
 			path = Delegate;
 			sourceTree = "<group>";
 		};
@@ -2308,7 +2245,6 @@
 			children = (
 				9ED9708FBAA4E8C8DA1CD5BF1A68D848 /* AxcSystem.swift */,
 			);
-			name = System;
 			path = System;
 			sourceTree = "<group>";
 		};
@@ -2334,7 +2270,6 @@
 			children = (
 				6E2920F8E63229ABC3B7C4C5455D0380 /* AxcEnum+CoreGraphics.swift */,
 			);
-			name = Obj;
 			path = Obj;
 			sourceTree = "<group>";
 		};
@@ -2348,7 +2283,6 @@
 				215416CBDD642A23B94F025A763A2C79 /* AxcMaker.swift */,
 				7876E54C22D82261C1D2E689DB77DED7 /* AxcSelector.swift */,
 			);
-			name = Define;
 			path = Define;
 			sourceTree = "<group>";
 		};
@@ -2362,7 +2296,6 @@
 				817FED6D8E3E76A25E68C2BE182082C8 /* Unified */,
 				195B4A4118B7F7BC5F7FA327D6686BF6 /* Utils */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -2372,7 +2305,6 @@
 				A0936CD8D9B18502B68D5F026A67F448 /* AxcUnifiedColor+CoreImage.swift */,
 				1CF8DEE02E82B8322110EBAF098DEE66 /* AxcUnifiedImage+CoreImage.swift */,
 			);
-			name = Linkage;
 			path = Linkage;
 			sourceTree = "<group>";
 		};
@@ -2383,7 +2315,6 @@
 				B7D0DFFDFD2213EE3C8DABB34B94722F /* Target */,
 				F2B385A75DAA894DDBC45D97DDFC2387 /* Unified */,
 			);
-			name = Protocol;
 			path = Protocol;
 			sourceTree = "<group>";
 		};
@@ -2394,7 +2325,6 @@
 				29CC79DA7768C077A670DE686C97A8B6 /* AxcWKWebViewEx.swift */,
 				CE83EB56093F8CBB6C57C3BAA40BD057 /* Obj */,
 			);
-			name = WebKit;
 			path = WebKit;
 			sourceTree = "<group>";
 		};
@@ -2403,7 +2333,6 @@
 			children = (
 				84664CF2D1A51022771D8F355F481A35 /* AxcLAContextEx.swift */,
 			);
-			name = LocalAuthentication;
 			path = LocalAuthentication;
 			sourceTree = "<group>";
 		};
@@ -2412,7 +2341,6 @@
 			children = (
 				8BEC749428ACD33056A5C23F23173A67 /* AxcUnifiedFont+CoreText.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -2427,7 +2355,6 @@
 				9CDC02943A4E59CF03C608FE678ED3AD /* AxcUnifiedString.swift */,
 				7AA509DB521B2A96B2A8A727C3A92C11 /* AxcUnifiedUrl.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -2436,7 +2363,6 @@
 			children = (
 				E2D6757B800B545012B43D1C25EE4F3F /* AxcUnifiedNumber+CrossPlatform.swift */,
 			);
-			name = Unified;
 			path = Unified;
 			sourceTree = "<group>";
 		};
@@ -2471,7 +2397,6 @@
 				266285596A8D883AC2BD2108DB5BC2A5 /* Obj */,
 				4222F5B87BD221CF24906994022E4A14 /* Protocol */,
 			);
-			name = UIKit;
 			path = UIKit;
 			sourceTree = "<group>";
 		};
@@ -2493,7 +2418,6 @@
 				BA994D5AF3AE51EF52B4665100EA70DF /* AxcBedrockScreenEx.swift */,
 				C77031E662D693ECE07E657D772624C7 /* AxcBedrockView.swift */,
 			);
-			name = Typealias;
 			path = Typealias;
 			sourceTree = "<group>";
 		};
@@ -2529,7 +2453,6 @@
 				1CAAFF3F48E9398C17F5EE0B9BB2C70C /* Linkage */,
 				6E5DE12AF495914388242DDD7E321E43 /* Obj */,
 			);
-			name = QuartzCore;
 			path = QuartzCore;
 			sourceTree = "<group>";
 		};
@@ -2555,7 +2478,6 @@
 			children = (
 				C720A0C748F0279BE3E2DCFFCC15B1AE /* AxcCFStringEx.swift */,
 			);
-			name = CoreFoundation;
 			path = CoreFoundation;
 			sourceTree = "<group>";
 		};
@@ -2892,8 +2814,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3076,6 +2998,7 @@
 				D261EDC9BA74D6DCD0BFDF5BE3C0FB2D /* AxcAngleType.swift in Sources */,
 				22EEC254D60DA6063D8DD7C12A443D52 /* AxcAnimateType.swift in Sources */,
 				9235F392A25E4B55B2AB1A64E84D15FA /* AxcAnimationDelegate.swift in Sources */,
+				DC1E2AE82C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */,
 				1C98332FD7B9C1E2F4B1656E4879C387 /* AxcAnimationGroupMaker.swift in Sources */,
 				584894DD0FF81E441CA395DB17E76445 /* AxcAnimationMaker.swift in Sources */,
 				65A08F772011A91273E711C69DA224D6 /* AxcAnyObjectEx.swift in Sources */,
@@ -3345,6 +3268,7 @@
 				7A5DC2524A3545E564C0A509BC323B01 /* AxcEncodableEx.swift in Sources */,
 				FEDD6673AD7E1DABF049B793902A0A36 /* AxcEnum.swift in Sources */,
 				09C8180064769CB35B8727A9B847FF5F /* AxcFileManagerEx.swift in Sources */,
+				DC1E2AE62C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */,
 				6C09B7D824FEE74923EC1F5DB955FA60 /* AxcFileUtil.swift in Sources */,
 				2415F9DF8BE49AD730DA818A22A1529F /* AxcFloatEx.swift in Sources */,
 				660B99E474958AE52E530D50B9B9C236 /* AxcFunc.swift in Sources */,
@@ -3556,6 +3480,7 @@
 				BDAF1B7B93EE291C5448548BB50E3387 /* AxcDevice.swift in Sources */,
 				75F763F1045D1F02004117ACD2EB5B1A /* AxcDevice+Platform.swift in Sources */,
 				4D419C79F7DC33DB1FD4B69B4271A4C9 /* AxcDevice+UIKit.swift in Sources */,
+				DC1E2AE72C5236D50084585A /* AxcKeyedDecodingContainer.swift in Sources */,
 				7E368DDE616E0AB436AC1C8F537117A4 /* AxcDictionaryEx.swift in Sources */,
 				AE50A33C99073E2A631DE4F5762C4933 /* AxcDirection.swift in Sources */,
 				5EBB1BB83367B5317E8CBC043F44FF7C /* AxcDispatchQueueEx.swift in Sources */,
@@ -4127,8 +4052,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
