@@ -37,6 +37,14 @@ public extension AxcKeyedDecodingContainerSpace { }
 // MARK: - 属性 & Api
 
 public extension AxcKeyedDecodingContainerSpace {
+    /// 解码协议类型
+    /// - Parameter codingKey: key
+    /// - Returns: 类型可选
+    func decodeIfPresent<T: Decodable>(codingKey: Key) -> T? {
+        if let value = try? base.decodeIfPresent(T.self, forKey: codingKey) { return value }
+        else { return nil }
+    }
+
     /// 解码String
     /// - Parameter codingKey: key
     /// - Returns: 类型可选
