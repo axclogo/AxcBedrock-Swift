@@ -50,7 +50,7 @@ public extension AxcSpace where Base: NSObject {
     }
 }
 
-private var kyp_performSelectorBlock = "kyp_performSelectorBlock"
+private var k_performSelectorBlock = "k_performSelectorBlock"
 fileprivate extension NSObject {
     /// 调用的方法
     @objc
@@ -60,9 +60,9 @@ fileprivate extension NSObject {
 
     /// Runtime扩展回调Block
     var _performSelectorBlock: AxcBlock.Empty {
-        set { AxcRuntime.Set(object: self, key: &kyp_performSelectorBlock, value: newValue, policy: .OBJC_ASSOCIATION_COPY) }
+        set { AxcRuntime.Set(object: self, key: &k_performSelectorBlock, value: newValue, policy: .OBJC_ASSOCIATION_COPY) }
         get {
-            guard let block: AxcBlock.Empty = AxcRuntime.GetObject(self, key: &kyp_performSelectorBlock) else {
+            guard let block: AxcBlock.Empty = AxcRuntime.GetObject(self, key: &k_performSelectorBlock) else {
                 let block: AxcBlock.Empty = { }
                 self._performSelectorBlock = block
                 return { }
