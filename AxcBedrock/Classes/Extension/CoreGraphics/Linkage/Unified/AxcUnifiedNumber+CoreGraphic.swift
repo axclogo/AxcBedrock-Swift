@@ -24,7 +24,7 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 
     /// 转换成CGRect
     var cgRect: CGRect {
-        return CGRect.Axc.Create(assertTransformCGFloat(base))
+        return CGRect.Axc.Create(all: assertTransformCGFloat(base))
     }
 
     /// 转换成CGPoint

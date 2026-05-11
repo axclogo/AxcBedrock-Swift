@@ -1,6 +1,6 @@
 //
 //  AxcCAKeyframeAnimationEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/28.
 //
@@ -36,7 +36,7 @@ public extension AxcSpace where Base: CAKeyframeAnimation {
     {
         let handle: AxcMaker.KeyframeAnimation = .init(animation: base)
         makeBlock(handle)
-        return handle.animation as! Base
+        return (handle.animation as? Base) ?? base
     }
 }
 

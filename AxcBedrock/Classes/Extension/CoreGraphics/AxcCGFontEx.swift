@@ -1,6 +1,6 @@
 //
 //  AxcCGFontEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/25.
 //
@@ -24,11 +24,15 @@ public extension AxcSpace where Base: CGFont {
     static func Create(_ unifiedValue: AxcUnifiedFont?,
                        weight: AxcBedrockFontWeight = .regular) -> CGFont {
         // CGFont只能通过名称创建，并且实例化方法是可选的
-        // 所以在可选分支直接设置FatalError即可
         let fontName = ".SFUI-Regular".axc.cfString
         guard let cgFont = CGFont(fontName) else {
             let log = "内部创建默认CGFont失败！fontName: \(fontName)"
+            AxcBedrockLib.Log(log)
+            #if DEBUG
             AxcBedrockLib.FatalLog(log)
+            #else
+            return CGFont(fontName)!
+            #endif
         }
         return CreateOptional(unifiedValue, weight: weight) ?? cgFont
     }

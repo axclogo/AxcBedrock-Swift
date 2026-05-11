@@ -1,6 +1,6 @@
 //
 //  AxcCATransitionEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/28.
 //
@@ -36,7 +36,7 @@ public extension AxcSpace where Base: CATransition {
     {
         let handle: AxcMaker.Transition = .init(animation: base)
         makeBlock(handle)
-        return handle.animation as! Base
+        return (handle.animation as? Base) ?? base
     }
 }
 

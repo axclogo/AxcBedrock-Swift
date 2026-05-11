@@ -1,6 +1,6 @@
 //
 //  AxcNSAttributedStringEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/25.
 //
@@ -12,7 +12,7 @@ import Foundation
 public extension AxcSpace where Base: NSAttributedString {
     /// 转换为 CFAttributedString
     var cfAttributedString: CFAttributedString {
-        return base as! CFAttributedString
+        return (base as NSAttributedString) as CFAttributedString
     }
 }
 

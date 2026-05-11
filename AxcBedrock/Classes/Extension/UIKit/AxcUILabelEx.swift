@@ -1,6 +1,6 @@
 //
 //  AxcUILabelEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/2/18.
 //
@@ -38,13 +38,6 @@ public extension AxcSpace where Base: UILabel {
         }
         label.textAlignment = alignment
         return label
-    }
-
-    /// 实例化富文本
-    /// - Parameter attributedText: 富文本
-    @available(*, deprecated, renamed: "Create(attributedText:)")
-    static func Create(_ attributedText: NSAttributedString) -> Base {
-        return Create(attributedText: attributedText)
     }
 
     /// 实例化富文本

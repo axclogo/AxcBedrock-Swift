@@ -1,6 +1,6 @@
 //
 //  AxcJSONSerializationTarget.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/21.
 //
@@ -73,13 +73,6 @@ public extension AxcJSONSerializationTarget {
 }
 
 public extension AxcJSONSerializationTarget {
-    /// 转换成JsonString
-    @available(*, deprecated, renamed: "jsonSerializationString")
-    var jsonStr: String? {
-        guard let jsonData = jsonSerializationData else { return nil }
-        return jsonData.axc.string
-    }
-
     /// 使用JSONSerialization转换成JsonString，默认编码utf8
     var jsonSerializationString: String? {
         return jsonSerializationString(encoding: .utf8)

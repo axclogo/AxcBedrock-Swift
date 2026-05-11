@@ -1,6 +1,6 @@
 //
 //  AxcArrayEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2021/12/22.
 //
@@ -127,11 +127,11 @@ public extension AxcArraySpace {
     /// - Returns: 元素集合
     func remove(at index: Int) -> [Element] {
         var newArr = base
-        if index < base.count {
-            newArr.remove(at: index)
-        } else {
+        guard index >= 0, index < base.count else {
             AxcBedrockLib.Log("移除元素越界！\nArray:\(self)\nindex:\(index)")
+            return newArr
         }
+        newArr.remove(at: index)
         return newArr
     }
 
@@ -224,29 +224,15 @@ public extension AxcArraySpace {
     /// - Returns: 元素
     func object(reversed: Bool = false,
                 by rule: @escaping AxcBlock.OneParamReturn<Element, Bool>) -> Element? {
-        var result: Element?
-        let arr = reversed ? base.reversed() : base
-        arr.forEach { element in
-            if rule(element) {
-                result = element
-                return
-            }
-        }
-        return result
+        let arr = reversed ? Array(base.reversed()) : base
+        return arr.first(where: rule)
     }
 
     /// 获取某个元素的下标 如果没有则返回空
     /// - Parameter rule: 规则代码块
     /// - Returns: 索引
     func index(of rule: @escaping AxcBlock.OneParamReturn<Element, Bool>) -> Int? {
-        var index: Int?
-        base.enumerated().forEach { idx, element in
-            if rule(element) {
-                index = idx
-                return
-            }
-        }
-        return index
+        return base.firstIndex(where: rule)
     }
 
     /// 获取符合规则的数量
@@ -330,18 +316,23 @@ public extension AxcArraySpace {
 public extension AxcArraySpace where Element: Equatable {
     /// 获取序列中的重复项
     ///
-    ///     [1, 1, 2, 2, 3, 3, 3, 4, 5].axc.duplicates().sorted() -> [1, 2, 3])
-    ///     ["h", "e", "l", "l", "o"].axc.duplicates().sorted() -> ["l"])
+    ///     [1, 1, 2, 2, 3, 3, 3, 4, 5].axc.duplicates().sorted() -> [1, 2, 3]
+    ///     ["h", "e", "l", "l", "o"].axc.duplicates().sorted() -> ["l"]
     ///
     /// - Returns: 在序列中重复的集合
     func duplicates() -> [Element] {
-        var result = [Element]()
+        var seen: [Element] = []
+        var duplicates: [Element] = []
         for value in base {
-            if result.contains(value) == false {
-                result.append(value)
+            if seen.contains(value) {
+                if !duplicates.contains(value) {
+                    duplicates.append(value)
+                }
+            } else {
+                seen.append(value)
             }
         }
-        return result
+        return duplicates
     }
 }
 
@@ -458,9 +449,8 @@ public extension AxcArraySpace {
     /// 判断是否包含某个元素
     /// - Parameter rule: 规则代码块
     func isContent(by rule: @escaping AxcBlock.OneParamReturn<Element, Bool>) -> Bool {
-        for index in 0 ..< base.count {
-            let elmt = base[index]
-            return rule(elmt)
+        for element in base {
+            if rule(element) { return true }
         }
         return false
     }

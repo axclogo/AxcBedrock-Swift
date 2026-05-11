@@ -1,6 +1,6 @@
 //
 //  AxcStringEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2021/12/16.
 //
@@ -39,18 +39,6 @@ public extension AxcSpace where Base == String {
     }
 
     /// 字符串转Data
-    @available(*, deprecated, renamed: "data(encoding:)")
-    func data(_ using: String.Encoding = .utf8) -> Data? {
-        return data(encoding: using)
-    }
-
-    /// 字符串转Data
-    @available(*, deprecated, renamed: "data(encoding:)")
-    func data(using: String.Encoding = .utf8) -> Data? {
-        return data(encoding: using)
-    }
-
-    /// 字符串转Data
     func data(encoding: String.Encoding = .utf8) -> Data? {
         guard !base.isEmpty else { return nil }
         return base.data(using: encoding, allowLossyConversion: false)
@@ -73,11 +61,12 @@ public extension AxcSpace where Base == String {
     /// 转成十六进制后转Data
     var hexData: Data? {
         var data = Data(capacity: base.count / 2)
-        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
+        guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive) else { return nil }
         regex.enumerateMatches(in: base, range: NSRange(base.startIndex..., in: base))
             { match, _, _ in
-                let byteString = (base as NSString).substring(with: match!.range)
-                let num = UInt8(byteString, radix: 16)!
+                guard let match = match else { return }
+                let byteString = (base as NSString).substring(with: match.range)
+                guard let num = UInt8(byteString, radix: 16) else { return }
                 data.append(num)
             }
         guard data.count > 0 else { return nil }
@@ -155,21 +144,9 @@ public extension AxcSpace where Base == String {
     // MARK: 编码转换
 
     /// 获取这个字符串UrlEncoded编码字符
-    @available(*, deprecated, renamed: "urlEncodedString")
-    var urlEncoded: String? {
-        return urlEncodedString
-    }
-
-    /// 获取这个字符串UrlEncoded编码字符
     var urlEncodedString: String? {
         guard let encodedStr = base.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return nil }
         return encodedStr
-    }
-
-    /// 获取这个字符串UrlDecode解码字符
-    @available(*, deprecated, renamed: "urlDecodedString")
-    var urlDecoded: String? {
-        return urlDecodedString
     }
 
     /// 获取这个字符串UrlDecode解码字符
@@ -179,20 +156,8 @@ public extension AxcSpace where Base == String {
     }
 
     /// 获取这个字符串base64的编码字符串
-    @available(*, deprecated, renamed: "base64EncodedString")
-    var base64Encoded: String? {
-        return base64EncodedString
-    }
-
-    /// 获取这个字符串base64的编码字符串
     var base64EncodedString: String? {
         return data?.axc.base64Str
-    }
-
-    /// 解码base64的编码字符串
-    @available(*, deprecated, renamed: "base64DecodedString")
-    var base64Decoded: String? {
-        return base64DecodedString
     }
 
     /// 解码base64的编码字符串
@@ -226,11 +191,6 @@ public extension AxcSpace where Base == String {
     }
 
     /// 转换成Html格式的文本
-    @available(*, deprecated, renamed: "htmlString")
-    var htmlStr: String {
-        return htmlString
-    }
-
     var htmlString: String {
         let htmlStr: String =
             """
@@ -333,13 +293,13 @@ public extension AxcSpace where Base == String {
     func uppercased(_ idx: Int) -> String {
         var prefixStr = ""
         if idx > 0 {
-            prefixStr = String(base.prefix(idx - 1))
+            prefixStr = String(base.prefix(idx))
         }
         var suffixStr = ""
-        if idx < base.count {
+        if idx < base.count - 1 {
             suffixStr = String(base.suffix(base.count - (idx + 1)))
         }
-        let upperStr = string(at: idx) ?? ""
+        let upperStr = (string(at: idx) ?? "").uppercased()
         return prefixStr + upperStr + suffixStr
     }
 
@@ -670,9 +630,9 @@ public extension AxcSpace where Base == String {
         ]
         // 尝试将字符串转换为 Data 对象，使用不同的编码类型
         for encoding in encodingAllValues {
-            if let data = string.data(using: encoding),
+            if let data = base.data(using: encoding),
                let convertedString = String(data: data, encoding: encoding),
-               string == convertedString { // 如果转换后的字符串与原始字符串相等，则表示找到了匹配的编码类型
+               base == convertedString { // 如果转换后的字符串与原始字符串相等，则表示找到了匹配的编码类型
                 return encoding
             }
         }

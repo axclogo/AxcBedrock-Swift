@@ -1,6 +1,6 @@
 //
 //  AxcUIImageEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2021/12/16.
 //
@@ -162,7 +162,8 @@ public extension AxcImageSpace {
             if let data = image?.axc.pngData {
                 return data
             } else {
-                AxcBedrockLib.FatalLog("图片处理错误！")
+                AxcBedrockLib.Log("图片处理错误！")
+                return nil
             }
         }
         return data.axc.uiImage as? Base

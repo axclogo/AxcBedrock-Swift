@@ -131,7 +131,7 @@ public extension AxcFileUtil {
                 }
             }
         } catch {
-            AxcBedrockLib.FatalLog("Error while enumerating contents of directory: \(error.localizedDescription)")
+            AxcBedrockLib.Log("Error while enumerating contents of directory: \(error.localizedDescription)")
         }
     }
 

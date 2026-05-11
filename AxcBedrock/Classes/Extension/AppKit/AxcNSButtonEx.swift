@@ -35,7 +35,7 @@ public extension AxcSpace where Base: NSButton {
         btn.toolTip = toolTip
         btn.bezelStyle = .regularSquare
         btn.setButtonType(.momentaryLight)
-        return btn as! Base
+        return (btn as? Base) ?? Base()
     }
 }
 

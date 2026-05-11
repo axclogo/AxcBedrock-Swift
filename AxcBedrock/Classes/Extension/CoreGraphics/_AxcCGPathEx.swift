@@ -1,6 +1,6 @@
 //
 //  _AxcCGPathEx.swift
-//  Pods
+//  AxcBedrock
 //
 //  Created by 赵新 on 2023/2/24.
 //
@@ -35,7 +35,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addLine(to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 let l = linearLength(p0: p0, p1: p1)
@@ -49,7 +49,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addQuadCurve(c1, to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 let l = quadCurveLength(p0: p0, c1: c1, p1: p1)
@@ -63,7 +63,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addCurve(c1, c2, to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 let l = cubicCurveLength(p0: p0, c1: c1, c2: c2, p1: p1)
@@ -77,7 +77,7 @@ extension AxcSpace where Base: CGPath {
 
             case .closeSubpath:
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 if let p1 = firstPointInSubpath {
@@ -115,7 +115,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addLine(to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 length += linearLength(p0: p0, p1: p1)
@@ -123,7 +123,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addQuadCurve(c1, to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 length += quadCurveLength(p0: p0, c1: c1, p1: p1)
@@ -131,7 +131,7 @@ extension AxcSpace where Base: CGPath {
 
             case let .addCurve(c1, c2, to: p1):
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 length += cubicCurveLength(p0: p0, c1: c1, c2: c2, p1: p1)
@@ -139,7 +139,7 @@ extension AxcSpace where Base: CGPath {
 
             case .closeSubpath:
                 guard let p0 = currentPoint else {
-                    AxcBedrockLib.FatalLog("没有找到当前路径点")
+                    AxcBedrockLib.Log("没有找到当前路径点")
                     break
                 }
                 if let p1 = firstPointInSubpath {

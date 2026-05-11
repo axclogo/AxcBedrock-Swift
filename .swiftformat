@@ -1,0 +1,12 @@
+--swiftversion 5.0
+--indent 4
+--indentcase false
+--trimwhitespace always
+--voidtype void
+--wraparguments before-first
+--wrapcollections before-first
+--maxwidth 120
+--disable redundantSelf
+--disable trailingCommas
+--disable wrapMultilineStatementBraces
+--exclude Pods,.build,Example

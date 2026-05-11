@@ -1,6 +1,6 @@
 //
 //  AxcCGRectEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/2/12.
 //
@@ -29,13 +29,6 @@ public extension AxcSpace where Base == CGRect {
         let width = CGFloat.Axc.Create(width)
         let height = CGFloat.Axc.Create(height)
         return CGRect(x: x, y: y, width: width, height: height)
-    }
-
-    /// 统一实例化
-    @available(*, deprecated, renamed: "Create(all:)")
-    static func Create(_ all: AxcUnifiedNumber) -> CGRect {
-        let all = CGFloat.Axc.Create(all)
-        return CGRect(x: all, y: all, width: all, height: all)
     }
 
     /// 统一实例化

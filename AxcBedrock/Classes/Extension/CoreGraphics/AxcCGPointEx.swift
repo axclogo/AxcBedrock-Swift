@@ -1,6 +1,6 @@
 //
 //  AxcCGPointEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/2/12.
 //
@@ -19,16 +19,6 @@ public extension AxcSpace where Base == CGPoint { }
 // MARK: - 类方法
 
 public extension AxcSpace where Base == CGPoint {
-    /// 无前缀实例化
-    @available(*, deprecated, renamed: "Create(x:y:)")
-    static func Create(_ x: AxcUnifiedNumber,
-                       _ y: AxcUnifiedNumber) -> CGPoint {
-        var point = CGPoint.zero
-        point.x = CGFloat.Axc.Create(x)
-        point.y = CGFloat.Axc.Create(y)
-        return point
-    }
-
     /// 多元参数实例化
     static func Create(x: AxcUnifiedNumber,
                        y: AxcUnifiedNumber) -> CGPoint {
@@ -36,13 +26,6 @@ public extension AxcSpace where Base == CGPoint {
         point.x = CGFloat.Axc.Create(x)
         point.y = CGFloat.Axc.Create(y)
         return point
-    }
-
-    /// 统一实例化
-    @available(*, deprecated, renamed: "Create(all:)")
-    static func Create(_ all: AxcUnifiedNumber) -> CGPoint {
-        let all = CGFloat.Axc.Create(all)
-        return .init(x: all, y: all)
     }
 
     /// 统一实例化

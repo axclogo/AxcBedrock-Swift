@@ -37,7 +37,8 @@ public extension AxcSpace where Base: CTFrame {
     /// 获取第一行
     var firstLine: CTLine? {
         guard let line = lines.firstObject else { return nil }
-        return (line as! CTLine)
+        // CTLine is a CoreFoundation type, cast is always valid from CFArray element
+        return unsafeBitCast(line, to: CTLine.self)
     }
 
     /// 获取某一行
@@ -45,7 +46,7 @@ public extension AxcSpace where Base: CTFrame {
     /// - Returns: CTLine
     func line(at index: Int) -> CTLine? {
         guard let line = lines.axc.object(at: index) else { return nil }
-        return (line as! CTLine)
+        return unsafeBitCast(line, to: CTLine.self)
     }
 }
 

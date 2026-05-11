@@ -1,6 +1,6 @@
 //
 //  AxcDataEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/21.
 //
@@ -25,12 +25,6 @@ public extension AxcSpace where Base == Data {
     }
 
     /// 通过给定的编码来返回字符串
-    @available(*, deprecated, renamed: "string(encoding:)")
-    func string(_ encoding: String.Encoding) -> String? {
-        return string(encoding: encoding)
-    }
-
-    /// 通过给定的编码来返回字符串
     func string(encoding: String.Encoding) -> String? {
         return String(data: base, encoding: encoding)
     }
@@ -43,24 +37,11 @@ public extension AxcSpace where Base == Data {
     /// 转换为Base64字符串
     /// - Parameter options: 选项
     /// - Returns: String
-    @available(*, deprecated, renamed: "base64String(options:)")
-    func base64Str(_ options: NSData.Base64EncodingOptions) -> String {
-        return base64String(options: options)
-    }
-    
-    /// 转换为Base64字符串
-    /// - Parameter options: 选项
-    /// - Returns: String
     func base64String(options: NSData.Base64EncodingOptions) -> String {
         return base.base64EncodedString(options: options)
     }
 
     /// 转换为十六进制字符串
-    @available(*, deprecated, renamed: "hexString")
-    var hexStr: String {
-        return hexString
-    }
-    
     var hexString: String {
         let string = NSMutableString(capacity: base.count * 2)
         var byte: UInt8 = 0

@@ -149,39 +149,11 @@ public extension AxcSpace where Base == CGColor {
     ///   - g: 绿色值
     ///   - b: 蓝色值
     ///   - a: 透明度值
-    @available(*, deprecated, renamed: "Create(red:green:blue:alpha:)")
-    static func Create(_ r: AxcUnifiedNumber,
-                       _ g: AxcUnifiedNumber,
-                       _ b: AxcUnifiedNumber,
-                       alpha: AxcUnifiedNumber = 1) -> CGColor {
-        return CreateOptional(red: r, green: g, blue: b, alpha: alpha) ?? AxcBedrockColor.black.cgColor
-    }
-
-    /// 通过RGBA创建，内部会自动除以255 具有默认值
-    /// - Parameters:
-    ///   - r: 红色值
-    ///   - g: 绿色值
-    ///   - b: 蓝色值
-    ///   - a: 透明度值
     static func Create(red: AxcUnifiedNumber,
                        green: AxcUnifiedNumber,
                        blue: AxcUnifiedNumber,
                        alpha: AxcUnifiedNumber = 1) -> CGColor {
         return CreateOptional(red: red, green: green, blue: blue, alpha: alpha) ?? AxcBedrockColor.black.cgColor
-    }
-
-    /// 通过RGBA创建，内部会自动除以255 可选
-    /// - Parameters:
-    ///   - r: 红色值
-    ///   - g: 绿色值
-    ///   - b: 蓝色值
-    ///   - a: 透明度值
-    @available(*, deprecated, renamed: "CreateOptional(red:green:blue:alpha:)")
-    static func CreateOptional(_ r: AxcUnifiedNumber,
-                               _ g: AxcUnifiedNumber,
-                               _ b: AxcUnifiedNumber,
-                               alpha: AxcUnifiedNumber = 1) -> CGColor? {
-        return CreateOptional(red: r, green: g, blue: b, alpha: alpha)
     }
 
     /// 通过RGBA创建，内部会自动除以255 可选

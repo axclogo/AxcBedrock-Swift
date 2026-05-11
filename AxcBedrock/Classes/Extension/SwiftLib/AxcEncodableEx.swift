@@ -1,6 +1,6 @@
 //
 //  AxcEncodableEx.swift
-//  Pods
+//  AxcBedrock
 //
 //  Created by 赵新 on 2023/7/14.
 //
@@ -14,34 +14,6 @@ public extension AxcSpace where Base: Encodable { }
 // MARK: - 类方法
 
 public extension AxcSpace where Base: Encodable { }
-
-// MARK: - 废弃兼容
-
-public extension AxcSpace where Base: Encodable {
-    /// 转jsondata
-    @available(*, deprecated, renamed: "jsonSerializationData")
-    var jsonData: Data? {
-        return jsonSerializationData
-    }
-
-    /// 转换成Json对象
-    @available(*, deprecated, renamed: "jsonSerializationObj")
-    var jsonObj: Any? {
-        return jsonSerializationObj
-    }
-
-    /// 根据选择转换成数据对象
-    @available(*, deprecated, renamed: "jsonSerializationObj(writingOptions:readingOptions:)")
-    func jsonObj(options: JSONSerialization.ReadingOptions = .mutableContainers) -> Any? {
-        return jsonSerializationObj(readingOptions: options)
-    }
-
-    /// 转json字符串
-    @available(*, deprecated, renamed: "jsonSerializationString")
-    var jsonStr: String? {
-        return jsonSerializationString
-    }
-}
 
 // MARK: - 属性 & Api
 

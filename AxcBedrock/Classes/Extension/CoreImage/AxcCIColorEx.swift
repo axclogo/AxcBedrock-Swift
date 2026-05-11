@@ -134,25 +134,6 @@ public extension AxcSpace where Base: CIColor {
     ///   - g: 绿色值
     ///   - b: 蓝色值
     ///   - a: 透明度值
-    @available(*, deprecated, renamed: "Create(red:green:blue:alpha:)")
-    static func Create(_ r: AxcUnifiedNumber,
-                       _ g: AxcUnifiedNumber,
-                       _ b: AxcUnifiedNumber,
-                       alpha: AxcUnifiedNumber = 1) -> CIColor {
-        let _255 = 255.axc.cgFloat
-        let red = CGFloat.Axc.Create(r) / _255
-        let green = CGFloat.Axc.Create(g) / _255
-        let blue = CGFloat.Axc.Create(b) / _255
-        let alpha = CGFloat.Axc.Create(alpha)
-        return CIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
-
-    /// 通过RGBA创建，内部会自动除以255 不会为空
-    /// - Parameters:
-    ///   - r: 红色值
-    ///   - g: 绿色值
-    ///   - b: 蓝色值
-    ///   - a: 透明度值
     static func Create(red: AxcUnifiedNumber,
                        green: AxcUnifiedNumber,
                        blue: AxcUnifiedNumber,

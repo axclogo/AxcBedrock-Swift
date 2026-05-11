@@ -1,6 +1,6 @@
 //
 //  AxcUnifiedNumber.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/1/19.
 //
@@ -200,139 +200,86 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 // MARK: 数学转换
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
+    // MARK: - 内部辅助方法
+
+    /// 将 Float 值安全转换为 Int（处理 NaN/Infinity/溢出）
+    private func _safeInt(_ value: Float) -> Int {
+        guard value.isFinite else { return 0 }
+        if value >= Float(Int.max) { return Int.max }
+        if value <= Float(Int.min) { return Int.min }
+        return Int(value)
+    }
+
+    /// 通用数值映射方法，消除类型分发重复代码
+    /// - Parameter transform: 对 Float 值进行变换的闭包
+    /// - Returns: 变换后的值，保持原始类型
+    private func _mapNumericValue(_ transform: (Float) -> Float) -> Base {
+        let result = transform(float)
+        let intResult = _safeInt(result)
+        if let _ = base as? Int { return (intResult as? Base) ?? base } else
+        if let _ = base as? Int8 { return (Int8(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? Int16 { return (Int16(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? Int32 { return (Int32(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? Int64 { return (Int64(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? UInt { return (UInt(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? UInt8 { return (UInt8(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? UInt16 { return (UInt16(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? UInt32 { return (UInt32(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? UInt64 { return (UInt64(clamping: intResult) as? Base) ?? base } else
+        if let _ = base as? Float { return (Float(result) as? Base) ?? base } else
+        if let _ = base as? Double { return (Double(result) as? Base) ?? base } else
+        if let _ = base as? CGFloat { return (CGFloat(result) as? Base) ?? base } else
+        if let _ = base as? String { return ("\(result)" as? Base) ?? base } else
+        if let _ = base as? NSString { return ("\(result)" as? Base) ?? base }
+        #if arch(x86_64)
+        if let _ = base as? Float80 { return (Float80(result) as? Base) ?? base }
+        #endif
+        return base
+    }
+
     /// 绝对值，运算精度Float后7位
     var abs: Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法取Abs绝对值！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法取Abs绝对值！")
+            return base
         }
-        let absValue: Float = Swift.abs(float)
-        if base is Int { return Int(absValue) as! Base } else
-        if base is Int8 { return Int8(absValue) as! Base } else
-        if base is Int16 { return Int16(absValue) as! Base } else
-        if base is Int32 { return Int32(absValue) as! Base } else
-        if base is Int64 { return Int64(absValue) as! Base } else
-        if base is UInt { return UInt(absValue) as! Base } else
-        if base is UInt8 { return UInt8(absValue) as! Base } else
-        if base is UInt16 { return UInt16(absValue) as! Base } else
-        if base is UInt32 { return UInt32(absValue) as! Base } else
-        if base is UInt64 { return UInt64(absValue) as! Base } else
-        if base is Float { return Float(absValue) as! Base } else
-        if base is Double { return Double(absValue) as! Base } else
-        if base is CGFloat { return CGFloat(absValue) as! Base } else
-        if base is String { return "\(absValue)" as! Base } else
-        if base is NSString { return "\(absValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(absValue) as! Base }
-        #endif
-        return absValue as! Base
+        return _mapNumericValue { Swift.abs($0) }
     }
 
     /// 向上取整，运算精度Float后7位
     var ceil: Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法向上取整！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法向上取整！")
+            return base
         }
-        let ceilValue = Darwin.ceil(float)
-        if base is Int { return Int(ceilValue) as! Base } else
-        if base is Int8 { return Int8(ceilValue) as! Base } else
-        if base is Int16 { return Int16(ceilValue) as! Base } else
-        if base is Int32 { return Int32(ceilValue) as! Base } else
-        if base is Int64 { return Int64(ceilValue) as! Base } else
-        if base is UInt { return UInt(ceilValue) as! Base } else
-        if base is UInt8 { return UInt8(ceilValue) as! Base } else
-        if base is UInt16 { return UInt16(ceilValue) as! Base } else
-        if base is UInt32 { return UInt32(ceilValue) as! Base } else
-        if base is UInt64 { return UInt64(ceilValue) as! Base } else
-        if base is Float { return Float(ceilValue) as! Base } else
-        if base is Double { return Double(ceilValue) as! Base } else
-        if base is CGFloat { return CGFloat(ceilValue) as! Base } else
-        if base is String { return "\(ceilValue)" as! Base } else
-        if base is NSString { return "\(ceilValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(ceilValue) as! Base }
-        #endif
-        return ceilValue as! Base
+        return _mapNumericValue { Darwin.ceil($0) }
     }
 
     /// 向下取整，运算精度Float后7位
     var floor: Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法向下取整！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法向下取整！")
+            return base
         }
-        let floorValue = Darwin.floor(float)
-        if base is Int { return Int(floorValue) as! Base } else
-        if base is Int8 { return Int8(floorValue) as! Base } else
-        if base is Int16 { return Int16(floorValue) as! Base } else
-        if base is Int32 { return Int32(floorValue) as! Base } else
-        if base is Int64 { return Int64(floorValue) as! Base } else
-        if base is UInt { return UInt(floorValue) as! Base } else
-        if base is UInt8 { return UInt8(floorValue) as! Base } else
-        if base is UInt16 { return UInt16(floorValue) as! Base } else
-        if base is UInt32 { return UInt32(floorValue) as! Base } else
-        if base is UInt64 { return UInt64(floorValue) as! Base } else
-        if base is Float { return Float(floorValue) as! Base } else
-        if base is Double { return Double(floorValue) as! Base } else
-        if base is CGFloat { return CGFloat(floorValue) as! Base } else
-        if base is String { return "\(floorValue)" as! Base } else
-        if base is NSString { return "\(floorValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(floorValue) as! Base }
-        #endif
-        return floorValue as! Base
+        return _mapNumericValue { Darwin.floor($0) }
     }
 
     /// 角度转弧度，运算精度Float后7位
     var angleToRadian: Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法角度转弧度！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法角度转弧度！")
+            return base
         }
-        let radianValue = .pi * float / Float(180)
-        if base is Int { return Int(radianValue) as! Base } else
-        if base is Int8 { return Int8(radianValue) as! Base } else
-        if base is Int16 { return Int16(radianValue) as! Base } else
-        if base is Int32 { return Int32(radianValue) as! Base } else
-        if base is Int64 { return Int64(radianValue) as! Base } else
-        if base is UInt { return UInt(radianValue) as! Base } else
-        if base is UInt8 { return UInt8(radianValue) as! Base } else
-        if base is UInt16 { return UInt16(radianValue) as! Base } else
-        if base is UInt32 { return UInt32(radianValue) as! Base } else
-        if base is UInt64 { return UInt64(radianValue) as! Base } else
-        if base is Float { return Float(radianValue) as! Base } else
-        if base is Double { return Double(radianValue) as! Base } else
-        if base is CGFloat { return CGFloat(radianValue) as! Base } else
-        if base is String { return "\(radianValue)" as! Base } else
-        if base is NSString { return "\(radianValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(radianValue) as! Base }
-        #endif
-        return radianValue as! Base
+        return _mapNumericValue { .pi * $0 / Float(180) }
     }
 
     /// 弧度转角度，运算精度Float后7位
     var radianToAngle: Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法弧度转角度！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法弧度转角度！")
+            return base
         }
-        let angleValue = float * 180 / .pi
-        if base is Int { return Int(angleValue) as! Base } else
-        if base is Int8 { return Int8(angleValue) as! Base } else
-        if base is Int16 { return Int16(angleValue) as! Base } else
-        if base is Int32 { return Int32(angleValue) as! Base } else
-        if base is Int64 { return Int64(angleValue) as! Base } else
-        if base is UInt { return UInt(angleValue) as! Base } else
-        if base is UInt8 { return UInt8(angleValue) as! Base } else
-        if base is UInt16 { return UInt16(angleValue) as! Base } else
-        if base is UInt32 { return UInt32(angleValue) as! Base } else
-        if base is UInt64 { return UInt64(angleValue) as! Base } else
-        if base is Float { return Float(angleValue) as! Base } else
-        if base is Double { return Double(angleValue) as! Base } else
-        if base is CGFloat { return CGFloat(angleValue) as! Base } else
-        if base is String { return "\(angleValue)" as! Base } else
-        if base is NSString { return "\(angleValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(angleValue) as! Base }
-        #endif
-        return angleValue as! Base
+        return _mapNumericValue { $0 * 180 / .pi }
     }
 }
 
@@ -348,45 +295,19 @@ public extension AxcSpace where Base: AxcUnifiedNumber {
 
 public extension AxcSpace where Base: AxcUnifiedNumber {
     /// 阈值限位
-    @available(*, deprecated, renamed: "limitThan(min:max:)")
-    func limitThan(less: AxcUnifiedNumber, greater: AxcUnifiedNumber) -> Base {
-        return limitThan(min: less, max: greater)
-    }
-
-    /// 阈值限位
     func limitThan(min: AxcUnifiedNumber, max: AxcUnifiedNumber) -> Base {
-        guard !(base is Bool) || !(base is Character) || !(base is NSNumber) else {
-            AxcBedrockLib.FatalLog("\(Base.self)类型无法做阈值限位！")
+        guard !(base is Bool), !(base is Character), !(base is NSNumber) else {
+            AxcBedrockLib.Log("\(Base.self)类型无法做阈值限位！")
+            return base
         }
-        let compareValue: Double = Double.Axc.Create(base)
-        var newValue: Double = compareValue
         let lessValue: Double = Double.Axc.Create(min)
         let greaterValue: Double = Double.Axc.Create(max)
-        if newValue < lessValue {
-            newValue = lessValue
+        return _mapNumericValue { currentValue in
+            var newValue = Double(currentValue)
+            if newValue < lessValue { newValue = lessValue }
+            if newValue > greaterValue { newValue = greaterValue }
+            return Float(newValue)
         }
-        if newValue > greaterValue {
-            newValue = greaterValue
-        }
-        if base is Int { return Int(newValue) as! Base } else
-        if base is Int8 { return Int8(newValue) as! Base } else
-        if base is Int16 { return Int16(newValue) as! Base } else
-        if base is Int32 { return Int32(newValue) as! Base } else
-        if base is Int64 { return Int64(newValue) as! Base } else
-        if base is UInt { return UInt(newValue) as! Base } else
-        if base is UInt8 { return UInt8(newValue) as! Base } else
-        if base is UInt16 { return UInt16(newValue) as! Base } else
-        if base is UInt32 { return UInt32(newValue) as! Base } else
-        if base is UInt64 { return UInt64(newValue) as! Base } else
-        if base is Float { return Float(newValue) as! Base } else
-        if base is Double { return Double(newValue) as! Base } else
-        if base is CGFloat { return CGFloat(newValue) as! Base } else
-        if base is String { return "\(newValue)" as! Base } else
-        if base is NSString { return "\(newValue)" as! Base }
-        #if arch(x86_64)
-        if base is Float80 { return Float80(newValue) as! Base }
-        #endif
-        return newValue as! Base
     }
 
     /// 最大阈值限位

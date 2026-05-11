@@ -1,6 +1,6 @@
 //
 //  AxcCASpringAnimationEx.swift
-//  AxcBadrock
+//  AxcBedrock
 //
 //  Created by 赵新 on 2022/2/10.
 //
@@ -36,7 +36,7 @@ public extension AxcSpace where Base: CASpringAnimation {
     {
         let handle: AxcMaker.SpringAnimation = .init(animation: base)
         makeBlock(handle)
-        return handle.animation as! Base
+        return (handle.animation as? Base) ?? base
     }
 }
 

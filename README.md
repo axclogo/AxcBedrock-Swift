@@ -31,12 +31,31 @@ I can't say there are many projects, but in the projects I am involved in, this 
 
 
 # Install
-You can quickly install AxcBedrock using CocoaPods:
+You can install AxcBedrock using CocoaPods or Swift Package Manager:
+
+## CocoaPods
 
 Podfile:
 ```ruby
 pod 'AxcBedrock'
 ```
+
+## Swift Package Manager
+
+Add the following to your `Package.swift` dependencies:
+```swift
+dependencies: [
+    .package(url: "https://github.com/axclogo/AxcBedrock-Swift.git", from: "2.0.0")
+]
+```
+
+Or in Xcode: File → Add Package Dependencies → Enter the repository URL.
+
+Available products:
+- `AxcBedrockCore` — Core utilities (cross-platform)
+- `AxcBedrockiOS` — iOS-specific extensions
+- `AxcBedrockmacOS` — macOS-specific extensions
+
 Alternatively, you can manually add the source code to your project.
 
 # Usage

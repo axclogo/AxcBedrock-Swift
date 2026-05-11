@@ -61,3 +61,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved

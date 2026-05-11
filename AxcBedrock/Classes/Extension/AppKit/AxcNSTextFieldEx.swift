@@ -40,7 +40,7 @@ public extension AxcSpace where Base: NSTextField {
         }
         label.alignment = alignment
         label.toolTip = toolTip
-        return label as! Base
+        return (label as? Base) ?? Base()
     }
 
     /// 实例化富文本
