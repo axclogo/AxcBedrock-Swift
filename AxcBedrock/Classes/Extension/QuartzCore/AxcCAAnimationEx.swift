@@ -41,7 +41,7 @@ public extension AxcSpace where Base == CAAnimation {
 
 // MARK: - 代理转Block
 
-private var kanimationDelegate = "kanimationDelegate"
+private var kanimationDelegate: UInt8 = 0
 public extension AxcSpace where Base: CAAnimation {
     /// 代理对象
     var animationDelegate: AxcDelegate.Animation {

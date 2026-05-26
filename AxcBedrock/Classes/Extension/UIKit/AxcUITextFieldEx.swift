@@ -55,7 +55,7 @@ public extension AxcSpace where Base: UITextField {
 
 // MARK: - 代理转Block
 
-private var ktextFieldDelegate = "ktextFieldDelegate"
+private var ktextFieldDelegate: UInt8 = 0
 public extension AxcSpace where Base: UITextField {
     /// 代理桥接者
     var textFieldDelegate: AxcDelegate.TextField {

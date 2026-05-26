@@ -322,11 +322,11 @@ private extension AxcSchedulerTarget {
     }
 }
 
-fileprivate var k_isPause = "k_fileprivate.AxcBedrock.isPause"
-fileprivate var k_taskList = "k_fileprivate.AxcBedrock.taskList"
-fileprivate var k_validTaskList = "k_fileprivate.AxcBedrock.validTaskList"
-fileprivate var k_allTaskCompleteBlock = "k_fileprivate.AxcBedrock.allTaskCompleteBlock"
-fileprivate var k_taskObj = "k_fileprivate.AxcBedrock.taskObj"
+fileprivate var k_isPause: UInt8 = 0
+fileprivate var k_taskList: UInt8 = 0
+fileprivate var k_validTaskList: UInt8 = 0
+fileprivate var k_allTaskCompleteBlock: UInt8 = 0
+fileprivate var k_taskObj: UInt8 = 0
 fileprivate extension AxcSchedulerTarget {
     /// 是否暂停
     var _state: AxcRunStatus {

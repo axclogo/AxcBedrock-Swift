@@ -63,7 +63,7 @@ public extension AxcTimeCheckerTarget {
     }
 }
 
-fileprivate var k_timeIntervalMap = "k_fileprivate.AxcBedrock.timeIntervalMap"
+fileprivate var k_timeIntervalMap: UInt8 = 0
 extension AxcTimeCheckerTarget {
     /// 时间存储表
     var _timeIntervalMap: [MarkType: CFTimeInterval] {

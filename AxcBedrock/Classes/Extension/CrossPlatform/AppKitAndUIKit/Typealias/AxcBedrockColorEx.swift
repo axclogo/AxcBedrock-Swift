@@ -153,13 +153,37 @@ public extension AxcSpace where Base: AxcBedrockColor {
     ///   - alpha: 阿尔法通道值
     static func CreateOptional(hexStr: String,
                                alpha: CGFloat = 1) -> AxcBedrockColor? {
-        var formatted = hexStr.replacingOccurrences(of: "0x", with: "")
-        formatted = formatted.replacingOccurrences(of: "#", with: "")
-        guard let hex = Int(formatted, radix: 16) else { return nil }
-        let red = CGFloat((hex & 0xFF0000) >> 16)
-        let green = CGFloat((hex & 0xFF00) >> 8)
-        let blue = CGFloat((hex & 0xFF) >> 0)
-        return AxcBedrockColor.Axc.Create(red: red, green: green, blue: blue, alpha: alpha)
+        var formatted = hexStr.trimmingCharacters(in: .whitespacesAndNewlines)
+        if formatted.hasPrefix("#") {
+            formatted.removeFirst()
+        }
+        if formatted.lowercased().hasPrefix("0x") {
+            formatted.removeFirst(2)
+        }
+
+        if formatted.count == 3 || formatted.count == 4 {
+            formatted = formatted.map { "\($0)\($0)" }.joined()
+        }
+
+        guard formatted.count == 6 || formatted.count == 8,
+              let hex = UInt64(formatted, radix: 16) else { return nil }
+
+        let red: CGFloat
+        let green: CGFloat
+        let blue: CGFloat
+        let finalAlpha: CGFloat
+        if formatted.count == 8 {
+            red = CGFloat((hex & 0xFF000000) >> 24)
+            green = CGFloat((hex & 0x00FF0000) >> 16)
+            blue = CGFloat((hex & 0x0000FF00) >> 8)
+            finalAlpha = CGFloat(hex & 0x000000FF) / 255.0
+        } else {
+            red = CGFloat((hex & 0xFF0000) >> 16)
+            green = CGFloat((hex & 0x00FF00) >> 8)
+            blue = CGFloat(hex & 0x0000FF)
+            finalAlpha = alpha
+        }
+        return AxcBedrockColor.Axc.Create(red: red, green: green, blue: blue, alpha: finalAlpha)
     }
 
     // MARK: hexInt创建

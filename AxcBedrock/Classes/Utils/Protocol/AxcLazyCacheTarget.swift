@@ -34,8 +34,7 @@ public protocol AxcLazyCacheTarget: AxcSharedTarget, AxcLogInfoTarget {
 
 // MARK: - 默认实现
 
-fileprivate var k_enableTotalCache = "k_fileprivate.AxcBedrock.enableTotalCache"
-fileprivate var k_systemCachePath = "k_fileprivate.AxcBedrock.systemCachePath"
+fileprivate var k_enableTotalCache: UInt8 = 0
 public extension AxcLazyCacheTarget {
     /// 缓存总开关，默认开
     var enableTotalCache: Bool {
@@ -282,8 +281,8 @@ public extension AxcLazyCacheTarget {
 
 // MARK: - 内部使用
 
-fileprivate var k_memoryCacheMap = "k_fileprivate.AxcBedrock.memoryCacheMap"
-fileprivate var k_fileManager = "k_fileprivate.AxcBedrock.fileManager"
+fileprivate var k_memoryCacheMap: UInt8 = 0
+fileprivate var k_fileManager: UInt8 = 0
 fileprivate extension AxcLazyCacheTarget {
     /// 缓存表
     typealias CacheMap = [String: [String: Any]]

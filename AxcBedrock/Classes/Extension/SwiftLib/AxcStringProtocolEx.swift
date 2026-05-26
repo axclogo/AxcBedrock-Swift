@@ -5,6 +5,8 @@
 //  Created by 赵新 on 2022/2/15.
 //
 
+import Foundation
+
 // MARK: - 数据转换
 
 public extension AxcSpace where Base: StringProtocol { }

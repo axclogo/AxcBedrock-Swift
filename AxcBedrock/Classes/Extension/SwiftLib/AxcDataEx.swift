@@ -7,6 +7,10 @@
 
 import Foundation
 
+#if canImport(AppKit)
+import AppKit
+#endif
+
 // MARK: - Data + AxcSpaceProtocol
 
 extension Data: AxcSpaceProtocol { }

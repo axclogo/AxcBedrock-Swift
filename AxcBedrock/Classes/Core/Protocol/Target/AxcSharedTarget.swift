@@ -15,7 +15,7 @@ public protocol AxcSharedTarget: NSObject {
     func config()
 }
 
-fileprivate var k_shared = "k_fileprivate.Axc.shared"
+fileprivate var k_shared: UInt8 = 0
 public extension AxcSharedTarget {
     /// 单例实例化
     static var Shared: Self {
@@ -33,7 +33,7 @@ public extension AxcSharedTarget {
 
 // MARK: - 线程
 
-fileprivate var k_queue = "k_fileprivate.Axc.queue"
+fileprivate var k_queue: UInt8 = 0
 public extension AxcSharedTarget {
     /// 子线程对象
     var dispatchQueue: DispatchQueue {

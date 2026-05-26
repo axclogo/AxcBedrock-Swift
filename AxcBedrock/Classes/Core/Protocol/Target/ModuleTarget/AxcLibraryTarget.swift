@@ -102,7 +102,7 @@ public extension AxcLibraryTarget {
 
 // MARK: - 实例私有
 
-fileprivate var k_attribute = "k_fileprivate.AxcBedrock.attribute"
+fileprivate var k_attribute: UInt8 = 0
 fileprivate extension AxcLibraryTarget {
     /// 属性，用于跨代理带参处理事务
     /// ⚠️但不能将此参数作为处理组件内部事务的参数！

@@ -261,7 +261,7 @@ public extension AxcImageSpace {
     }
 }
 
-fileprivate var k_selectorImage = "k_fileprivate.AxcBedrock.selectorImage"
+fileprivate var k_selectorImage: UInt8 = 0
 
 extension AxcImageSpace {
     /// 方法选择器转Block对象

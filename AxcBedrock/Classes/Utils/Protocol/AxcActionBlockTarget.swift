@@ -13,8 +13,8 @@ protocol AxcActionBlockTarget {
     associatedtype ActionType
 }
 
-private var k_actionBlockMap = "k_actionBlockMap"
-private var k_defaultKey = "k_defaultKey"
+private var k_actionBlockMap: UInt8 = 0
+private let k_defaultKey = "k_defaultKey"
 extension AxcActionBlockTarget where Self: NSObject {
     /// 设置触发代码块
     func setActionBlock(key: String? = nil, _ block: @escaping AxcBlock.Action<ActionType>) {

@@ -195,11 +195,11 @@ public extension AxcImageSpace {
         #if os(macOS)
         let imageSize = base.size
         let tintColor = assertTransformColor(tintUnifiedColor)
-        /// 使用CGContext绘制图像
-        base.lockFocus()
+        let tintedImage = Base(size: imageSize)
+        tintedImage.lockFocus()
+        defer { tintedImage.unlockFocus() }
         guard let context = NSGraphicsContext.current?.cgContext else { return nil }
         context.setFillColor(tintColor.cgColor)
-        /// 获取图像的mask(alpha通道)
         let rect = CGRect(origin: .zero, size: imageSize)
         guard let mask = base.representations.first as? NSBitmapImageRep,
               let cgImage = mask.converting(to: .deviceRGB,
@@ -207,13 +207,12 @@ public extension AxcImageSpace {
         else { return nil }
         context.clip(to: rect, mask: cgImage)
         context.fill(CGRect(origin: .zero, size: imageSize))
-
-        base.unlockFocus()
-        return base
+        return tintedImage
 
         #elseif os(iOS) || os(tvOS) || os(watchOS)
 
         UIGraphicsBeginImageContextWithOptions(base.size, false, base.scale)
+        defer { UIGraphicsEndImageContext() }
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         context.translateBy(x: 0, y: base.size.height)
         context.scaleBy(x: 1.0, y: -1.0)
@@ -225,7 +224,6 @@ public extension AxcImageSpace {
         context.fill(rect)
         guard let currentContext = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
         let newImage = currentContext as UIImage
-        UIGraphicsEndImageContext()
         return newImage as? Base
 
         #endif

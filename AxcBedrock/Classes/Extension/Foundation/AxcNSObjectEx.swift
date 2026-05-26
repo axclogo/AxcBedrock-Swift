@@ -50,7 +50,7 @@ public extension AxcSpace where Base: NSObject {
     }
 }
 
-private var k_performSelectorBlock = "k_performSelectorBlock"
+private var k_performSelectorBlock: UInt8 = 0
 fileprivate extension NSObject {
     /// 调用的方法
     @objc

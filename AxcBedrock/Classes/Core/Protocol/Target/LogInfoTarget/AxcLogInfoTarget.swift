@@ -101,7 +101,7 @@ public extension AxcLogInfoTarget {
 
 // MARK: - 私有
 
-fileprivate var k_weakDelegateObj = "k_fileprivate.AxcBedrock.weakDelegateObj"
+fileprivate var k_weakDelegateObj: UInt8 = 0
 
 fileprivate extension AxcLogInfoTarget {
     /// 获取统一的日志前缀
