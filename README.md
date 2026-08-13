@@ -1,3 +1,5 @@
+
+
 # AxcBedrock
 ![language](https://img.shields.io/badge/Language-swift-8E44AD.svg)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -87,7 +89,7 @@ print(testString) // "hel"
 ```swift
 let attText = "这是一段富文本".axc.makeAttributed { make in
     make.set(font: 15, range: 0...1)
-.set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
+    make.set(foregroundColor: "FFBBAA", range: NSRange(location: 0, length: 4))
 }
 ```
 | iOS performance | MacOS performance |
@@ -176,4 +178,3 @@ Tasks that need help:
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
 
 # Please give a Star⭐️ to this repository if it has been helpful to you or has inspired you in any way. ~ ~ Thanks♪(･ω･)ﾉ
-
