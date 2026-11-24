@@ -1,11 +1,11 @@
 # AxcBedrock
-![language](https://img.shields.io/badge/Language-swift-8E44AD.svg)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)
-[![Platform](https://img.shields.io/cocoapods/p/AxcBedrock.svg?style=flat)](https://cocoapods.org/pods/AxcBedrock)
-![CocoaPods](https://img.shields.io/badge/CocoaPods-1.12.1-brightgreen.svg)
-![Axc](https://img.shields.io/badge/Axc-Kit-orange.svg)
+![Language: Swift](./ReadmeSource/badges/language.svg)
+[![License: MIT](./ReadmeSource/badges/license.svg)](./LICENSE)
+[![Platform: iOS 10+ | macOS 11+](./ReadmeSource/badges/platform.svg)](./Package.swift)
+[![CocoaPods: supported](./ReadmeSource/badges/cocoapods.svg)](https://cocoapods.org/pods/AxcBedrock)
+![Axc: Kit](./ReadmeSource/badges/axc.svg)
 
+[CI / GitHub Actions](https://github.com/axclogo/AxcBedrock-Swift/actions/workflows/swift.yml)
 
 # 语言
 - en [English](./README.md)
