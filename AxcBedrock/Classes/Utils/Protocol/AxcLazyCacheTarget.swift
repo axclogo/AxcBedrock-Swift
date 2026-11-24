@@ -159,11 +159,12 @@ public extension AxcLazyCacheTarget {
     ///   - fileName: 文件名
     ///   - loadBlock: 加载代码块
     ///   - expiry: 有效期，nil为永久
-    /// - Returns: Data
+    /// - Returns: 缓存或加载得到的数据；写盘失败仍返回加载结果。
+    /// - Throws: 原样传播加载错误，不写入失败结果，下次请求可重试。
     static func DiskCache(table: TableKey,
                           fileName: String,
                           expiry: AxcTimeMark? = nil,
-                          loadBlock: AxcBlock.Return<Data>) -> Data {
+                          loadBlock: () throws -> Data) rethrows -> Data {
         // 读取/创建表目录
         let tablePath = _AppendPathComponent(Shared.diskCachePath, toString: table.cacheKey)
         do {
@@ -181,8 +182,8 @@ public extension AxcLazyCacheTarget {
         let filePath = _AppendPathComponent(tablePath, toString: fileName)
 
         // 创建内部读写文件函数
-        func _readAndWriteFile() -> Data {
-            let loadValue = loadBlock()
+        func _readAndWriteFile() throws -> Data {
+            let loadValue = try loadBlock()
             let fileUrl = URL(fileURLWithPath: filePath)
             do {
                 try loadValue.write(to: fileUrl, options: .atomic)
@@ -201,14 +202,13 @@ public extension AxcLazyCacheTarget {
         if let content = _FileManager.contents(atPath: filePath) {
             // 设置了有效期
             if let expiry = expiry {
+                var isExpired = false
                 do {
                     let fileAttributes = try _FileManager.attributesOfItem(atPath: filePath)
                     // 获取文件修改日期
                     if let modificationDate = fileAttributes[.modificationDate] as? Date {
                         let validityDate = modificationDate.axc.addTimeMark(expiry) // 日期叠加
-                        if Date() > validityDate { // 文件已失效
-                            return _readAndWriteFile() // 执行读写逻辑
-                        }
+                        isExpired = Date() > validityDate
                     }
                 } catch let err {
                     let log = """
@@ -218,10 +218,13 @@ public extension AxcLazyCacheTarget {
                         """
                     Shared.log(log)
                 }
+                if isExpired {
+                    return try _readAndWriteFile()
+                }
             }
             return content
         } else { // 没有读到文件，执行读取加写入逻辑
-            return _readAndWriteFile()
+            return try _readAndWriteFile()
         }
     }
 

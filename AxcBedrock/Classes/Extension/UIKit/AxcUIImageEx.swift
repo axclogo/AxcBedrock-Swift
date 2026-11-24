@@ -9,6 +9,10 @@
 
 import UIKit
 
+private enum AxcImageCacheError: Error {
+    case pngEncodingFailed
+}
+
 fileprivate extension AxcLazyCache.TableKey {
     /// 图片缓存表，启用缓存
     static let uiImageTable = AxcLazyCache.Table("uiImage_table", enableCache: true)
@@ -140,33 +144,36 @@ public extension AxcImageSpace {
         return Base(cgImage: cgImage)
     }
 
-    /// 图片切圆角，默认以最小宽高
+    /// 图片切圆角，默认以最小宽高；生成失败返回 nil，不缓存失败结果。
     func set(cornerRadius: AxcUnifiedNumber) -> Base? {
         let radius = assertTransformCGFloat(cornerRadius)
         guard radius != 0 else { return base } // 无需旋转
-        // 启动缓存
-        let data = AxcLazyCache.DiskCache(table: .uiImageTable, fileName: base.hashValue.axc.string) {
-            let maxRadius = base.size.axc.smaller / 2 // 取宽高中一个最小的
-            let cornerRadius: CGFloat
-            if radius > 0, radius <= maxRadius {
-                cornerRadius = radius
-            } else {
-                cornerRadius = maxRadius
+        do {
+            let data = try AxcLazyCache.DiskCache(table: .uiImageTable, fileName: base.hashValue.axc.string) {
+                let maxRadius = base.size.axc.smaller / 2 // 取宽高中一个最小的
+                let cornerRadius: CGFloat
+                if radius > 0, radius <= maxRadius {
+                    cornerRadius = radius
+                } else {
+                    cornerRadius = maxRadius
+                }
+                UIGraphicsBeginImageContextWithOptions(base.size, false, base.scale)
+                let rect = CGRect(origin: .zero, size: base.size)
+                UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
+                base.draw(in: rect)
+                let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                if let data = image?.axc.pngData {
+                    return data
+                } else {
+                    throw AxcImageCacheError.pngEncodingFailed
+                }
             }
-            UIGraphicsBeginImageContextWithOptions(base.size, false, base.scale)
-            let rect = CGRect(origin: .zero, size: base.size)
-            UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).addClip()
-            base.draw(in: rect)
-            let image: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            if let data = image?.axc.pngData {
-                return data
-            } else {
-                AxcBedrockLib.Log("图片处理错误！")
-                return nil
-            }
+            return data.axc.uiImage as? Base
+        } catch {
+            AxcBedrockLib.Log("图片处理错误！\(error)")
+            return nil
         }
-        return data.axc.uiImage as? Base
     }
 
     /// 方形图

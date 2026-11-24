@@ -2,99 +2,48 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [master, main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build-ios:
-    name: Build iOS (Xcode ${{ matrix.xcode }})
-    runs-on: macos-14
-    strategy:
-      matrix:
-        xcode: ['15.4', '16.0']
+  macos:
+    name: macOS Swift Package build and tests
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
+      - run: swift build
+      - run: swift test --enable-code-coverage
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
-
-      - name: Build for iOS Simulator
-        run: |
-          xcodebuild build \
-            -scheme AxcBedrock-iOS \
-            -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest' \
-            -configuration Debug \
-            CODE_SIGNING_ALLOWED=NO \
-            | xcpretty
-
-  build-macos:
-    name: Build macOS (Xcode ${{ matrix.xcode }})
-    runs-on: macos-14
-    strategy:
-      matrix:
-        xcode: ['15.4', '16.0']
+  ios:
+    name: iOS Swift Package build and cache tests
+    runs-on: macos-15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
-
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode }}.app
-
-      - name: Build for macOS
-        run: |
-          xcodebuild build \
-            -scheme AxcBedrock-macOS \
-            -destination 'platform=macOS' \
-            -configuration Debug \
-            CODE_SIGNING_ALLOWED=NO \
-            | xcpretty
-
-  spm-build:
-    name: SPM Build
-    runs-on: macos-14
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_15.4.app
-
-      - name: Build with SPM
-        run: swift build
-
-  test:
-    name: Unit Tests
-    runs-on: macos-14
-    needs: [build-ios, spm-build]
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_15.4.app
-
-      - name: Run Tests
-        run: swift test --enable-code-coverage
-
-      - name: Generate Coverage Report
-        run: |
-          xcrun llvm-cov export \
-            .build/debug/AxcBedrockPackageTests.xctest/Contents/MacOS/AxcBedrockPackageTests \
-            -instr-profile .build/debug/codecov/default.profdata \
-            -format lcov > coverage.lcov || true
-
-      - name: Upload Coverage
-        uses: codecov/codecov-action@v4
-        with:
-          file: coverage.lcov
-          fail_ci_if_error: false
+      - name: Build Swift Package for iOS Simulator
+        run: >-
+          xcodebuild build -scheme AxcBedrockCore
+          -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO
+      - name: Run cache regression tests
+        run: >-
+          xcodebuild test -scheme AxcBedrockCore
+          -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
+          -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO
+          -only-testing:AxcBedrockTests/AxcDiskCacheTests
+          -only-testing:AxcBedrockTests/AxcUIImageCacheTests
 
   swiftlint:
     name: SwiftLint
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install SwiftLint
-        run: brew install swiftlint
-
-      - name: Run SwiftLint
-        run: swiftlint lint --reporter github-actions-logging
+      - run: swiftlint lint --reporter github-actions-logging
