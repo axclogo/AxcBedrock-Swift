@@ -28,6 +28,8 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
     steps:
       - uses: actions/checkout@v4
+      - name: Select Swift Package instead of legacy Pods project
+        run: rm _Pods.xcodeproj
       - name: Build Swift Package for iOS Simulator
         run: |
           if ! xcodebuild build -scheme AxcBedrockCore \
