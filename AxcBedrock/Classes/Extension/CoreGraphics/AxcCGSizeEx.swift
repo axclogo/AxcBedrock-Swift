@@ -148,4 +148,9 @@ public extension AxcSpace where Base == CGSize {
 
 // MARK: - 决策判断
 
-public extension AxcSpace where Base == CGSize { }
+public extension AxcSpace where Base == CGSize {
+    /// 宽高是否均为有限数值；允许零和负值，不判断是否适合作为布局尺寸或除数。
+    var isFinite: Bool {
+        return base.width.isFinite && base.height.isFinite
+    }
+}

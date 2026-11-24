@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- 类型化关联对象键 `AxcAssociationKey`，支持强/弱持有及 Runtime 单键读写、移除。
+- 实例级 `AxcOnce`，并发只执行一次，后续调用不等待闭包完成。
+- `.axc.clamped(to:)` 与 CGPoint / CGSize / CGRect 的 `.axc.isFinite`。
+- 关联对象生命周期、并发执行、数值边界、几何、已有 Insets 和图片别名的核心回归测试。
+
+### Documentation
+- 说明能力范围、并发语义及平台边界，修正 SwiftPM 产品与导入模块说明。
+
 ## [2.0.0] - 2026-05-07
 
 ### Added

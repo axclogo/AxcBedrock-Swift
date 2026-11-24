@@ -143,4 +143,13 @@ public extension AxcSpace where Base == CGRect {
 
 // MARK: - 决策判断
 
-public extension AxcSpace where Base == CGRect { }
+public extension AxcSpace where Base == CGRect {
+    /// 矩形是否具有有限的分量和边界；排除 null、infinite、NaN 及边界计算溢出。
+    /// 允许零和负尺寸；空矩形与标准化判断请使用系统的 isEmpty 和 standardized。
+    var isFinite: Bool {
+        return !base.isNull && !base.isInfinite
+            && base.origin.axc.isFinite && base.size.axc.isFinite
+            && (base.origin.x + base.size.width).isFinite
+            && (base.origin.y + base.size.height).isFinite
+    }
+}

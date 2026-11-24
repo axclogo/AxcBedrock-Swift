@@ -54,14 +54,17 @@ dependencies: [
 Or in Xcode: File → Add Package Dependencies → Enter the repository URL.
 
 Available products:
-- `AxcBedrockCore` — Core utilities (cross-platform)
-- `AxcBedrockiOS` — iOS-specific extensions
-- `AxcBedrockmacOS` — macOS-specific extensions
+- `AxcBedrock` and `AxcBedrockCore` — Both expose the `AxcBedrockCore` target, including platform extensions selected at compile time.
+
+Use `import AxcBedrockCore` with SwiftPM; CocoaPods uses `import AxcBedrock`.
+The declared minimum platforms are iOS 10.0 and macOS 11.0. SwiftPM uses tools version 5.3
+and Swift 5 language mode; the podspec uses `swift_version = '5.0'`.
+These are Apple-platform libraries; the Core name does not imply Linux support.
 
 Alternatively, you can manually add the source code to your project.
 
 # Usage
-Using the functions and extensions in AxcBedrock is very simple. Simply import AxcBedrock into your project and you can start using it.
+Import `AxcBedrockCore` with SwiftPM, or `AxcBedrock` with CocoaPods, to use the functions and extensions below.
 
 ## Format/Specification
 All API usage follows this naming convention:
@@ -74,6 +77,59 @@ Xxxx.Axc.Xxxx
 In this way, you can easily access all the functions and extensions you need.
 
 ## Examples
+### Foundation helpers
+
+The library includes typed associated objects, an instance-scoped once token, and small
+numeric/geometry helpers. Existing Insets and image APIs are reused; no additional image wrapper is needed.
+
+```swift
+private enum Keys {
+    static let title = AxcAssociationKey<String>()
+    static let delegate = AxcAssociationKey<NSObject>.Weak()
+}
+let object = NSObject()
+AxcRuntime.Set(object: object, key: Keys.title, value: "Title")
+let title: String? = AxcRuntime.GetObject(object, key: Keys.title)
+AxcRuntime.Remove(object: object, key: Keys.title) // Only this key
+
+let once = AxcOnce() // Store as an instance property, or static let to share
+once.run { print("Runs once on the calling thread") }
+
+let progress = 1.5.axc.clamped(to: 0.0...1.0) // 1.0
+let finite = CGRect(x: 0, y: 0, width: 10, height: 20).axc.isFinite
+let insets = AxcBedrockEdgeInsets.Axc.Create(horizontal: 2, vertical: 3)
+let total = insets.axc.horizontal // 4; vertical is 6
+let size = CGSize(width: 10, height: 20).axc.add(edge: insets)
+```
+
+- **Associated objects** (`Utils/Runtime`): each key instance has its own identity and value type.
+  Hosts must be `NSObject` instances that support Objective-C associated objects. Default keys retain values;
+  `Weak()` keys use the existing `AxcWeakObj` and return nil after the value is released.
+  Passing nil removes a value. Active associations retain their key to prevent address reuse.
+  Individual reads/writes use atomic Runtime retention, but read-modify-write sequences and value internals
+  require caller synchronization. Strong reference cycles remain the caller's responsibility.
+  Copying is explicit at the call site; no generic copy policy is provided because `NSCopying` need not
+  preserve a concrete Swift subtype. The existing raw Runtime functions remain in use internally.
+- **Once** (`Utils/GCD`): one synchronous, nonthrowing body per `AxcOnce` instance, no reset or global token table.
+  `run` returns true for the winning caller and false for later or reentrant callers. Concurrent losers
+  return without waiting for the body to finish. This is not an initialization completion barrier.
+  Store the token for the required lifetime; creating a new token on every call does not share state.
+  Prefer Swift's `static let` when only initializing a shared value.
+- **Numbers and geometry** (`Extension/SwiftLib`, `Extension/CoreGraphics`): `clamped(to:)` takes a valid
+  `ClosedRange`, preserves NaN, and clamps infinities to the bounds. `CGPoint`, `CGSize`, and `CGRect`
+  expose `.axc.isFinite`; rectangles also reject null/infinite sentinels and overflowing edges.
+  Zero and negative sizes are allowed by this finiteness check; it does not promise positive layout sizes
+  or safe divisors. Use native `isEmpty`, `isNull`, `isInfinite`, and `standardized` for their respective semantics.
+- **Insets and images** (`Extension/CrossPlatform/AppKitAndUIKit/Typealias`): reuse Insets
+  `horizontal`, `vertical`, `add(edge:)`, `CGSize.axc.add/subtract(edge:)`, and `inset(rect:)`.
+  `AxcBedrockImage` already aliases `UIImage` on iOS and `NSImage` on macOS, retaining native identity
+  and behavior. It does not unify platform-specific scale or coordinate semantics; `AxcUnifiedImage`
+  remains the existing input conversion protocol.
+
+The new files are covered by the existing SwiftPM source directories and CocoaPods globs.
+Runtime, once, and clamping live in CocoaPods Core; geometry, Insets, and images require the platform sources.
+Run the core regression suite with `swift test` on macOS. iOS compilation/tests require Xcode and an iOS SDK.
+
 ### Example Call
 Here is a simple example to demonstrate how to use the functionality in AxcBedrock:
 

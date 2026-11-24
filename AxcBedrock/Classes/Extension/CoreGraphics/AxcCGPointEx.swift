@@ -131,4 +131,9 @@ public extension AxcSpace where Base == CGPoint {
 
 // MARK: - 决策判断
 
-public extension AxcSpace where Base == CGPoint { }
+public extension AxcSpace where Base == CGPoint {
+    /// 坐标是否均为有限数值；零和负坐标有效，NaN 和无穷无效。
+    var isFinite: Bool {
+        return base.x.isFinite && base.y.isFinite
+    }
+}
