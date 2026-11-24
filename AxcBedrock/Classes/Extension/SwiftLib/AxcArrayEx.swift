@@ -82,7 +82,7 @@ public extension AxcArraySpace {
     /// 随机返回一个值
     /// - Returns: 元素
     var random: Element? {
-        guard base.count > 0 else { return nil }
+        guard !base.isEmpty else { return nil }
         let index = arc4random_uniform(base.count.axc.uint32).axc.int
         return base[index]
     }
@@ -372,7 +372,7 @@ public extension AxcArraySpace where Element == String {
 
     /// 排空
     func filterEmpty() -> [Element] {
-        return base.filter { !$0.isEmpty || $0.count != 0 }
+        return base.filter { !$0.isEmpty }
     }
 }
 

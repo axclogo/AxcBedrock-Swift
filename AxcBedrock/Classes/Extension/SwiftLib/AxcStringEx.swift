@@ -69,7 +69,7 @@ public extension AxcSpace where Base == String {
                 guard let num = UInt8(byteString, radix: 16) else { return }
                 data.append(num)
             }
-        guard data.count > 0 else { return nil }
+        guard !data.isEmpty else { return nil }
         return data
     }
 
@@ -179,7 +179,7 @@ public extension AxcSpace where Base == String {
     /// 该api首次执行效率低，对性能要求高的地方慎用！
     /// 已通过缓存方式进行优化处理
     var pinYin: String? {
-        guard base.count > 0 else { return nil }
+        guard !base.isEmpty else { return nil }
         // 缓存代码块
         let py: String = AxcLazyCache.MemoryCache(table: .pinYinTable, key: base) {
             let mutableString = NSMutableString(string: base)

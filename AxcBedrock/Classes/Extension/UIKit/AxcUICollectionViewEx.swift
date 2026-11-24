@@ -155,7 +155,7 @@ public extension AxcSpace where Base: UICollectionView {
     func dequeueReusableView<T: UICollectionReusableView>(_ register: AxcRegister,
                                                           indexPath: IndexPath) -> T {
         var identifier = register.identifier
-        if identifier.count == 0 {
+        if identifier.isEmpty {
             identifier = "\(register.classType)"
         }
         var view = T()

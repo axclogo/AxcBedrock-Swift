@@ -41,12 +41,18 @@ jobs:
           fi
           cat ios-build.log
       - name: Run cache regression tests
-        run: >-
-          xcodebuild test -scheme AxcBedrockCore
-          -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5'
-          -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO
-          -only-testing:AxcBedrockTests/AxcDiskCacheTests
-          -only-testing:AxcBedrockTests/AxcUIImageCacheTests
+        run: |
+          if ! xcodebuild test -scheme AxcBedrock-Package \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO \
+            -parallel-testing-enabled NO \
+            -only-testing:AxcBedrockTests/AxcDiskCacheTests \
+            -only-testing:AxcBedrockTests/AxcUIImageCacheTests > ios-test.log 2>&1; then
+            cat ios-test.log
+            while IFS= read -r line; do echo "::error::$line"; done < <(grep -E 'error:|failed' ios-test.log | tail -n 20)
+            exit 1
+          fi
+          cat ios-test.log
 
   swiftlint:
     name: SwiftLint

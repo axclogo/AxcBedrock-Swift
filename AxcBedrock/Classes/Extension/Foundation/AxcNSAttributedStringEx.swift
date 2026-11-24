@@ -124,7 +124,7 @@ public extension AxcSpace where Base: NSAttributedString {
 
     /// 获取富文本全部属性
     func attributes(_ range: AxcUnifiedRange? = nil) -> [NSAttributedString.Key: Any] {
-        guard string.count > 0 else { return [:] }
+        guard !string.isEmpty else { return [:] }
         if var nsRange = NSRange.Axc.CreateOptional(range) {
             return base.attributes(at: 0, effectiveRange: &nsRange)
         } else {

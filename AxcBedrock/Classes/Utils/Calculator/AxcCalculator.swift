@@ -133,7 +133,7 @@ public extension AxcBedrockLib {
             remainder.append(str1[str1.index(str1.startIndex, offsetBy: i)])
 
             // 当余数小于除数时，补零
-            while remainder.count > 0, remainder.last! == "0" {
+            while !remainder.isEmpty, remainder.last! == "0" {
                 quotient.append("0")
                 remainder.removeLast()
             }

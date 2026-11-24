@@ -22,7 +22,7 @@ public extension AxcSpace where Base == String {
     /// 获取工程中Bundle图片 可选值
     func uiImage_optional(bundle: Bundle = .main,
                           tintColor: AxcUnifiedColor? = nil) -> UIImage? {
-        guard base.count != 0 else { return UIImage() }
+        guard !base.isEmpty else { return UIImage() }
         var image = UIImage(named: base, in: bundle, compatibleWith: nil)
         if let tintColor = tintColor {
             image = image?.axc.set(tintUnifiedColor: tintColor)
