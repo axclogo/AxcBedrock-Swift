@@ -29,10 +29,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build Swift Package for iOS Simulator
-        run: >-
-          xcodebuild build -scheme AxcBedrockCore
-          -destination 'generic/platform=iOS Simulator'
-          -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO
+        run: |
+          if ! xcodebuild build -scheme AxcBedrockCore \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath .build/ios CODE_SIGNING_ALLOWED=NO > ios-build.log 2>&1; then
+            cat ios-build.log
+            while IFS= read -r line; do echo "::error::$line"; done < <(grep -E 'error:|failed' ios-build.log | tail -n 20)
+            exit 1
+          fi
+          cat ios-build.log
       - name: Run cache regression tests
         run: >-
           xcodebuild test -scheme AxcBedrockCore
@@ -46,4 +51,5 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - run: brew install swiftlint
       - run: swiftlint lint --reporter github-actions-logging
