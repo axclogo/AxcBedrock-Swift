@@ -8,16 +8,21 @@
 [CI / GitHub Actions](https://github.com/axclogo/AxcBedrock-Swift/actions/workflows/swift.yml)
 
 # 语言
+
 - en [English](./README.md)
 - zh_CN [简体中文](./README.zh_CN.md)
 
 # 介绍
 ![bedrock](./ReadmeSource/bedrock.png)<br>
-AxcBedrock是一个基础的工具库，为iOS和macOS应用程序提基础供常用的函数和扩展。
+AxcBedrock 是一个基础工具库，为 iOS 和 macOS 应用提供常用函数和扩展。
 
 如同MineCraft中的基岩一样，作为世界基础，承担起所有方块。
 
-在将来，还会继续支持Dart等语言（时间够的话😄）[Dart版本点这里（还在开发中..）](https://github.com/axclogo/AxcBedrock-Dart) 
+## Swift 与 Dart
+
+[AxcBedrock-Swift](https://github.com/axclogo/AxcBedrock-Swift) 面向 iOS 和 macOS；[AxcBedrock-Dart](https://github.com/axclogo/AxcBedrock-Dart) 提供纯 Dart 核心，以及独立的 Flutter 几何与绘制辅助包。
+
+两者共用 `value.axc.operation` 的调用习惯，在语言允许的范围内对齐通用能力，保留原生类型与平台差异。Dart 版不会逐项复刻 Apple framework 扩展，具体范围见 [API 对照](https://github.com/axclogo/AxcBedrock-Dart/blob/master/doc/api-parity.md)。Dart 当前为尚未发布的 `2.0.0-dev.1` 开发版。
 
 主要思想是想打通开发的连贯性，不局限于一个平台或一个语言，打通开发人员的习惯，让所有底层Api或简单小操作的调用统一
 
@@ -29,6 +34,14 @@ AxcBedrock是一个基础的工具库，为iOS和macOS应用程序提基础供�
 
 不敢说很多项目，但是我在做的项目中这个方案确实解决了代码补全侵染的问题，也具有良好的美观性，并且不会和主项目的extension造成命名重复的问题。
 
+
+# 作者的话
+
+终于有空，借助 Codex 给 AxcBedrock 的 Swift 和 Dart 两个版本做了一轮收尾，把这一阶段的小功能、示例、测试和文档整理成一个闭环，也算没有让当初的想法一直烂尾。
+
+到了 AI 时代，我也不确定这样的基础工具库还剩下多少价值。先把自己想做的事情做完，给过去的投入一个交代；如果恰好还能帮到别人，就更好了。
+
+目前主要精力放在 Agent 相关研究上，正在做 [AxcAgentEngine](https://github.com/axclogo/AxcAgentEngine)。这两个库暂时以当前范围收尾，不承诺持续更新；以后如果用的人多、出现明确需求，再考虑继续维护。
 
 # 安装
 您可以使用CocoaPods快速安装AxcBedrock:
@@ -44,6 +57,8 @@ pod 'AxcBedrock'
 在 Xcode 的 Add Package Dependencies 中添加本仓库地址，选择 `AxcBedrock` 或
 `AxcBedrockCore` 产品；两者都导出同一个 `AxcBedrockCore` target，包含按平台条件编译的扩展。
 SwiftPM 使用 `import AxcBedrockCore`，CocoaPods 使用 `import AxcBedrock`。
+
+本文新增能力以当前 `master` 开发分支为准，不表示已经发布新版本。SwiftPM 可选择该分支；需要可复现依赖时，固定经过确认的 revision。
 
 最低平台声明保持 iOS 10.0 / macOS 11.0。SwiftPM tools version 为 5.3、语言模式为 Swift 5，
 podspec 的 `swift_version` 为 `5.0`。Core 名称不表示支持 Linux。
@@ -208,13 +223,7 @@ QQ：532432339
 # 贡献
 AxcBedrock是开源的，并感谢任何形式的贡献。如果您发现错误或想改进库，请提交拉取请求。
 
-**目前需协助帮忙~如果有想法的请联系我！或者提PR，谢谢！Orz**
-
-## 需要协助一起的任务还有：
-- 完善单元测试部分
-- 支持Swift Package Manager
-- 如果有需要优化的地方，提出优化项
-- 如果有想一起开发Dart版的Bedrock，请联系我！
+欢迎提交带复现示例的 Issue、范围明确的修复和测试。SwiftPM 支持与 Dart 对应项目均已存在；后续维护取决于实际使用情况和时间安排，不承诺固定响应或发版节奏。
 
 # 证书
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.

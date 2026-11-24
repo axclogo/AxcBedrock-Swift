@@ -8,6 +8,7 @@
 [CI / GitHub Actions](https://github.com/axclogo/AxcBedrock-Swift/actions/workflows/swift.yml)
 
 # Language
+
 - en [English](./README.md)
 - zh_CN [简体中文](./README.zh_CN.md)
 
@@ -17,7 +18,11 @@ AxcBedrock is a basic tool library that provides commonly used functions and ext
 
 Like Bedrock in MineCraft, as the foundation of the world, it bears all the blocks.
 
-In the future, it will continue to support languages such as Dart (if time permits 😄) [Click here for the Dart version (still in development..)](https://github.com/axclogo/AxcBedrock-Dart) 
+## Swift and Dart
+
+[AxcBedrock-Swift](https://github.com/axclogo/AxcBedrock-Swift) provides helpers for iOS and macOS. [AxcBedrock-Dart](https://github.com/axclogo/AxcBedrock-Dart) provides a pure Dart core and a separate Flutter package for geometry and painting helpers.
+
+Both share the `value.axc.operation` approach and align common capabilities where the languages allow it. They use native types and keep platform differences explicit; the Dart version does not reproduce every Apple framework extension. See the [API comparison](https://github.com/axclogo/AxcBedrock-Dart/blob/master/doc/api-parity.md). Dart is currently an unpublished `2.0.0-dev.1` development version.
 
 The main idea is to establish coherence in development, not limited to one platform or one language, to connect developers' habits, and to unify the invocation of all underlying APIs or simple small operations.
 
@@ -29,6 +34,14 @@ Therefore, AxcBedrock is based on namespace mode encapsulation, with the suffix 
 
 I can't say there are many projects, but in the projects I am involved in, this solution really solves the problem of code completion creeping in. It also has good aesthetics and will not cause naming conflicts with the extensions of the main project.
 
+
+# A note from the author
+
+I finally found some time to use Codex to wrap up this stage of both the Swift and Dart projects: bringing the small helpers, examples, tests, and documentation together, rather than leaving the original idea unfinished indefinitely.
+
+In the AI era, I honestly do not know how much value libraries like these still have. Finishing what I set out to do gives me some closure. If it helps someone else along the way, even better.
+
+My focus is now on Agent research and [AxcAgentEngine](https://github.com/axclogo/AxcAgentEngine). These two libraries will stay within their current scope for now, with no commitment to regular updates. If more people use them and clear needs emerge, I will consider continuing maintenance.
 
 # Install
 You can install AxcBedrock using CocoaPods or Swift Package Manager:
@@ -45,11 +58,13 @@ pod 'AxcBedrock'
 Add the following to your `Package.swift` dependencies:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/axclogo/AxcBedrock-Swift.git", from: "2.0.0")
+    .package(url: "https://github.com/axclogo/AxcBedrock-Swift.git", branch: "master")
 ]
 ```
 
 Or in Xcode: File → Add Package Dependencies → Enter the repository URL.
+
+This example follows the current development branch, which includes the helpers described below. Pin a reviewed revision when you need a reproducible dependency; this README does not imply a new tagged release.
 
 Available products:
 - `AxcBedrock` and `AxcBedrockCore` — Both expose the `AxcBedrockCore` target, including platform extensions selected at compile time.
@@ -220,13 +235,7 @@ QQ：532432339
 # Contribution
 AxcBedrock is open source and thanks for any contributions. If you find any errors or want to improve the library, please submit a pull request.
 
-**Currently I need help~ If you have any ideas, please contact me! Or submit a PR, thank you! Orz**
-
-Tasks that need help:
-- Improve the unit test section
-- Support Swift Package Manager
-- If there are areas that need optimization, propose optimization items
-- If you want to develop a Dart version of Bedrock together, please contact me!
+Issues with reproducible examples, focused fixes, and tests are welcome. SwiftPM support and the Dart counterpart are already present. Future maintenance will depend on actual usage and available time; there is no promised response or release schedule.
 
 # LICENSE
 AxcBedrock is available under the MIT license. See the LICENSE file for more info.
